@@ -14,7 +14,10 @@ GatePassScreen As screen:
         );
         ClearCollect(
             colOfflineStockLine,
-            'Stock Transfer Lines'
+            Filter(
+                'Stock Transfer Lines',
+                'Transfer Order No'.'Stock Transfer Header' = First(varGatePassHeader).'Stock Transfer Header'
+            )
         );
 
     Gallery7_3 As gallery.galleryVertical:
