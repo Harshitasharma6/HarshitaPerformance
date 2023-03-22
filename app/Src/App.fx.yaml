@@ -168,8 +168,12 @@ App As appinfo:
             LookUp(
                 Warehouses,
                 Warehouse = varUserVanNo.Van.Warehouse
-            ).warehouse
+            ).Warehouse
         );
+        Set(UserAreaGUID, LookUp(
+                                    Areas,
+                                    Area = varUserArea.Area.Area
+                                ).Area);
         If(
             Connection.Connected,
             ClearCollect(
