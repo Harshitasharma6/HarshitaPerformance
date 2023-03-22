@@ -1,6 +1,6 @@
 "NewFOCScreen As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
     Fill: =_VarGblAppColors.LightText
-    OnVisible: |
+    OnVisible: |-
         =//Clear(colFOCCartItem);
         Set(
             varGatePassHeaderAll,
