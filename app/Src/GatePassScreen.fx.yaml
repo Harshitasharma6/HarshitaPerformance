@@ -32,7 +32,7 @@ GatePassScreen As screen:
                     Sort(
                         Filter(
                             Filter(
-                                'Stock Transfer Lines',
+                                colOfflineStockLine,
                                 'Transfer Order No'.'Stock Transfer Header' in varGatePassHeader.headerGUID
                             ),
                             'Created On' >= Today()
