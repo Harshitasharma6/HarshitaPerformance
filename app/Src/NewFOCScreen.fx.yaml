@@ -1,16 +1,12 @@
 "NewFOCScreen As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
     Fill: =_VarGblAppColors.LightText
     OnVisible: |-
-        =//Clear(colFOCCartItem);
-        Set(
+        =Set(
             varGatePassHeaderAll,
             AddColumns(
                 Filter(
                     'Stock Transfer Headers',
-                    !IsBlank('To Location') && 'To Location'.Warehouse = LookUp(
-                        Warehouses,
-                        Warehouse = varUserVanNo.Van.Warehouse
-                    ).Warehouse && 'Stock transfer type' = 'Stock transfer type (Stock Transfer Headers)'.'Warehouse to van transfer' && IsToday('Created On')
+                    'To Location'.Warehouse = StockTransferWarehouse && 'Stock transfer type' = 'Stock transfer type (Stock Transfer Headers)'.'Warehouse to van transfer' && 'Created On'>=Today()
                 ),
                 "headerGUID",
                 'Stock Transfer Header'
@@ -180,17 +176,16 @@
                                 IsBlank(compFOCSearch.SearchText),
                                 Filter(
                                     'Current Stocks',
-                                    IsToday('Created On') && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
+                                    'Created Date' >= Today() && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
                                 ),
                                 Filter(
                                     Filter(
-                                        'Current Stocks',
-                                        IsToday('Created On') && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
+                                        colOfflineCurrentStock,
+                                        'Created Date' >= Today() && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
                                     ),
-                                    compFOCSearch.SearchText in 'Item SKU'.'Pack Title' || compFOCSearch.SearchText in 'Item SKU'.'Item Description '
+                                    (compFOCSearch.SearchText in 'Item SKU'.'Pack Title' || compFOCSearch.SearchText in 'Item SKU'.'Item Description ')
                                 )
                             )
-                            //Filter('Current Stocks', IsToday('Created On') && 'Van No'.Warehouse= varUserVanNo.Van.Warehouse)
                         Layout: =Layout.Vertical
                         LayoutMinHeight: =287
                         LayoutMinWidth: =1200
@@ -293,7 +288,7 @@
                                         2000
                                     ),
                                     If(
-                                        !IsBlank(txtFOCCasesValue) || Not(Value(txtFOCCasesValue.Text)) = "0",
+                                        !IsBlank(txtFOCCasesValue),
                                         Collect(
                                             colFOCCartItem,
                                             {
@@ -371,7 +366,7 @@
                                         2000
                                     ),
                                     If(
-                                        !IsBlank(txtFOCPcsValue) || Not(Value(txtFOCPcsValue.Text)) = 0,
+                                        !IsBlank(txtFOCPcsValue),
                                         Collect(
                                             colFOCCartItem,
                                             {
@@ -634,7 +629,7 @@
                                     {Value: 0}
                                 );
                                 ,
-                                //Checking Second condition if the (qty is greater then remainining cases) 
+                                //Checking Second condition if the (qty is greater then remainining cases)
                                 ((First(CurrentQtyCases).Value > OneFifoItem.'Remaining Qty Cases')),
                                  //////______________CART MANIPULATION
                                 If(
@@ -824,7 +819,7 @@
                                         }
                                     );
                                 );
-                                
+                               
                 //Testingggggg__________________________________________________________________________________________________
                 Patch(
                                     SequenceTestingVariable,
@@ -987,7 +982,7 @@
                                 Area = varUserArea.Area.Area
                             ),
                             Customer: LookUp(
-                                Customers_1,
+                                AllCustomerss,
                                 Branch.'Branch Master' = LookUp(
                                     Users,
                                     'Primary Email' = User().Email
@@ -1007,7 +1002,7 @@
                             'Total Discount Amount': 0
                         }
                     );
-                    
+                   
                 );
                 /*---Create FOC Order Line----------------*/
                 If(
@@ -1027,10 +1022,10 @@
                                 {
                                     Cases: FOCItem.qtyCases,
                                     PCs: FOCItem.qtyPcs,
-                                    'Order Number': LookUp(
+                                    'Order Number': First(CreateFOCOrder)/*LookUp(
                                         'Order Headers',
                                         'Order Number' = First(CreateFOCOrder).'Order Number'
-                                    ),
+                                    )*/,
                                     Salesperson: LookUp(
                                         Users,
                                         'Primary Email' = User().Email
@@ -1049,7 +1044,7 @@
                                         'SKU Master' = FOCItem.skuId
                                     ),
                                     'Customer no.': LookUp(
-                                        Customers_1,
+                                        AllCustomerss,
                                         Branch.'Branch Master' = LookUp(
                                             Users,
                                             'Primary Email' = User().Email
@@ -1078,7 +1073,7 @@
                             )*/
                         )
                     );
-                    
+                   
                 );
                       //////////////////////create invoice 18-03-2023 ///////////////////////////
                 If(
@@ -1092,27 +1087,27 @@
                                 'Invoice Number': "RI" & Left(
                                     LookUp(
                                         'Invoice Series',
-                                        'Route No'.Area = LookUp(
+                                        'Route No'.Area = UserAreaGUID/*LookUp(
                                             Areas,
                                             Area = varUserArea.Area.Area
-                                        ).Area
+                                        ).Area*/
                                     ).'Sequence No',
                                     4
                                 ) & Text(
                                     LookUp(
                                         'Invoice Series',
-                                        'Route No'.Area = LookUp(
+                                        'Route No'.Area = UserAreaGUID/*LookUp(
                                             Areas,
                                             Area = varUserArea.Area.Area
-                                        ).Area
+                                        ).Area*/
                                     ).'Route No'.'Name (zx_name)'
                                 ) & Right(
                                     LookUp(
                                         'Invoice Series',
-                                        'Route No'.Area = LookUp(
+                                        'Route No'.Area = UserAreaGUID/*LookUp(
                                             Areas,
                                             Area = varUserArea.Area.Area
-                                        ).Area
+                                        ).Area*/
                                     ).'Sequence No' + 1,
                                     6
                                 ),
@@ -1121,7 +1116,7 @@
                                     'Primary Email' = User().Email
                                 ),
                                 Customer: LookUp(
-                                    Customers_1,
+                                    AllCustomerss,
                                     Branch.'Branch Master' = LookUp(
                                         Users,
                                         'Primary Email' = User().Email
@@ -1137,10 +1132,10 @@
                                 ),
                                 'Invoice Date': Now(),
                                 'Order Type': 'Order Type (Choice)'.'FOC Order',
-                                'Order Number': LookUp(
+                                'Order Number': First(CreateFOCOrder)/*LookUp(
                                     'Order Headers',
                                     'Order Number' = First(CreateFOCOrder).'Order Number'
-                                ),
+                                )*/,
                                 'Total Amount': 0,
                                 'Total Tax Amount': 0,
                                 'Total Discount Amount': 0,
@@ -1156,7 +1151,7 @@
                             }
                         )
                     );
-                    
+                   
                 );
                 If(
                     !IsBlank(CreateInvHeaderFOC),
@@ -1168,14 +1163,14 @@
                                 'Invoice Lines',
                                 Defaults('Invoice Lines'),
                                 {
-                                    'Invoice Number': LookUp(
+                                    'Invoice Number': First(CreateInvHeaderFOC)/*LookUp(
                                         'Invoice Headers',
                                         'Invoice Header' = First(CreateInvHeaderFOC).'Invoice Header'
-                                    ),
-                                    'Order Number': LookUp(
+                                    )*/,
+                                    'Order Number': First(CreateFOCOrder)/*LookUp(
                                         'Order Headers',
                                         'Order Number' = First(CreateFOCOrder).'Order Number'
-                                    ),
+                                    )*/,
                                     'Item Type': 'Item Type (Choice)'.Free,
                                     'Item SKU': LookUp(
                                         'SKU Masters',
@@ -1196,7 +1191,7 @@
                                     'Tax Amount': 0,
                                     Rate: 0,
                                     Customer: LookUp(
-                                        Customers_1,
+                                        AllCustomerss,
                                         Branch.'Branch Master' = LookUp(
                                             Users,
                                             'Primary Email' = User().Email
@@ -1239,7 +1234,7 @@
                         'Current Stocks',
                         LookUp(
                             'Current Stocks',
-                            'Item SKU'.'SKU Master' = CurSt.skuId && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse && IsToday('Created On')
+                            'Item SKU'.'SKU Master' = CurSt.skuId && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse && 'Created On' >= Today()
                         ),
                         {
                             Cases: Sum(

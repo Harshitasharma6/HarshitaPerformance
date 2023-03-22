@@ -12,7 +12,7 @@
                 IsBlank(
                     LookUp(
                         Attendances,
-                        User.'Primary Email' = User().Email && IsToday(DateValue('Created On'))
+                        User.'Primary Email' = User().Email && Date=Today()
                     )
                 ),
                 Patch(
@@ -44,7 +44,7 @@
                     colOfflineTodayAttendance,
                     LookUp(
                         Attendances,
-                        User.'Primary Email' = User().Email && IsToday(DateValue('Created On'))
+                        User.'Primary Email' = User().Email && Date=Today()
                     )
                 );
                 Navigate(GatePassScreen);
@@ -53,7 +53,7 @@
                     IsBlank(
                         LookUp(
                             Attendances,
-                            User.'Primary Email' = User().Email && !IsBlank('Check-out Time') && IsToday('Created On')
+                            User.'Primary Email' = User().Email && !IsBlank('Check-out Time') && Date=Today()
                         )
                     ),
                     Notify(
@@ -80,7 +80,10 @@
                     )
                 )
             );
-            Set(varDayEnd, false);
+            Set(
+                varDayEnd,
+                false
+            );
         Size: =24
         Text: ="START"
         Width: =280
@@ -382,17 +385,13 @@
                     If(IsBlank(txtAttendanceCases.Text) && IsBlank(txtAttendancePcs.Text), DisplayMode.Disabled, DisplayMode.Edit)
                 Fill: =_VarGblAppColors.BisleriBlue
                 HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
-                OnSelect: |+
+                OnSelect: |
                     =Set(
                         varStockInventoryPatch,
                         AddColumns(
                             Filter(
                                 'Stock Transfer Headers',
-                                !IsBlank('To Location') &&
-                                'To Location'.Warehouse = LookUp(
-                                    Warehouses,
-                                    Warehouse = varUserVanNo.Van.Warehouse
-                                ).Warehouse && IsToday('Created On')
+                                'To Location'.Warehouse = StockTransferWarehouse && 'Created On' >= Today()
                             ),
                             "headerInventoryGUID",
                             'Stock Transfer Header'
@@ -403,11 +402,7 @@
                         AddColumns(
                             Filter(
                                 'Stock Transfer Headers',
-                                !IsBlank('From Location') &&
-                                'From Location'.Warehouse = LookUp(
-                                    Warehouses,
-                                    Warehouse = varUserVanNo.Van.Warehouse
-                                ).Warehouse && IsToday('Created On') && 'Stock transfer type'='Stock transfer type (Stock Transfer Headers)'.'Van to van transfer'
+                                'From Location'.Warehouse = StockTransferWarehouse && 'Created On' >= Today() && 'Stock transfer type' = 'Stock transfer type (Stock Transfer Headers)'.'Van to van transfer'
                             ),
                             "headerInventoryGUID",
                             'Stock Transfer Header'
@@ -418,20 +413,17 @@
                         AddColumns(
                             Filter(
                                 'Stock Transfer Headers',
-                                !IsBlank('To Location') &&
-                                'To Location'.Warehouse = LookUp(
-                                    Warehouses,
-                                    Warehouse = varUserVanNo.Van.Warehouse
-                                ).Warehouse && IsToday('Created On') && 'Stock transfer type'='Stock transfer type (Stock Transfer Headers)'.'Van to van transfer'
+                                'To Location'.Warehouse = StockTransferWarehouse && 'Created On'>=Today() && 'Stock transfer type' = 'Stock transfer type (Stock Transfer Headers)'.'Van to van transfer'
                             ),
                             "headerInventoryGUID",
                             'Stock Transfer Header'
                         )
                     );
-                    
-                    Set(varAttendance, 0);
+                    Set(
+                        varAttendance,
+                        0
+                    );
                     Navigate(SettlementScreen);
-                    
                 Size: =_VarGblAppFonts.Size.Medium
                 Text: ="Confirm"
                 Width: =120
