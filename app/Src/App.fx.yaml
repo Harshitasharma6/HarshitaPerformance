@@ -500,7 +500,7 @@ App As appinfo:
             ).'Offline Order Number'
         );
         /*ClearCollect(
-            AllCustomerss,
+            AllCustomerss,  
             Filter(
                 Customers_1,
                 (Salesperson.'Primary Email' = User().Email && Customer status' = 'Customer status (Choice)'.Customer)
