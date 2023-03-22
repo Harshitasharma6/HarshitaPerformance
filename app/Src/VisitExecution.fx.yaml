@@ -11094,8 +11094,7 @@
         PaddingRight: =7
         PaddingTop: =7
         Visible: |-
-            =Set(invheads,First(Invoicedata).'Invoice Header');
-            
+            =
             If(!IsBlank(LookUp(
                                 'Invoice Headers',
                                 'Invoice Header' = invheads)),true,false)
