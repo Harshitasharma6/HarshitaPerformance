@@ -2035,11 +2035,11 @@
                                                     ).'Quantity Per UOM') - (First(CurrentQty).Value - OneFifoItem.'Remaining Qty Pcs'),
                                                     'Invoiced Qty Pcs.': ((LookUp(
                                                         'Stock Transfer Lines' As oneStockLine,
-                                                        ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && >=)
+                                                        ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.Date>=Datetodays)
                                                     ).'Invoiced Qty Pcs.') + First(CurrentQty).Value),
                                                     'Remaining Qty Cases': ((LookUp(
                                                         'Stock Transfer Lines' As oneStockLine,
-                                                        ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.Date>=Datetodays))
+                                                        ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.Date>=Datetodays)
                                                     ).'Remaining Qty Cases') - First(SequenceNo).Value)
                                                 }
                                             );
