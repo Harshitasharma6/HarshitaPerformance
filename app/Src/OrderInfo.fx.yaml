@@ -37,6 +37,7 @@
                 ZIndex: =1
 
             OrderHeader As gallery.variableTemplateHeightGallery:
+                AccessibleLabel: ="OrderHeader"
                 DelayItemLoading: =true
                 Height: =1262
                 Items: |-
@@ -139,6 +140,7 @@
                     ZIndex: =19
 
             OrderLine As gallery.variableTemplateHeightGallery:
+                AccessibleLabel: ="OrderLine"
                 DelayItemLoading: =true
                 Fill: =_VarGblAppColors.LightText
                 Height: =824

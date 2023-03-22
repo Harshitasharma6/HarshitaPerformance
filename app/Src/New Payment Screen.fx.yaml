@@ -166,6 +166,7 @@
                 ZIndex: =23
 
             ImgPaymentPaytm As image:
+                AccessibleLabel: ="ImgPaymentPaytm"
                 BorderColor: =_VarGblAppColors.HeaderBg
                 BorderThickness: =2
                 Height: =67
@@ -369,6 +370,7 @@
                 ZIndex: =30
 
             DatePicker3 As datepicker:
+                AccessibleLabel: ="DatePicker3"
                 BorderColor: =_VarGblAppColors.BisleriBlue
                 FocusedBorderThickness: =2
                 Height: =45
@@ -398,6 +400,7 @@
                 ZIndex: =32
 
             ComboBox1 As combobox:
+                AccessibleLabel: ="ComboBox1"
                 BorderColor: =_VarGblAppColors.BisleriBlue
                 ChevronBackground: =_VarGblAppColors.BisleriBlue
                 ChevronHoverBackground: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)

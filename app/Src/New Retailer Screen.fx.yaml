@@ -881,6 +881,7 @@
                     ZIndex: =68
 
                 cmbDistrict As combobox:
+                    AccessibleLabel: ="cmbDistrict"
                     BorderColor: =_VarGblAppColors.BisleriBlue
                     BorderThickness: =1
                     ChevronBackground: =RGBA(0, 0, 0, 0)
@@ -907,6 +908,7 @@
                     ZIndex: =69
 
                 cmbCity As combobox:
+                    AccessibleLabel: ="cmbCity"
                     BorderColor: =_VarGblAppColors.BisleriBlue
                     BorderThickness: =1
                     ChevronBackground: =RGBA(0, 0, 0, 0)
@@ -932,6 +934,7 @@
                     ZIndex: =70
 
                 cmbTaluka As combobox:
+                    AccessibleLabel: ="cmbTaluka"
                     BorderColor: =_VarGblAppColors.BisleriBlue
                     BorderThickness: =1
                     ChevronBackground: =RGBA(0, 0, 0, 0)
@@ -971,6 +974,7 @@
                     ZIndex: =71
 
                 cmbArea As combobox:
+                    AccessibleLabel: ="cmbArea"
                     BorderColor: =_VarGblAppColors.BisleriBlue
                     BorderThickness: =1
                     ChevronBackground: =RGBA(0, 0, 0, 0)
