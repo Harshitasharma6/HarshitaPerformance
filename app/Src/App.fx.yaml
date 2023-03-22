@@ -54,12 +54,13 @@ App As appinfo:
         Reset(txtLoginUsername);
         Reset(txtLoginPassword);
         ///////////////////////////******SAVE DATA*****////////////////////////////
-        Set(dataforbranch,LookUp(
-                            Users,
-                            'Primary Email' = User().Email
-                        ).'Branch Master'.'Branch Master');
-        
-        
+        Set(
+            dataforbranch,
+            LookUp(
+                Users,
+                'Primary Email' = User().Email
+            ).'Branch Master'.'Branch Master'
+        );
         Set(
             Datetodays,
             Date(
@@ -196,8 +197,11 @@ App As appinfo:
                 ,
                 ClearCollect(
                     colOfflineAreas,
-                    Filter(Areas,' Site/Branch '.'Branch Master'= dataforbranch)
-                );    
+                    Filter(
+                        Areas,
+                        ' Site/Branch '.'Branch Master' = dataforbranch
+                    )
+                );
                 ,
                 ClearCollect(
                     colOfflineWarehouse,
@@ -218,9 +222,8 @@ App As appinfo:
                     colOfflineCustomerVisits,
                     Filter(
                         Visits,
-                        'Visit Date' = Today() && 'Owning User'.'Primary Email'= User().Email
-                        )
-                    
+                        'Visit Date' = Today() && 'Owning User'.'Primary Email' = User().Email
+                    )
                 );
                 ,
                 ClearCollect(
@@ -258,7 +261,7 @@ App As appinfo:
                     colOfflineOrderHeader,
                     Filter(
                         'Order Headers',
-                        IsToday('Order Date') && 'Owning User'.'Primary Email' = User().Email
+                        'Order Date' > Today() && 'Owning User'.'Primary Email' = User().Email
                     )
                 );
                 ,
@@ -480,7 +483,7 @@ App As appinfo:
             colOfflineCurrentStock,
             Filter(
                 'Current Stocks',
-                 'Created Date' = Datetodays && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse 
+                'Created Date' = Datetodays && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
             )
         );
         ClearCollect(
