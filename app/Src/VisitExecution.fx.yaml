@@ -10037,10 +10037,10 @@
                         );
                         Set(invheads,
                         First(CreateInvHeader).'Invoice Header');
-                        Set(
+                        /*Set(
                             varOrdered,
                             true
-                        )
+                        )*/
                     PaddingBottom: =
                     Size: =_VarGblAppFonts.Size.UpperMedium
                     Text: ="Confirm"
