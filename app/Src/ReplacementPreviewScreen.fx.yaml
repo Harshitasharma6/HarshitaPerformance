@@ -331,7 +331,7 @@
             Fill: =_VarGblAppColors.BisleriBlue
             FocusedBorderThickness: =2
             HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
-            OnSelect: |
+            OnSelect: |-
                 =ClearCollect(
                     CreateReplacementRecord,
                     Patch(
@@ -407,10 +407,10 @@
                                     'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,
                                     Cases: ThissItem.qtyCases,
                                     PCs: ThissItem.qtyPcs,
-                                    'Order Number': LookUp(
+                                    'Order Number': First(CreateReplacementRecord) /*LookUp(
                                         'Order Headers',
                                         'Order Number' = First(CreateReplacementRecord).'Order Number'
-                                    ),
+                                    )*/,
                                     Salesperson: LookUp(
                                         Users,
                                         'Primary Email' = User().Email
