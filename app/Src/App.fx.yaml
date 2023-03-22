@@ -151,6 +151,13 @@ App As appinfo:
         );*/
         ///////////////////////////******CLEAR COLLECT OFFLINE*****////////////////////////////
         Set(
+            varUserArea,
+            LookUp(
+                'User Area Mappings',
+                Salesperson.'Primary Email' = User().Email
+            )
+        );
+        Set(
             DemandHeadersdata,
             LookUp(
                 'Check-in Demand Headers',
@@ -247,8 +254,7 @@ App As appinfo:
             ,
             ClearCollect(
                 colOfflineStockTransferHeader,
-                'Stock Transfer Headers'
-            );
+               Filter( 'Stock Transfer Headers','Created On'>= Today() ));
             ,
             ClearCollect(
                 colOfflinePayments,
@@ -403,13 +409,7 @@ App As appinfo:
                 User.'Primary Email' = User().Email && 'Created Date' = Datetodays
             )
         );
-        Set(
-            varUserArea,
-            LookUp(
-                'User Area Mappings',
-                Salesperson.'Primary Email' = User().Email
-            )
-        );
+        
         ClearCollect(
             varOfflinePricingMaster,
             Filter(
