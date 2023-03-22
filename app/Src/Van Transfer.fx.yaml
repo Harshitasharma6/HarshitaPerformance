@@ -1164,7 +1164,7 @@
                     Area.Area = LookUp(
                         'Location VAN Mappings',
                         Van.Warehouse = LookUp(
-                            colOfflineStockTransferHeader,
+                            'Stock Transfer Headers',
                             'Stock Transfer Header' = ThisItem.'Transfer Order No'.'Stock Transfer Header'
                         ).'To Location'.Warehouse
                     ).Area.Area
