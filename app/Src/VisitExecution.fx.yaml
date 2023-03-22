@@ -1980,10 +1980,10 @@
                                 }
                             )
                         );
-                        Set(
+                        /*Set(
                             amt,
                             txtPaymentAmountValue
-                        );
+                        );*/
                         Set(
                             var,
                             Blank()
@@ -5582,10 +5582,10 @@
                                     }
                                 )
                             );
-                            Set(
+                            /*Set(
                                 varConfirmation,
                                 true
-                            );
+                            );*/
                             Notify(
                                 "IRN has been generated sucessfully",
                                 NotificationType.Success,

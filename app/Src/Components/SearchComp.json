@@ -113,7 +113,7 @@
         "Name": "btnSearchBackground",
         "Parent": "SearchComp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1735,
+        "PublishOrderIndex": 1724,
         "Rules": [
           {
             "Category": "Data",
@@ -484,7 +484,7 @@
         "Name": "txtSearchInput",
         "Parent": "SearchComp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1736,
+        "PublishOrderIndex": 1725,
         "Rules": [
           {
             "Category": "Data",
@@ -833,7 +833,7 @@
         "Name": "icoSearch",
         "Parent": "SearchComp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1737,
+        "PublishOrderIndex": 1726,
         "Rules": [
           {
             "Category": "Design",
@@ -1018,7 +1018,7 @@
         "Name": "grpSearch",
         "Parent": "SearchComp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1738,
+        "PublishOrderIndex": 1727,
         "Rules": [
           {
             "Category": "Design",

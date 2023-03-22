@@ -24537,6 +24537,46 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "'Visit Screen'.conVisitToday.galVisitTodayData.btnVisitStart_1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Visit Screen'.conVisitToday.galVisitTodayData.btnVisitStart_1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 28,
+                  "charOffset": 703,
+                  "snippet": {
+                    "text": "LocationConfirmOnVisitScreen"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Visit Screen",
+                "type": "'Visit Screen'.conVisitToday.galVisitTodayData.btnVisitStart_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LocationConfirmOnVisitScreen"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "VisitExecution.OnVisible"
                 }
               ],
@@ -36972,7 +37012,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrColumnMissing-ColName-ExpectedType",
-          "ruleIndex": 4
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -37012,7 +37052,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 5
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -37029,7 +37069,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 9912,
+                  "charOffset": 9916,
                   "snippet": {
                     "text": ".'Invoice Number'"
                   }
@@ -37069,7 +37109,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 9888,
+                  "charOffset": 9892,
                   "snippet": {
                     "text": "="
                   }
@@ -37109,7 +37149,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 10409,
+                  "charOffset": 10413,
                   "snippet": {
                     "text": ".'Invoice Number'"
                   }
@@ -37149,7 +37189,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 10385,
+                  "charOffset": 10389,
                   "snippet": {
                     "text": "="
                   }
@@ -37189,7 +37229,7 @@
                 },
                 "region": {
                   "charLength": 21,
-                  "charOffset": 16627,
+                  "charOffset": 16631,
                   "snippet": {
                     "text": "IsToday('Created On')"
                   }
@@ -37229,7 +37269,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 20158,
+                  "charOffset": 20162,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -37269,7 +37309,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 20155,
+                  "charOffset": 20159,
                   "snippet": {
                     "text": "&&"
                   }
@@ -37309,7 +37349,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 20771,
+                  "charOffset": 20775,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -37349,7 +37389,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 20768,
+                  "charOffset": 20772,
                   "snippet": {
                     "text": "&&"
                   }
@@ -37389,7 +37429,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 24141,
+                  "charOffset": 24145,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -37429,7 +37469,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 24138,
+                  "charOffset": 24142,
                   "snippet": {
                     "text": "&&"
                   }
@@ -37469,7 +37509,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 24691,
+                  "charOffset": 24695,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -37509,7 +37549,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 24688,
+                  "charOffset": 24692,
                   "snippet": {
                     "text": "&&"
                   }
@@ -37549,7 +37589,7 @@
                 },
                 "region": {
                   "charLength": 21,
-                  "charOffset": 26220,
+                  "charOffset": 26224,
                   "snippet": {
                     "text": "IsToday('Created On')"
                   }
@@ -37589,7 +37629,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 29696,
+                  "charOffset": 29700,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -37629,7 +37669,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 29693,
+                  "charOffset": 29697,
                   "snippet": {
                     "text": "&&"
                   }
@@ -37669,7 +37709,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 30299,
+                  "charOffset": 30303,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -37709,7 +37749,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 30296,
+                  "charOffset": 30300,
                   "snippet": {
                     "text": "&&"
                   }
@@ -37749,7 +37789,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 35241,
+                  "charOffset": 35245,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -37789,7 +37829,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 35238,
+                  "charOffset": 35242,
                   "snippet": {
                     "text": "&&"
                   }
@@ -37829,7 +37869,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 36051,
+                  "charOffset": 36055,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -37869,7 +37909,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 36048,
+                  "charOffset": 36052,
                   "snippet": {
                     "text": "&&"
                   }
@@ -37909,7 +37949,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 36580,
+                  "charOffset": 36584,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -37949,7 +37989,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 36577,
+                  "charOffset": 36581,
                   "snippet": {
                     "text": "&&"
                   }
@@ -37989,7 +38029,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 41119,
+                  "charOffset": 41123,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -38029,7 +38069,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 41116,
+                  "charOffset": 41120,
                   "snippet": {
                     "text": "&&"
                   }
@@ -38069,7 +38109,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 41666,
+                  "charOffset": 41670,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -38109,7 +38149,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 41663,
+                  "charOffset": 41667,
                   "snippet": {
                     "text": "&&"
                   }
@@ -38149,7 +38189,7 @@
                 },
                 "region": {
                   "charLength": 21,
-                  "charOffset": 44323,
+                  "charOffset": 44327,
                   "snippet": {
                     "text": "IsToday('Created On')"
                   }
@@ -38189,7 +38229,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 47175,
+                  "charOffset": 47179,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -38229,7 +38269,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 47172,
+                  "charOffset": 47176,
                   "snippet": {
                     "text": "&&"
                   }
@@ -38269,7 +38309,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 47794,
+                  "charOffset": 47798,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -38309,7 +38349,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 47791,
+                  "charOffset": 47795,
                   "snippet": {
                     "text": "&&"
                   }
@@ -38349,7 +38389,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 50468,
+                  "charOffset": 50472,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -38389,7 +38429,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 50465,
+                  "charOffset": 50469,
                   "snippet": {
                     "text": "&&"
                   }
@@ -38429,7 +38469,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 51018,
+                  "charOffset": 51022,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -38469,7 +38509,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 51015,
+                  "charOffset": 51019,
                   "snippet": {
                     "text": "&&"
                   }
@@ -38509,7 +38549,7 @@
                 },
                 "region": {
                   "charLength": 21,
-                  "charOffset": 52651,
+                  "charOffset": 52655,
                   "snippet": {
                     "text": "IsToday('Created On')"
                   }
@@ -38549,7 +38589,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 55475,
+                  "charOffset": 55479,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -38589,7 +38629,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 55472,
+                  "charOffset": 55476,
                   "snippet": {
                     "text": "&&"
                   }
@@ -38629,7 +38669,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 56084,
+                  "charOffset": 56088,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -38669,7 +38709,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 56081,
+                  "charOffset": 56085,
                   "snippet": {
                     "text": "&&"
                   }
@@ -38709,7 +38749,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 60371,
+                  "charOffset": 60375,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -38749,7 +38789,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 60368,
+                  "charOffset": 60372,
                   "snippet": {
                     "text": "&&"
                   }
@@ -38789,7 +38829,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 61186,
+                  "charOffset": 61190,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -38829,7 +38869,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 61183,
+                  "charOffset": 61187,
                   "snippet": {
                     "text": "&&"
                   }
@@ -38869,7 +38909,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 64690,
+                  "charOffset": 64694,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -38909,7 +38949,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 64687,
+                  "charOffset": 64691,
                   "snippet": {
                     "text": "&&"
                   }
@@ -38949,7 +38989,7 @@
                 },
                 "region": {
                   "charLength": 34,
-                  "charOffset": 65237,
+                  "charOffset": 65241,
                   "snippet": {
                     "text": "IsToday(oneStockLine.'Created On')"
                   }
@@ -38989,7 +39029,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 65234,
+                  "charOffset": 65238,
                   "snippet": {
                     "text": "&&"
                   }
@@ -39293,7 +39333,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrColumnMissing-ColName-ExpectedType",
-          "ruleIndex": 4
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -39333,7 +39373,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 5
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -44203,7 +44243,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -44233,7 +44273,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -44263,7 +44303,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -44293,7 +44333,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -44323,7 +44363,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -44353,7 +44393,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -44383,7 +44423,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -44413,7 +44453,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -44443,7 +44483,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -44473,7 +44513,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -44503,7 +44543,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -44533,7 +44573,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -44563,7 +44603,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -44593,7 +44633,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -44623,7 +44663,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -44653,7 +44693,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -44683,7 +44723,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -44713,7 +44753,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -44743,7 +44783,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -44773,7 +44813,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -44803,7 +44843,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -44833,7 +44873,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -44863,7 +44903,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -44893,7 +44933,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -44923,7 +44963,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -44953,7 +44993,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -44983,7 +45023,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -45013,7 +45053,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -45043,7 +45083,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -45073,7 +45113,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -45103,7 +45143,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -45133,7 +45173,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -45163,7 +45203,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -45193,7 +45233,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -45223,7 +45263,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -45253,7 +45293,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 8
+          "ruleIndex": 9
         },
         {
           "locations": [
@@ -45283,7 +45323,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 8
+          "ruleIndex": 9
         },
         {
           "locations": [
@@ -45313,37 +45353,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 8
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.varConfirmation"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.varConfirmation",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "varConfirmation",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 8
+          "ruleIndex": 9
         },
         {
           "locations": [
@@ -45373,7 +45383,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 9
+          "ruleIndex": 10
         },
         {
           "locations": [
@@ -45403,7 +45413,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 9
+          "ruleIndex": 10
         },
         {
           "locations": [
@@ -45433,7 +45443,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 9
+          "ruleIndex": 10
         },
         {
           "locations": [
@@ -45463,36 +45473,6 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-CollectDelegatableDataSource",
           "ruleIndex": 10
         },
         {
@@ -45523,7 +45503,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -45553,7 +45533,37 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 10
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.OnStart"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.OnStart",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "OnStart",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-CollectDelegatableDataSource",
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -45583,7 +45593,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -45613,7 +45623,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -45643,7 +45653,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -45673,7 +45683,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 10
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -45702,7 +45712,7 @@
             "level": "Medium"
           },
           "ruleId": "app-DataSourceDefaultMaxRowsLimit",
-          "ruleIndex": 11
+          "ruleIndex": 12
         },
         {
           "locations": [
@@ -45732,7 +45742,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 12
+          "ruleIndex": 13
         },
         {
           "locations": [
@@ -45762,7 +45772,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 12
+          "ruleIndex": 13
         },
         {
           "locations": [
@@ -45791,37 +45801,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 13
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "LocationConfirmOnVisitScreen.VisitData"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "LocationConfirmOnVisitScreen.VisitData",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "VisitData",
-                "module": "LocationConfirmOnVisitScreen",
-                "type": "LocationConfirmOnVisitScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 8
+          "ruleIndex": 14
         },
         {
           "locations": [
@@ -45851,7 +45831,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 12
+          "ruleIndex": 13
         },
         {
           "locations": [
@@ -45880,7 +45860,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 13
+          "ruleIndex": 14
         }
       ],
       "tool": {
@@ -45955,6 +45935,23 @@
                 "componentType": "app",
                 "howToFix": [
                   "Remove or replace the unexpected characters with an expected character."
+                ],
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrInvalidName",
+              "messageStrings": {
+                "issue": {
+                  "text": "Name isn't valid. '{0}' isn't recognized."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Remove or correct the reference to the name that isn't valid."
                 ],
                 "level": "High",
                 "primaryCategory": "formula",
