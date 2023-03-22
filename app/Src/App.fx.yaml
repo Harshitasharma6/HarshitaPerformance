@@ -163,6 +163,13 @@ App As appinfo:
                 Salesperson.'Primary Email' = User().Email && Date = Datetodays
             )
         );
+        Set(
+            StockTransferWarehouse,
+            LookUp(
+                Warehouses,
+                Warehouse = varUserVanNo.Van.Warehouse
+            )
+        );
         If(
             Connection.Connected,
             ClearCollect(
