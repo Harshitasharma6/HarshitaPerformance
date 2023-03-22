@@ -9612,6 +9612,7 @@
                                             CreateInvHeaderdata,
                                             First(CreateInvHeader)
                                         );
+                                        
                         //////////////Patch Invoice Line ///////////////////
                         ClearCollect(
                                             CreateInvLine,
