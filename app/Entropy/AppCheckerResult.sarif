@@ -14184,168 +14184,8 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 10,
-                  "charOffset": 753,
-                  "snippet": {
-                    "text": ".Warehouse"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "Van Transfer",
-                "type": "'Van Transfer'"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Van Transfer'.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Van Transfer'.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 644,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "Van Transfer",
-                "type": "'Van Transfer'"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Van Transfer'.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Van Transfer'.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 764,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "Van Transfer",
-                "type": "'Van Transfer'"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Van Transfer'.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Van Transfer'.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 860,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "Van Transfer",
-                "type": "'Van Transfer'"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Van Transfer'.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Van Transfer'.OnVisible",
-                  "relativeAddress": 0
-                },
-                "region": {
                   "charLength": 13,
-                  "charOffset": 1138,
+                  "charOffset": 1045,
                   "snippet": {
                     "text": "'To Location'"
                   }
@@ -14385,7 +14225,7 @@
                 },
                 "region": {
                   "charLength": 22,
-                  "charOffset": 1130,
+                  "charOffset": 1037,
                   "snippet": {
                     "text": "IsBlank('To Location')"
                   }
@@ -14425,7 +14265,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1153,
+                  "charOffset": 1060,
                   "snippet": {
                     "text": "&&"
                   }
@@ -14465,7 +14305,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1300,
+                  "charOffset": 1207,
                   "snippet": {
                     "text": "&&"
                   }
@@ -14505,7 +14345,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1402,
+                  "charOffset": 1309,
                   "snippet": {
                     "text": "&&"
                   }
@@ -26881,36 +26721,6 @@
                 "member": "OnStart",
                 "module": "App",
                 "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "GatePassScreen.OnVisible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "GatePassScreen.OnVisible",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "OnVisible",
-                "module": "GatePassScreen",
-                "type": "GatePassScreen"
               }
             }
           ],
