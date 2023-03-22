@@ -589,7 +589,7 @@
                         'Stock Transfer Lines',
                         'Transfer Order No'.'Stock Transfer Header' in varMyVanSTockHeader.headerGUID && 'Transfer status'='Transfer status (Stock Transfer Lines)'.'Transfer generated'
                     ),
-                    IsToday('Created On')
+                    'Created On'>=Today()
                 )
             ) > 0 && CountRows(varMyVanSTockHeader)>0
         Width: =178
@@ -644,7 +644,7 @@
                         'Stock Transfer Lines',
                         'Transfer Order No'.'Stock Transfer Header' in varMyVanSTockHeader.headerGUID && 'Transfer status'='Transfer status (Stock Transfer Lines)'.'Transfer generated'
                     ),
-                    IsToday('Created On')
+                    'Created On'>= Today()
                 )
             ) > 0 && CountRows(varMyVanSTockHeader)>0
         Width: =178
@@ -794,7 +794,7 @@
                         IsBlank(
                             LookUp(
                                 'Current Stocks',
-                                'Item SKU'.'SKU Master' = CurSt.SKU.'SKU Master' && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse && IsToday('Created On')
+                                'Item SKU'.'SKU Master' = CurSt.SKU.'SKU Master' && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse && 'Created Date'>= Today()
                             )
                         ),
                         Patch(
@@ -837,7 +837,7 @@
                             'Current Stocks',
                             LookUp(
                                 'Current Stocks',
-                                'Item SKU'.'SKU Master' = CurSt.SKU.'SKU Master' && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse && IsToday('Created On')
+                                'Item SKU'.'SKU Master' = CurSt.SKU.'SKU Master' && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse && 'Created Date'>=Today()
                             ),
                             {
                                 Cases: Sum(
@@ -1906,7 +1906,7 @@
                             'Current Stocks',
                             LookUp(
                                 'Current Stocks',
-                                'Item SKU'.'SKU Master' = CurSt.productId && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse && IsToday('Created On')
+                                'Item SKU'.'SKU Master' = CurSt.productId && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse && 'Created Date' >= Today()
                             ),
                             {
                                 Cases: Sum(
@@ -2116,7 +2116,7 @@
                                     ) */
                                     Filter(
                                         'Current Stocks',
-                                        IsToday('Created On') && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
+                                        'Created Date' >= Today()  && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
                                     )
                                 Layout: =Layout.Vertical
                                 LayoutMinHeight: =120
