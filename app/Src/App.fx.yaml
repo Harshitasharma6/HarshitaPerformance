@@ -158,6 +158,13 @@ App As appinfo:
             )
         );
         Set(
+            varUserVanNo,
+            LookUp(
+                'Location VAN Mappings',
+                Area.Area = varUserArea.Area.Area
+            )
+        );
+        Set(
             StockTransferWarehouse,
             LookUp(
                 Warehouses,
@@ -401,13 +408,6 @@ App As appinfo:
             LookUp(
                 'User Area Mappings',
                 Salesperson.'Primary Email' = User().Email
-            )
-        );
-        Set(
-            varUserVanNo,
-            LookUp(
-                'Location VAN Mappings',
-                Area.Area = varUserArea.Area.Area
             )
         );
         ClearCollect(
