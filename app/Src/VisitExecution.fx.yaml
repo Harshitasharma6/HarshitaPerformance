@@ -41,7 +41,8 @@
             varDiscountHeader,
             LookUp(
                 'Discount Headers',
-                Branch.'Branch Master' = dataforbranch    )
+                Branch.'Branch Master' = dataforbranch
+            )
         );
         /*Set(
             varPricingLine,
@@ -146,14 +147,18 @@
         );
         Reset(txtPaymentAmountValue_2);
         Set(
+            Warehousesdata,
+            LookUp(
+                Warehouses,
+                Warehouse = varUserVanNo.Van.Warehouse
+            ).Warehouse
+        );
+        Set(
             varGatePassHeaderAll,
             AddColumns(
                 Filter(
                     'Stock Transfer Headers',
-                    !IsBlank('To Location') && 'To Location'.Warehouse = LookUp(
-                        Warehouses,
-                        Warehouse = varUserVanNo.Van.Warehouse
-                    ).Warehouse && IsToday('Created On')
+                    'To Location'.Warehouse = Warehousesdata && Date >= Datetodays
                 ),
                 "headerGUID",
                 'Stock Transfer Header'
@@ -7130,6 +7135,18 @@
                     HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
                     OnSelect: |-
                         =/////////////////////////////////////////////////////////_______________ORDER PLACEMENT
+                        Set(
+                            visitiddata,
+                            First(VisitData).'Visit ID'
+                        );
+                        Set(
+                            CreateOrderRecorddata,
+                            First(CreateOrderRecord)
+                        );
+                        Set(
+                            CreateInvHeaderdata,
+                            First(CreateInvHeader)
+                        );
                         If(
                             OrderData.'Mode Of Payment' = 'Payment Type (choice)'.CASH || OrderData.'Mode Of Payment' = 'Payment Type (choice)'.COUPON || OrderData.'Mode Of Payment' = 'Payment Type (choice)'.KOTAK || OrderData.'Mode Of Payment' = 'Payment Type (choice)'.PAYTM,
                             ClearCollect(
@@ -7138,7 +7155,7 @@
                                     IsBlank(
                                         LookUp(
                                             'Order Headers',
-                                            Vists.'Visit ID' = First(VisitData).'Visit ID'
+                                            Vists.'Visit ID' = visitiddata
                                         )
                                     ),
                                     Patch(
@@ -7199,7 +7216,7 @@
                                             ),
                                             Vists: LookUp(
                                                 Visits,
-                                                'Visit ID' = First(VisitData).'Visit ID'
+                                                'Visit ID' = visitiddata
                                             )
                                         }
                                     ),
@@ -7207,7 +7224,7 @@
                                         'Order Headers',
                                         LookUp(
                                             'Order Headers',
-                                            Vists.'Visit ID' = First(VisitData).'Visit ID'
+                                            Vists.'Visit ID' = visitiddata
                                         ),
                                         {
                                             'Order Date': Today(),
@@ -7264,7 +7281,7 @@
                                             ),
                                             Vists: LookUp(
                                                 Visits,
-                                                'Visit ID' = First(VisitData).'Visit ID'
+                                                'Visit ID' = visitiddata
                                             )
                                         }
                                     )
@@ -7283,7 +7300,7 @@
                                             IsBlank(
                                                 LookUp(
                                                     'Order Lines',
-                                                    'Order Number'.'Order Id' = First(CreateOrderRecord).'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Paid
+                                                    'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Paid
                                                 )
                                             ),
                                             Patch(
@@ -7296,7 +7313,7 @@
                                                     'Empty Jars': ThissItem.emptyJar,
                                                     'Order Number': LookUp(
                                                         'Order Headers',
-                                                        'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                        'Order Number' = CreateOrderRecorddata.'Order Number'
                                                     ),
                                                     Salesperson: LookUp(
                                                         Users,
@@ -7335,7 +7352,7 @@
                                                     ),
                                                     'Reference Line': LookUp(
                                                         'Order Lines',
-                                                        'Order Number'.'Order Number' = First(CreateOrderRecord).'Order Number' && 'Item SKU'.'SKU Master' = LookUp(
+                                                        'Order Number'.'Order Number' = CreateOrderRecorddata.'Order Number' && 'Item SKU'.'SKU Master' = LookUp(
                                                             'Scheme Orders',
                                                             'Scheme Order' = ThissItem.schemeOrderValue.zx_schemeorderid
                                                         ).'Item Code'.'SKU Master'
@@ -7347,7 +7364,7 @@
                                                 'Order Lines',
                                                 LookUp(
                                                     'Order Lines',
-                                                    'Order Number'.'Order Id' = First(CreateOrderRecord).'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Paid
+                                                    'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Paid
                                                 ),
                                                 {
                                                     'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,
@@ -7356,7 +7373,7 @@
                                                     'Empty Jars': ThissItem.emptyJar,
                                                     'Order Number': LookUp(
                                                         'Order Headers',
-                                                        'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                        'Order Number' = CreateOrderRecorddata.'Order Number'
                                                     ),
                                                     Salesperson: LookUp(
                                                         Users,
@@ -7395,7 +7412,7 @@
                                                     ),
                                                     'Reference Line': LookUp(
                                                         'Order Lines',
-                                                        'Order Number'.'Order Number' = First(CreateOrderRecord).'Order Number' && 'Item SKU'.'SKU Master' = LookUp(
+                                                        'Order Number'.'Order Number' = CreateOrderRecorddata.'Order Number' && 'Item SKU'.'SKU Master' = LookUp(
                                                             'Scheme Orders',
                                                             'Scheme Order' = ThissItem.schemeOrderValue.zx_schemeorderid
                                                         ).'Item Code'.'SKU Master'
@@ -7418,7 +7435,7 @@
                                             IsBlank(
                                                 LookUp(
                                                     'Order Lines',
-                                                    'Order Number'.'Order Id' = First(CreateOrderRecord).'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Parent Item Code'.'SKU Master' = ThissItem.SchemeOrderProductReference
+                                                    'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Parent Item Code'.'SKU Master' = ThissItem.SchemeOrderProductReference
                                                 )
                                             ),
                                             Patch(
@@ -7431,7 +7448,7 @@
                                                     'Empty Jars': ThissItem.emptyJar,
                                                     'Order Number': LookUp(
                                                         'Order Headers',
-                                                        'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                        'Order Number' = CreateOrderRecorddata.'Order Number'
                                                     ),
                                                     Salesperson: LookUp(
                                                         Users,
@@ -7483,7 +7500,7 @@
                                                 'Order Lines',
                                                 LookUp(
                                                     'Order Lines',
-                                                    'Order Number'.'Order Id' = First(CreateOrderRecord).'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Parent Item Code'.'SKU Master' = ThissItem.SchemeOrderProductReference
+                                                    'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Parent Item Code'.'SKU Master' = ThissItem.SchemeOrderProductReference
                                                 ),
                                                 {
                                                     'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,
@@ -7492,7 +7509,7 @@
                                                     'Empty Jars': ThissItem.emptyJar,
                                                     'Order Number': LookUp(
                                                         'Order Headers',
-                                                        'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                        'Order Number' = CreateOrderRecorddata.'Order Number'
                                                     ),
                                                     Salesperson: LookUp(
                                                         Users,
@@ -7551,7 +7568,7 @@
                                         IsBlank(
                                             LookUp(
                                                 'Invoice Headers',
-                                                'Order Number'.'Order Id' = First(CreateOrderRecord).'Order Id'
+                                                'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id'
                                             )
                                         ),
                                         Patch(
@@ -7623,7 +7640,7 @@
                                                 'Order Type': 'Order Type (Choice)'.'Sales Order',
                                                 'Order Number': LookUp(
                                                     'Order Headers',
-                                                    'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                    'Order Number' = CreateOrderRecorddata.'Order Number'
                                                 ),
                                                 'Total Amount': (Sum(
                                                     colCartItems,
@@ -7653,7 +7670,7 @@
                                             'Invoice Headers',
                                             LookUp(
                                                 'Invoice Headers',
-                                                'Order Number'.'Order Id' = First(CreateOrderRecord).'Order Id'
+                                                'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id'
                                             ),
                                             {
                                                 Salesperson: LookUp(
@@ -7676,7 +7693,7 @@
                                                 'Order Type': 'Order Type (Choice)'.'Sales Order',
                                                 'Order Number': LookUp(
                                                     'Order Headers',
-                                                    'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                    'Order Number' = CreateOrderRecorddata.'Order Number'
                                                 ),
                                                 'Total Amount': (Sum(
                                                     colCartItems,
@@ -7736,7 +7753,7 @@
                                             IsBlank(
                                                 LookUp(
                                                     'Invoice Lines',
-                                                    'Invoice Number'.'Invoice Number' = First(CreateInvHeader).'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Paid
+                                                    'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Paid
                                                 )
                                             ),
                                             Patch(
@@ -7745,11 +7762,11 @@
                                                 {
                                                     'Invoice Number': LookUp(
                                                         'Invoice Headers',
-                                                        'Invoice Header' = First(CreateInvHeader).'Invoice Header'
+                                                        'Invoice Header' = CreateInvHeaderdata.'Invoice Header'
                                                     ),
                                                     'Order Number': LookUp(
                                                         'Order Headers',
-                                                        'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                        'Order Number' = CreateOrderRecorddata.'Order Number'
                                                     ),
                                                     'Item Type': If(
                                                         OrdrItems.schemeOrder = true,
@@ -7803,16 +7820,16 @@
                                                 'Invoice Lines',
                                                 LookUp(
                                                     'Invoice Lines',
-                                                    'Invoice Number'.'Invoice Number' = First(CreateInvHeader).'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId
+                                                    'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId
                                                 ),
                                                 {
                                                     'Invoice Number': LookUp(
                                                         'Invoice Headers',
-                                                        'Invoice Header' = First(CreateInvHeader).'Invoice Header'
+                                                        'Invoice Header' = CreateInvHeaderdata.'Invoice Header'
                                                     ),
                                                     'Order Number': LookUp(
                                                         'Order Headers',
-                                                        'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                        'Order Number' = CreateOrderRecorddata.'Order Number'
                                                     ),
                                                     'Item Type': If(
                                                         OrdrItems.schemeOrder = true,
@@ -7877,7 +7894,7 @@
                                             IsBlank(
                                                 LookUp(
                                                     'Invoice Lines',
-                                                    'Invoice Number'.'Invoice Number' = First(CreateInvHeader).'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                    'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free
                                                 )
                                             ),
                                             Patch(
@@ -7886,11 +7903,11 @@
                                                 {
                                                     'Invoice Number': LookUp(
                                                         'Invoice Headers',
-                                                        'Invoice Header' = First(CreateInvHeader).'Invoice Header'
+                                                        'Invoice Header' = CreateInvHeaderdata.'Invoice Header'
                                                     ),
                                                     'Order Number': LookUp(
                                                         'Order Headers',
-                                                        'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                        'Order Number' = CreateOrderRecorddata.'Order Number'
                                                     ),
                                                     'Item Type': If(
                                                         OrdrItems.schemeOrder = true,
@@ -7956,16 +7973,16 @@
                                                 'Invoice Lines',
                                                 LookUp(
                                                     'Invoice Lines',
-                                                    'Invoice Number'.'Invoice Number' = First(CreateInvHeader).'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                    'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free
                                                 ),
                                                 {
                                                     'Invoice Number': LookUp(
                                                         'Invoice Headers',
-                                                        'Invoice Header' = First(CreateInvHeader).'Invoice Header'
+                                                        'Invoice Header' = CreateInvHeaderdata.'Invoice Header'
                                                     ),
                                                     'Order Number': LookUp(
                                                         'Order Headers',
-                                                        'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                        'Order Number' = CreateOrderRecorddata.'Order Number'
                                                     ),
                                                     'Item Type': If(
                                                         OrdrItems.schemeOrder = true,
@@ -8037,7 +8054,7 @@
                                     Invoice.Run(
                                         LookUp(
                                             'Invoice Headers',
-                                            'Invoice Header' = First(CreateInvHeader).'Invoice Header'
+                                            'Invoice Header' = CreateInvHeaderdata.'Invoice Header'
                                         ).'Invoice Header'
                                     ).bisleriinvoice
                                 );
@@ -8120,7 +8137,7 @@
                                             IsBlank(
                                                 LookUp(
                                                     'Order Headers',
-                                                    Vists.'Visit ID' = First(VisitData).'Visit ID'
+                                                    Vists.'Visit ID' = visitiddata
                                                 )
                                             ),
                                             Patch(
@@ -8172,7 +8189,7 @@
                                                     ),
                                                     Vists: LookUp(
                                                         Visits,
-                                                        'Visit ID' = First(VisitData).'Visit ID'
+                                                        'Visit ID' = visitiddata
                                                     )
                                                 }
                                             ),
@@ -8180,7 +8197,7 @@
                                                 'Order Headers',
                                                 LookUp(
                                                     'Order Headers',
-                                                    Vists.'Visit ID' = First(VisitData).'Visit ID'
+                                                    Vists.'Visit ID' = visitiddata
                                                 ),
                                                 {
                                                     'Order Date': Today(),
@@ -8228,7 +8245,7 @@
                                                     ),
                                                     Vists: LookUp(
                                                         Visits,
-                                                        'Visit ID' = First(VisitData).'Visit ID'
+                                                        'Visit ID' = visitiddata
                                                     )
                                                 }
                                             )
@@ -8247,7 +8264,7 @@
                                                     IsBlank(
                                                         LookUp(
                                                             'Order Lines',
-                                                            'Order Number'.'Order Id' = First(CreateOrderRecord).'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Paid
+                                                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Paid
                                                         )
                                                     ),
                                                     Patch(
@@ -8260,7 +8277,7 @@
                                                             'Empty Jars': ThissItem.emptyJar,
                                                             'Order Number': LookUp(
                                                                 'Order Headers',
-                                                                'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                                'Order Number' = CreateOrderRecorddata.'Order Number'
                                                             ),
                                                             Salesperson: LookUp(
                                                                 Users,
@@ -8298,7 +8315,7 @@
                                                     ),
                                                     'Reference Line': LookUp(
                                                         'Order Lines',
-                                                        'Order Number'.'Order Number' = First(CreateOrderRecord).'Order Number' && 'Item SKU'.'SKU Master' = LookUp(
+                                                        'Order Number'.'Order Number' = CreateOrderRecorddata.'Order Number' && 'Item SKU'.'SKU Master' = LookUp(
                                                             'Scheme Orders',
                                                             'Scheme Order' = ThissItem.schemeOrderValue.zx_schemeorderid
                                                         ).'Item Code'.'SKU Master'
@@ -8310,7 +8327,7 @@
                                                         'Order Lines',
                                                         LookUp(
                                                             'Order Lines',
-                                                            'Order Number'.'Order Id' = First(CreateOrderRecord).'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Paid
+                                                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Paid
                                                         ),
                                                         {
                                                             'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,
@@ -8319,7 +8336,7 @@
                                                             'Empty Jars': ThissItem.emptyJar,
                                                             'Order Number': LookUp(
                                                                 'Order Headers',
-                                                                'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                                'Order Number' = CreateOrderRecorddata.'Order Number'
                                                             ),
                                                             Salesperson: LookUp(
                                                                 Users,
@@ -8357,7 +8374,7 @@
                                                     ),
                                                     'Reference Line': LookUp(
                                                         'Order Lines',
-                                                        'Order Number'.'Order Number' = First(CreateOrderRecord).'Order Number' && 'Item SKU'.'SKU Master' = LookUp(
+                                                        'Order Number'.'Order Number' = CreateOrderRecorddata.'Order Number' && 'Item SKU'.'SKU Master' = LookUp(
                                                             'Scheme Orders',
                                                             'Scheme Order' = ThissItem.schemeOrderValue.zx_schemeorderid
                                                         ).'Item Code'.'SKU Master'
@@ -8381,7 +8398,7 @@
                                                     IsBlank(
                                                         LookUp(
                                                             'Order Lines',
-                                                            'Order Number'.'Order Id' = First(CreateOrderRecord).'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free
                                                         )
                                                     ),
                                                     Patch(
@@ -8394,7 +8411,7 @@
                                                             'Empty Jars': ThissItem.emptyJar,
                                                             'Order Number': LookUp(
                                                                 'Order Headers',
-                                                                'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                                'Order Number' = CreateOrderRecorddata.'Order Number'
                                                             ),
                                                             Salesperson: LookUp(
                                                                 Users,
@@ -8445,7 +8462,7 @@
                                                         'Order Lines',
                                                         LookUp(
                                                             'Order Lines',
-                                                            'Order Number'.'Order Id' = First(CreateOrderRecord).'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free
                                                         ),
                                                         {
                                                             'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,
@@ -8454,7 +8471,7 @@
                                                             'Empty Jars': ThissItem.emptyJar,
                                                             'Order Number': LookUp(
                                                                 'Order Headers',
-                                                                'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                                'Order Number' = CreateOrderRecorddata.'Order Number'
                                                             ),
                                                             Salesperson: LookUp(
                                                                 Users,
@@ -8512,7 +8529,7 @@
                                                 IsBlank(
                                                     LookUp(
                                                         'Invoice Headers',
-                                                        'Order Number'.'Order Id' = First(CreateOrderRecord).'Order Id'
+                                                        'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id'
                                                     )
                                                 ),
                                                 Patch(
@@ -8584,7 +8601,7 @@
                                                         'Order Type': 'Order Type (Choice)'.'Sales Order',
                                                         'Order Number': LookUp(
                                                             'Order Headers',
-                                                            'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                            'Order Number' = CreateOrderRecorddata.'Order Number'
                                                         ),
                                                         'Total Amount': (Sum(
                                                             colCartItems,
@@ -8614,7 +8631,7 @@
                                                     'Invoice Headers',
                                                     LookUp(
                                                         'Invoice Headers',
-                                                        'Order Number'.'Order Id' = First(CreateOrderRecord).'Order Id'
+                                                        'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id'
                                                     ),
                                                     {
                                                         Salesperson: LookUp(
@@ -8637,7 +8654,7 @@
                                                         'Order Type': 'Order Type (Choice)'.'Sales Order',
                                                         'Order Number': LookUp(
                                                             'Order Headers',
-                                                            'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                            'Order Number' = CreateOrderRecorddata.'Order Number'
                                                         ),
                                                         'Total Amount': (Sum(
                                                             colCartItems,
@@ -8697,7 +8714,7 @@
                                                     IsBlank(
                                                         LookUp(
                                                             'Invoice Lines',
-                                                            'Invoice Number'.'Invoice Number' = First(CreateInvHeader).'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Paid
+                                                            'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Paid
                                                         )
                                                     ),
                                                     Patch(
@@ -8706,11 +8723,11 @@
                                                         {
                                                             'Invoice Number': LookUp(
                                                                 'Invoice Headers',
-                                                                'Invoice Header' = First(CreateInvHeader).'Invoice Header'
+                                                                'Invoice Header' = CreateInvHeaderdata.'Invoice Header'
                                                             ),
                                                             'Order Number': LookUp(
                                                                 'Order Headers',
-                                                                'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                                'Order Number' = CreateOrderRecorddata.'Order Number'
                                                             ),
                                                             'Item Type': If(
                                                                 OrdrItems.schemeOrder = true,
@@ -8764,16 +8781,16 @@
                                                         'Invoice Lines',
                                                         LookUp(
                                                             'Invoice Lines',
-                                                            'Invoice Number'.'Invoice Number' = First(CreateInvHeader).'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Paid
+                                                            'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Paid
                                                         ),
                                                         {
                                                             'Invoice Number': LookUp(
                                                                 'Invoice Headers',
-                                                                'Invoice Header' = First(CreateInvHeader).'Invoice Header'
+                                                                'Invoice Header' = CreateInvHeaderdata.'Invoice Header'
                                                             ),
                                                             'Order Number': LookUp(
                                                                 'Order Headers',
-                                                                'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                                'Order Number' = CreateOrderRecorddata.'Order Number'
                                                             ),
                                                             'Item Type': If(
                                                                 OrdrItems.schemeOrder = true,
@@ -8839,7 +8856,7 @@
                                                     IsBlank(
                                                         LookUp(
                                                             'Invoice Lines',
-                                                            'Invoice Number'.'Invoice Number' = First(CreateInvHeader).'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                            'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free
                                                         )
                                                     ),
                                                     Patch(
@@ -8848,11 +8865,11 @@
                                                         {
                                                             'Invoice Number': LookUp(
                                                                 'Invoice Headers',
-                                                                'Invoice Header' = First(CreateInvHeader).'Invoice Header'
+                                                                'Invoice Header' = CreateInvHeaderdata.'Invoice Header'
                                                             ),
                                                             'Order Number': LookUp(
                                                                 'Order Headers',
-                                                                'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                                'Order Number' = CreateOrderRecorddata.'Order Number'
                                                             ),
                                                             'Item Type': If(
                                                                 OrdrItems.schemeOrder = true,
@@ -8918,16 +8935,16 @@
                                                         'Invoice Lines',
                                                         LookUp(
                                                             'Invoice Lines',
-                                                            'Invoice Number'.'Invoice Number' = First(CreateInvHeader).'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                            'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free
                                                         ),
                                                         {
                                                             'Invoice Number': LookUp(
                                                                 'Invoice Headers',
-                                                                'Invoice Header' = First(CreateInvHeader).'Invoice Header'
+                                                                'Invoice Header' = CreateInvHeaderdata.'Invoice Header'
                                                             ),
                                                             'Order Number': LookUp(
                                                                 'Order Headers',
-                                                                'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                                'Order Number' = CreateOrderRecorddata.'Order Number'
                                                             ),
                                                             'Item Type': If(
                                                                 OrdrItems.schemeOrder = true,
@@ -8996,7 +9013,7 @@
                                             Invoice.Run(
                                                 LookUp(
                                                     'Invoice Headers',
-                                                    'Invoice Header' = First(CreateInvHeader).'Invoice Header'
+                                                    'Invoice Header' = CreateInvHeaderdata.'Invoice Header'
                                                 ).'Invoice Header'
                                             ).bisleriinvoice
                                         ); 
@@ -9093,7 +9110,7 @@
                                             IsBlank(
                                                 LookUp(
                                                     'Order Headers',
-                                                    Vists.'Visit ID' = First(VisitData).'Visit ID'
+                                                    Vists.'Visit ID' = visitiddata
                                                 )
                                             ),
                                             Patch(
@@ -9145,7 +9162,7 @@
                                                     ),
                                                     Vists: LookUp(
                                                         Visits,
-                                                        'Visit ID' = First(VisitData).'Visit ID'
+                                                        'Visit ID' = visitiddata
                                                     )
                                                 }
                                             ),
@@ -9153,7 +9170,7 @@
                                                 'Order Headers',
                                                 LookUp(
                                                     'Order Headers',
-                                                    Vists.'Visit ID' = First(VisitData).'Visit ID'
+                                                    Vists.'Visit ID' = visitiddata
                                                 ),
                                                 {
                                                     'Order Date': Today(),
@@ -9201,7 +9218,7 @@
                                                     ),
                                                     Vists: LookUp(
                                                         Visits,
-                                                        'Visit ID' = First(VisitData).'Visit ID'
+                                                        'Visit ID' = visitiddata
                                                     )
                                                 }
                                             )
@@ -9220,7 +9237,7 @@
                                                     IsBlank(
                                                         LookUp(
                                                             'Order Lines',
-                                                            'Order Number'.'Order Id' = First(CreateOrderRecord).'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Paid
+                                                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Paid
                                                         )
                                                     ),
                                                     Patch(
@@ -9233,7 +9250,7 @@
                                                             'Empty Jars': ThissItem.emptyJar,
                                                             'Order Number': LookUp(
                                                                 'Order Headers',
-                                                                'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                                'Order Number' = CreateOrderRecorddata.'Order Number'
                                                             ),
                                                             Salesperson: LookUp(
                                                                 Users,
@@ -9271,7 +9288,7 @@
                                                     ),
                                                     'Reference Line': LookUp(
                                                         'Order Lines',
-                                                        'Order Number'.'Order Number' = First(CreateOrderRecord).'Order Number' && 'Item SKU'.'SKU Master' = LookUp(
+                                                        'Order Number'.'Order Number' = CreateOrderRecorddata.'Order Number' && 'Item SKU'.'SKU Master' = LookUp(
                                                             'Scheme Orders',
                                                             'Scheme Order' = ThissItem.schemeOrderValue.zx_schemeorderid
                                                         ).'Item Code'.'SKU Master'
@@ -9283,7 +9300,7 @@
                                                         'Order Lines',
                                                         LookUp(
                                                             'Order Lines',
-                                                            'Order Number'.'Order Id' = First(CreateOrderRecord).'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Paid
+                                                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Paid
                                                         ),
                                                         {
                                                             'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,
@@ -9292,7 +9309,7 @@
                                                             'Empty Jars': ThissItem.emptyJar,
                                                             'Order Number': LookUp(
                                                                 'Order Headers',
-                                                                'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                                'Order Number' = CreateOrderRecorddata.'Order Number'
                                                             ),
                                                             Salesperson: LookUp(
                                                                 Users,
@@ -9330,7 +9347,7 @@
                                                     ),
                                                     'Reference Line': LookUp(
                                                         'Order Lines',
-                                                        'Order Number'.'Order Number' = First(CreateOrderRecord).'Order Number' && 'Item SKU'.'SKU Master' = LookUp(
+                                                        'Order Number'.'Order Number' = CreateOrderRecorddata.'Order Number' && 'Item SKU'.'SKU Master' = LookUp(
                                                             'Scheme Orders',
                                                             'Scheme Order' = ThissItem.schemeOrderValue.zx_schemeorderid
                                                         ).'Item Code'.'SKU Master'
@@ -9353,7 +9370,7 @@
                                                     IsBlank(
                                                         LookUp(
                                                             'Order Lines',
-                                                            'Order Number'.'Order Id' = First(CreateOrderRecord).'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free
                                                         )
                                                     ),
                                                     Patch(
@@ -9366,7 +9383,7 @@
                                                             'Empty Jars': ThissItem.emptyJar,
                                                             'Order Number': LookUp(
                                                                 'Order Headers',
-                                                                'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                                'Order Number' = CreateOrderRecorddata.'Order Number'
                                                             ),
                                                             Salesperson: LookUp(
                                                                 Users,
@@ -9417,7 +9434,7 @@
                                                         'Order Lines',
                                                         LookUp(
                                                             'Order Lines',
-                                                            'Order Number'.'Order Id' = First(CreateOrderRecord).'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free
                                                         ),
                                                         {
                                                             'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,
@@ -9426,7 +9443,7 @@
                                                             'Empty Jars': ThissItem.emptyJar,
                                                             'Order Number': LookUp(
                                                                 'Order Headers',
-                                                                'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                                'Order Number' = CreateOrderRecorddata.'Order Number'
                                                             ),
                                                             Salesperson: LookUp(
                                                                 Users,
@@ -9484,7 +9501,7 @@
                                                 IsBlank(
                                                     LookUp(
                                                         'Invoice Headers',
-                                                        'Order Number'.'Order Id' = First(CreateOrderRecord).'Order Id'
+                                                        'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id'
                                                     )
                                                 ),
                                                 Patch(
@@ -9556,7 +9573,7 @@
                                                         'Order Type': 'Order Type (Choice)'.'Sales Order',
                                                         'Order Number': LookUp(
                                                             'Order Headers',
-                                                            'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                            'Order Number' = CreateOrderRecorddata.'Order Number'
                                                         ),
                                                         'Total Amount': (Sum(
                                                             colCartItems,
@@ -9586,7 +9603,7 @@
                                                     'Invoice Headers',
                                                     LookUp(
                                                         'Invoice Headers',
-                                                        'Order Number'.'Order Id' = First(CreateOrderRecord).'Order Id'
+                                                        'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id'
                                                     ),
                                                     {
                                                         Salesperson: LookUp(
@@ -9609,7 +9626,7 @@
                                                         'Order Type': 'Order Type (Choice)'.'Sales Order',
                                                         'Order Number': LookUp(
                                                             'Order Headers',
-                                                            'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                            'Order Number' = CreateOrderRecorddata.'Order Number'
                                                         ),
                                                         'Total Amount': (Sum(
                                                             colCartItems,
@@ -9669,7 +9686,7 @@
                                                     IsBlank(
                                                         LookUp(
                                                             'Invoice Lines',
-                                                            'Invoice Number'.'Invoice Number' = First(CreateInvHeader).'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Paid
+                                                            'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Paid
                                                         )
                                                     ),
                                                     Patch(
@@ -9678,11 +9695,11 @@
                                                         {
                                                             'Invoice Number': LookUp(
                                                                 'Invoice Headers',
-                                                                'Invoice Header' = First(CreateInvHeader).'Invoice Header'
+                                                                'Invoice Header' = CreateInvHeaderdata.'Invoice Header'
                                                             ),
                                                             'Order Number': LookUp(
                                                                 'Order Headers',
-                                                                'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                                'Order Number' = CreateOrderRecorddata.'Order Number'
                                                             ),
                                                             'Item Type': If(
                                                                 OrdrItems.schemeOrder = true,
@@ -9736,16 +9753,16 @@
                                                         'Invoice Lines',
                                                         LookUp(
                                                             'Invoice Lines',
-                                                            'Invoice Number'.'Invoice Number' = First(CreateInvHeader).'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Paid
+                                                            'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Paid
                                                         ),
                                                         {
                                                             'Invoice Number': LookUp(
                                                                 'Invoice Headers',
-                                                                'Invoice Header' = First(CreateInvHeader).'Invoice Header'
+                                                                'Invoice Header' = CreateInvHeaderdata.'Invoice Header'
                                                             ),
                                                             'Order Number': LookUp(
                                                                 'Order Headers',
-                                                                'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                                'Order Number' = CreateOrderRecorddata.'Order Number'
                                                             ),
                                                             'Item Type': If(
                                                                 OrdrItems.schemeOrder = true,
@@ -9811,7 +9828,7 @@
                                                     IsBlank(
                                                         LookUp(
                                                             'Invoice Lines',
-                                                            'Invoice Number'.'Invoice Number' = First(CreateInvHeader).'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                            'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free
                                                         )
                                                     ),
                                                     Patch(
@@ -9820,11 +9837,11 @@
                                                         {
                                                             'Invoice Number': LookUp(
                                                                 'Invoice Headers',
-                                                                'Invoice Header' = First(CreateInvHeader).'Invoice Header'
+                                                                'Invoice Header' = CreateInvHeaderdata.'Invoice Header'
                                                             ),
                                                             'Order Number': LookUp(
                                                                 'Order Headers',
-                                                                'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                                'Order Number' = CreateOrderRecorddata.'Order Number'
                                                             ),
                                                             'Item Type': If(
                                                                 OrdrItems.schemeOrder = true,
@@ -9890,16 +9907,16 @@
                                                         'Invoice Lines',
                                                         LookUp(
                                                             'Invoice Lines',
-                                                            'Invoice Number'.'Invoice Number' = First(CreateInvHeader).'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                            'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free
                                                         ),
                                                         {
                                                             'Invoice Number': LookUp(
                                                                 'Invoice Headers',
-                                                                'Invoice Header' = First(CreateInvHeader).'Invoice Header'
+                                                                'Invoice Header' = CreateInvHeaderdata.'Invoice Header'
                                                             ),
                                                             'Order Number': LookUp(
                                                                 'Order Headers',
-                                                                'Order Number' = First(CreateOrderRecord).'Order Number'
+                                                                'Order Number' = CreateOrderRecorddata.'Order Number'
                                                             ),
                                                             'Item Type': If(
                                                                 OrdrItems.schemeOrder = true,
@@ -9968,7 +9985,7 @@
                                             Invoice.Run(
                                                 LookUp(
                                                     'Invoice Headers',
-                                                    'Invoice Header' = First(CreateInvHeader).'Invoice Header'
+                                                    'Invoice Header' = CreateInvHeaderdata.'Invoice Header'
                                                 ).'Invoice Header'
                                             ).bisleriinvoice
                                         );*/
@@ -10035,8 +10052,10 @@
                                 )
                             )
                         );
-                        Set(invheads,
-                        First(CreateInvHeader).'Invoice Header');
+                        Set(
+                            invheads,
+                            CreateInvHeaderdata.'Invoice Header'
+                        );
                         /*Set(
                             varOrdered,
                             true
@@ -11030,19 +11049,15 @@
         Height: =55
         Icon: =Icon.Print
         OnSelect: |
-            =/*Launch(
-                        Invoice.Run(
-                            LookUp(
-                                'Invoice Headers',
-                                'Invoice Header' = First(CreateInvHeader).'Invoice Header'
-                            ).'Invoice Header'
-                        ).bisleriinvoice
-                    );*/
+            =Set(
+                INVID,
+                GUID(First(CreateInvHeader).'Invoice Header')
+            );
             ClearCollect(
                 Invoicedata,
                 Filter(
                     'Invoice Headers',
-                    'Invoice Header' = GUID(First(CreateInvHeader).'Invoice Header')
+                    'Invoice Header' = INVID
                 )
             );
             ClearCollect(
@@ -11079,7 +11094,7 @@
         PaddingRight: =7
         PaddingTop: =7
         Visible: |-
-            =
+            =Set(invheads,First(Invoicedata).'Invoice Header');
             
             If(!IsBlank(LookUp(
                                 'Invoice Headers',
