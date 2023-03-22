@@ -156,6 +156,13 @@ App As appinfo:
             )
         );
         ///////////////////////////******CLEAR COLLECT OFFLINE*****////////////////////////////
+        Set(
+            DemandHeadersdata,
+            LookUp(
+                'Check-in Demand Headers',
+                Salesperson.'Primary Email' = User().Email && Date = Datetodays
+            )
+        );
         If(
             Connection.Connected,
             ClearCollect(
@@ -171,11 +178,7 @@ App As appinfo:
                     CountRows(colOfflineTodayDemandsHeader) > 0,
                     Filter(
                         'Check-in Demand Lines',
-                        'Check-in Demand Header'.'Check-in Demand Header' = LookUp(
-                            'Check-in Demand Headers',
-                            Salesperson.'Primary Email' = User().Email && Date = Datetodays
-                        ).'Check-in Demand Header'
-                    )
+                        CheckInDemandHeaderCalculated = DemandHeadersdata.'Demand Header No')
                 )
             );
             Concurrent(
@@ -483,7 +486,7 @@ App As appinfo:
             colOfflineCurrentStock,
             Filter(
                 'Current Stocks',
-                'Created Date' = Datetodays && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
+                'Created Date' >= Today() && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
             )
         );
         ClearCollect(
