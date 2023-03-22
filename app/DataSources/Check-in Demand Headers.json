@@ -38,11 +38,9 @@
       "zx_date": "Date",
       "zx_name": "Demand Header No",
       "zx_RouteNo": "Route No.",
-      "zx_routenocalculated": "RouteNoCalculated",
       "zx_Salesperson": "Salesperson",
       "zx_salespersonemployeecode": "Sales Person Employee Code",
       "zx_VanNo": "Van No",
-      "zx_vannocalculated": "VANNoCalculated",
       "zx_zx_checkindemandlines_CheckinDemandHeader": "Check-in Demand Lines",
       "zx_zx_stocktransferheader_ReferenceDemand_zx": "Stock Transfer Headers"
     },

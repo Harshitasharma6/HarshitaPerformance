@@ -116,7 +116,6 @@
   },
   "ScreenOrder": [
     "Base Screen",
-    "Login Screen",
     "Menu Screen",
     "Profile Screen",
     "Customer Screen",
