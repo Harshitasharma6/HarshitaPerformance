@@ -1,16 +1,12 @@
 "NewFOCScreen As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
     Fill: =_VarGblAppColors.LightText
     OnVisible: |-
-        =//Clear(colFOCCartItem);
-        Set(
+        =Set(
             varGatePassHeaderAll,
             AddColumns(
                 Filter(
                     'Stock Transfer Headers',
-                    !IsBlank('To Location') && 'To Location'.Warehouse = LookUp(
-                        Warehouses,
-                        Warehouse = varUserVanNo.Van.Warehouse
-                    ).Warehouse && 'Stock transfer type' = 'Stock transfer type (Stock Transfer Headers)'.'Warehouse to van transfer' && IsToday('Created On')
+                    'To Location'.Warehouse = StockTransferWarehouse && 'Stock transfer type' = 'Stock transfer type (Stock Transfer Headers)'.'Warehouse to van transfer' && 'Created On'>=Today()
                 ),
                 "headerGUID",
                 'Stock Transfer Header'
@@ -180,17 +176,16 @@
                                 IsBlank(compFOCSearch.SearchText),
                                 Filter(
                                     'Current Stocks',
-                                    IsToday('Created On') && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
+                                    'Created Date' >= Today() && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
                                 ),
                                 Filter(
                                     Filter(
-                                        'Current Stocks',
-                                        IsToday('Created On') && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
+                                        colOfflineCurrentStock,
+                                        'Created Date' >= Today() && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
                                     ),
-                                    compFOCSearch.SearchText in 'Item SKU'.'Pack Title' || compFOCSearch.SearchText in 'Item SKU'.'Item Description '
+                                    (compFOCSearch.SearchText in 'Item SKU'.'Pack Title' || compFOCSearch.SearchText in 'Item SKU'.'Item Description ')
                                 )
                             )
-                            //Filter('Current Stocks', IsToday('Created On') && 'Van No'.Warehouse= varUserVanNo.Van.Warehouse)
                         Layout: =Layout.Vertical
                         LayoutMinHeight: =287
                         LayoutMinWidth: =1200
@@ -293,7 +288,7 @@
                                         2000
                                     ),
                                     If(
-                                        !IsBlank(txtFOCCasesValue) || Not(Value(txtFOCCasesValue.Text)) = "0",
+                                        !IsBlank(txtFOCCasesValue),
                                         Collect(
                                             colFOCCartItem,
                                             {
@@ -371,7 +366,7 @@
                                         2000
                                     ),
                                     If(
-                                        !IsBlank(txtFOCPcsValue) || Not(Value(txtFOCPcsValue.Text)) = 0,
+                                        !IsBlank(txtFOCPcsValue),
                                         Collect(
                                             colFOCCartItem,
                                             {
@@ -546,7 +541,7 @@
             Fill: =_VarGblAppColors.BisleriBlue
             HoverColor: =_VarGblAppColors.HeaderBg
             HoverFill: =_VarGblAppColors.BisleriBlueMediumLight
-            OnSelect: |
+            OnSelect: |+
                 =/////////////////////////////////////////////////////////_______________STOCK UPDATION FOR CASES
                 ClearCollect(
                     CurrentQtyCases,
@@ -1265,6 +1260,9 @@
                 );
                 Clear(colFOCManipulatedCartItems);
                 Navigate(FOCScreen);
+                
+                
+                
             Size: =_VarGblAppFonts.Size.UpperMedium
             Text: ="Yes"
             Width: =120
