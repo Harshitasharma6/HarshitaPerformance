@@ -1693,7 +1693,7 @@
                                                 'Stock Transfer Lines',
                                                 ('Transfer Order No'.'Stock Transfer Header' exactin varGatePassHeader.headerGUID) && (SKU.'SKU Master' = OneProductItem.productId)
                                             ),
-                                            IsToday('Created On')
+                                            'Created On' >= Today()
                                         ),
                                         'Manufacturing date',
                                         SortOrder.Ascending
@@ -1869,7 +1869,7 @@
                                                 'Stock Transfer Lines',
                                                 ('Transfer Order No'.'Stock Transfer Header' exactin varGatePassHeader.headerGUID) && (SKU.'SKU Master' = OneProductItem.productId)
                                             ),
-                                            IsToday('Created On')
+                                            'Created On' >= Today()
                                         ),
                                         'Manufacturing date',
                                         SortOrder.Ascending
@@ -2132,7 +2132,7 @@
                                                     'Remaining Qty Cases': 0
                                                   /*  'Invoiced Qty Cases': ((LookUp(
                                                         'Stock Transfer Lines' As oneStockLine,
-                                                        ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && IsToday(oneStockLine.'Created On'))
+                                                        ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.'Created On'>=Today())
                                                     ).'Invoiced Qty Cases') + OneFifoItem.'Remaining Qty Cases') */
                                                 }
                                             );
@@ -2170,7 +2170,7 @@
                                                 'Stock Transfer Lines',
                                                 ('Transfer Order No'.'Stock Transfer Header' exactin varGatePassHeader.headerGUID) && (SKU.'SKU Master' = OneProductItem.productId)
                                             ),
-                                            IsToday('Created On')
+                                            'Created On' >= Today()
                                         ),
                                         'Manufacturing date',
                                         SortOrder.Ascending
@@ -2328,7 +2328,7 @@
                                                 'Stock Transfer Lines',
                                                 ('Transfer Order No'.'Stock Transfer Header' exactin varGatePassHeader.headerGUID) && (SKU.'SKU Master' = OneProductItem.productId)
                                             ),
-                                            IsToday('Created On')
+                                            'Created On' >= Today()
                                         ),
                                         'Manufacturing date',
                                         SortOrder.Ascending
@@ -2384,13 +2384,13 @@
                                                 'Stock Transfer Lines',
                                                 LookUp(
                                                     'Stock Transfer Lines' As oneStockLine,
-                                                    ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && IsToday(oneStockLine.'Created On'))
+                                                    ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.'Created On' >= Today())
                                                 ),
                                                 {
                                                     'Remaining Qty Pcs': OneFifoItem.'Remaining Qty Pcs' - First(CurrentQtyScheme).Value,
                                                     'Invoiced Qty Pcs.': ((LookUp(
                                                         'Stock Transfer Lines' As oneStockLine,
-                                                        ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && IsToday(oneStockLine.'Created On'))
+                                                        ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.'Created On' >= Today())
                                                     ).'Invoiced Qty Pcs.') + First(CurrentQtyScheme).Value)
                                                 }
                                             );
@@ -2471,7 +2471,7 @@
                                                 'Stock Transfer Lines',
                                                 LookUp(
                                                     'Stock Transfer Lines' As oneStockLine,
-                                                    ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && IsToday(oneStockLine.'Created On'))
+                                                    ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.'Created On' >= Today())
                                                 ),
                                                 {
                                                     'Remaining Qty Pcs': (First(SequenceNo1).Value * LookUp(
@@ -2480,7 +2480,7 @@
                                                     ).'Quantity Per UOM') - (First(CurrentQtyScheme).Value - OneFifoItem.'Remaining Qty Pcs'),
                                                     'Invoiced Qty Pcs.': ((LookUp(
                                                         'Stock Transfer Lines' As oneStockLine,
-                                                        ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && IsToday(oneStockLine.'Created On'))
+                                                        ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.'Created On' >= Today())
                                                     ).'Invoiced Qty Pcs.') + First(CurrentQtyScheme).Value),
                                                     'Remaining Qty Cases': OneFifoItem.'Remaining Qty Cases' - First(SequenceNo1).Value
                                                 }
@@ -2540,13 +2540,13 @@
                                                 'Stock Transfer Lines',
                                                 LookUp(
                                                     'Stock Transfer Lines' As oneStockLine,
-                                                    ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && IsToday(oneStockLine.'Created On'))
+                                                    ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.'Created On' >= Today())
                                                 ),
                                                 {
                                                     'Remaining Qty Pcs': 0,
                                                     'Invoiced Qty Pcs.': ((LookUp(
                                                         'Stock Transfer Lines' As oneStockLine,
-                                                        ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && IsToday(oneStockLine.'Created On'))
+                                                        ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.'Created On' >= Today())
                                                     ).'Invoiced Qty Pcs.') + ((OneFifoItem.'Remaining Qty Cases' * LookUp(
                                                         'Item UOMS',
                                                         SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master'
@@ -2554,7 +2554,7 @@
                                                     'Remaining Qty Cases': 0
                                                     /*'Invoiced Qty Cases': ((LookUp(
                                                         'Stock Transfer Lines' As oneStockLine,
-                                                        ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && IsToday(oneStockLine.'Created On'))
+                                                        ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.'Created On'>=Today())
                                                     ).'Invoiced Qty Cases') + OneFifoItem.'Remaining Qty Cases')*/
                                                 }
                                             );
@@ -2613,10 +2613,7 @@
                                                 Warehouses,
                                                 Warehouse = varUserVanNo.Van.Warehouse
                                             ),
-                                            'Route No': LookUp(
-                                                Areas,
-                                                Area = varUserArea.Area.Area
-                                            ),
+                                            'Route No': Areavalueid,
                                             Customer: LookUp(
                                                 Customers_1,
                                                 Account = paymentData.Customer.Account
@@ -2688,10 +2685,7 @@
                                                         Customers_1,
                                                         Account = paymentData.Customer.Account
                                                     ),
-                                                    'Route No': LookUp(
-                                                        Areas,
-                                                        Area = varUserArea.Area.Area
-                                                    ),
+                                                    'Route No': Areavalueid,
                                                     'Reference Scheme ': LookUp(
                                                         'Scheme Orders',
                                                         'Scheme Order' = ThissItem.cartItem.schemeOrderValue.'Scheme Order'.'Scheme Order'
@@ -2719,19 +2713,13 @@
                                                 'Invoice Number': "RI" & Left(
                                                     LookUp(
                                                         'Invoice Series',
-                                                        'Route No'.Area = LookUp(
-                                                            Areas,
-                                                            Area = varUserArea.Area.Area
-                                                        ).Area
+                                                        'Route No'.Area = Areavalueid.Area
                                                     ).'Sequence No',
                                                     4
                                                 ) & Text(
                                                     LookUp(
                                                         'Invoice Series',
-                                                        'Route No'.Area = LookUp(
-                                                            Areas,
-                                                            Area = varUserArea.Area.Area
-                                                        ).Area
+                                                        'Route No'.Area = Areavalueid.Area
                                                     ).'Route No'.'Name (zx_name)'
                                                 ) &
                                                 /*LookUp(
@@ -2754,10 +2742,7 @@
                              Right(
                                                     LookUp(
                                                         'Invoice Series',
-                                                        'Route No'.Area = LookUp(
-                                                            Areas,
-                                                            Area = varUserArea.Area.Area
-                                                        ).Area
+                                                        'Route No'.Area = Areavalueid.Area
                                                     ).'Sequence No' + 1,
                                                     6
                                                 ),
@@ -2769,10 +2754,7 @@
                                                     Customers_1,
                                                     Account = paymentData.Customer.Account
                                                 ),
-                                                'Route No': LookUp(
-                                                    Areas,
-                                                    Area = varUserArea.Area.Area
-                                                ),
+                                                'Route No': Areavalueid,
                                                 'Van No': LookUp(
                                                     Warehouses,
                                                     Warehouse = varUserVanNo.Van.Warehouse
@@ -2824,18 +2806,12 @@
                                         'Invoice Series',
                                         LookUp(
                                             'Invoice Series',
-                                            'Route No'.Area = LookUp(
-                                                Areas,
-                                                Area = varUserArea.Area.Area
-                                            ).Area
+                                            'Route No'.Area = Areavalueid.Area
                                         ),
                                         {
                                             'Sequence No': LookUp(
                                                 'Invoice Series',
-                                                'Route No'.Area = LookUp(
-                                                    Areas,
-                                                    Area = varUserArea.Area.Area
-                                                ).Area
+                                                'Route No'.Area = Areavalueid.Area
                                             ).'Sequence No' + 1
                                         }
                                     );
@@ -2874,10 +2850,7 @@
                                                         Customers_1,
                                                         Account = paymentData.Customer.Account
                                                     ),
-                                                    'Route No': LookUp(
-                                                        Areas,
-                                                        Area = varUserArea.Area.Area
-                                                    ),
+                                                    'Route No': Areavalueid,
                                                     Salesperson: LookUp(
                                                         Users,
                                                         'Primary Email' = User().Email
@@ -2899,20 +2872,20 @@
                                             'Current Stocks',
                                             LookUp(
                                                 'Current Stocks',
-                                                'Item SKU'.'SKU Master' = oneLine.skuId && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse && IsToday('Created On')
+                                                'Item SKU'.'SKU Master' = oneLine.skuId && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse && 'Created On' >= Today()
                                             ),
                                             {
                                                 Cases: Sum(
                                                     Filter(
                                                         'Stock Transfer Lines',
-                                                        'Transfer Order No'.'Stock Transfer Header' exactin varGatePassHeader.headerGUID && SKU.'SKU Master' = oneLine.skuId && IsToday('Created On')
+                                                        'Transfer Order No'.'Stock Transfer Header' exactin varGatePassHeader.headerGUID && SKU.'SKU Master' = oneLine.skuId && 'Created On' >= Today()
                                                     ),
                                                     'Remaining Qty Cases'
                                                 ),
                                                 PCs: Sum(
                                                     Filter(
                                                         'Stock Transfer Lines',
-                                                        'Transfer Order No'.'Stock Transfer Header' exactin varGatePassHeader.headerGUID && SKU.'SKU Master' = oneLine.skuId && IsToday('Created On')
+                                                        'Transfer Order No'.'Stock Transfer Header' exactin varGatePassHeader.headerGUID && SKU.'SKU Master' = oneLine.skuId && 'Created On' >= Today()
                                                     ),
                                                     'Remaining Qty Pcs'
                                                 )
@@ -2948,7 +2921,7 @@
                                             ).'Used Credit Limit') - (Sum(
                                                 Filter(
                                                     'Order Headers',
-                                                    Customer.Account = paymentData.Customer.Account && IsToday('Created On')
+                                                    Customer.Account = paymentData.Customer.Account && 'Created On' >= Today()
                                                 ),
                                                 'Net Amount'
                                             ))) < ((Sum(
@@ -3004,10 +2977,7 @@
                                                             Warehouses,
                                                             Warehouse = varUserVanNo.Van.Warehouse
                                                         ),
-                                                        'Route No': LookUp(
-                                                            Areas,
-                                                            Area = varUserArea.Area.Area
-                                                        ),
+                                                        'Route No': Areavalueid,
                                                         Customer: LookUp(
                                                             Customers_1,
                                                             Account = paymentData.Customer.Account
@@ -3078,10 +3048,7 @@
                                                                     Customers_1,
                                                                     Account = paymentData.Customer.Account
                                                                 ),
-                                                                'Route No': LookUp(
-                                                                    Areas,
-                                                                    Area = varUserArea.Area.Area
-                                                                ),
+                                                                'Route No': Areavalueid,
                                                                 'Reference Scheme ': LookUp(
                                                                     'Scheme Orders',
                                                                     'Scheme Order' = ThissItem.cartItem.schemeOrderValue.'Scheme Order'.'Scheme Order'
@@ -3109,45 +3076,30 @@
                                                             'Invoice Number': "RI" & Left(
                                                                 LookUp(
                                                                     'Invoice Series',
-                                                                    'Route No'.Area = LookUp(
-                                                                        Areas,
-                                                                        Area = varUserArea.Area.Area
-                                                                    ).Area
+                                                                    'Route No'.Area = Areavalueid.Area
                                                                 ).'Sequence No',
                                                                 4
                                                             ) & Text(
                                                                 LookUp(
                                                                     'Invoice Series',
-                                                                    'Route No'.Area = LookUp(
-                                                                        Areas,
-                                                                        Area = varUserArea.Area.Area
-                                                                    ).Area
+                                                                    'Route No'.Area = Areavalueid.Area
                                                                 ).'Route No'.'Name (zx_name)'
                                                             ) &
                                                 /*LookUp(
                                                     'Invoice Series',
-                                                    'Route No'.Area = LookUp(
-                                                        Areas,
-                                                        Area = varUserArea.Area.Area
-                                                    ).Area
+                                                    'Route No'.Area = Areavalueid.Area
                                                 ).'Last Sequence No' + "000001",
                              Left(
                                                     LookUp(
                                                         'Invoice Series',
-                                                        'Route No'.Area = LookUp(
-                                                            Areas,
-                                                            Area = varUserArea.Area.Area
-                                                        ).Area
+                                                        'Route No'.Area = Areavalueid.Area
                                                     ).'Sequence No',
                                                     4
                                                 ) &*/ 
                              Right(
                                                                 LookUp(
                                                                     'Invoice Series',
-                                                                    'Route No'.Area = LookUp(
-                                                                        Areas,
-                                                                        Area = varUserArea.Area.Area
-                                                                    ).Area
+                                                                    'Route No'.Area = Areavalueid.Area
                                                                 ).'Sequence No' + 1,
                                                                 6
                                                             ),
@@ -3159,10 +3111,7 @@
                                                                 Customers_1,
                                                                 Account = paymentData.Customer.Account
                                                             ),
-                                                            'Route No': LookUp(
-                                                                Areas,
-                                                                Area = varUserArea.Area.Area
-                                                            ),
+                                                            'Route No': Areavalueid,
                                                             'Van No': LookUp(
                                                                 Warehouses,
                                                                 Warehouse = varUserVanNo.Van.Warehouse
@@ -3214,18 +3163,12 @@
                                                     'Invoice Series',
                                                     LookUp(
                                                         'Invoice Series',
-                                                        'Route No'.Area = LookUp(
-                                                            Areas,
-                                                            Area = varUserArea.Area.Area
-                                                        ).Area
+                                                        'Route No'.Area = Areavalueid.Area
                                                     ),
                                                     {
                                                         'Sequence No': LookUp(
                                                             'Invoice Series',
-                                                            'Route No'.Area = LookUp(
-                                                                Areas,
-                                                                Area = varUserArea.Area.Area
-                                                            ).Area
+                                                            'Route No'.Area = Areavalueid.Area
                                                         ).'Sequence No' + 1
                                                     }
                                                 );
@@ -3264,10 +3207,7 @@
                                                                     Customers_1,
                                                                     Account = paymentData.Customer.Account
                                                                 ),
-                                                                'Route No': LookUp(
-                                                                    Areas,
-                                                                    Area = varUserArea.Area.Area
-                                                                ),
+                                                                'Route No': Areavalueid,
                                                                 Salesperson: LookUp(
                                                                     Users,
                                                                     'Primary Email' = User().Email
@@ -3289,20 +3229,20 @@
                                                     'Current Stocks',
                                                     LookUp(
                                                         'Current Stocks',
-                                                        'Item SKU'.'SKU Master' = oneLine.skuId && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse && IsToday('Created On')
+                                                        'Item SKU'.'SKU Master' = oneLine.skuId && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse && 'Created On' >= Today()
                                                     ),
                                                     {
                                                         Cases: Sum(
                                                             Filter(
                                                                 'Stock Transfer Lines',
-                                                                'Transfer Order No'.'Stock Transfer Header' exactin varGatePassHeader.headerGUID && SKU.'SKU Master' = oneLine.skuId && IsToday('Created On')
+                                                                'Transfer Order No'.'Stock Transfer Header' exactin varGatePassHeader.headerGUID && SKU.'SKU Master' = oneLine.skuId && 'Created On' >= Today()
                                                             ),
                                                             'Remaining Qty Cases'
                                                         ),
                                                         PCs: Sum(
                                                             Filter(
                                                                 'Stock Transfer Lines',
-                                                                'Transfer Order No'.'Stock Transfer Header' exactin varGatePassHeader.headerGUID && SKU.'SKU Master' = oneLine.skuId && IsToday('Created On')
+                                                                'Transfer Order No'.'Stock Transfer Header' exactin varGatePassHeader.headerGUID && SKU.'SKU Master' = oneLine.skuId && 'Created On' >= Today()
                                                             ),
                                                             'Remaining Qty Pcs'
                                                         )
@@ -3353,7 +3293,7 @@
                                             ).'Used Credit Limit') - (Sum(
                                                 Filter(
                                                     'Order Headers',
-                                                    Customer.Account = paymentData.Customer.Account && IsToday('Created On')
+                                                    Customer.Account = paymentData.Customer.Account && 'Created On' >= Today()
                                                 ),
                                                 'Net Amount'
                                             ))) < ((Sum(
@@ -3409,10 +3349,7 @@
                                                             Warehouses,
                                                             Warehouse = varUserVanNo.Van.Warehouse
                                                         ),
-                                                        'Route No': LookUp(
-                                                            Areas,
-                                                            Area = varUserArea.Area.Area
-                                                        ),
+                                                        'Route No': Areavalueid,
                                                         Customer: LookUp(
                                                             Customers_1,
                                                             Account = paymentData.Customer.Account
@@ -3483,10 +3420,7 @@
                                                                     Customers_1,
                                                                     Account = paymentData.Customer.Account
                                                                 ),
-                                                                'Route No': LookUp(
-                                                                    Areas,
-                                                                    Area = varUserArea.Area.Area
-                                                                ),
+                                                                'Route No': Areavalueid,
                                                                 'Reference Scheme ': LookUp(
                                                                     'Scheme Orders',
                                                                     'Scheme Order' = ThissItem.cartItem.schemeOrderValue.'Scheme Order'.'Scheme Order'
@@ -3514,45 +3448,30 @@
                                                             'Invoice Number': "RI" & Left(
                                                                 LookUp(
                                                                     'Invoice Series',
-                                                                    'Route No'.Area = LookUp(
-                                                                        Areas,
-                                                                        Area = varUserArea.Area.Area
-                                                                    ).Area
+                                                                    'Route No'.Area = Areavalueid.Area
                                                                 ).'Sequence No',
                                                                 4
                                                             ) & Text(
                                                                 LookUp(
                                                                     'Invoice Series',
-                                                                    'Route No'.Area = LookUp(
-                                                                        Areas,
-                                                                        Area = varUserArea.Area.Area
-                                                                    ).Area
+                                                                    'Route No'.Area = Areavalueid.Area
                                                                 ).'Route No'.'Name (zx_name)'
                                                             ) &
                                                 /*LookUp(
                                                     'Invoice Series',
-                                                    'Route No'.Area = LookUp(
-                                                        Areas,
-                                                        Area = varUserArea.Area.Area
-                                                    ).Area
+                                                    'Route No'.Area = Areavalueid.Area
                                                 ).'Last Sequence No' + "000001",
                              Left(
                                                     LookUp(
                                                         'Invoice Series',
-                                                        'Route No'.Area = LookUp(
-                                                            Areas,
-                                                            Area = varUserArea.Area.Area
-                                                        ).Area
+                                                        'Route No'.Area = Areavalueid.Area
                                                     ).'Sequence No',
                                                     4
                                                 ) &*/ 
                              Right(
                                                                 LookUp(
                                                                     'Invoice Series',
-                                                                    'Route No'.Area = LookUp(
-                                                                        Areas,
-                                                                        Area = varUserArea.Area.Area
-                                                                    ).Area
+                                                                    'Route No'.Area = Areavalueid.Area
                                                                 ).'Sequence No' + 1,
                                                                 6
                                                             ),
@@ -3564,10 +3483,7 @@
                                                                 Customers_1,
                                                                 Account = paymentData.Customer.Account
                                                             ),
-                                                            'Route No': LookUp(
-                                                                Areas,
-                                                                Area = varUserArea.Area.Area
-                                                            ),
+                                                            'Route No': Areavalueid,
                                                             'Van No': LookUp(
                                                                 Warehouses,
                                                                 Warehouse = varUserVanNo.Van.Warehouse
@@ -3619,18 +3535,12 @@
                                                     'Invoice Series',
                                                     LookUp(
                                                         'Invoice Series',
-                                                        'Route No'.Area = LookUp(
-                                                            Areas,
-                                                            Area = varUserArea.Area.Area
-                                                        ).Area
+                                                        'Route No'.Area = Areavalueid.Area
                                                     ),
                                                     {
                                                         'Sequence No': LookUp(
                                                             'Invoice Series',
-                                                            'Route No'.Area = LookUp(
-                                                                Areas,
-                                                                Area = varUserArea.Area.Area
-                                                            ).Area
+                                                            'Route No'.Area = Areavalueid.Area
                                                         ).'Sequence No' + 1
                                                     }
                                                 );
@@ -3669,10 +3579,7 @@
                                                                     Customers_1,
                                                                     Account = paymentData.Customer.Account
                                                                 ),
-                                                                'Route No': LookUp(
-                                                                    Areas,
-                                                                    Area = varUserArea.Area.Area
-                                                                ),
+                                                                'Route No': Areavalueid,
                                                                 Salesperson: LookUp(
                                                                     Users,
                                                                     'Primary Email' = User().Email
@@ -3694,20 +3601,20 @@
                                                     'Current Stocks',
                                                     LookUp(
                                                         'Current Stocks',
-                                                        'Item SKU'.'SKU Master' = oneLine.skuId && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse && IsToday('Created On')
+                                                        'Item SKU'.'SKU Master' = oneLine.skuId && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse && 'Created On' >= Today()
                                                     ),
                                                     {
                                                         Cases: Sum(
                                                             Filter(
                                                                 'Stock Transfer Lines',
-                                                                'Transfer Order No'.'Stock Transfer Header' exactin varGatePassHeader.headerGUID && SKU.'SKU Master' = oneLine.skuId && IsToday('Created On')
+                                                                'Transfer Order No'.'Stock Transfer Header' exactin varGatePassHeader.headerGUID && SKU.'SKU Master' = oneLine.skuId && 'Created On' >= Today()
                                                             ),
                                                             'Remaining Qty Cases'
                                                         ),
                                                         PCs: Sum(
                                                             Filter(
                                                                 'Stock Transfer Lines',
-                                                                'Transfer Order No'.'Stock Transfer Header' exactin varGatePassHeader.headerGUID && SKU.'SKU Master' = oneLine.skuId && IsToday('Created On')
+                                                                'Transfer Order No'.'Stock Transfer Header' exactin varGatePassHeader.headerGUID && SKU.'SKU Master' = oneLine.skuId && 'Created On' >= Today()
                                                             ),
                                                             'Remaining Qty Pcs'
                                                         )
