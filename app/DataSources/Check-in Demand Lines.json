@@ -28,6 +28,7 @@
       "versionnumber": "Version Number",
       "zx_cases": "Cases",
       "zx_CheckinDemandHeader": "Check-in Demand Header",
+      "zx_checkindemandheadercalculated": "CheckInDemandHeaderCalculated",
       "zx_checkindemandlines_AsyncOperations": "System Jobs",
       "zx_checkindemandlines_BulkDeleteFailures": "Bulk Delete Failures",
       "zx_checkindemandlines_DuplicateBaseRecord": "Duplicate Records (zx_checkindemandlines_DuplicateBaseRecord)",
