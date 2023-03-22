@@ -67,7 +67,7 @@ App As appinfo:
                 Day(Today())
             )
         );
-        Concurrent(
+        /*Concurrent(
             SaveData(
                 colOfflineTodayDemandsHeader,
                 "colOfflineTodayDemandsHeader"
@@ -92,10 +92,6 @@ App As appinfo:
                 colOfflineItemMasters,
                 "colOfflineItemMasters"
             ),
-          /*  SaveData(
-                colOfflineCustomers,
-                "colOfflineCustomers"
-            ), */
             SaveData(
                 colOfflineCustomerVisits,
                 "colOfflineCustomerVisits"
@@ -152,7 +148,7 @@ App As appinfo:
                 colOfflineInvoiceSeries,
                 "colOfflineInvoiceSeries"
             )
-        );
+        );*/
         ///////////////////////////******CLEAR COLLECT OFFLINE*****////////////////////////////
         Set(
             DemandHeadersdata,
@@ -287,7 +283,7 @@ App As appinfo:
                 );
             ),
         ///////////////////////////******LOAD DATA*****////////////////////////////
-            Concurrent(
+            /*Concurrent(
                 LoadData(
                     colOfflineTodayDemandsHeader,
                     "colOfflineTodayDemandsHeader"
@@ -318,11 +314,11 @@ App As appinfo:
                     "colOfflineItemMasters"
                 );
                 ,
-              /*  LoadData(
+                LoadData(
                     colOfflineCustomers,
                     "colOfflineCustomers"
                 ); 
-                ,  */
+                ,  
                 LoadData(
                     colOfflineCustomerVisits,
                     "colOfflineCustomerVisits"
@@ -393,7 +389,7 @@ App As appinfo:
                     "colOfflineInvoiceSeries"
                 );
             )
-        );
+        );*/
         ClearCollect(
             colOfflineTodayAttendance,
             LookUp(
