@@ -129,7 +129,7 @@
                                 !IsBlank(compSearchStockInventory.SearchText),
                                 Filter(
                                     Filter(
-                                        'Current Stocks',
+                                        colOfflineCurrentStock,
                                         'Created Date'>= Today() && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
                                     ),
                                     compSearchStockInventory.SearchText in 'Item SKU'.'Pack Title' || compSearchStockInventory.SearchText in 'Item SKU'.Item
