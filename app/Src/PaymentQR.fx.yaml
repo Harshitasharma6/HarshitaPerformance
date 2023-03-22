@@ -14,9 +14,11 @@ PaymentQR As screen:
         ZIndex: =2
 
     Gallery2 As gallery.galleryVertical:
+        AccessibleLabel: ="Gallery"
         Height: =827
         Items: =payments
         Layout: =Layout.Vertical
+        TabIndex: =0
         TemplateSize: =822
         Y: =308
         ZIndex: =3

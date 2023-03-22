@@ -6,11 +6,10 @@ GatePassScreen As screen:
             AddColumns(
                 Filter(
                     'Stock Transfer Headers',
-                    !IsBlank('To Location') &&
                     'To Location'.Warehouse = LookUp(
                         Warehouses,
                         Warehouse = varUserVanNo.Van.Warehouse
-                    ).Warehouse && 'Stock transfer type' = 'Stock transfer type (Stock Transfer Headers)'.'Warehouse to van transfer' && IsToday('Created On')
+                    ).Warehouse && 'Stock transfer type' = 'Stock transfer type (Stock Transfer Headers)'.'Warehouse to van transfer' && 'Created On'>= Today()
                 ),
                 "headerGUID",
                 'Stock Transfer Header'
@@ -35,7 +34,7 @@ GatePassScreen As screen:
                                 'Stock Transfer Lines',
                                 'Transfer Order No'.'Stock Transfer Header' in varGatePassHeader.headerGUID
                             ),
-                            IsToday('Created On')
+                            'Created On' >= Today()
                         ),
                         'Created On',
                         SortOrder.Descending
@@ -468,6 +467,7 @@ GatePassScreen As screen:
             ZIndex: =11
 
         Icon5 As icon.Print:
+            AccessibleLabel: ="Icon5"
             Color: =RGBA(255, 255, 255, 1)
             Height: =36
             Icon: =Icon.Print
@@ -514,6 +514,7 @@ GatePassScreen As screen:
             PaddingLeft: =7
             PaddingRight: =7
             PaddingTop: =7
+            TabIndex: =0
             Width: =36
             X: =207
             Y: =974
@@ -943,7 +944,6 @@ GatePassScreen As screen:
                 AddColumns(
                     Filter(
                         'Stock Transfer Headers',
-                        !IsBlank('To Location') &&
                         'To Location'.Warehouse = LookUp(
                             Warehouses,
                             Warehouse = varUserVanNo.Van.Warehouse
@@ -1039,6 +1039,7 @@ GatePassScreen As screen:
                 ZIndex: =1
 
             DataCardValue4 As attachments:
+                AccessibleLabel: ="DataCardValue4"
                 AddAttachmentText: ="Upload file"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DisplayMode: =Parent.DisplayMode

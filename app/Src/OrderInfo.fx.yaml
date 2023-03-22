@@ -37,6 +37,7 @@
                 ZIndex: =1
 
             OrderHeader As gallery.variableTemplateHeightGallery:
+                AccessibleLabel: ="OrderHeader"
                 DelayItemLoading: =true
                 Height: =1262
                 Items: |-
@@ -90,6 +91,7 @@
                     )
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
+                TabIndex: =0
                 TemplateSize: =84
                 Y: =199
                 ZIndex: =2
@@ -139,6 +141,7 @@
                     ZIndex: =19
 
             OrderLine As gallery.variableTemplateHeightGallery:
+                AccessibleLabel: ="OrderLine"
                 DelayItemLoading: =true
                 Fill: =_VarGblAppColors.LightText
                 Height: =824
@@ -146,6 +149,7 @@
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 ShowScrollbar: =false
+                TabIndex: =0
                 TemplatePadding: =0
                 TemplateSize: =250
                 Y: =917

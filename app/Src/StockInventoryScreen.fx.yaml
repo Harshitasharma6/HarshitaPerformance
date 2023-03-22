@@ -235,10 +235,12 @@
         ZIndex: =7
 
     Icon13 As icon.Reload:
+        AccessibleLabel: ="Icon13"
         Color: =_VarGblAppColors.LightText
         Height: =40
         Icon: =Icon.Reload
         OnSelect: =Refresh('Current Stocks')
+        TabIndex: =0
         Width: =50
         X: =477
         Y: =20

@@ -1574,6 +1574,7 @@
         ZIndex: =5
 
     Icon12 As icon.Reload:
+        AccessibleLabel: ="Icone12"
         Color: =_VarGblAppColors.LightText
         Height: =40
         Icon: =Icon.Reload
@@ -1581,6 +1582,7 @@
             =Refresh('Stock Inventories');
             Refresh('Order Lines');
             Refresh('Stock Transfer Lines');
+        TabIndex: =0
         Width: =50
         X: =479
         Y: =20

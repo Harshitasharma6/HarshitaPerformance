@@ -143,6 +143,7 @@
                     ZIndex: =15
 
                 ImgPaymentPaytm_3 As image:
+                    AccessibleLabel: ="ImgPaymentPaytm_3"
                     BorderColor: =_VarGblAppColors.HeaderBg
                     BorderThickness: =2
                     Height: =67
@@ -152,6 +153,7 @@
                         ClearCollect(payments,Payment.Payment1({Orderid:orderId,Amount:"90"}));
                         Set(amt,txtPaymentAmountValue);
                         Navigate(PaymentQR);
+                    TabIndex: =0
                     Visible: =If(paymentData.Customer.'Mode Of Payment' ='Payment Type (choice)'.CASH, true, false)
                     Width: =135
                     X: =471
@@ -1364,6 +1366,7 @@
                                     ZIndex: =10
 
                                 TextInput1 As text:
+                                    AccessibleLabel: ="TextInput1"
                                     Align: =Align.Center
                                     BorderColor: =RGBA(204, 204, 204, 1)
                                     BorderThickness: =1
@@ -1382,6 +1385,7 @@
                                     ZIndex: =12
 
                                 TextInput1_2 As text:
+                                    AccessibleLabel: ="TextInput1_2"
                                     Align: =Align.Center
                                     BorderColor: =RGBA(204, 204, 204, 1)
                                     BorderThickness: =1
@@ -1400,6 +1404,7 @@
                                     ZIndex: =13
 
                                 TextInput1_3 As text:
+                                    AccessibleLabel: ="TextInput1_3"
                                     Align: =Align.Center
                                     BorderColor: =RGBA(204, 204, 204, 1)
                                     BorderThickness: =1
