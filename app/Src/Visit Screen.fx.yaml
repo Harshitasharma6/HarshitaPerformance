@@ -456,7 +456,7 @@
                                     colOfflineOrderLines,
                                     Filter(
                                         'Order Lines' As Item,
-                                        (Item.'Customer no.'.Account = ThisItem.Account) && (IsToday(Item.'Created On'))
+                                        (Item.'Customer no.'.Account = ThisItem.Account) && Item.'Created On' >= Today()
                                     )
                                 )
                             )
@@ -657,7 +657,7 @@
                         IsBlank(
                             LookUp(
                                 Visits,
-                                Customer.Account = ThisItem.Account && !IsBlank('Check-in Time') && IsBlank('Check-out Time') && IsToday('Created On')/*&& Customer.Salesperson.'Primary Email' = User().Email*/
+                                Customer.Account = ThisItem.Account && !IsBlank('Check-in Time') && IsBlank('Check-out Time') && 'Created On' >= Today()/*&& Customer.Salesperson.'Primary Email' = User().Email*/
                             )
                         ),
                         Notify(
@@ -669,7 +669,7 @@
                             Visits,
                             LookUp(
                                 Visits,
-                                Customer.Account = ThisItem.Account && IsBlank('Check-out Time') && IsToday('Created On')/*&& Customer.Salesperson.'Primary Email' = User().Email*/
+                                Customer.Account = ThisItem.Account && IsBlank('Check-out Time') && 'Created On' >= Today()/*&& Customer.Salesperson.'Primary Email' = User().Email*/
                             ),
                             {
                                 'Check-out Latitude': Location.Latitude,
@@ -802,14 +802,14 @@
                             colOfflineOrderLines,
                             Filter(
                                 'Order Lines' As Item,
-                                (Item.'Customer no.'.Account = ThisItem.Customer.Account) && (IsToday(Item.'Created On'))
+                                (Item.'Customer no.'.Account = ThisItem.Customer.Account) && Item.'Created On' >= Today()
                             )
                         );
                         ClearCollect(
                             colOfflineVisitOrderHeader,
                             LookUp(
                                 'Order Headers',
-                                Vists.'Visit ID' = ThisItem.'Visit ID' && !IsBlank(Vists.'Visit ID')
+                                Vists.'Visit ID' = ThisItem.'Visit ID'
                             )
                         );
                         Set(
@@ -820,7 +820,7 @@
                             varOrdered,
                             false
                         );*/
-                        ,
+                    ,
                         Notify(
                             "You have ended this visit",
                             NotificationType.Error,
@@ -868,14 +868,14 @@
                             colOfflineOrderLines,
                             Filter(
                                 'Order Lines' As Item,
-                                (Item.'Customer no.'.Account = ThisItem.Customer.Account) && (IsToday(Item.'Created On'))
+                                (Item.'Customer no.'.Account = ThisItem.Customer.Account) && Item.'Created On' >= Today()
                             )
                         );
-                         ClearCollect(
+                        ClearCollect(
                             colOfflineVisitOrderHeader,
                             LookUp(
                                 'Order Headers',
-                                Vists.'Visit ID' = ThisItem.'Visit ID' && !IsBlank(Vists.'Visit ID')
+                                Vists.'Visit ID' = ThisItem.'Visit ID'
                             )
                         );
                         Set(
@@ -886,7 +886,7 @@
                             varOrdered,
                             false
                         );*/
-                        ,
+                    ,
                         Notify(
                             "You have ended this visit",
                             NotificationType.Error,
