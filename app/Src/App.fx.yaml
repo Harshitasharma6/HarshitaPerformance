@@ -171,117 +171,116 @@ App As appinfo:
                 Area = varUserArea.Area.Area
             ).Area
         );
-        If(
-            Connection.Connected,
-            ClearCollect(
-                colOfflineTodayDemandsHeader,
+        //If(
+           // Connection.Connected,
+        ClearCollect(
+            colOfflineTodayDemandsHeader,
+            Filter(
+                'Check-in Demand Headers',
+                Salesperson.'Primary Email' = User().Email && Date = Datetodays
+            )
+        );
+        ClearCollect(
+            colOfflineTodayDemandsLines,
+            If(
+                CountRows(colOfflineTodayDemandsHeader) > 0,
                 Filter(
-                    'Check-in Demand Headers',
-                    Salesperson.'Primary Email' = User().Email && Date = Datetodays
+                    'Check-in Demand Lines',
+                    CheckInDemandHeaderCalculated = DemandHeadersdata.'Demand Header No'
                 )
-            );
+            )
+        );
+        Concurrent(
             ClearCollect(
-                colOfflineTodayDemandsLines,
-                If(
-                    CountRows(colOfflineTodayDemandsHeader) > 0,
-                    Filter(
-                        'Check-in Demand Lines',
-                        CheckInDemandHeaderCalculated = DemandHeadersdata.'Demand Header No'
-                    )
+                AllCustomerss,
+                Filter(
+                    Customers_1,
+                    (Salesperson.'Primary Email' = User().Email && 'Customer status' = 'Customer status (Choice)'.Customer)
                 )
             );
-            Concurrent(
-                ClearCollect(
-                    AllCustomerss,
-                    Filter(
-                        Customers_1,
-                        (Salesperson.'Primary Email' = User().Email && 'Customer status' = 'Customer status (Choice)'.Customer)
-                    )
-                );
-                ,
-                ClearCollect(
-                    colOfflineUsers,
-                    Filter(
-                        Users,
-                        'Branch Master'.'Branch Master' = dataforbranch
-                    )
-                );
-                ,
-                ClearCollect(
-                    colOfflineAreas,
-                    Filter(
-                        Areas,
-                        ' Site/Branch '.'Branch Master' = dataforbranch
-                    )
-                );
-                ,
-                ClearCollect(
-                    colOfflineWarehouse,
-                    Warehouses
-                );
-                ,
-                ClearCollect(
-                    colOfflineItemMasters,
-                    'Item Masters'
-                );
-                ,
+            ,
+            ClearCollect(
+                colOfflineUsers,
+                Filter(
+                    Users,
+                    'Branch Master'.'Branch Master' = dataforbranch
+                )
+            );
+            ,
+            ClearCollect(
+                colOfflineAreas,
+                Filter(
+                    Areas,
+                    ' Site/Branch '.'Branch Master' = dataforbranch
+                )
+            );
+            ,
+            ClearCollect(
+                colOfflineWarehouse,
+                Warehouses
+            );
+            ,
+            ClearCollect(
+                colOfflineItemMasters,
+                'Item Masters'
+            );
+            ,
                /* ClearCollect(
                     colOfflineCustomers,
                     Customers_1
                 );   
                 ,  */
-                ClearCollect(
-                    colOfflineCustomerVisits,
-                    Filter(
-                        Visits,
-                        'Visit Date' = Today() && 'Owning User'.'Primary Email' = User().Email
-                    )
-                );
-                ,
-                ClearCollect(
-                    colOfflineStockTransferHeader,
-                    'Stock Transfer Headers'
-                );
-                ,
-                ClearCollect(
-                    colOfflinePayments,
-                    Filter(
-                        Payments,
-                        Salesperson.'Primary Email' = User().Email
-                    )
-                );
-                ,
-                ClearCollect(
-                    colOfflineVariantMaster,
-                    'SKU Masters'
-                );
-                ,
-                ClearCollect(
-                    colOfflineSchemeHeader,
-                    Filter(
-                        'Scheme Headers',
-                        'Start Date' <= Today() && 'End Date' >= Today() && IsActive = 'IsActive (Scheme Headers)'.Yes
-                    )
-                );
-                ,
-                ClearCollect(
-                    colOfflineHSNMasters,
-                    'HSN Masters'
-                );
-                ,
-                ClearCollect(
-                    colOfflineOrderHeader,
-                    Filter(
-                        'Order Headers',
-                        'Order Date' > Today() && 'Owning User'.'Primary Email' = User().Email
-                    )
-                );
-                ,
-                ClearCollect(
-                    colOfflineInvoiceSeries,
-                    'Invoice Series'
-                );
-            ),
+            ClearCollect(
+                colOfflineCustomerVisits,
+                Filter(
+                    Visits,
+                    'Visit Date' = Today() && 'Owning User'.'Primary Email' = User().Email
+                )
+            );
+            ,
+            ClearCollect(
+                colOfflineStockTransferHeader,
+                'Stock Transfer Headers'
+            );
+            ,
+            ClearCollect(
+                colOfflinePayments,
+                Filter(
+                    Payments,
+                    Salesperson.'Primary Email' = User().Email
+                )
+            );
+            ClearCollect(
+                colOfflineVariantMaster,
+                'SKU Masters'
+            );
+            ,
+            ClearCollect(
+                colOfflineSchemeHeader,
+                Filter(
+                    'Scheme Headers',
+                    'Start Date' <= Today() && 'End Date' >= Today() && IsActive = 'IsActive (Scheme Headers)'.Yes
+                )
+            );
+            ,
+            ClearCollect(
+                colOfflineHSNMasters,
+                'HSN Masters'
+            );
+            ,
+            ClearCollect(
+                colOfflineOrderHeader,
+                Filter(
+                    'Order Headers',
+                    'Order Date' > Today() && 'Owning User'.'Primary Email' = User().Email
+                )
+            );
+            ,
+            ClearCollect(
+                colOfflineInvoiceSeries,
+                'Invoice Series'
+            )
+        );
         ///////////////////////////******LOAD DATA*****////////////////////////////
             /*Concurrent(
                 LoadData(
