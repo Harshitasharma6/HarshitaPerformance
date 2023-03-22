@@ -99,34 +99,34 @@
                             Filter(
                                 Filter(
                                     Filter(
-                                        'Order Headers',
+                                        colOfflineOrderHeader,
                                         Salesperson.'Primary Email' = User().Email && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
                                     ),
                                     'Order Type' = galOrderStatusFilter.Selected.Value
                                 ),
-                                'Created On' > (Today() - 30)
+                                'Order Date' > (Today() - 30)
                             ),
                             "Last 7 Days",
                             Filter(
                                 Filter(
                                     Filter(
-                                        'Order Headers',
+                                        colOfflineOrderHeader,
                                        Salesperson.'Primary Email' = User().Email && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
                                     ),
                                     'Order Type' = galOrderStatusFilter.Selected.Value
                                 ),
-                                'Created On' > Today() - 7
+                                'Order Date' > (Today() - 7)
                             ),
                             "Today's Orders",
                             Filter(
                                 Filter(
                                     Filter(
-                                        'Order Headers',
+                                        colOfflineOrderHeader,
                                        Salesperson.'Primary Email' = User().Email && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
                                     ),
                                     'Order Type' = galOrderStatusFilter.Selected.Value
                                 ),
-                                IsToday('Created On')
+                                'Order Date'>= Today()
                             )
                         ),
                         'Created On',
