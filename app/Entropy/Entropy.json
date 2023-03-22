@@ -1833,7 +1833,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "03/22/2023 20:29:24",
+  "HeaderLastSavedDateTimeUTC": "03/22/2023 21:31:31",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "0b2e8b71-cf2b-4ea4-9c96-3a21300305f8": "\"/providers/microsoft.powerapps/apis/shared_microsoftspatialservices/connections/302918bc408b4c3fbc478cbbda059d75\"",
@@ -6611,7 +6611,7 @@
       "typedDataCard": 1
     },
     "DeserializationLoadTime": 17.2936524,
-    "ErrorCount": 558
+    "ErrorCount": 435
   },
   "WasLocalDatabaseReferencesEmpty": false
 }
