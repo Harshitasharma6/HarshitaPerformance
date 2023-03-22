@@ -1574,6 +1574,7 @@
         ZIndex: =5
 
     Icon12 As icon.Reload:
+        AccessibleLabel: ="Icone12"
         Color: =_VarGblAppColors.LightText
         Height: =40
         Icon: =Icon.Reload

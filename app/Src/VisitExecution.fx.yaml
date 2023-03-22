@@ -1724,6 +1724,7 @@
                                     ZIndex: =10
 
                                 Icon9 As icon.Trash:
+                                    AccessibleLabel: ="Icon9"
                                     Color: =_VarGblAppColors.BisleriBlue
                                     Height: =14
                                     Icon: =Icon.Trash
@@ -1961,6 +1962,7 @@
                     ZIndex: =16
 
                 ImgPaymentPaytm_2 As image:
+                    AccessibleLabel: ="ImgPaymentPaytm_2"
                     BorderColor: =_VarGblAppColors.HeaderBg
                     BorderThickness: =2
                     Height: =67
@@ -5191,6 +5193,7 @@
                         ZIndex: =4
 
                 DatePicker3_1 As datepicker:
+                    AccessibleLabel: ="DatePicker3_1"
                     BorderColor: =_VarGblAppColors.BisleriBlue
                     FocusedBorderThickness: =2
                     Height: =45
@@ -5216,6 +5219,7 @@
                     ZIndex: =26
 
                 ComboBox1_1 As combobox:
+                    AccessibleLabel: ="ComboBox1_1"
                     BorderColor: =_VarGblAppColors.BisleriBlue
                     ChevronBackground: =_VarGblAppColors.BisleriBlue
                     ChevronHoverBackground: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
@@ -11035,6 +11039,7 @@
             ZIndex: =3
 
     Icon7_2 As icon.Reload:
+        AccessibleLabel: ="Icon7_2"
         Color: =RGBA(255, 255, 255, 1)
         Height: =36
         Icon: =Icon.Reload
@@ -11045,6 +11050,7 @@
         ZIndex: =12
 
     Icon5_1 As icon.Print:
+        AccessibleLabel: ="Icon5_1"
         Color: =RGBA(255, 255, 255, 1)
         Height: =55
         Icon: =Icon.Print

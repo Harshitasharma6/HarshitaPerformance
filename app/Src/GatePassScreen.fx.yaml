@@ -468,6 +468,7 @@ GatePassScreen As screen:
             ZIndex: =11
 
         Icon5 As icon.Print:
+            AccessibleLabel: ="Icon5"
             Color: =RGBA(255, 255, 255, 1)
             Height: =36
             Icon: =Icon.Print
@@ -1039,6 +1040,7 @@ GatePassScreen As screen:
                 ZIndex: =1
 
             DataCardValue4 As attachments:
+                AccessibleLabel: ="DataCardValue4"
                 AddAttachmentText: ="Upload file"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DisplayMode: =Parent.DisplayMode

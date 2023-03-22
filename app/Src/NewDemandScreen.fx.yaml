@@ -832,6 +832,7 @@ NewDemandScreen As screen:
         ZIndex: =7
 
     dteCheckInDemand As datepicker:
+        AccessibleLabel: ="dteCheckInDemand"
         BorderColor: =_VarGblAppColors.BisleriBlue
         DefaultDate: =Today()+1
         FocusedBorderThickness: =2
