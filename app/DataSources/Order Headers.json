@@ -30,7 +30,6 @@
       "transactioncurrencyid": "Currency",
       "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
       "versionnumber": "Version Number",
-      "zx_createddate": "Created Date",
       "zx_deliverydate": "Delivery Date",
       "zx_invoicenumber": "Invoice Number",
       "zx_irnmessage": "IRN Message",
