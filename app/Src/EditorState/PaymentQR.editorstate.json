@@ -129,7 +129,16 @@
         "Y",
         "Width",
         "Height",
-        "ZIndex"
+        "ZIndex",
+        "AccessibleLabel",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "-1",
+          "InvariantPropertyName": "TabIndex",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        }
       ],
       "GalleryTemplateChildName": "galleryTemplate4",
       "HasDynamicProperties": false,
@@ -145,6 +154,11 @@
       "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
+        {
+          "Category": "Data",
+          "PropertyName": "AccessibleLabel",
+          "RuleProviderType": "Unknown"
+        },
         {
           "Category": "Data",
           "PropertyName": "Items",
@@ -263,6 +277,11 @@
         {
           "Category": "Design",
           "PropertyName": "ZIndex",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "TabIndex",
           "RuleProviderType": "Unknown"
         }
       ],

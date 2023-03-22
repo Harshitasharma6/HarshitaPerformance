@@ -176,6 +176,7 @@
                     ClearCollect(payments,Payment.Payment1({Orderid:orderId,Amount:"90"}));
                     Set(amt,txtPaymentAmountValue);
                     Navigate(PaymentQR);
+                TabIndex: =0
                 Visible: =If(rdbModeOfPayment.Selected.Value ='Payment Type (choice)'.CASH, true, false)
                 Width: =135
                 X: =362

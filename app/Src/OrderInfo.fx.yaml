@@ -91,6 +91,7 @@
                     )
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
+                TabIndex: =0
                 TemplateSize: =84
                 Y: =199
                 ZIndex: =2
@@ -148,6 +149,7 @@
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 ShowScrollbar: =false
+                TabIndex: =0
                 TemplatePadding: =0
                 TemplateSize: =250
                 Y: =917

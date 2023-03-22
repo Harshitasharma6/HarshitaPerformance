@@ -1740,6 +1740,7 @@
                                             colCartItems,
                                             ThisItem
                                         );
+                                    TabIndex: =0
                                     Visible: =ThisItem.schemeOrder = false
                                     Width: =17
                                     X: =596
@@ -1996,6 +1997,7 @@
                             Blank()
                         );
                         Navigate(PaymentQR);
+                    TabIndex: =0
                     Visible: |-
                         =//If(OrderData.'Mode Of Payment' ='Payment Type (choice)'.PAYTM, true, false)
                         If(rdbModeOfPayment_2.Selected.Value='Payment Mode (Choice)'.PAYTM, true, false)
@@ -11044,6 +11046,7 @@
         Height: =36
         Icon: =Icon.Reload
         OnSelect: =Refresh('Current Stocks');
+        TabIndex: =0
         Width: =38
         X: =496
         Y: =22
@@ -11099,6 +11102,7 @@
         PaddingLeft: =7
         PaddingRight: =7
         PaddingTop: =7
+        TabIndex: =0
         Visible: |-
             =
             If(!IsBlank(LookUp(

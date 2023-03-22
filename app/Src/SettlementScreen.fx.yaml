@@ -1582,6 +1582,7 @@
             =Refresh('Stock Inventories');
             Refresh('Order Lines');
             Refresh('Stock Transfer Lines');
+        TabIndex: =0
         Width: =50
         X: =479
         Y: =20
