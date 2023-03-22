@@ -14305,7 +14305,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1207,
+                  "charOffset": 1111,
                   "snippet": {
                     "text": "&&"
                   }
@@ -14345,7 +14345,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1309,
+                  "charOffset": 1213,
                   "snippet": {
                     "text": "&&"
                   }
