@@ -10,6 +10,7 @@
     "Name": "Stock Transfer Headers",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",
+      "cr8eb_tolocationtext": "ToLocationText",
       "createdby": "Created By",
       "createdon": "Created On",
       "createdonbehalfby": "Created By (Delegate)",
@@ -45,7 +46,6 @@
       "zx_stocktransferheaderid": "Stock Transfer Header",
       "zx_stocktransfertype": "Stock transfer type",
       "zx_ToLocation": "To Location",
-      "zx_tolocationcalculated": "ToLocationCalculated",
       "zx_transferaccepted": "Transfer accepted",
       "zx_vancode": "Van Code",
       "zx_zx_stocktransferlines_TransferOrderNo_zx_": "Stock Transfer Lines"
