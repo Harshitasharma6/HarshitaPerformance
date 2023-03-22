@@ -258,7 +258,7 @@ App As appinfo:
                     colOfflineOrderHeader,
                     Filter(
                         'Order Headers',
-                        IsToday('Order Date') && 'Owning User'.'Primary Email' = User().Email
+                        'Order Date'>Today() && 'Owning User'.'Primary Email' = User().Email
                     )
                 );
                 ,
