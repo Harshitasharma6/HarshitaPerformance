@@ -894,10 +894,7 @@
                 AddColumns(
                     Filter(
                         'Stock Transfer Headers',
-                        'To Location'.Warehouse = LookUp(
-                            Warehouses,
-                            Warehouse = varUserVanNo.Van.Warehouse
-                        ).Warehouse && 'Stock transfer type' = 'Stock transfer type (Stock Transfer Headers)'.'Van to van transfer' && IsToday('Created On')
+                        'To Location'.Warehouse = StockTransferWarehouse && 'Stock transfer type' = 'Stock transfer type (Stock Transfer Headers)'.'Van to van transfer' && 'Created On'>= Today()
                     ),
                     "headerGUID",
                     'Stock Transfer Header'
@@ -908,10 +905,7 @@
                 AddColumns(
                     Filter(
                         'Stock Transfer Headers',
-                        'From Location'.Warehouse = LookUp(
-                            Warehouses,
-                            Warehouse = varUserVanNo.Van.Warehouse
-                        ).Warehouse && 'Stock transfer type' = 'Stock transfer type (Stock Transfer Headers)'.'Van to van transfer' && IsToday('Created On')
+                        'From Location'.Warehouse = StockTransferWarehouse && 'Stock transfer type' = 'Stock transfer type (Stock Transfer Headers)'.'Van to van transfer' && 'Created On'>= Today()
                     ),
                     "headerGUID",
                     'Stock Transfer Header'
@@ -933,11 +927,8 @@
                 AddColumns(
                     Filter(
                         'Stock Transfer Headers',
-                        !IsBlank('To Location') &&
-                        'To Location'.Warehouse = LookUp(
-                            Warehouses,
-                            Warehouse = varUserVanNo.Van.Warehouse
-                        ).Warehouse && 'Stock transfer type' = 'Stock transfer type (Stock Transfer Headers)'.'Warehouse to van transfer' && IsToday('Created On')
+                        
+                        'To Location'.Warehouse = StockTransferWarehouse && 'Stock transfer type' = 'Stock transfer type (Stock Transfer Headers)'.'Warehouse to van transfer' && 'Created On'>= Today()
                     ),
                     "headerGUID",
                     'Stock Transfer Header'
