@@ -168,7 +168,7 @@ App As appinfo:
             LookUp(
                 Warehouses,
                 Warehouse = varUserVanNo.Van.Warehouse
-            )
+            ).warehouse
         );
         If(
             Connection.Connected,

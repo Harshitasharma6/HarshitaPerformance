@@ -54,6 +54,7 @@
       "zx_stocktransferlines_ProcessSession": "Process Sessions",
       "zx_stocktransferlines_SyncErrors": "Sync Errors",
       "zx_stocktransferlinesid": "Stock Transfer Lines",
+      "zx_tolocationcalculated": "ToLocationCalculated",
       "zx_transferaccepted": "Transfer accepted",
       "zx_TransferOrderNo": "Transfer Order No",
       "zx_transferstatus": "Transfer status",
