@@ -51,8 +51,6 @@ App As appinfo:
                 }
             }
         );
-        Reset(txtLoginUsername);
-        Reset(txtLoginPassword);
         ///////////////////////////******SAVE DATA*****////////////////////////////
         Set(
             dataforbranch,
@@ -170,10 +168,13 @@ App As appinfo:
                 Warehouse = varUserVanNo.Van.Warehouse
             ).Warehouse
         );
-        Set(UserAreaGUID, LookUp(
-                                    Areas,
-                                    Area = varUserArea.Area.Area
-                                ).Area);
+        Set(
+            UserAreaGUID,
+            LookUp(
+                Areas,
+                Area = varUserArea.Area.Area
+            ).Area
+        );
         If(
             Connection.Connected,
             ClearCollect(
@@ -189,7 +190,8 @@ App As appinfo:
                     CountRows(colOfflineTodayDemandsHeader) > 0,
                     Filter(
                         'Check-in Demand Lines',
-                        CheckInDemandHeaderCalculated = DemandHeadersdata.'Demand Header No')
+                        CheckInDemandHeaderCalculated = DemandHeadersdata.'Demand Header No'
+                    )
                 )
             );
             Concurrent(

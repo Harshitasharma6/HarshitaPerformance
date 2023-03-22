@@ -89,7 +89,7 @@
         "Name": "lblHeader",
         "Parent": "Header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1741,
+        "PublishOrderIndex": 1732,
         "Rules": [
           {
             "Category": "Data",
@@ -395,7 +395,7 @@
         "Name": "shpCircleHeader",
         "Parent": "Header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1742,
+        "PublishOrderIndex": 1733,
         "Rules": [
           {
             "Category": "Design",
@@ -640,7 +640,7 @@
         "Name": "imgHeaderProfile",
         "Parent": "Header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1743,
+        "PublishOrderIndex": 1734,
         "Rules": [
           {
             "Category": "Data",
@@ -971,7 +971,7 @@
         "Name": "icoHeaderBack",
         "Parent": "Header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1744,
+        "PublishOrderIndex": 1735,
         "Rules": [
           {
             "Category": "Data",
@@ -1177,7 +1177,7 @@
       "ZIndex",
       "HeaderText"
     ],
-    "LastModifiedTimestamp": "638150777699854768",
+    "LastModifiedTimestamp": "638150917982994935",
     "Name": "Header",
     "Rules": [
       {
@@ -1252,7 +1252,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638150777699854768",
+  "LastModifiedTimestamp": "638150917982994935",
   "Name": "a0a659eefc374080809256c8dd399bf7",
   "OverridableProperties": {},
   "Version": "638060954686496662"

@@ -113,7 +113,7 @@
         "Name": "btnSearchBackground",
         "Parent": "SearchComp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1724,
+        "PublishOrderIndex": 1715,
         "Rules": [
           {
             "Category": "Data",
@@ -484,7 +484,7 @@
         "Name": "txtSearchInput",
         "Parent": "SearchComp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1725,
+        "PublishOrderIndex": 1716,
         "Rules": [
           {
             "Category": "Data",
@@ -833,7 +833,7 @@
         "Name": "icoSearch",
         "Parent": "SearchComp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1726,
+        "PublishOrderIndex": 1717,
         "Rules": [
           {
             "Category": "Design",
@@ -1018,7 +1018,7 @@
         "Name": "grpSearch",
         "Parent": "SearchComp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1727,
+        "PublishOrderIndex": 1718,
         "Rules": [
           {
             "Category": "Design",
@@ -1114,7 +1114,7 @@
       },
       "SearchHintText"
     ],
-    "LastModifiedTimestamp": "638150777699998798",
+    "LastModifiedTimestamp": "638150917983049581",
     "Name": "SearchComp",
     "Rules": [
       {
@@ -1210,7 +1210,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638150777699998798",
+  "LastModifiedTimestamp": "638150917983049581",
   "Name": "b58dc360fd85467589b37fba8655146d",
   "OverridableProperties": {},
   "TemplateOriginalName": "bb70b3c079264f63a6a227510340b05a",
