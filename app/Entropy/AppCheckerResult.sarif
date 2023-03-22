@@ -14695,6 +14695,86 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "'Van Transfer'.canVanTransferOutData.dataCardVanTransferOut.contHomeCheckInDemandUpperVertical_1.contHomeCheckInDemandUpper_1.contHomeCheckInDemandLowerVertical_1.contHomeCheckInDemandData_1.galVanTransferOutData.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Van Transfer'.canVanTransferOutData.dataCardVanTransferOut.contHomeCheckInDemandUpperVertical_1.contHomeCheckInDemandUpper_1.contHomeCheckInDemandLowerVertical_1.contHomeCheckInDemandData_1.galVanTransferOutData.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 21,
+                  "charOffset": 323,
+                  "snippet": {
+                    "text": "IsToday('Created On')"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Van Transfer",
+                "type": "'Van Transfer'.canVanTransferOutData.dataCardVanTransferOut.contHomeCheckInDemandUpperVertical_1.contHomeCheckInDemandUpper_1.contHomeCheckInDemandLowerVertical_1.contHomeCheckInDemandData_1.galVanTransferOutData"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Van Transfer'.canVanTransferOutData.dataCardVanTransferOut.contHomeCheckInDemandUpperVertical_1.contHomeCheckInDemandUpper_1.contHomeCheckInDemandLowerVertical_1.contHomeCheckInDemandData_1.galVanTransferOutData.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Van Transfer'.canVanTransferOutData.dataCardVanTransferOut.contHomeCheckInDemandUpperVertical_1.contHomeCheckInDemandUpper_1.contHomeCheckInDemandLowerVertical_1.contHomeCheckInDemandData_1.galVanTransferOutData.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 345,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Van Transfer",
+                "type": "'Van Transfer'.canVanTransferOutData.dataCardVanTransferOut.contHomeCheckInDemandUpperVertical_1.contHomeCheckInDemandUpper_1.contHomeCheckInDemandLowerVertical_1.contHomeCheckInDemandData_1.galVanTransferOutData"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "'Van Transfer'.canVanTransferOutData.dataCardVanTransferOut.btnVanTransferOutConfirm.OnSelect"
                 }
               ],
@@ -14761,6 +14841,326 @@
           "message": {
             "arguments": [
               "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Van Transfer'.canVanTransferOutData.dataCardVanTransferOut.btnVanTransferOutConfirm.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Van Transfer'.canVanTransferOutData.dataCardVanTransferOut.btnVanTransferOutConfirm.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 21,
+                  "charOffset": 28046,
+                  "snippet": {
+                    "text": "IsToday('Created On')"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Van Transfer",
+                "type": "'Van Transfer'.canVanTransferOutData.dataCardVanTransferOut.btnVanTransferOutConfirm"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Van Transfer'.canVanTransferOutData.dataCardVanTransferOut.btnVanTransferOutConfirm.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Van Transfer'.canVanTransferOutData.dataCardVanTransferOut.btnVanTransferOutConfirm.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 28043,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Van Transfer",
+                "type": "'Van Transfer'.canVanTransferOutData.dataCardVanTransferOut.btnVanTransferOutConfirm"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Van Transfer'.btnVanTransferConfirm_1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Van Transfer'.btnVanTransferConfirm_1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 21,
+                  "charOffset": 5529,
+                  "snippet": {
+                    "text": "IsToday('Created On')"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Van Transfer",
+                "type": "'Van Transfer'.btnVanTransferConfirm_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Van Transfer'.btnVanTransferConfirm_1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Van Transfer'.btnVanTransferConfirm_1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 5526,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Van Transfer",
+                "type": "'Van Transfer'.btnVanTransferConfirm_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Van Transfer'.btnVanTransferConfirm_1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Van Transfer'.btnVanTransferConfirm_1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 21,
+                  "charOffset": 7565,
+                  "snippet": {
+                    "text": "IsToday('Created On')"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Van Transfer",
+                "type": "'Van Transfer'.btnVanTransferConfirm_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Van Transfer'.btnVanTransferConfirm_1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Van Transfer'.btnVanTransferConfirm_1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 7562,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Van Transfer",
+                "type": "'Van Transfer'.btnVanTransferConfirm_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Van Transfer'.btnVanTransferSelectAll.Visible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Van Transfer'.btnVanTransferSelectAll.Visible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 21,
+                  "charOffset": 412,
+                  "snippet": {
+                    "text": "IsToday('Created On')"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Visible",
+                "module": "Van Transfer",
+                "type": "'Van Transfer'.btnVanTransferSelectAll"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Van Transfer'.chkVanTransferSelectAll.Visible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Van Transfer'.chkVanTransferSelectAll.Visible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 21,
+                  "charOffset": 412,
+                  "snippet": {
+                    "text": "IsToday('Created On')"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Visible",
+                "module": "Van Transfer",
+                "type": "'Van Transfer'.chkVanTransferSelectAll"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
             ],
             "id": "issue"
           },
