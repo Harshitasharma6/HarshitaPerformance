@@ -1740,6 +1740,7 @@
                                             colCartItems,
                                             ThisItem
                                         );
+                                    TabIndex: =0
                                     Visible: =ThisItem.schemeOrder = false
                                     Width: =17
                                     X: =596
@@ -1996,6 +1997,7 @@
                             Blank()
                         );
                         Navigate(PaymentQR);
+                    TabIndex: =0
                     Visible: |-
                         =//If(OrderData.'Mode Of Payment' ='Payment Type (choice)'.PAYTM, true, false)
                         If(rdbModeOfPayment_2.Selected.Value='Payment Mode (Choice)'.PAYTM, true, false)
@@ -7144,12 +7146,11 @@
                             First(VisitData).'Visit ID'
                         );
                         Set(
-                            CreateOrderRecorddata,
-                            First(CreateOrderRecord)
-                        );
-                        Set(
-                            CreateInvHeaderdata,
-                            First(CreateInvHeader)
+                            Areavalueid,
+                            LookUp(
+                                Areas,
+                                Area = varUserArea.Area.Area
+                            )
                         );
                         If(
                             OrderData.'Mode Of Payment' = 'Payment Type (choice)'.CASH || OrderData.'Mode Of Payment' = 'Payment Type (choice)'.COUPON || OrderData.'Mode Of Payment' = 'Payment Type (choice)'.KOTAK || OrderData.'Mode Of Payment' = 'Payment Type (choice)'.PAYTM,
@@ -7290,6 +7291,10 @@
                                         }
                                     )
                                 )
+                            );
+                            Set(
+                                CreateOrderRecorddata,
+                                First(CreateOrderRecord)
                             );
                             If(
                                 !IsBlank(CreateOrderRecord) && CountRows(CreateOrderRecord) > 0,
@@ -7582,19 +7587,13 @@
                                                 'Invoice Number': "RI" & Left(
                                                     LookUp(
                                                         'Invoice Series',
-                                                        'Route No'.Area = LookUp(
-                                                            Areas,
-                                                            Area = varUserArea.Area.Area
-                                                        ).Area
+                                                        'Route No'.Area = Areavalueid.Area
                                                     ).'Sequence No',
                                                     4
                                                 ) & Text(
                                                     LookUp(
                                                         'Invoice Series',
-                                                        'Route No'.Area = LookUp(
-                                                            Areas,
-                                                            Area = varUserArea.Area.Area
-                                                        ).Area
+                                                        'Route No'.Area = Areavalueid.Area
                                                     ).'Route No'.'Name (zx_name)'
                                                 ) &
                                             /*LookUp(
@@ -7617,10 +7616,7 @@
                          Right(
                                                     LookUp(
                                                         'Invoice Series',
-                                                        'Route No'.Area = LookUp(
-                                                            Areas,
-                                                            Area = varUserArea.Area.Area
-                                                        ).Area
+                                                        'Route No'.Area = Areavalueid.Area
                                                     ).'Sequence No' + 1,
                                                     6
                                                 ),
@@ -7685,10 +7681,7 @@
                                                     Customers_1,
                                                     Account = OrderData.Account
                                                 ),
-                                                'Route No': LookUp(
-                                                    Areas,
-                                                    Area = varUserArea.Area.Area
-                                                ),
+                                                'Route No': Areavalueid,
                                                 'Van No': LookUp(
                                                     Warehouses,
                                                     Warehouse = varUserVanNo.Van.Warehouse
@@ -7725,22 +7718,20 @@
                                         )
                                     )
                                 );
+                                Set(
+                                    CreateInvHeaderdata,
+                                    First(CreateInvHeader)
+                                );
                                 Patch(
                                     'Invoice Series',
                                     LookUp(
                                         'Invoice Series',
-                                        'Route No'.Area = LookUp(
-                                            Areas,
-                                            Area = varUserArea.Area.Area
-                                        ).Area
+                                        'Route No'.Area = Areavalueid.Area
                                     ),
                                     {
                                         'Sequence No': LookUp(
                                             'Invoice Series',
-                                            'Route No'.Area = LookUp(
-                                                Areas,
-                                                Area = varUserArea.Area.Area
-                                            ).Area
+                                            'Route No'.Area = Areavalueid.Area
                                         ).'Sequence No' + 1
                                     }
                                 );
@@ -7793,10 +7784,7 @@
                                                         Customers_1,
                                                         Account = OrderData.Account
                                                     ),
-                                                    'Route No': LookUp(
-                                                        Areas,
-                                                        Area = varUserArea.Area.Area
-                                                    ),
+                                                    'Route No': Areavalueid,
                                                     Salesperson: LookUp(
                                                         Users,
                                                         'Primary Email' = User().Email
@@ -7856,10 +7844,7 @@
                                                         Customers_1,
                                                         Account = OrderData.Account
                                                     ),
-                                                    'Route No': LookUp(
-                                                        Areas,
-                                                        Area = varUserArea.Area.Area
-                                                    ),
+                                                    'Route No': Areavalueid,
                                                     Salesperson: LookUp(
                                                         Users,
                                                         'Primary Email' = User().Email
@@ -7934,10 +7919,7 @@
                                                         Customers_1,
                                                         Account = OrderData.Account
                                                     ),
-                                                    'Route No': LookUp(
-                                                        Areas,
-                                                        Area = varUserArea.Area.Area
-                                                    ),
+                                                    'Route No': Areavalueid,
                                                     Salesperson: LookUp(
                                                         Users,
                                                         'Primary Email' = User().Email
@@ -8009,10 +7991,7 @@
                                                         Customers_1,
                                                         Account = OrderData.Account
                                                     ),
-                                                    'Route No': LookUp(
-                                                        Areas,
-                                                        Area = varUserArea.Area.Area
-                                                    ),
+                                                    'Route No': Areavalueid,
                                                     Salesperson: LookUp(
                                                         Users,
                                                         'Primary Email' = User().Email
@@ -8064,7 +8043,13 @@
                                 );
                          */
                             );
-                            
+                            Set (
+                                dataforsum,
+                                Filter(
+                                    'Order Headers',
+                                    Customer.Account = OrderData.Account && 'Created On' >= Today()
+                                )
+                            )
                         //Stock substraction from location ____________________________________________________________________________________
                         /*ForAll(
                                 colCartItems As oneLine,
@@ -8119,10 +8104,7 @@
                                         Customers_1,
                                         Account = OrderData.Account
                                     ).'Used Credit Limit') - (Sum(
-                                        Filter(
-                                            'Order Headers',
-                                            Customer.Account = OrderData.Account && IsToday('Created On')
-                                        ),
+                                        dataforsum,
                                         'Net Amount'
                                     ))) < (Sum(
                                         colCartItems,
@@ -8166,10 +8148,7 @@
                                                         Warehouses,
                                                         Warehouse = varUserVanNo.Van.Warehouse
                                                     ),
-                                                    'Route No': LookUp(
-                                                        Areas,
-                                                        Area = varUserArea.Area.Area
-                                                    ),
+                                                    'Route No': Areavalueid,
                                                     Customer: LookUp(
                                                         Customers_1,
                                                         Account = OrderData.Account
@@ -8255,6 +8234,10 @@
                                             )
                                         )
                                     );
+                                    Set(
+                                        CreateOrderRecorddata,
+                                        First(CreateOrderRecord)
+                                    );
                                     If(
                                         !IsBlank(CreateOrderRecord) && CountRows(CreateOrderRecord) > 0,
                                         ClearCollect(
@@ -8309,10 +8292,7 @@
                                                                 Customers_1,
                                                                 Account = OrderData.Account
                                                             ),
-                                                            'Route No': LookUp(
-                                                                Areas,
-                                                                Area = varUserArea.Area.Area
-                                                            )
+                                                            'Route No': Areavalueid
                                                             /* 'Reference Scheme ': LookUp(
                                                         'Scheme Orders',
                                                         'Scheme Order' = ThissItem.schemeOrderValue.zx_schemeorderid
@@ -8368,10 +8348,7 @@
                                                                 Customers_1,
                                                                 Account = OrderData.Account
                                                             ),
-                                                            'Route No': LookUp(
-                                                                Areas,
-                                                                Area = varUserArea.Area.Area
-                                                            )
+                                                            'Route No': Areavalueid
                                                             /* 'Reference Scheme ': LookUp(
                                                         'Scheme Orders',
                                                         'Scheme Order' = ThissItem.schemeOrderValue.zx_schemeorderid
@@ -8443,10 +8420,7 @@
                                                                 Customers_1,
                                                                 Account = OrderData.Account
                                                             ),
-                                                            'Route No': LookUp(
-                                                                Areas,
-                                                                Area = varUserArea.Area.Area
-                                                            ),
+                                                            'Route No': Areavalueid,
                                                             'Scheme Parent Item Code': LookUp(
                                                                 'SKU Masters',
                                                                 'SKU Master' = ThissItem.SchemeOrderProductReference
@@ -8503,10 +8477,7 @@
                                                                 Customers_1,
                                                                 Account = OrderData.Account
                                                             ),
-                                                            'Route No': LookUp(
-                                                                Areas,
-                                                                Area = varUserArea.Area.Area
-                                                            ),
+                                                            'Route No': Areavalueid,
                                                             'Scheme Parent Item Code': LookUp(
                                                                 'SKU Masters',
                                                                 'SKU Master' = ThissItem.SchemeOrderProductReference
@@ -8543,19 +8514,13 @@
                                                         'Invoice Number': "RI" & Left(
                                                             LookUp(
                                                                 'Invoice Series',
-                                                                'Route No'.Area = LookUp(
-                                                                    Areas,
-                                                                    Area = varUserArea.Area.Area
-                                                                ).Area
+                                                                'Route No'.Area = Areavalueid.Area
                                                             ).'Sequence No',
                                                             4
                                                         ) & Text(
                                                             LookUp(
                                                                 'Invoice Series',
-                                                                'Route No'.Area = LookUp(
-                                                                    Areas,
-                                                                    Area = varUserArea.Area.Area
-                                                                ).Area
+                                                                'Route No'.Area = Areavalueid.Area
                                                             ).'Route No'.'Name (zx_name)'
                                                         ) &
                                             /*LookUp(
@@ -8578,10 +8543,7 @@
                          Right(
                                                             LookUp(
                                                                 'Invoice Series',
-                                                                'Route No'.Area = LookUp(
-                                                                    Areas,
-                                                                    Area = varUserArea.Area.Area
-                                                                ).Area
+                                                                'Route No'.Area = Areavalueid.Area
                                                             ).'Sequence No' + 1,
                                                             6
                                                         ),
@@ -8593,10 +8555,7 @@
                                                             Customers_1,
                                                             Account = OrderData.Account
                                                         ),
-                                                        'Route No': LookUp(
-                                                            Areas,
-                                                            Area = varUserArea.Area.Area
-                                                        ),
+                                                        'Route No': Areavalueid,
                                                         'Van No': LookUp(
                                                             Warehouses,
                                                             Warehouse = varUserVanNo.Van.Warehouse
@@ -8646,10 +8605,7 @@
                                                             Customers_1,
                                                             Account = OrderData.Account
                                                         ),
-                                                        'Route No': LookUp(
-                                                            Areas,
-                                                            Area = varUserArea.Area.Area
-                                                        ),
+                                                        'Route No': Areavalueid,
                                                         'Van No': LookUp(
                                                             Warehouses,
                                                             Warehouse = varUserVanNo.Van.Warehouse
@@ -8686,22 +8642,20 @@
                                                 )
                                             )
                                         );
+                                        Set(
+                                            CreateInvHeaderdata,
+                                            First(CreateInvHeader)
+                                        );
                                         Patch(
                                             'Invoice Series',
                                             LookUp(
                                                 'Invoice Series',
-                                                'Route No'.Area = LookUp(
-                                                    Areas,
-                                                    Area = varUserArea.Area.Area
-                                                ).Area
+                                                'Route No'.Area = Areavalueid.Area
                                             ),
                                             {
                                                 'Sequence No': LookUp(
                                                     'Invoice Series',
-                                                    'Route No'.Area = LookUp(
-                                                        Areas,
-                                                        Area = varUserArea.Area.Area
-                                                    ).Area
+                                                    'Route No'.Area = Areavalueid.Area
                                                 ).'Sequence No' + 1
                                             }
                                         );
@@ -9092,10 +9046,7 @@
                                         Customers_1,
                                         Account = OrderData.Account
                                     ).'Used Credit Limit') - (Sum(
-                                        Filter(
-                                            'Order Headers',
-                                            Customer.Account = OrderData.Account && IsToday('Created On')
-                                        ),
+                                        dataforsum,
                                         'Net Amount'
                                     ))) < (Sum(
                                         colCartItems,
@@ -9227,6 +9178,10 @@
                                                 }
                                             )
                                         )
+                                    );
+                                    Set(
+                                        CreateOrderRecorddata,
+                                        First(CreateOrderRecord)
                                     );
                                     If(
                                         !IsBlank(CreateOrderRecord) && CountRows(CreateOrderRecord) > 0,
@@ -9515,19 +9470,13 @@
                                                         'Invoice Number': "RI" & Left(
                                                             LookUp(
                                                                 'Invoice Series',
-                                                                'Route No'.Area = LookUp(
-                                                                    Areas,
-                                                                    Area = varUserArea.Area.Area
-                                                                ).Area
+                                                                'Route No'.Area = Areavalueid.Area
                                                             ).'Sequence No',
                                                             4
                                                         ) & Text(
                                                             LookUp(
                                                                 'Invoice Series',
-                                                                'Route No'.Area = LookUp(
-                                                                    Areas,
-                                                                    Area = varUserArea.Area.Area
-                                                                ).Area
+                                                                'Route No'.Area = Areavalueid.Area
                                                             ).'Route No'.'Name (zx_name)'
                                                         ) &
                                             /*LookUp(
@@ -9550,10 +9499,7 @@
                          Right(
                                                             LookUp(
                                                                 'Invoice Series',
-                                                                'Route No'.Area = LookUp(
-                                                                    Areas,
-                                                                    Area = varUserArea.Area.Area
-                                                                ).Area
+                                                                'Route No'.Area = Areavalueid.Area
                                                             ).'Sequence No' + 1,
                                                             6
                                                         ),
@@ -9618,10 +9564,7 @@
                                                             Customers_1,
                                                             Account = OrderData.Account
                                                         ),
-                                                        'Route No': LookUp(
-                                                            Areas,
-                                                            Area = varUserArea.Area.Area
-                                                        ),
+                                                        'Route No': Areavalueid,
                                                         'Van No': LookUp(
                                                             Warehouses,
                                                             Warehouse = varUserVanNo.Van.Warehouse
@@ -9662,20 +9605,18 @@
                                             'Invoice Series',
                                             LookUp(
                                                 'Invoice Series',
-                                                'Route No'.Area = LookUp(
-                                                    Areas,
-                                                    Area = varUserArea.Area.Area
-                                                ).Area
+                                                'Route No'.Area = Areavalueid.Area
                                             ),
                                             {
                                                 'Sequence No': LookUp(
                                                     'Invoice Series',
-                                                    'Route No'.Area = LookUp(
-                                                        Areas,
-                                                        Area = varUserArea.Area.Area
-                                                    ).Area
+                                                    'Route No'.Area = Areavalueid.Area
                                                 ).'Sequence No' + 1
                                             }
+                                        );
+                                        Set(
+                                            CreateInvHeaderdata,
+                                            First(CreateInvHeader)
                                         );
                                         
                         //////////////Patch Invoice Line ///////////////////
@@ -9943,10 +9884,7 @@
                                                                 Customers_1,
                                                                 Account = OrderData.Account
                                                             ),
-                                                            'Route No': LookUp(
-                                                                Areas,
-                                                                Area = varUserArea.Area.Area
-                                                            ),
+                                                            'Route No': Areavalueid,
                                                             Salesperson: LookUp(
                                                                 Users,
                                                                 'Primary Email' = User().Email
@@ -11044,6 +10982,7 @@
         Height: =36
         Icon: =Icon.Reload
         OnSelect: =Refresh('Current Stocks');
+        TabIndex: =0
         Width: =38
         X: =496
         Y: =22
@@ -11099,6 +11038,7 @@
         PaddingLeft: =7
         PaddingRight: =7
         PaddingTop: =7
+        TabIndex: =0
         Visible: |-
             =
             If(!IsBlank(LookUp(

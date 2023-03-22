@@ -170,7 +170,7 @@
                                         =Sort(
                                             Filter(
                                                 'Order Headers',
-                                                IsToday('Order Date') && Salesperson.'Primary Email' = User().Email && 'Order Type' = 'Order Type (Choice)'.'Sales Order'
+                                                'Order Date' >= Today() && Salesperson.'Primary Email' = User().Email && 'Order Type' = 'Order Type (Choice)'.'Sales Order'
                                             ),
                                             'Created On',
                                             SortOrder.Descending
@@ -506,7 +506,7 @@
                                     Items: |-
                                         =Filter(
                                             'Order Lines',
-                                            'Order Number'.'Order Type' = 'Order Type (Choice)'.'Replacement Order' && IsToday('Order Number'.'Order Date') && Salesperson.'Primary Email' = User().Email
+                                            'Order Number'.'Order Type' = 'Order Type (Choice)'.'Replacement Order' && 'Order Number'.'Order Date' > Today() && Salesperson.'Primary Email' = User().Email
                                         )
                                     Layout: =Layout.Vertical
                                     LayoutMinHeight: =287
@@ -799,7 +799,7 @@
                                     Items: |-
                                         =Filter(
                                             Payments,
-                                            IsToday('Receipt Date'),
+                                            'Receipt Date' >= Today(),
                                             Salesperson.'Primary Email' = User().Email
                                         )
                                     Layout: =Layout.Vertical
@@ -1234,7 +1234,7 @@
                                     Items: |-
                                         =Filter(
                                             'Order Lines',
-                                            IsToday('Order Number'.'Order Date') && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order'
+                                            'Order Number'.'Order Date' >= Today() && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order'
                                         )
                                     Layout: =Layout.Vertical
                                     LayoutMinHeight: =287
@@ -1930,7 +1930,7 @@
                                     Items: |-
                                         =Filter(
                                             'Current Stocks',
-                                            IsToday('Created On') && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
+                                            'Created On' >= Today() && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
                                         )
                                     Layout: =Layout.Vertical
                                     LayoutMinHeight: =287
@@ -2068,17 +2068,19 @@
                                 Sum(
                                     Filter(
                                         'Current Stocks',
-                                        IsToday('Created On') && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
+                                        'Created On' >= Today() && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
                                     ),
                                     Cases
                                 ) > 0,
-                              Text(  Sum(
-                                    Filter(
-                                        'Current Stocks',
-                                        IsToday('Created On') && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
-                                    ),
-                                    Cases
-                                )),
+                                Text(
+                                    Sum(
+                                        Filter(
+                                            'Current Stocks',
+                                            'Created On' >= Today() && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
+                                        ),
+                                        Cases
+                                    )
+                                ),
                                 "-"
                             )
                         Width: =168
@@ -2140,17 +2142,19 @@
                                 Sum(
                                     Filter(
                                         'Current Stocks',
-                                        IsToday('Created On') && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
+                                        'Created On' >= Today() && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
                                     ),
                                     PCs
                                 ) > 0,
-                               Text( Sum(
-                                    Filter(
-                                        'Current Stocks',
-                                        IsToday('Created On') && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
-                                    ),
-                                    PCs
-                                )),
+                                Text(
+                                    Sum(
+                                        Filter(
+                                            'Current Stocks',
+                                            'Created On' >= Today() && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
+                                        ),
+                                        PCs
+                                    )
+                                ),
                                 "-"
                             )
                         Width: =168
@@ -2278,7 +2282,13 @@
                                         _VarGblAppColors.LightText
                                     FillPortions: =0
                                     Height: =Parent.Height
-                                    Items: =Filter('Order Lines', IsToday('Created On'), Salesperson.'Primary Email'=User().Email, 'Order Number'.'Order Type'='Order Type (Choice)'.'Empty jar Order')
+                                    Items: |-
+                                        =Filter(
+                                            'Order Lines',
+                                            'Created On' >= Today(),
+                                            Salesperson.'Primary Email' = User().Email,
+                                            'Order Number'.'Order Type' = 'Order Type (Choice)'.'Empty jar Order'
+                                        )
                                     Layout: =Layout.Vertical
                                     LayoutMinHeight: =413
                                     LayoutMinWidth: =1200

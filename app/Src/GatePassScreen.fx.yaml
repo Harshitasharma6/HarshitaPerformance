@@ -508,6 +508,7 @@ GatePassScreen As screen:
             PaddingLeft: =7
             PaddingRight: =7
             PaddingTop: =7
+            TabIndex: =0
             Width: =36
             X: =207
             Y: =974

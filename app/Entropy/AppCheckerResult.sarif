@@ -14,6 +14,86 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.OnStart"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.OnStart",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 25,
+                  "charOffset": 4318,
+                  "snippet": {
+                    "text": ".'Check-in Demand Header'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnStart",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.OnStart"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.OnStart",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 4157,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnStart",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "NewOrder.contNewOrderUpperVertical.contNewOrderUpper.contNewOrderLowerVertical.contNewOrderData.galNewOrderProduct.Items"
                 }
               ],
@@ -3574,6 +3654,486 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "GatePassScreen.OnVisible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "GatePassScreen.OnVisible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 13,
+                  "charOffset": 124,
+                  "snippet": {
+                    "text": "'To Location'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnVisible",
+                "module": "GatePassScreen",
+                "type": "GatePassScreen"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "To Location"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "GatePassScreen.OnVisible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "GatePassScreen.OnVisible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 22,
+                  "charOffset": 116,
+                  "snippet": {
+                    "text": "IsBlank('To Location')"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnVisible",
+                "module": "GatePassScreen",
+                "type": "GatePassScreen"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "GatePassScreen.OnVisible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "GatePassScreen.OnVisible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 139,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnVisible",
+                "module": "GatePassScreen",
+                "type": "GatePassScreen"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "GatePassScreen.OnVisible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "GatePassScreen.OnVisible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 299,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnVisible",
+                "module": "GatePassScreen",
+                "type": "GatePassScreen"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "GatePassScreen.OnVisible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "GatePassScreen.OnVisible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 401,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnVisible",
+                "module": "GatePassScreen",
+                "type": "GatePassScreen"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "GatePassScreen.Icon7_1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "GatePassScreen.Icon7_1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 13,
+                  "charOffset": 126,
+                  "snippet": {
+                    "text": "'To Location'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "GatePassScreen",
+                "type": "GatePassScreen.Icon7_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "To Location"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "GatePassScreen.Icon7_1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "GatePassScreen.Icon7_1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 22,
+                  "charOffset": 118,
+                  "snippet": {
+                    "text": "IsBlank('To Location')"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "GatePassScreen",
+                "type": "GatePassScreen.Icon7_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "GatePassScreen.Icon7_1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "GatePassScreen.Icon7_1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 141,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "GatePassScreen",
+                "type": "GatePassScreen.Icon7_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "GatePassScreen.Icon7_1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "GatePassScreen.Icon7_1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 301,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "GatePassScreen",
+                "type": "GatePassScreen.Icon7_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "GatePassScreen.Gallery7_3.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "GatePassScreen.Gallery7_3.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 21,
+                  "charOffset": 303,
+                  "snippet": {
+                    "text": "IsToday('Created On')"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "GatePassScreen",
+                "type": "GatePassScreen.Gallery7_3"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "GatePassScreen.Button12_2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "GatePassScreen.Button12_2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 10,
+                  "charOffset": 501,
+                  "snippet": {
+                    "text": ".Warehouse"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "GatePassScreen",
+                "type": "GatePassScreen.Button12_2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "GatePassScreen.Button12_2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "GatePassScreen.Button12_2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 392,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "GatePassScreen",
+                "type": "GatePassScreen.Button12_2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "GatePassScreen.Button12_3.OnSelect"
                 }
               ],
@@ -3584,7 +4144,7 @@
                 },
                 "region": {
                   "charLength": 10,
-                  "charOffset": 2770,
+                  "charOffset": 2852,
                   "snippet": {
                     "text": ".Warehouse"
                   }
@@ -3624,7 +4184,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2573,
+                  "charOffset": 2652,
                   "snippet": {
                     "text": "="
                   }
@@ -3664,7 +4224,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2551,
+                  "charOffset": 2630,
                   "snippet": {
                     "text": "&&"
                   }
@@ -3704,7 +4264,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2781,
+                  "charOffset": 2863,
                   "snippet": {
                     "text": "&&"
                   }
@@ -3744,7 +4304,7 @@
                 },
                 "region": {
                   "charLength": 10,
-                  "charOffset": 3926,
+                  "charOffset": 4029,
                   "snippet": {
                     "text": ".Warehouse"
                   }
@@ -3784,7 +4344,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3717,
+                  "charOffset": 3817,
                   "snippet": {
                     "text": "="
                   }
@@ -3824,7 +4384,7 @@
                 },
                 "region": {
                   "charLength": 10,
-                  "charOffset": 4445,
+                  "charOffset": 4560,
                   "snippet": {
                     "text": ".Warehouse"
                   }
@@ -3864,7 +4424,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4248,
+                  "charOffset": 4360,
                   "snippet": {
                     "text": "="
                   }
@@ -3904,7 +4464,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4226,
+                  "charOffset": 4338,
                   "snippet": {
                     "text": "&&"
                   }
@@ -3944,7 +4504,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4456,
+                  "charOffset": 4571,
                   "snippet": {
                     "text": "&&"
                   }
@@ -3984,7 +4544,7 @@
                 },
                 "region": {
                   "charLength": 10,
-                  "charOffset": 4905,
+                  "charOffset": 5024,
                   "snippet": {
                     "text": ".Warehouse"
                   }
@@ -4024,7 +4584,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4696,
+                  "charOffset": 4812,
                   "snippet": {
                     "text": "="
                   }
@@ -4064,7 +4624,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4674,
+                  "charOffset": 4790,
                   "snippet": {
                     "text": "&&"
                   }
@@ -4104,7 +4664,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4916,
+                  "charOffset": 5035,
                   "snippet": {
                     "text": "&&"
                   }
@@ -4144,7 +4704,7 @@
                 },
                 "region": {
                   "charLength": 10,
-                  "charOffset": 5371,
+                  "charOffset": 5493,
                   "snippet": {
                     "text": ".Warehouse"
                   }
@@ -4184,7 +4744,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 5162,
+                  "charOffset": 5281,
                   "snippet": {
                     "text": "="
                   }
@@ -4224,7 +4784,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5140,
+                  "charOffset": 5259,
                   "snippet": {
                     "text": "&&"
                   }
@@ -4264,7 +4824,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5382,
+                  "charOffset": 5504,
                   "snippet": {
                     "text": "&&"
                   }
@@ -4544,7 +5104,7 @@
                 },
                 "region": {
                   "charLength": 10,
-                  "charOffset": 4033,
+                  "charOffset": 4029,
                   "snippet": {
                     "text": ".Warehouse"
                   }
@@ -4584,7 +5144,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3821,
+                  "charOffset": 3817,
                   "snippet": {
                     "text": "="
                   }
@@ -4624,7 +5184,7 @@
                 },
                 "region": {
                   "charLength": 10,
-                  "charOffset": 4564,
+                  "charOffset": 4560,
                   "snippet": {
                     "text": ".Warehouse"
                   }
@@ -4664,7 +5224,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4364,
+                  "charOffset": 4360,
                   "snippet": {
                     "text": "="
                   }
@@ -4704,7 +5264,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4342,
+                  "charOffset": 4338,
                   "snippet": {
                     "text": "&&"
                   }
@@ -4744,7 +5304,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4575,
+                  "charOffset": 4571,
                   "snippet": {
                     "text": "&&"
                   }
@@ -4784,7 +5344,7 @@
                 },
                 "region": {
                   "charLength": 10,
-                  "charOffset": 5032,
+                  "charOffset": 5024,
                   "snippet": {
                     "text": ".Warehouse"
                   }
@@ -4824,7 +5384,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4820,
+                  "charOffset": 4812,
                   "snippet": {
                     "text": "="
                   }
@@ -4864,7 +5424,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4798,
+                  "charOffset": 4790,
                   "snippet": {
                     "text": "&&"
                   }
@@ -4904,7 +5464,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5043,
+                  "charOffset": 5035,
                   "snippet": {
                     "text": "&&"
                   }
@@ -4944,7 +5504,7 @@
                 },
                 "region": {
                   "charLength": 10,
-                  "charOffset": 5505,
+                  "charOffset": 5493,
                   "snippet": {
                     "text": ".Warehouse"
                   }
@@ -4984,7 +5544,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 5293,
+                  "charOffset": 5281,
                   "snippet": {
                     "text": "="
                   }
@@ -5024,7 +5584,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5271,
+                  "charOffset": 5259,
                   "snippet": {
                     "text": "&&"
                   }
@@ -5064,7 +5624,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5516,
+                  "charOffset": 5504,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22777,6 +23337,117 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "VisitExecution.Icon5_1.Visible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.Icon5_1.Visible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 49,
+                  "snippet": {
+                    "text": ";"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Visible",
+                "module": "VisitExecution",
+                "type": "VisitExecution.Icon5_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrOperatorExpected",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.Icon5_1.Visible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.Icon5_1.Visible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 49,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "Set(invheads,First(Invoicedata).'Invoice Header')"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Visible",
+                "module": "VisitExecution",
+                "type": "VisitExecution.Icon5_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrBehaviorPropertyExpected",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.Icon5_1.Visible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.Icon5_1.Visible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 49,
+                  "snippet": {
+                    "text": ";"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Visible",
+                "module": "VisitExecution",
+                "type": "VisitExecution.Icon5_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrOperatorExpected",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
                 }
               ],
@@ -26212,7 +26883,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrColumnMissing-ColName-ExpectedType",
-          "ruleIndex": 4
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -26252,7 +26923,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 5
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -28533,7 +29204,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrColumnMissing-ColName-ExpectedType",
-          "ruleIndex": 4
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -28573,7 +29244,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 5
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -33420,6 +34091,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "GatePassScreen.FormViewer1.File_DataCard1.DataCardValue4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "GatePassScreen.FormViewer1.File_DataCard1.DataCardValue4.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "GatePassScreen",
+                "type": "GatePassScreen.FormViewer1.File_DataCard1.DataCardValue4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "GatePassScreen.Icon5.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "GatePassScreen.Icon5.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "GatePassScreen",
+                "type": "GatePassScreen.Icon5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "GatePassScreen.Icon5.TabIndex"
                 }
               ],
@@ -33443,7 +34174,37 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 6
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'New Payment Screen'.canPayment.dataCardPayment.ImgPaymentPaytm.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'New Payment Screen'.canPayment.dataCardPayment.ImgPaymentPaytm.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "New Payment Screen",
+                "type": "'New Payment Screen'.canPayment.dataCardPayment.ImgPaymentPaytm"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -33473,7 +34234,247 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 6
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'New Payment Screen'.canPayment.dataCardPayment.DatePicker3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'New Payment Screen'.canPayment.dataCardPayment.DatePicker3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "New Payment Screen",
+                "type": "'New Payment Screen'.canPayment.dataCardPayment.DatePicker3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'New Payment Screen'.canPayment.dataCardPayment.ComboBox1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'New Payment Screen'.canPayment.dataCardPayment.ComboBox1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "New Payment Screen",
+                "type": "'New Payment Screen'.canPayment.dataCardPayment.ComboBox1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'New Retailer Screen'.canKYC.dataCardKYC.contKYCInfo.cmbDistrict.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'New Retailer Screen'.canKYC.dataCardKYC.contKYCInfo.cmbDistrict.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "New Retailer Screen",
+                "type": "'New Retailer Screen'.canKYC.dataCardKYC.contKYCInfo.cmbDistrict"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'New Retailer Screen'.canKYC.dataCardKYC.contKYCInfo.cmbCity.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'New Retailer Screen'.canKYC.dataCardKYC.contKYCInfo.cmbCity.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "New Retailer Screen",
+                "type": "'New Retailer Screen'.canKYC.dataCardKYC.contKYCInfo.cmbCity"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'New Retailer Screen'.canKYC.dataCardKYC.contKYCInfo.cmbTaluka.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'New Retailer Screen'.canKYC.dataCardKYC.contKYCInfo.cmbTaluka.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "New Retailer Screen",
+                "type": "'New Retailer Screen'.canKYC.dataCardKYC.contKYCInfo.cmbTaluka"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'New Retailer Screen'.canKYC.dataCardKYC.contKYCInfo.cmbArea.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'New Retailer Screen'.canKYC.dataCardKYC.contKYCInfo.cmbArea.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "New Retailer Screen",
+                "type": "'New Retailer Screen'.canKYC.dataCardKYC.contKYCInfo.cmbArea"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "NewDemandScreen.dteCheckInDemand.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "NewDemandScreen.dteCheckInDemand.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "NewDemandScreen",
+                "type": "NewDemandScreen.dteCheckInDemand"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "OrderInfo.Canvas1.DataCard1.OrderHeader.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "OrderInfo.Canvas1.DataCard1.OrderHeader.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "OrderInfo",
+                "type": "OrderInfo.Canvas1.DataCard1.OrderHeader"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -33503,7 +34504,37 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 6
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "OrderInfo.Canvas1.DataCard1.OrderLine.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "OrderInfo.Canvas1.DataCard1.OrderLine.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "OrderInfo",
+                "type": "OrderInfo.Canvas1.DataCard1.OrderLine"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -33533,7 +34564,37 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 6
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "PaymentQR.Gallery2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "PaymentQR.Gallery2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "PaymentQR",
+                "type": "PaymentQR.Gallery2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -33563,7 +34624,127 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 6
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Pending Payment Screen'.canPayment_1.dataCardPayment_1.contHomeOrdersUpperVertical_3.contHomeOrdersUpper_3.contHomeOrdersLowerVertical_3.contHomeOrdersData_3.galHomeOrdersData_3.TextInput1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Pending Payment Screen'.canPayment_1.dataCardPayment_1.contHomeOrdersUpperVertical_3.contHomeOrdersUpper_3.contHomeOrdersLowerVertical_3.contHomeOrdersData_3.galHomeOrdersData_3.TextInput1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Pending Payment Screen",
+                "type": "'Pending Payment Screen'.canPayment_1.dataCardPayment_1.contHomeOrdersUpperVertical_3.contHomeOrdersUpper_3.contHomeOrdersLowerVertical_3.contHomeOrdersData_3.galHomeOrdersData_3.TextInput1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Pending Payment Screen'.canPayment_1.dataCardPayment_1.contHomeOrdersUpperVertical_3.contHomeOrdersUpper_3.contHomeOrdersLowerVertical_3.contHomeOrdersData_3.galHomeOrdersData_3.TextInput1_2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Pending Payment Screen'.canPayment_1.dataCardPayment_1.contHomeOrdersUpperVertical_3.contHomeOrdersUpper_3.contHomeOrdersLowerVertical_3.contHomeOrdersData_3.galHomeOrdersData_3.TextInput1_2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Pending Payment Screen",
+                "type": "'Pending Payment Screen'.canPayment_1.dataCardPayment_1.contHomeOrdersUpperVertical_3.contHomeOrdersUpper_3.contHomeOrdersLowerVertical_3.contHomeOrdersData_3.galHomeOrdersData_3.TextInput1_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Pending Payment Screen'.canPayment_1.dataCardPayment_1.contHomeOrdersUpperVertical_3.contHomeOrdersUpper_3.contHomeOrdersLowerVertical_3.contHomeOrdersData_3.galHomeOrdersData_3.TextInput1_3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Pending Payment Screen'.canPayment_1.dataCardPayment_1.contHomeOrdersUpperVertical_3.contHomeOrdersUpper_3.contHomeOrdersLowerVertical_3.contHomeOrdersData_3.galHomeOrdersData_3.TextInput1_3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Pending Payment Screen",
+                "type": "'Pending Payment Screen'.canPayment_1.dataCardPayment_1.contHomeOrdersUpperVertical_3.contHomeOrdersUpper_3.contHomeOrdersLowerVertical_3.contHomeOrdersData_3.galHomeOrdersData_3.TextInput1_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Pending Payment Screen'.canPayment_1.dataCardPayment_1.Container5_2.ImgPaymentPaytm_3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Pending Payment Screen'.canPayment_1.dataCardPayment_1.Container5_2.ImgPaymentPaytm_3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Pending Payment Screen",
+                "type": "'Pending Payment Screen'.canPayment_1.dataCardPayment_1.Container5_2.ImgPaymentPaytm_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -33593,7 +34774,37 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 6
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SettlementScreen.Icon12.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SettlementScreen.Icon12.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "SettlementScreen",
+                "type": "SettlementScreen.Icon12"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -33623,7 +34834,37 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 6
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "StockInventoryScreen.Icon13.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "StockInventoryScreen.Icon13.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "StockInventoryScreen",
+                "type": "StockInventoryScreen.Icon13"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -33653,7 +34894,37 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 6
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.Icon5_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.Icon5_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "VisitExecution",
+                "type": "VisitExecution.Icon5_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -33683,7 +34954,37 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 6
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.Icon7_2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.Icon7_2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "VisitExecution",
+                "type": "VisitExecution.Icon7_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -33713,7 +35014,37 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 6
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.contHomeOrdersUpperVertical_1.contHomeOrdersUpper_1.contHomeOrdersLowerVertical_1.contHomeOrdersData_1.galHomeOrdersData_1.Icon9.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.contHomeOrdersUpperVertical_1.contHomeOrdersUpper_1.contHomeOrdersLowerVertical_1.contHomeOrdersData_1.galHomeOrdersData_1.Icon9.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.contHomeOrdersUpperVertical_1.contHomeOrdersUpper_1.contHomeOrdersLowerVertical_1.contHomeOrdersData_1.galHomeOrdersData_1.Icon9"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -33743,7 +35074,37 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 6
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container5.ImgPaymentPaytm_2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container5.ImgPaymentPaytm_2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container5.ImgPaymentPaytm_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -33773,26 +35134,26 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 6
+          "ruleIndex": 9
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "GatePassScreen.Icon7_1.AccessibleLabel"
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container5.DatePicker3_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "GatePassScreen.Icon7_1.AccessibleLabel",
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container5.DatePicker3_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "GatePassScreen",
-                "type": "GatePassScreen.Icon7_1"
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container5.DatePicker3_1"
               }
             }
           ],
@@ -33803,26 +35164,26 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 7
+          "ruleIndex": 8
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "GatePassScreen.Icon7_1.TabIndex"
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container5.ComboBox1_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "GatePassScreen.Icon7_1.TabIndex",
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container5.ComboBox1_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "TabIndex",
-                "module": "GatePassScreen",
-                "type": "GatePassScreen.Icon7_1"
+                "member": "AccessibleLabel",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container5.ComboBox1_1"
               }
             }
           ],
@@ -33832,8 +35193,8 @@
           "properties": {
             "level": "Medium"
           },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 6
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -33863,7 +35224,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 8
+          "ruleIndex": 10
         },
         {
           "locations": [
@@ -33893,7 +35254,37 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 8
+          "ruleIndex": 10
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.invheads"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.invheads",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "invheads",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 10
         },
         {
           "locations": [
@@ -33923,7 +35314,127 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 8
+          "ruleIndex": 10
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.Beat Image White"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.Beat Image White",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Beat Image White",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.Beat Plan Image White"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.Beat Plan Image White",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Beat Plan Image White",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.Screenshot 2023-02-20 at 6.26.57 PM"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.Screenshot 2023-02-20 at 6.26.57 PM",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Screenshot 2023-02-20 at 6.26.57 PM",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.WhatsApp Image 2023-02-14 at 4.02.05 PM"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.WhatsApp Image 2023-02-14 at 4.02.05 PM",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "WhatsApp Image 2023-02-14 at 4.02.05 PM",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -33953,7 +35464,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 9
+          "ruleIndex": 12
         },
         {
           "locations": [
@@ -33983,7 +35494,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 9
+          "ruleIndex": 12
         },
         {
           "locations": [
@@ -34013,7 +35524,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 9
+          "ruleIndex": 12
         },
         {
           "locations": [
@@ -34043,7 +35554,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 9
+          "ruleIndex": 12
         },
         {
           "locations": [
@@ -34073,7 +35584,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 9
+          "ruleIndex": 12
         },
         {
           "locations": [
@@ -34103,7 +35614,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 9
+          "ruleIndex": 12
         },
         {
           "locations": [
@@ -34133,7 +35644,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 9
+          "ruleIndex": 12
         },
         {
           "locations": [
@@ -34162,7 +35673,7 @@
             "level": "Medium"
           },
           "ruleId": "app-DataSourceDefaultMaxRowsLimit",
-          "ruleIndex": 10
+          "ruleIndex": 13
         },
         {
           "locations": [
@@ -34192,7 +35703,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 11
+          "ruleIndex": 14
         },
         {
           "locations": [
@@ -34222,7 +35733,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 11
+          "ruleIndex": 14
         },
         {
           "locations": [
@@ -34251,7 +35762,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 12
+          "ruleIndex": 15
         },
         {
           "locations": [
@@ -34281,7 +35792,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 11
+          "ruleIndex": 14
         },
         {
           "locations": [
@@ -34310,7 +35821,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 12
+          "ruleIndex": 15
         }
       ],
       "tool": {
@@ -34392,6 +35903,40 @@
               }
             },
             {
+              "id": "app-ErrOperatorExpected",
+              "messageStrings": {
+                "issue": {
+                  "text": "Expected operator. We expect an operator such as +, *, or & at this point in the formula."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Edit your formula so that it includes an operator between the operands."
+                ],
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrBehaviorPropertyExpected",
+              "messageStrings": {
+                "issue": {
+                  "text": "Behavior function in a non-behavior property. You can't use this property to change values elsewhere in the app."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Move the behavior function to a behavior-based property."
+                ],
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
               "id": "app-ErrColumnMissing-ColName-ExpectedType",
               "messageStrings": {
                 "issue": {
@@ -34423,23 +35968,6 @@
               }
             },
             {
-              "id": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-              "messageStrings": {
-                "issue": {
-                  "text": "Missing tab stop"
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "Set TabIndex to 0 or greater to ensure that interactive elements have a tab stop."
-                ],
-                "level": "Medium",
-                "primaryCategory": "accessibility",
-                "whyFix": "People who use the keyboard with your app will not be able to access this element without a tab stop."
-              }
-            },
-            {
               "id": "acc-AccessibleLabelNeeded",
               "messageStrings": {
                 "issue": {
@@ -34457,6 +35985,23 @@
               }
             },
             {
+              "id": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+              "messageStrings": {
+                "issue": {
+                  "text": "Missing tab stop"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Set TabIndex to 0 or greater to ensure that interactive elements have a tab stop."
+                ],
+                "level": "Medium",
+                "primaryCategory": "accessibility",
+                "whyFix": "People who use the keyboard with your app will not be able to access this element without a tab stop."
+              }
+            },
+            {
               "id": "app-UnusedVariables",
               "messageStrings": {
                 "issue": {
@@ -34471,6 +36016,23 @@
                 "level": "Medium",
                 "primaryCategory": "performance",
                 "whyFix": "This variable is declared but is not referenced by any control, so it is not needed."
+              }
+            },
+            {
+              "id": "app-UnusedMediaResources",
+              "messageStrings": {
+                "issue": {
+                  "text": "Unused media files"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Remove the unused media file in the Media pane."
+                ],
+                "level": "Medium",
+                "primaryCategory": "performance",
+                "whyFix": "This media file is not referenced by any control formulas so it is not needed. Removing it will improve performance."
               }
             },
             {
