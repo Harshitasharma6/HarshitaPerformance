@@ -412,7 +412,7 @@
                         'To Location'.Warehouse = LookUp(
                             'Stock Transfer Headers',
                             'Stock Transfer Header' = Itemm.'Transfer Order No'.'Stock Transfer Header'
-                        ).'From Location'.Warehouse && IsToday('Created On')
+                        ).'From Location'.Warehouse && 'Created On'>= Today()
                     )
                 )
             );

@@ -37,7 +37,8 @@
       "zx_locationvanmapping_SyncErrors": "Sync Errors",
       "zx_locationvanmappingid": "Location VAN Mapping",
       "zx_name": "Name",
-      "zx_Van": "Van"
+      "zx_Van": "Van",
+      "zx_vancalculated": "VANCalculated"
     },
     "PreferredName": "Location VAN Mappings",
     "Type": "NativeCDSDataSourceInfo"
