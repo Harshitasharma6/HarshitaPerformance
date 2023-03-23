@@ -5555,7 +5555,7 @@
                     OnSelect: |-
                         =/////////////////////////////////////////////////////////_______________ORDER PLACEMENT
                         Set(
-                            visitiddata,
+                            visiteddata,
                             First(VisitData).'Visit ID'
                         );
                         Set(
@@ -5573,7 +5573,7 @@
                                     IsBlank(
                                         LookUp(
                                             'Order Headers',
-                                            Vists.'Visit ID' = visitiddata
+                                            Vists.'Visit ID' = visiteddata
                                         )
                                     ),
                                     Patch(
@@ -5634,7 +5634,7 @@
                                             ),
                                             Vists: LookUp(
                                                 Visits,
-                                                'Visit ID' = visitiddata
+                                                'Visit ID' = visiteddata
                                             )
                                         }
                                     ),
@@ -5642,7 +5642,7 @@
                                         'Order Headers',
                                         LookUp(
                                             'Order Headers',
-                                            Vists.'Visit ID' = visitiddata
+                                            Vists.'Visit ID' = visiteddata
                                         ),
                                         {
                                             'Order Date': Today(),
@@ -5699,7 +5699,7 @@
                                             ),
                                             Vists: LookUp(
                                                 Visits,
-                                                'Visit ID' = visitiddata
+                                                'Visit ID' = visiteddata
                                             )
                                         }
                                     )
@@ -6536,7 +6536,7 @@
                                             IsBlank(
                                                 LookUp(
                                                     'Order Headers',
-                                                    Vists.'Visit ID' = visitiddata
+                                                    Vists.'Visit ID' = visiteddata
                                                 )
                                             ),
                                             Patch(
@@ -6585,7 +6585,7 @@
                                                     ),
                                                     Vists: LookUp(
                                                         Visits,
-                                                        'Visit ID' = visitiddata
+                                                        'Visit ID' = visiteddata
                                                     )
                                                 }
                                             ),
@@ -6593,7 +6593,7 @@
                                                 'Order Headers',
                                                 LookUp(
                                                     'Order Headers',
-                                                    Vists.'Visit ID' = visitiddata
+                                                    Vists.'Visit ID' = visiteddata
                                                 ),
                                                 {
                                                     'Order Date': Today(),
@@ -6641,7 +6641,7 @@
                                                     ),
                                                     Vists: LookUp(
                                                         Visits,
-                                                        'Visit ID' = visitiddata
+                                                        'Visit ID' = visiteddata
                                                     )
                                                 }
                                             )
@@ -7478,7 +7478,7 @@
                                             IsBlank(
                                                 LookUp(
                                                     'Order Headers',
-                                                    Vists.'Visit ID' = visitiddata
+                                                    Vists.'Visit ID' = visiteddata
                                                 )
                                             ),
                                             Patch(
@@ -7530,7 +7530,7 @@
                                                     ),
                                                     Vists: LookUp(
                                                         Visits,
-                                                        'Visit ID' = visitiddata
+                                                        'Visit ID' = visiteddata
                                                     )
                                                 }
                                             ),
@@ -7538,7 +7538,7 @@
                                                 'Order Headers',
                                                 LookUp(
                                                     'Order Headers',
-                                                    Vists.'Visit ID' = visitiddata
+                                                    Vists.'Visit ID' = visiteddata
                                                 ),
                                                 {
                                                     'Order Date': Today(),
@@ -7586,7 +7586,7 @@
                                                     ),
                                                     Vists: LookUp(
                                                         Visits,
-                                                        'Visit ID' = visitiddata
+                                                        'Visit ID' = visiteddata
                                                     )
                                                 }
                                             )
