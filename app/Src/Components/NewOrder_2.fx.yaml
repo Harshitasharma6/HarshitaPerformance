@@ -594,11 +594,12 @@ NewOrder_2 As CanvasComponent:
                                         'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
                                     ).'Item Code'.'Item Master'
                                 );
-                                Set(varDiscountDate,DateValue(
-                                                            LookUp(
-                                                                'Discount Lines',
-                                                                'Applicable for'.'Customer group' = varCustomerGroup.'Customer group' && 'Discount Date' >= Today() && Variant.'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
-                                                            ).'Discount Date'));
+                                Set(
+                                    varDiscountDate,
+                                     LookUp(
+                                        'Discount Lines',
+                                        'Applicable for'.'Customer group' = varCustomerGroup.'Customer group' && 'Discount Date' >= Today() && Variant.'SKU Master' = ThisItem.'Item SKU'.'SKU Master').'Discount Date'
+                                );
                                 If(
                                     Value(Self.Text) <= ThisItem.Cases,
                                     If(
@@ -622,10 +623,8 @@ NewOrder_2 As CanvasComponent:
                                                 OrderLinesSum: Sum(
                                                     Filter(
                                                         'Order Lines' As Item,
-                                                        (Item.'Customer no.'.Account = varOrderData.Account) && Item.'Item SKU'.'SKU Master' = ThisItem.'Item SKU'.'SKU Master' && Item.'Created On' >=  varDiscountDate /*LookUp(
-                                                            'Discount Lines',
-                                                            'Applicable for'.'Customer group' = varCustomerGroup.'Customer group' && 'Discount Date' >= Today() && Variant.'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
-                                                        ).'Discount Date'*/ && Item.'Created On' <= varDiscountDate /*DateValue(
+                                                        (Item.'Customer no.'.Account = varOrderData.Account) && Item.'Item SKU'.'SKU Master' = ThisItem.'Item SKU'.'SKU Master' && DateValue(Item.'Created On') >= DateValue(varDiscountDate) && DateValue(Item.'Created On') <= DateValue(varDiscountDate) 
+                                                        /*DateValue(
                                                             LookUp(
                                                                 'Discount Lines',
                                                                 'Applicable for'.'Customer group' = varCustomerGroup.'Customer group' && 'Discount Date' >= Today() && Variant.'SKU Master' = ThisItem.'Item SKU'.'SKU Master'

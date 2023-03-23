@@ -185,10 +185,10 @@
                     Title: "Payments",
                     id: 2
                 },
-                {
+                /*{
                     Title: "Return Requests",
                     id: 3
-                },
+                },*/
                 {
                     Title: "Return Preview",
                     id: 4
@@ -954,7 +954,9 @@
     ReturnRequests As fluidGrid.fluidGridWithBlankCard:
         BorderThickness: =0
         Height: =908
-        Visible: =varSelectedVisitActiveTab = 3
+        Visible: |-
+            =//varSelectedVisitActiveTab = 3
+            false
         Width: =Parent.Width
         Y: =147
         ZIndex: =5
