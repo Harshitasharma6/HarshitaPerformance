@@ -7865,7 +7865,7 @@
                 },
                 "region": {
                   "charLength": 10,
-                  "charOffset": 288,
+                  "charOffset": 282,
                   "snippet": {
                     "text": ".Warehouse"
                   }
@@ -7905,7 +7905,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 123,
+                  "charOffset": 117,
                   "snippet": {
                     "text": "="
                   }
@@ -7945,7 +7945,7 @@
                 },
                 "region": {
                   "charLength": 5,
-                  "charOffset": 310,
+                  "charOffset": 304,
                   "snippet": {
                     "text": ".Area"
                   }

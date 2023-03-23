@@ -174,7 +174,7 @@
                 OnSelect: |
                     =Set(orderId,RandBetween(0,9999));
                     ClearCollect(payments,Payment.Payment1({Orderid:orderId,Amount:"90"}));
-                    Set(amt,txtPaymentAmountValue);
+                    /*Set(amt,txtPaymentAmountValue);*/
                     Navigate(PaymentQR);
                 TabIndex: =0
                 Visible: =If(rdbModeOfPayment.Selected.Value ='Payment Type (choice)'.CASH, true, false)

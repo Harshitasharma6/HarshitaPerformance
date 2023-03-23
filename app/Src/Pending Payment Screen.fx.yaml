@@ -151,7 +151,7 @@
                     OnSelect: |
                         =Set(orderId,RandBetween(0,9999));
                         ClearCollect(payments,Payment.Payment1({Orderid:orderId,Amount:"90"}));
-                        Set(amt,txtPaymentAmountValue);
+                        /*Set(amt,txtPaymentAmountValue);*/
                         Navigate(PaymentQR);
                     TabIndex: =0
                     Visible: =If(paymentData.Customer.'Mode Of Payment' ='Payment Type (choice)'.CASH, true, false)
@@ -276,10 +276,10 @@
                                 {'Payment Status': 'Payment Status Choice'.Completed}
                             );
                             Refresh('Current Stocks');
-                            Set(
+                            /*Set(
                                 VarPaymentConfirm,
                                 true
-                            );
+                            );*/
                             Navigate(OrderScreen);
                         Size: =_VarGblAppFonts.Size.UpperMedium
                         Text: ="Confirm"
