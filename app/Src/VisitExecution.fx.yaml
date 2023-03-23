@@ -5355,13 +5355,7 @@
                                 Area = varUserArea.Area.Area
                             )
                         );
-                        ClearCollect(
-                            colCartData,
-                            Filter(
-                                colCartItems,
-                                schemeOrder = true
-                            )
-                        );
+                        
                         If(
                             OrderData.'Mode Of Payment' = 'Payment Type (choice)'.CASH || OrderData.'Mode Of Payment' = 'Payment Type (choice)'.COUPON || OrderData.'Mode Of Payment' = 'Payment Type (choice)'.KOTAK || OrderData.'Mode Of Payment' = 'Payment Type (choice)'.PAYTM,
                             ClearCollect(
@@ -5646,11 +5640,10 @@
                         ClearCollect(
                                     CreateItemsRecord,
                                     ForAll(
-                                        /*Filter(
+                                        Filter(
                                             colCartItems,
                                             schemeOrder = true
-                                        )*/ 
-                                        colCart As ThissItem,
+                                        ) As ThissItem,
                                         If(
                                             IsBlank(
                                                 LookUp(
