@@ -5508,7 +5508,7 @@
                                 ClearCollect(
                                     CreateItemsRecord,
                                     ForAll(
-                                        /*Filter(
+                                        Filter(
                                             colCartItems,
                                             schemeOrder = false
                                         ) As ThissItem,
