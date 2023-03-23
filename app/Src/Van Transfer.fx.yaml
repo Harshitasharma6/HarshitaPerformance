@@ -301,15 +301,10 @@
                     'User Area Mappings',
                     Area.Area = LookUp(
                         'Location VAN Mappings',
-                       /*Van.Warehouse*/
-                        VANCalculated = /*LookUp(
+                        Van.Warehouse = LookUp(
                             'Stock Transfer Headers',
                             'Stock Transfer Header' = ThisItem.'Transfer Order No'.'Stock Transfer Header'
-                        ).'From Location'.Warehouse*/
-                 LookUp(
-                            'Stock Transfer Headers',
-                            'Transfer Order No' = ThisItem.StockHeaderCalculated
-                        ).FromWarehouseCalculated
+                        ).'From Location'.Warehouse
                     ).Area.Area
                 ).Salesperson.'Full Name'
             Width: =171
@@ -403,6 +398,7 @@
                     )
                 )
             );
+            
             ForAll(
                 colModifiedTransferLines As Itemm,
                 Collect(
@@ -412,7 +408,7 @@
                         'To Location'.Warehouse = LookUp(
                             'Stock Transfer Headers',
                             'Stock Transfer Header' = Itemm.'Transfer Order No'.'Stock Transfer Header'
-                        ).'From Location'.Warehouse && 'Created On'>= Today()
+                        ).'From Location'.Warehouse && 'Created On' >= Today()
                     )
                 )
             );

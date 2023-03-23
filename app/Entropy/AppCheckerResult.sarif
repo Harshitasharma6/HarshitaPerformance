@@ -8025,7 +8025,7 @@
                 },
                 "region": {
                   "charLength": 10,
-                  "charOffset": 595,
+                  "charOffset": 577,
                   "snippet": {
                     "text": ".Warehouse"
                   }
@@ -8065,7 +8065,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 419,
+                  "charOffset": 404,
                   "snippet": {
                     "text": "="
                   }
@@ -8105,7 +8105,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 606,
+                  "charOffset": 588,
                   "snippet": {
                     "text": "&&"
                   }
@@ -8145,7 +8145,7 @@
                 },
                 "region": {
                   "charLength": 10,
-                  "charOffset": 4587,
+                  "charOffset": 4492,
                   "snippet": {
                     "text": ".Warehouse"
                   }
@@ -8185,7 +8185,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4411,
+                  "charOffset": 4319,
                   "snippet": {
                     "text": "="
                   }
@@ -8225,7 +8225,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4389,
+                  "charOffset": 4297,
                   "snippet": {
                     "text": "&&"
                   }
@@ -8265,7 +8265,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4598,
+                  "charOffset": 4503,
                   "snippet": {
                     "text": "&&"
                   }
@@ -8304,10 +8304,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 24,
-                  "charOffset": 794,
+                  "charLength": 10,
+                  "charOffset": 628,
                   "snippet": {
-                    "text": ".FromWarehouseCalculated"
+                    "text": ".Warehouse"
                   }
                 }
               },
@@ -8345,7 +8345,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 487,
+                  "charOffset": 461,
                   "snippet": {
                     "text": "="
                   }
@@ -8385,7 +8385,7 @@
                 },
                 "region": {
                   "charLength": 5,
-                  "charOffset": 830,
+                  "charOffset": 650,
                   "snippet": {
                     "text": ".Area"
                   }
