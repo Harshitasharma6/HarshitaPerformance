@@ -1071,11 +1071,20 @@ NewOrder As CanvasComponent:
                                     varLoading,
                                     true
                                 );
-                                Set(collorderheaderdata,LookUp(
-                                                            colOfflineVisitOrderHeader,
-                                                            Vists.'Visit ID' = First(VisitData).'Visit ID' && !IsBlank(Vists.'Visit ID')
-                                                        ));
-                                
+                                Set(
+                                    collorderheaderdata,
+                                    LookUp(
+                                        colOfflineVisitOrderHeader,
+                                        Vists.'Visit ID' = First(VisitData).'Visit ID' && !IsBlank(Vists.'Visit ID')
+                                    )
+                                );
+                                Set(
+                                    varHSN,
+                                    LookUp(
+                                        'SKU Masters',
+                                        'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                    ).'HSN Code'.'HSN Code'
+                                );
                                 If(
                                     Self.Text <> "" And Value(Self.Text) <> RoundDown(
                                         Value(Self.Text),
@@ -1320,10 +1329,10 @@ NewOrder As CanvasComponent:
                                                         ),
                                                         taxStructure: LookUp(
                                                             'HSN Masters' As ItemHsn,
-                                                            ItemHsn.'HSN Code' = LookUp(
+                                                            ItemHsn.'HSN Code' = varHSN /*LookUp(
                                                                 'SKU Masters',
                                                                 'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
-                                                            ).'HSN Code'.'HSN Code'
+                                                            ).'HSN Code'.'HSN Code'*/
                                                         )
                                                     },
                                                     Collect(
@@ -1607,8 +1616,8 @@ NewOrder As CanvasComponent:
                                                                 'Scheme Order'
                                                             ).SchemeOrder) && ('Offer Item Code'.'SKU Master' in AddColumns(
                                                                 Filter(
-                                                                    'Current Stocks',
-                                                                    'Created On' >=Today() && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
+                                                                    colOfflineCurrentStock /*'Current Stocks'*/,
+                                                                    'Created On' >= Today() && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
                                                                 ),
                                                                 "skuID",
                                                                 'Item SKU'.'SKU Master'
