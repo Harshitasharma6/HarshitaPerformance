@@ -7,14 +7,14 @@ NewOrder_2 As CanvasComponent:
     Y: =0
     ZIndex: =1
 
-    contNewOrderUpperVertical_1 As groupContainer.verticalAutoLayoutContainer:
+    contNewOrderUpperVertical_2 As groupContainer.verticalAutoLayoutContainer:
         Height: =525
         LayoutDirection: =LayoutDirection.Vertical
         LayoutMode: =LayoutMode.Auto
         Width: =App.Width
         ZIndex: =1
 
-        contNewOrderUpper_1 As groupContainer.manualLayoutContainer:
+        contNewOrderUpper_2 As groupContainer.manualLayoutContainer:
             AlignInContainer: =AlignInContainer.SetByContainer
             FillPortions: =0
             Height: =978
@@ -23,7 +23,7 @@ NewOrder_2 As CanvasComponent:
             Width: =Parent.Width
             ZIndex: =1
 
-            contNewOrderLowerVertical_1 As groupContainer.verticalAutoLayoutContainer:
+            contNewOrderLowerVertical_2 As groupContainer.verticalAutoLayoutContainer:
                 Height: =906
                 LayoutDirection: =LayoutDirection.Vertical
                 LayoutMode: =LayoutMode.Auto
@@ -32,7 +32,7 @@ NewOrder_2 As CanvasComponent:
                 Y: =6
                 ZIndex: =1
 
-                contNewOrderHeader_1 As groupContainer.manualLayoutContainer:
+                contNewOrderHeader_2 As groupContainer.manualLayoutContainer:
                     AlignInContainer: =AlignInContainer.SetByContainer
                     FillPortions: =0
                     Height: =60
@@ -41,7 +41,7 @@ NewOrder_2 As CanvasComponent:
                     Width: =App.Width
                     ZIndex: =1
 
-                    btnNewOrderHeaderProduct_16 As button:
+                    btnNewOrderHeaderProduct_18 As button:
                         DisabledBorderColor: |-
                             =//RGBA(166, 166, 166, 1)
                             _VarGblAppColors.BisleriBlue
@@ -60,7 +60,7 @@ NewOrder_2 As CanvasComponent:
                         X: =5
                         ZIndex: =1
 
-                    btnNewOrderHeaderCases_23 As button:
+                    btnNewOrderHeaderCases_35 As button:
                         DisabledBorderColor: |-
                             =//RGBA(166, 166, 166, 1)
                             _VarGblAppColors.BisleriBlue
@@ -76,10 +76,10 @@ NewOrder_2 As CanvasComponent:
                         Size: =_VarGblAppFonts.Size.Regular
                         Text: ="Stock (Cases)"
                         Width: =77
-                        X: =btnNewOrderHeaderProduct_16.X + btnNewOrderHeaderProduct_16.Width +5
+                        X: =btnNewOrderHeaderProduct_18.X + btnNewOrderHeaderProduct_18.Width +5
                         ZIndex: =2
 
-                    btnNewOrderHeaderPcs_19 As button:
+                    btnNewOrderHeaderPcs_42 As button:
                         DisabledBorderColor: |-
                             =//RGBA(166, 166, 166, 1)
                             _VarGblAppColors.BisleriBlue
@@ -95,10 +95,10 @@ NewOrder_2 As CanvasComponent:
                         Size: =_VarGblAppFonts.Size.Regular
                         Text: ="Stock (Pcs)"
                         Width: =77
-                        X: =btnNewOrderHeaderCases_23.X + btnNewOrderHeaderCases_23.Width +5
+                        X: =btnNewOrderHeaderCases_35.X + btnNewOrderHeaderCases_35.Width +5
                         ZIndex: =3
 
-                    btnNewOrderHeaderReceivedEmptyJar_2 As button:
+                    btnNewOrderHeaderReceivedEmptyJar_3 As button:
                         DisabledBorderColor: |-
                             =//RGBA(166, 166, 166, 1)
                             _VarGblAppColors.BisleriBlue
@@ -114,10 +114,10 @@ NewOrder_2 As CanvasComponent:
                         Size: =_VarGblAppFonts.Size.Subtitle
                         Text: ="Cases"
                         Width: =77
-                        X: =btnNewOrderHeaderPcs_19.X + btnNewOrderHeaderPcs_19.Width +5
+                        X: =btnNewOrderHeaderPcs_42.X + btnNewOrderHeaderPcs_42.Width +5
                         ZIndex: =4
 
-                    btnNewOrderHeaderCases_27 As button:
+                    btnNewOrderHeaderCases_36 As button:
                         DisabledBorderColor: |-
                             =//RGBA(166, 166, 166, 1)
                             _VarGblAppColors.BisleriBlue
@@ -133,10 +133,10 @@ NewOrder_2 As CanvasComponent:
                         Size: =_VarGblAppFonts.Size.Subtitle
                         Text: ="Pcs"
                         Width: =77
-                        X: =btnNewOrderHeaderReceivedEmptyJar_2.X + btnNewOrderHeaderReceivedEmptyJar_2.Width +5
+                        X: =btnNewOrderHeaderReceivedEmptyJar_3.X + btnNewOrderHeaderReceivedEmptyJar_3.Width +5
                         ZIndex: =5
 
-                    btnNewOrderHeaderPcs_40 As button:
+                    btnNewOrderHeaderPcs_43 As button:
                         DisabledBorderColor: |-
                             =//RGBA(166, 166, 166, 1)
                             _VarGblAppColors.BisleriBlue
@@ -152,20 +152,20 @@ NewOrder_2 As CanvasComponent:
                         Size: =_VarGblAppFonts.Size.Tiny
                         Text: ="Received Empty Jar"
                         Width: =77
-                        X: =btnNewOrderHeaderCases_27.X + btnNewOrderHeaderCases_27.Width +5
+                        X: =btnNewOrderHeaderCases_36.X + btnNewOrderHeaderCases_36.Width +5
                         ZIndex: =6
 
-                contNewOrderData_1 As groupContainer.horizontalAutoLayoutContainer:
+                contNewOrderData_2 As groupContainer.horizontalAutoLayoutContainer:
                     AlignInContainer: =AlignInContainer.SetByContainer
                     FillPortions: =0
                     Height: =461
                     LayoutMinHeight: =570
                     LayoutMinWidth: =640
                     LayoutMode: =LayoutMode.Auto
-                    Width: =contNewOrderHeader_1.Width
+                    Width: =contNewOrderHeader_2.Width
                     ZIndex: =3
 
-                    galNewOrderProduct_1 As gallery.galleryVertical:
+                    galNewOrderProduct_2 As gallery.galleryVertical:
                         AccessibleLabel: ="galNewOrderProduct"
                         AlignInContainer: =AlignInContainer.SetByContainer
                         Fill: |-
@@ -187,22 +187,22 @@ NewOrder_2 As CanvasComponent:
                         ShowScrollbar: =false
                         TabIndex: =0
                         TemplateSize: =80
-                        Width: =contNewOrderHeader_1.Width
+                        Width: =contNewOrderHeader_2.Width
                         ZIndex: =1
 
-                        btnNewOrderDataBackground_1 As button:
+                        btnNewOrderDataBackground_2 As button:
                             DisabledFill: |-
                                 =//RGBA(244, 244, 244, 1)
                                 ColorFade( _VarGblAppColors.BisleriBlue, 80%)
                             DisplayMode: =DisplayMode.Disabled
-                            Height: =galNewOrderProduct_1.TemplateHeight
+                            Height: =galNewOrderProduct_2.TemplateHeight
                             OnSelect: =Select(Parent)
                             Size: =24
                             Text: =""
                             Width: =Parent.Width-10
                             ZIndex: =1
 
-                        lblNewOrderProductCode_1 As label:
+                        lblNewOrderProductCode_2 As label:
                             Align: =Align.Center
                             Color: =_VarGblAppColors.BisleriBlue
                             FontWeight: =FontWeight.Semibold
@@ -232,7 +232,7 @@ NewOrder_2 As CanvasComponent:
                             Width: =220
                             ZIndex: =2
 
-                        txtNewOrderPcs_1 As text:
+                        txtNewOrderPcs_2 As text:
                             AccessibleLabel: ="txtNewOrderActualDel"
                             Align: =Align.Center
                             BorderColor: |-
@@ -552,7 +552,7 @@ NewOrder_2 As CanvasComponent:
                                         NotificationType.Error,
                                         2000
                                     );
-                                    Reset(txtNewOrderPcs_1);
+                                    Reset(txtNewOrderPcs_2);
                                     
                                 );
                             OnSelect: =Select(Parent)
@@ -562,7 +562,7 @@ NewOrder_2 As CanvasComponent:
                             Y: =20
                             ZIndex: =6
 
-                        txtNewOrderRecEmpty_1 As text:
+                        txtNewOrderRecEmpty_2 As text:
                             AccessibleLabel: ="txtNewOrderRecEmpty"
                             Align: =Align.Center
                             BorderColor: |-
@@ -877,7 +877,7 @@ NewOrder_2 As CanvasComponent:
                                         NotificationType.Error,
                                         2000
                                     );
-                                    Reset(txtNewOrderRecEmpty_1);
+                                    Reset(txtNewOrderRecEmpty_2);
                                     
                                 );
                             OnSelect: =Select(Parent)
@@ -887,37 +887,37 @@ NewOrder_2 As CanvasComponent:
                             Y: =20
                             ZIndex: =7
 
-                        shpNewOrderDataRectangle1_5 As rectangle:
+                        shpNewOrderDataRectangle1_6 As rectangle:
                             Fill: |-
                                 =//RGBA(56, 96, 178, 1)
                                 _VarGblAppColors.LightText
-                            Height: =galNewOrderProduct_1.TemplateHeight
+                            Height: =galNewOrderProduct_2.TemplateHeight
                             OnSelect: =Select(Parent)
                             Width: =2
                             X: =222
                             ZIndex: =10
 
-                        shpNewOrderDataRectangle2_1 As rectangle:
+                        shpNewOrderDataRectangle2_2 As rectangle:
                             Fill: |-
                                 =//RGBA(56, 96, 178, 1)
                                 _VarGblAppColors.LightText
-                            Height: =galNewOrderProduct_1.TemplateHeight
+                            Height: =galNewOrderProduct_2.TemplateHeight
                             OnSelect: =Select(Parent)
                             Width: =2
                             X: =303
                             ZIndex: =11
 
-                        shpNewOrderDataRectangle3_3 As rectangle:
+                        shpNewOrderDataRectangle3_6 As rectangle:
                             Fill: |-
                                 =//RGBA(56, 96, 178, 1)
                                 _VarGblAppColors.LightText
-                            Height: =galNewOrderProduct_1.TemplateHeight
+                            Height: =galNewOrderProduct_2.TemplateHeight
                             OnSelect: =Select(Parent)
                             Width: =2
                             X: =385
                             ZIndex: =12
 
-                        txtNewOrderCasesValue_1 As text:
+                        txtNewOrderCasesValue_2 As text:
                             AccessibleLabel: ="txtNewOrderActualDel"
                             Align: =Align.Center
                             BorderColor: |-
@@ -997,7 +997,7 @@ NewOrder_2 As CanvasComponent:
                             Y: =20
                             ZIndex: =13
 
-                        lblNewOrderProductDescription_1 As label:
+                        lblNewOrderProductDescription_2 As label:
                             Align: =Align.Center
                             FontWeight: =FontWeight.Semibold
                             Height: =50
@@ -1008,27 +1008,27 @@ NewOrder_2 As CanvasComponent:
                             Y: =30
                             ZIndex: =14
 
-                        shpNewOrderDataRectangle3_4 As rectangle:
+                        shpNewOrderDataRectangle3_7 As rectangle:
                             Fill: |-
                                 =//RGBA(56, 96, 178, 1)
                                 _VarGblAppColors.LightText
-                            Height: =galNewOrderProduct_1.TemplateHeight
+                            Height: =galNewOrderProduct_2.TemplateHeight
                             OnSelect: =Select(Parent)
                             Width: =2
                             X: =468
                             ZIndex: =15
 
-                        shpNewOrderDataRectangle3_5 As rectangle:
+                        shpNewOrderDataRectangle3_8 As rectangle:
                             Fill: |-
                                 =//RGBA(56, 96, 178, 1)
                                 _VarGblAppColors.LightText
-                            Height: =galNewOrderProduct_1.TemplateHeight
+                            Height: =galNewOrderProduct_2.TemplateHeight
                             OnSelect: =Select(Parent)
                             Width: =2
                             X: =550
                             ZIndex: =16
 
-                        Label1_2 As label:
+                        Label1_4 As label:
                             Align: =Align.Center
                             Height: =55
                             OnSelect: =Select(Parent)
@@ -1039,7 +1039,7 @@ NewOrder_2 As CanvasComponent:
                             Y: =12
                             ZIndex: =17
 
-                        Label1_3 As label:
+                        Label1_5 As label:
                             Align: =Align.Center
                             Height: =55
                             OnSelect: =Select(Parent)
@@ -1050,7 +1050,7 @@ NewOrder_2 As CanvasComponent:
                             Y: =12
                             ZIndex: =18
 
-    btnNewOrderBackground_1 As button:
+    btnNewOrderBackground_2 As button:
         DisabledFill: |-
             =//RGBA(244, 244, 244, 1)
             _VarGblAppColors.LightText
@@ -1067,7 +1067,7 @@ NewOrder_2 As CanvasComponent:
         Y: =521
         ZIndex: =2
 
-    lblNewOrderDate_1 As label:
+    lblNewOrderDate_2 As label:
         FontWeight: =FontWeight.Semibold
         Height: =30
         Size: =_VarGblAppFonts.Size.Medium
@@ -1078,7 +1078,7 @@ NewOrder_2 As CanvasComponent:
         Y: =560
         ZIndex: =3
 
-    lblNewOrderQty_1 As label:
+    lblNewOrderQty_3 As label:
         FontWeight: =FontWeight.Semibold
         Height: =30
         Size: =_VarGblAppFonts.Size.Medium
@@ -1089,7 +1089,7 @@ NewOrder_2 As CanvasComponent:
         Y: =598
         ZIndex: =4
 
-    lblNewOrderOrder_1 As label:
+    lblNewOrderOrder_2 As label:
         FontWeight: =FontWeight.Semibold
         Height: =30
         Size: =_VarGblAppFonts.Size.Medium
@@ -1100,7 +1100,7 @@ NewOrder_2 As CanvasComponent:
         Y: =636
         ZIndex: =5
 
-    lblNewOrderEmptyJar_1 As label:
+    lblNewOrderEmptyJar_2 As label:
         FontWeight: =FontWeight.Semibold
         Height: =30
         Size: =_VarGblAppFonts.Size.Medium
@@ -1111,7 +1111,7 @@ NewOrder_2 As CanvasComponent:
         Y: =674
         ZIndex: =6
 
-    lblNewOrderDiscount_1 As label:
+    lblNewOrderDiscount_2 As label:
         FontWeight: =FontWeight.Semibold
         Height: =30
         Size: =_VarGblAppFonts.Size.Medium
@@ -1122,7 +1122,7 @@ NewOrder_2 As CanvasComponent:
         Y: =712
         ZIndex: =7
 
-    lblNewOrderDateValue_1 As label:
+    lblNewOrderDateValue_2 As label:
         Color: |-
             =//RGBA(0, 0, 0, 1)
             _VarGblAppColors.PrimaryRed
@@ -1134,7 +1134,7 @@ NewOrder_2 As CanvasComponent:
         Y: =560
         ZIndex: =8
 
-    lblNewOrderQtyValue_1 As label:
+    lblNewOrderQtyValue_3 As label:
         Color: |-
             =//RGBA(0, 0, 0, 1)
             _VarGblAppColors.PrimaryRed
@@ -1146,7 +1146,7 @@ NewOrder_2 As CanvasComponent:
         Y: =598
         ZIndex: =9
 
-    lblNewOrderOrderValue_1 As label:
+    lblNewOrderOrderValue_2 As label:
         Color: |-
             =//RGBA(0, 0, 0, 1)
             _VarGblAppColors.PrimaryRed
@@ -1169,7 +1169,7 @@ NewOrder_2 As CanvasComponent:
         Y: =636
         ZIndex: =10
 
-    lblNewOrderEmptyJarValue_1 As label:
+    lblNewOrderEmptyJarValue_2 As label:
         Color: |-
             =//RGBA(0, 0, 0, 1)
             _VarGblAppColors.PrimaryRed
@@ -1192,7 +1192,7 @@ NewOrder_2 As CanvasComponent:
         Y: =674
         ZIndex: =11
 
-    lblNewOrderDiscountValue_1 As label:
+    lblNewOrderDiscountValue_2 As label:
         Color: |-
             =//RGBA(0, 0, 0, 1)
             _VarGblAppColors.PrimaryRed
@@ -1215,7 +1215,7 @@ NewOrder_2 As CanvasComponent:
         Y: =712
         ZIndex: =12
 
-    lblNewOrderTotalOrder_1 As label:
+    lblNewOrderTotalOrder_2 As label:
         FontWeight: =FontWeight.Semibold
         Height: =30
         Size: =_VarGblAppFonts.Size.Medium
@@ -1226,7 +1226,7 @@ NewOrder_2 As CanvasComponent:
         Y: =750
         ZIndex: =13
 
-    lblNewOrderTotalOrderValue_1 As label:
+    lblNewOrderTotalOrderValue_2 As label:
         Color: |-
             =//RGBA(0, 0, 0, 1)
             _VarGblAppColors.PrimaryRed
@@ -1252,7 +1252,7 @@ NewOrder_2 As CanvasComponent:
         Y: =750
         ZIndex: =14
 
-    Button1_1 As button:
+    Button1_2 As button:
         Fill: =_VarGblAppColors.BisleriBlue
         HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
         Size: =_VarGblAppFonts.Size.UpperMedium

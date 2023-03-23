@@ -1,6 +1,6 @@
 {
   "ControlStates": {
-    "btnNewOrderBackground_1": {
+    "btnNewOrderBackground_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -97,7 +97,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "btnNewOrderBackground_1",
+      "Name": "btnNewOrderBackground_2",
       "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -280,7 +280,7 @@
       "StyleName": "defaultButtonStyle",
       "Type": "ControlInfo"
     },
-    "btnNewOrderDataBackground_1": {
+    "btnNewOrderDataBackground_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "OnSelect",
@@ -364,7 +364,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "btnNewOrderDataBackground_1",
+      "Name": "btnNewOrderDataBackground_2",
       "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -552,7 +552,7 @@
       "StyleName": "defaultButtonStyle",
       "Type": "ControlInfo"
     },
-    "btnNewOrderHeaderCases_23": {
+    "btnNewOrderHeaderCases_35": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -671,7 +671,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "btnNewOrderHeaderCases_23",
+      "Name": "btnNewOrderHeaderCases_35",
       "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -859,7 +859,7 @@
       "StyleName": "defaultButtonStyle",
       "Type": "ControlInfo"
     },
-    "btnNewOrderHeaderCases_27": {
+    "btnNewOrderHeaderCases_36": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -985,7 +985,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "btnNewOrderHeaderCases_27",
+      "Name": "btnNewOrderHeaderCases_36",
       "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -1173,7 +1173,7 @@
       "StyleName": "defaultButtonStyle",
       "Type": "ControlInfo"
     },
-    "btnNewOrderHeaderPcs_19": {
+    "btnNewOrderHeaderPcs_42": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -1292,7 +1292,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "btnNewOrderHeaderPcs_19",
+      "Name": "btnNewOrderHeaderPcs_42",
       "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -1480,7 +1480,7 @@
       "StyleName": "defaultButtonStyle",
       "Type": "ControlInfo"
     },
-    "btnNewOrderHeaderPcs_40": {
+    "btnNewOrderHeaderPcs_43": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -1606,7 +1606,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "btnNewOrderHeaderPcs_40",
+      "Name": "btnNewOrderHeaderPcs_43",
       "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -1794,7 +1794,7 @@
       "StyleName": "defaultButtonStyle",
       "Type": "ControlInfo"
     },
-    "btnNewOrderHeaderProduct_16": {
+    "btnNewOrderHeaderProduct_18": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -1913,7 +1913,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "btnNewOrderHeaderProduct_16",
+      "Name": "btnNewOrderHeaderProduct_18",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -2101,7 +2101,7 @@
       "StyleName": "defaultButtonStyle",
       "Type": "ControlInfo"
     },
-    "btnNewOrderHeaderReceivedEmptyJar_2": {
+    "btnNewOrderHeaderReceivedEmptyJar_3": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -2227,7 +2227,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "btnNewOrderHeaderReceivedEmptyJar_2",
+      "Name": "btnNewOrderHeaderReceivedEmptyJar_3",
       "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -2415,7 +2415,7 @@
       "StyleName": "defaultButtonStyle",
       "Type": "ControlInfo"
     },
-    "Button1_1": {
+    "Button1_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -2506,7 +2506,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "Button1_1",
+      "Name": "Button1_2",
       "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -2694,7 +2694,7 @@
       "StyleName": "defaultButtonStyle",
       "Type": "ControlInfo"
     },
-    "contNewOrderData_1": {
+    "contNewOrderData_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "BorderColor",
@@ -2823,7 +2823,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "contNewOrderData_1",
+      "Name": "contNewOrderData_2",
       "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -2941,7 +2941,7 @@
       "StyleName": "",
       "Type": "ControlInfo"
     },
-    "contNewOrderHeader_1": {
+    "contNewOrderHeader_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "BorderColor",
@@ -3041,7 +3041,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "contNewOrderHeader_1",
+      "Name": "contNewOrderHeader_2",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -3154,7 +3154,7 @@
       "StyleName": "",
       "Type": "ControlInfo"
     },
-    "contNewOrderLowerVertical_1": {
+    "contNewOrderLowerVertical_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "BorderColor",
@@ -3224,7 +3224,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "contNewOrderLowerVertical_1",
+      "Name": "contNewOrderLowerVertical_2",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -3342,7 +3342,7 @@
       "StyleName": "",
       "Type": "ControlInfo"
     },
-    "contNewOrderUpper_1": {
+    "contNewOrderUpper_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "BorderColor",
@@ -3442,7 +3442,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "contNewOrderUpper_1",
+      "Name": "contNewOrderUpper_2",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -3555,7 +3555,7 @@
       "StyleName": "",
       "Type": "ControlInfo"
     },
-    "contNewOrderUpperVertical_1": {
+    "contNewOrderUpperVertical_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "BorderColor",
@@ -3632,7 +3632,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "contNewOrderUpperVertical_1",
+      "Name": "contNewOrderUpperVertical_2",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -3750,7 +3750,7 @@
       "StyleName": "",
       "Type": "ControlInfo"
     },
-    "galleryTemplate7_2": {
+    "galleryTemplate7_25": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "TemplateFill"
@@ -3764,7 +3764,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "galleryTemplate7_2",
+      "Name": "galleryTemplate7_25",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -3777,7 +3777,7 @@
       "StyleName": "",
       "Type": "ControlInfo"
     },
-    "galNewOrderProduct_1": {
+    "galNewOrderProduct_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -3924,7 +3924,7 @@
           "PropertyName": "LayoutMinHeight"
         }
       ],
-      "GalleryTemplateChildName": "galleryTemplate7_2",
+      "GalleryTemplateChildName": "galleryTemplate7_25",
       "HasDynamicProperties": true,
       "IsAutoGenerated": false,
       "IsComponentDefinition": false,
@@ -3934,7 +3934,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "galNewOrderProduct_1",
+      "Name": "galNewOrderProduct_2",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -4082,7 +4082,7 @@
       "StyleName": "defaultGalleryStyle",
       "Type": "ControlInfo"
     },
-    "Label1_2": {
+    "Label1_4": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Live",
@@ -4163,7 +4163,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "Label1_2",
+      "Name": "Label1_4",
       "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -4371,7 +4371,7 @@
       "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
-    "Label1_3": {
+    "Label1_5": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Live",
@@ -4452,7 +4452,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "Label1_3",
+      "Name": "Label1_5",
       "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -4660,7 +4660,7 @@
       "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
-    "lblNewOrderDate_1": {
+    "lblNewOrderDate_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Live",
@@ -4747,7 +4747,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "lblNewOrderDate_1",
+      "Name": "lblNewOrderDate_2",
       "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -4950,7 +4950,7 @@
       "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
-    "lblNewOrderDateValue_1": {
+    "lblNewOrderDateValue_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Live",
@@ -5044,7 +5044,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "lblNewOrderDateValue_1",
+      "Name": "lblNewOrderDateValue_2",
       "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -5247,7 +5247,7 @@
       "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
-    "lblNewOrderDiscount_1": {
+    "lblNewOrderDiscount_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Live",
@@ -5334,7 +5334,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "lblNewOrderDiscount_1",
+      "Name": "lblNewOrderDiscount_2",
       "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -5537,7 +5537,7 @@
       "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
-    "lblNewOrderDiscountValue_1": {
+    "lblNewOrderDiscountValue_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Live",
@@ -5631,7 +5631,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "lblNewOrderDiscountValue_1",
+      "Name": "lblNewOrderDiscountValue_2",
       "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -5834,7 +5834,7 @@
       "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
-    "lblNewOrderEmptyJar_1": {
+    "lblNewOrderEmptyJar_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Live",
@@ -5921,7 +5921,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "lblNewOrderEmptyJar_1",
+      "Name": "lblNewOrderEmptyJar_2",
       "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -6124,7 +6124,7 @@
       "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
-    "lblNewOrderEmptyJarValue_1": {
+    "lblNewOrderEmptyJarValue_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Live",
@@ -6218,7 +6218,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "lblNewOrderEmptyJarValue_1",
+      "Name": "lblNewOrderEmptyJarValue_2",
       "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -6421,7 +6421,7 @@
       "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
-    "lblNewOrderOrder_1": {
+    "lblNewOrderOrder_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Live",
@@ -6508,7 +6508,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "lblNewOrderOrder_1",
+      "Name": "lblNewOrderOrder_2",
       "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -6711,7 +6711,7 @@
       "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
-    "lblNewOrderOrderValue_1": {
+    "lblNewOrderOrderValue_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Live",
@@ -6805,7 +6805,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "lblNewOrderOrderValue_1",
+      "Name": "lblNewOrderOrderValue_2",
       "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -7008,7 +7008,7 @@
       "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
-    "lblNewOrderProductCode_1": {
+    "lblNewOrderProductCode_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Live",
@@ -7117,7 +7117,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "lblNewOrderProductCode_1",
+      "Name": "lblNewOrderProductCode_2",
       "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -7325,7 +7325,7 @@
       "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
-    "lblNewOrderProductDescription_1": {
+    "lblNewOrderProductDescription_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Live",
@@ -7427,7 +7427,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "lblNewOrderProductDescription_1",
+      "Name": "lblNewOrderProductDescription_2",
       "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -7635,7 +7635,7 @@
       "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
-    "lblNewOrderQty_1": {
+    "lblNewOrderQty_3": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Live",
@@ -7722,7 +7722,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "lblNewOrderQty_1",
+      "Name": "lblNewOrderQty_3",
       "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -7925,7 +7925,7 @@
       "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
-    "lblNewOrderQtyValue_1": {
+    "lblNewOrderQtyValue_3": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Live",
@@ -8019,7 +8019,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "lblNewOrderQtyValue_1",
+      "Name": "lblNewOrderQtyValue_3",
       "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -8222,7 +8222,7 @@
       "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
-    "lblNewOrderTotalOrder_1": {
+    "lblNewOrderTotalOrder_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Live",
@@ -8309,7 +8309,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "lblNewOrderTotalOrder_1",
+      "Name": "lblNewOrderTotalOrder_2",
       "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -8512,7 +8512,7 @@
       "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
-    "lblNewOrderTotalOrderValue_1": {
+    "lblNewOrderTotalOrderValue_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Live",
@@ -8606,7 +8606,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "lblNewOrderTotalOrderValue_1",
+      "Name": "lblNewOrderTotalOrderValue_2",
       "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -8860,18 +8860,13 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "ZIndex",
-          "RuleProviderType": "Unknown"
+          "PropertyName": "Fill",
+          "RuleProviderType": "System"
         },
         {
           "Category": "Design",
-          "PropertyName": "Y",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "X",
-          "RuleProviderType": "Unknown"
+          "PropertyName": "Height",
+          "RuleProviderType": "System"
         },
         {
           "Category": "Design",
@@ -8880,19 +8875,24 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "Height",
-          "RuleProviderType": "Unknown"
+          "PropertyName": "X",
+          "RuleProviderType": "System"
         },
         {
           "Category": "Design",
-          "PropertyName": "Fill",
+          "PropertyName": "Y",
+          "RuleProviderType": "System"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "ZIndex",
           "RuleProviderType": "System"
         }
       ],
       "StyleName": "",
       "Type": "ControlInfo"
     },
-    "shpNewOrderDataRectangle1_5": {
+    "shpNewOrderDataRectangle1_6": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -8956,7 +8956,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "shpNewOrderDataRectangle1_5",
+      "Name": "shpNewOrderDataRectangle1_6",
       "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -9044,7 +9044,7 @@
       "StyleName": "defaultRectangleStyle",
       "Type": "ControlInfo"
     },
-    "shpNewOrderDataRectangle2_1": {
+    "shpNewOrderDataRectangle2_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -9108,7 +9108,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "shpNewOrderDataRectangle2_1",
+      "Name": "shpNewOrderDataRectangle2_2",
       "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -9196,7 +9196,7 @@
       "StyleName": "defaultRectangleStyle",
       "Type": "ControlInfo"
     },
-    "shpNewOrderDataRectangle3_3": {
+    "shpNewOrderDataRectangle3_6": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -9260,7 +9260,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "shpNewOrderDataRectangle3_3",
+      "Name": "shpNewOrderDataRectangle3_6",
       "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -9348,7 +9348,7 @@
       "StyleName": "defaultRectangleStyle",
       "Type": "ControlInfo"
     },
-    "shpNewOrderDataRectangle3_4": {
+    "shpNewOrderDataRectangle3_7": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -9412,7 +9412,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "shpNewOrderDataRectangle3_4",
+      "Name": "shpNewOrderDataRectangle3_7",
       "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -9500,7 +9500,7 @@
       "StyleName": "defaultRectangleStyle",
       "Type": "ControlInfo"
     },
-    "shpNewOrderDataRectangle3_5": {
+    "shpNewOrderDataRectangle3_8": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -9564,7 +9564,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "shpNewOrderDataRectangle3_5",
+      "Name": "shpNewOrderDataRectangle3_8",
       "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -9652,7 +9652,7 @@
       "StyleName": "defaultRectangleStyle",
       "Type": "ControlInfo"
     },
-    "txtNewOrderCasesValue_1": {
+    "txtNewOrderCasesValue_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -9811,7 +9811,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "txtNewOrderCasesValue_1",
+      "Name": "txtNewOrderCasesValue_2",
       "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -10024,7 +10024,7 @@
       "StyleName": "defaultTextStyle",
       "Type": "ControlInfo"
     },
-    "txtNewOrderPcs_1": {
+    "txtNewOrderPcs_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -10161,7 +10161,7 @@
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "If(\r\n    Value(Self.Text) <= ThisItem.PCs,\r\n    If(\r\n        !IsBlank(\r\n            LookUp(\r\n                colCartItems,\r\n                productId = ThisItem.'Item SKU'.'SKU Master'\r\n            )\r\n        ),\r\n        Patch(\r\n            colCartItems,\r\n            LookUp(\r\n                colCartItems,\r\n                productId = ThisItem.'Item SKU'.'SKU Master'\r\n            ),\r\n            {qtyPcs: Value(Self.Text)}\r\n        );\r\n        ,\r\n        Collect(\r\n            colCartItems,\r\n            {\r\n                productId: ThisItem.'Item SKU'.'SKU Master',\r\n                qtyCases: 0,\r\n                qtyPcs: Value(Self.Text)\r\n            }\r\n        );\r\n    );\r\n    ,\r\n    Notify(\r\n        \"You are entering an invalid quantity. Please enter a quantity which is available in the stock\",\r\n        NotificationType.Error,\r\n        2000\r\n    );\r\n    Reset(txtNewOrderPcs_1);\r\n)",
+          "AutoRuleBindingString": "If(\r\n    Value(Self.Text) <= ThisItem.PCs,\r\n    If(\r\n        !IsBlank(\r\n            LookUp(\r\n                colCartItems,\r\n                productId = ThisItem.'Item SKU'.'SKU Master'\r\n            )\r\n        ),\r\n        Patch(\r\n            colCartItems,\r\n            LookUp(\r\n                colCartItems,\r\n                productId = ThisItem.'Item SKU'.'SKU Master'\r\n            ),\r\n            {qtyPcs: Value(Self.Text)}\r\n        );\r\n        ,\r\n        Collect(\r\n            colCartItems,\r\n            {\r\n                productId: ThisItem.'Item SKU'.'SKU Master',\r\n                qtyCases: 0,\r\n                qtyPcs: Value(Self.Text)\r\n            }\r\n        );\r\n    );\r\n    ,\r\n    Notify(\r\n        \"You are entering an invalid quantity. Please enter a quantity which is available in the stock\",\r\n        NotificationType.Error,\r\n        2000\r\n    );\r\n    Reset(txtNewOrderPcs_2);\r\n)",
           "InvariantPropertyName": "OnChange",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
@@ -10176,7 +10176,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "txtNewOrderPcs_1",
+      "Name": "txtNewOrderPcs_2",
       "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -10389,7 +10389,7 @@
       "StyleName": "defaultTextStyle",
       "Type": "ControlInfo"
     },
-    "txtNewOrderRecEmpty_1": {
+    "txtNewOrderRecEmpty_2": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -10526,7 +10526,7 @@
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "If(\r\n    Value(Self.Text) <= ThisItem.Cases,\r\n    If(\r\n        !IsBlank(\r\n            LookUp(\r\n                colCartItems,\r\n                productId = ThisItem.'Item SKU'.'SKU Master'\r\n            )\r\n        ),\r\n        Patch(\r\n            colCartItems,\r\n            LookUp(\r\n                colCartItems,\r\n                productId = ThisItem.'Item SKU'.'SKU Master'\r\n            ),\r\n            {qtyCases: Value(Self.Text)}\r\n        );\r\n        ,\r\n        Collect(\r\n            colCartItems,\r\n            {\r\n                productId: ThisItem.'Item SKU'.'SKU Master',\r\n                qtyCases: Value(Self.Text),\r\n                qtyPcs: 0\r\n            }\r\n        );\r\n    );\r\n    ,\r\n    Notify(\r\n        \"You are entering an invalid quantity. Please enter a quantity which is available in the stock\",\r\n        NotificationType.Error,\r\n        2000\r\n    );\r\n    Reset(txtNewOrderRecEmpty_1);\r\n)",
+          "AutoRuleBindingString": "If(\r\n    Value(Self.Text) <= ThisItem.Cases,\r\n    If(\r\n        !IsBlank(\r\n            LookUp(\r\n                colCartItems,\r\n                productId = ThisItem.'Item SKU'.'SKU Master'\r\n            )\r\n        ),\r\n        Patch(\r\n            colCartItems,\r\n            LookUp(\r\n                colCartItems,\r\n                productId = ThisItem.'Item SKU'.'SKU Master'\r\n            ),\r\n            {qtyCases: Value(Self.Text)}\r\n        );\r\n        ,\r\n        Collect(\r\n            colCartItems,\r\n            {\r\n                productId: ThisItem.'Item SKU'.'SKU Master',\r\n                qtyCases: Value(Self.Text),\r\n                qtyPcs: 0\r\n            }\r\n        );\r\n    );\r\n    ,\r\n    Notify(\r\n        \"You are entering an invalid quantity. Please enter a quantity which is available in the stock\",\r\n        NotificationType.Error,\r\n        2000\r\n    );\r\n    Reset(txtNewOrderRecEmpty_2);\r\n)",
           "InvariantPropertyName": "OnChange",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
@@ -10541,7 +10541,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "txtNewOrderRecEmpty_1",
+      "Name": "txtNewOrderRecEmpty_2",
       "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [

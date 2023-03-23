@@ -6,7 +6,7 @@
     "AllowCustomization": true,
     "Description": "",
     "Name": "NewOrder_2",
-    "TemplateGuid": "e82915f52298423ca6a2bce6d0004b54"
+    "TemplateGuid": "d3addbc6037048049f4bf8927fb6096c"
   },
   "ComponentType": "CanvasComponent",
   "CustomGroupControlTemplateName": "",
@@ -29,9 +29,9 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638151750644344199",
-  "Name": "e82915f52298423ca6a2bce6d0004b54",
+  "LastModifiedTimestamp": "638151878886914526",
+  "Name": "d3addbc6037048049f4bf8927fb6096c",
   "OverridableProperties": {},
-  "TemplateOriginalName": "3e9279facdc34347aebf39461b7865fe",
+  "TemplateOriginalName": "e82915f52298423ca6a2bce6d0004b54",
   "Version": "638061594329874087"
 }

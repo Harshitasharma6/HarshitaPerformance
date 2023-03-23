@@ -31,6 +31,8 @@
       "transactioncurrencyid": "Currency",
       "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
       "versionnumber": "Version Number",
+      "zx_baseamount": "Base Amount",
+      "zx_baseamount_base": "Base Amount (Base)",
       "zx_baseprice": "Cases Unit Price",
       "zx_baseprice_base": "Base Price (Base)",
       "zx_batchno": "Batch No",
