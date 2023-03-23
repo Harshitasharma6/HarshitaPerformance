@@ -127,7 +127,7 @@
         "Name": "btnAttendanceBackground",
         "Parent": "AttendanceHeaderComp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1675,
+        "PublishOrderIndex": 1715,
         "Rules": [
           {
             "Category": "Data",
@@ -418,7 +418,7 @@
         "Name": "imgBisleriAttendance",
         "Parent": "AttendanceHeaderComp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1676,
+        "PublishOrderIndex": 1716,
         "Rules": [
           {
             "Category": "Data",
@@ -772,7 +772,7 @@
         "Name": "imgProfileAttendance",
         "Parent": "AttendanceHeaderComp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1677,
+        "PublishOrderIndex": 1717,
         "Rules": [
           {
             "Category": "Data",
@@ -1062,7 +1062,7 @@
         "Name": "icoBackAttendance",
         "Parent": "AttendanceHeaderComp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1678,
+        "PublishOrderIndex": 1718,
         "Rules": [
           {
             "Category": "Data",
@@ -1318,7 +1318,7 @@
         "Name": "htmAttendanceBackground",
         "Parent": "AttendanceHeaderComp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1679,
+        "PublishOrderIndex": 1719,
         "Rules": [
           {
             "Category": "Data",
@@ -1590,7 +1590,7 @@
         "Name": "lblWelcomeAttendance",
         "Parent": "AttendanceHeaderComp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1680,
+        "PublishOrderIndex": 1720,
         "Rules": [
           {
             "Category": "Data",
@@ -1949,7 +1949,7 @@
         "Name": "lblUsernameAttendance",
         "Parent": "AttendanceHeaderComp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1681,
+        "PublishOrderIndex": 1721,
         "Rules": [
           {
             "Category": "Data",
@@ -2319,7 +2319,7 @@
         "Name": "imgAttendanceProfile",
         "Parent": "AttendanceHeaderComp",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1682,
+        "PublishOrderIndex": 1722,
         "Rules": [
           {
             "Category": "Data",
@@ -2528,7 +2528,7 @@
       "Y",
       "ZIndex"
     ],
-    "LastModifiedTimestamp": "638151872615450144",
+    "LastModifiedTimestamp": "638151932010214136",
     "Name": "AttendanceHeaderComp",
     "Rules": [
       {
@@ -2587,7 +2587,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638151872615450144",
+  "LastModifiedTimestamp": "638151932010214136",
   "Name": "725bd40733b54ec4a1cce3217a18ca9c",
   "OverridableProperties": {},
   "TemplateOriginalName": "e1af65520cbd4d9f9f007cff381895cd",
