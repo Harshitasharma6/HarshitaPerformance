@@ -5909,8 +5909,9 @@
                                                     ),
                                                     'Scheme Order Item': LookUp(
                                                         'Scheme Orders',
-                                                        'Scheme Order' = ThissItem.SchemeOrderLine.'Scheme Order'
-                                                    ),
+                                                        'Scheme Order' = ThissItem.SchemeOrderLine.
+                        'Scheme Order'
+                        ),
                                                     'Scheme Offer Item': LookUp(
                                                         'Scheme Offers',
                                                         'Scheme Offers' = ThissItem.schemeOrderValue.'Scheme Offers'
