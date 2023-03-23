@@ -97,6 +97,42 @@
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(31, 31, 31, 1)
             HoverFill: =ColorFade(Self.Color, 10%)
+            OnSelect: |-
+                =If(Gallery13_3.Selected.Title="Transfer IN",Set(
+                    varSalesperson,
+                    LookUp(
+                        'Stock Transfer Headers',
+                        'Stock Transfer Header' = galVanTransferInData.Selected.'Transfer Order No'.'Stock Transfer Header'
+                    ).'From Location'.Warehouse
+                );
+                Set(
+                    varstocktransfer,
+                    LookUp(
+                        'Location VAN Mappings',
+                        Van.Warehouse = varSalesperson
+                    ).Area.Area
+                ),//Transfer out
+                Set(
+                    varSalesperson,
+                    LookUp(
+                        'Stock Transfer Headers',
+                        'Stock Transfer Header' = galVanTransferOutData_1.Selected.'Transfer Order No'.'Stock Transfer Header'
+                    ).'To Location'.Warehouse
+                );
+                Set(
+                    varstocktransfer,
+                    LookUp(
+                        'Location VAN Mappings',
+                        Van.Warehouse = varSalesperson
+                    ).Area.Area
+                ))
+                /*LookUp(
+                        'Location VAN Mappings',
+                        Van.Warehouse = LookUp(
+                            'Stock Transfer Headers',
+                            'Stock Transfer Header' = ThisItem.'Transfer Order No'.'Stock Transfer Header'
+                        ).'To Location'.Warehouse
+                    ).Area.Area*/
             PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
             PressedColor: =RGBA(31, 31, 31, 1)
             PressedFill: =ColorFade(Self.Color, 30%)
@@ -143,7 +179,8 @@
         ShowScrollbar: =false
         TabIndex: =0
         TemplateSize: =146
-        Visible: =Gallery13_3.Selected.Title = "Transfer IN"
+        Visible: |
+            =Gallery13_3.Selected.Title = "Transfer IN"
         Y: =196
         ZIndex: =4
 
@@ -184,7 +221,11 @@
             Height: =25
             OnSelect: =Select(Parent)
             Size: =12
-            Text: =LookUp('Stock Transfer Headers', 'Stock Transfer Header' =  ThisItem.'Transfer Order No'.'Stock Transfer Header').'From Location'.'Vehicle Number/Warehouse Name'
+            Text: |-
+                =LookUp(
+                    'Stock Transfer Headers',
+                    'Stock Transfer Header' = ThisItem.'Transfer Order No'.'Stock Transfer Header'
+                ).'From Location'.Name
             Width: =170
             X: =119
             Y: =70
@@ -284,7 +325,7 @@
             FocusedBorderThickness: =4
             FontWeight: =FontWeight.Bold
             Height: =23
-            OnSelect: =Select(Parent)
+            OnSelect: =
             Size: =12
             Text: |-
                 =/*LookUp(
@@ -300,13 +341,15 @@
                 
                 LookUp(
                     'User Area Mappings',
-                    Area.Area = LookUp(
+                    Area.Area = varstocktransfer
+                   /* LookUp(
                         'Location VAN Mappings',
-                        Van.Warehouse = LookUp(
-                            colOfflineStockTransferHeader,
+                        Van.Warehouse = 
+                        LookUp(
+                            'Stock Transfer Headers',
                             'Stock Transfer Header' = ThisItem.'Transfer Order No'.'Stock Transfer Header'
                         ).'From Location'.Warehouse
-                    ).Area.Area
+                    ).Area.Area*/
                 ).Salesperson.'Full Name'
             Width: =171
             X: =407
@@ -399,6 +442,7 @@
                     )
                 )
             );
+            
             ForAll(
                 colModifiedTransferLines As Itemm,
                 Collect(
@@ -408,7 +452,7 @@
                         'To Location'.Warehouse = LookUp(
                             'Stock Transfer Headers',
                             'Stock Transfer Header' = Itemm.'Transfer Order No'.'Stock Transfer Header'
-                        ).'From Location'.Warehouse && IsToday('Created On')
+                        ).'From Location'.Warehouse && 'Created On' >= Today()
                     )
                 )
             );
@@ -885,6 +929,7 @@
         ZIndex: =8
 
     Icon7 As icon.Reload:
+        AccessibleLabel: ="Icon7"
         Color: =RGBA(255, 255, 255, 1)
         Height: =36
         Icon: =Icon.Reload
@@ -934,6 +979,7 @@
                     'Stock Transfer Header'
                 )
             );
+        TabIndex: =0
         Width: =38
         X: =496
         Y: =22
@@ -1161,7 +1207,8 @@
             Text: |-
                 =LookUp(
                     'User Area Mappings',
-                    Area.Area = LookUp(
+                    Area.Area = 
+                    LookUp(
                         'Location VAN Mappings',
                         Van.Warehouse = LookUp(
                             'Stock Transfer Headers',
@@ -1253,13 +1300,13 @@
                 ChevronHoverFill: =_VarGblAppColors.BisleriBlue
                 DefaultSelectedItems: |-
                     =LookUp(
-                        Users,
+                        colOfflineUsers,
                         'Primary Email' = LookUp(
                             'User Area Mappings',
-                            Area.Area = LookUp(
+                            Area.Area = varSelectedLocation/*LookUp(
                                 'Location VAN Mappings',
                                 Van.Warehouse = varHarkamalAudi
-                            ).Area.Area
+                            ).Area.Area*/
                         ).Salesperson.'Primary Email' && Not(IsBlank('Primary Email')) && Not('Full Name' = "INTEGRATION")
                     )
                 DisplayFields: =["fullname"]
@@ -1268,7 +1315,6 @@
                 HoverColor: =_VarGblAppColors.BisleriBlue
                 HoverFill: =_VarGblAppColors.BisleriBlueLight
                 InputTextPlaceholder: ="Find Salesman"
-                IsSearchable: =false
                 Items: |-
                     =/*Filter(
                         Filter(
@@ -1283,7 +1329,7 @@
                     )*/
                     Filter(
                         Filter(
-                            Users,
+                            colOfflineUsers,
                             'Primary Email' in AddColumns(
                                 'User Area Mappings',
                                 "UserEmail",
@@ -1292,7 +1338,7 @@
                         ),
                         !IsBlank('Primary Email')
                     )
-                OnChange: |-
+                OnChange: |
                     =/*Set(
                         varSelectedSalesmanArea,
                         LookUp(
@@ -1310,11 +1356,43 @@
                     Set(
                         varVaishaliMercedes,
                         Self.Selected.'Primary Email'
-                    )
+                    );
+                    
+                    Set(varSelectedUserArea,LookUp(
+                                'User Area Mappings' As ItemUser,
+                                ItemUser.Salesperson.'Primary Email' = varVaishaliMercedes
+                            ).AreaCalculated );
+                    
+                    Set(varSelecteduserLocation,LookUp(
+                            'Location VAN Mappings' As itemLocation,
+                            itemLocation.Area.'Name (zx_name)' = varSelectedUserArea 
+                        ).VANCalculated)
                 OnSelect: =
                 PressedFill: =_VarGblAppColors.BisleriBlue
                 SearchFields: =["firstname"]
-                SearchItems: =[]
+                SearchItems: |-
+                    =Search(/*Filter(
+                        Filter(
+                            Users,
+                            'Primary Email' in AddColumns(
+                                'User Area Mappings',
+                                "UserEmail",
+                                Salesperson.'Primary Email'
+                            ).UserEmail && Not('Primary Email' = User().Email)
+                        ),
+                        !IsBlank('Primary Email')
+                    )*/
+                    Filter(
+                        Filter(
+                            colOfflineUsers,
+                            'Primary Email' in AddColumns(
+                                'User Area Mappings',
+                                "UserEmail",
+                                Salesperson.'Primary Email'
+                            ).UserEmail && Not('Primary Email' = User().Email)
+                        ),
+                        !IsBlank('Primary Email')
+                    ),ComboBox4.SearchText,"firstname")
                 SelectionFill: =_VarGblAppColors.BisleriBlue
                 SelectMultiple: =false
                 Size: =21
@@ -1341,16 +1419,20 @@
                 ChevronHoverFill: =_VarGblAppColors.BisleriBlue
                 Default: =//If(!IsBlank(ComboBox4.Selected.'Full Name'), LookUp(Warehouses, Warehouse = varSelectedSalesmanVan.Van.Warehouse))
                 DefaultSelectedItems: |-
-                    =LookUp(
+                    =/*LookUp(
                         Warehouses As OneWarehouse,
-                        OneWarehouse.Warehouse = LookUp(
+                        OneWarehouse.Name = varSelecteduserLocation /*LookUp(
                             'Location VAN Mappings' As itemLocation,
-                            itemLocation.Area.Area = LookUp(
+                            itemLocation.Area.'Name (zx_name)' = varSelectedUserArea 
+                            LookUp(
                                 'User Area Mappings' As ItemUser,
                                 ItemUser.Salesperson.'Primary Email' = varVaishaliMercedes
                             ).Area.Area
-                        ).Van.Warehouse
-                    )
+                        ).Van.Warehouse && OneWarehouse.'Site Code'.'Branch Master' = dataforbranch
+                    )*/
+                    LookUp(
+                        Warehouses As OneWarehouse,
+                        OneWarehouse.Name = varSelecteduserLocation && OneWarehouse.'Site Code'.'Branch Master' = dataforbranch)
                 DisplayFields: =["zx_name"]
                 DisplayMode: =//If(IsBlank(ComboBox4.Selected.'Full Name'), DisplayMode.Edit, DisplayMode.Disabled)
                 Height: =60
@@ -1360,8 +1442,7 @@
                 Items: |-
                     =Filter(
                         Warehouses,
-                        'Warehouse Type' = 'Warehouse Type (Warehouses)'.Vehicle && Not(Warehouse = varUserVanNo.Van.Warehouse)
-                    )
+                        'Warehouse Type' = 'Warehouse Type (Warehouses)'.Vehicle && Not(Warehouse = varUserVanNo.Van.Warehouse)&& 'Site Code'.'Branch Master' = dataforbranch)
                 OnChange: |-
                     =/*Set(
                         varSelectedWarehouseVan,
@@ -1380,15 +1461,17 @@
                     Set(
                         varHarkamalAudi,
                         Self.Selected.Warehouse
-                    )
+                    );
+                    Set(varSelectedLocation,LookUp(
+                                'Location VAN Mappings',
+                                Van.Warehouse = varHarkamalAudi ).Area.Area);
                 PressedFill: =_VarGblAppColors.BisleriBlue
                 Reset: =true
                 SearchFields: =["zx_name"]
                 SearchItems: |-
                     =Search(Filter(
                         Warehouses,
-                        'Warehouse Type' = 'Warehouse Type (Warehouses)'.Vehicle && Not(Warehouse = varUserVanNo.Van.Warehouse)
-                    ),cmbVanTransferOutSelectVehicle.SearchText,"zx_name")
+                        'Warehouse Type' = 'Warehouse Type (Warehouses)'.Vehicle && Not(Warehouse = varUserVanNo.Van.Warehouse)&& 'Site Code'.'Branch Master' = dataforbranch),cmbVanTransferOutSelectVehicle.SearchText,"zx_name")
                 SelectionFill: =_VarGblAppColors.BisleriBlue
                 SelectMultiple: =false
                 Size: =21
@@ -1859,6 +1942,7 @@
                             }
                         )
                     );
+                    ClearCollect(colOfflineStockTransferHeader,'Stock Transfer Headers');
                     ForAll(
                         colManipulatedTransferLines As OneProduct,
                         Collect(
@@ -1871,7 +1955,7 @@
                                     PCs: OneProduct.qtyPcs,
                                     Date: Today(),
                                     'Transfer Order No': LookUp(
-                                        'Stock Transfer Headers',
+                                        colOfflineStockTransferHeader,
                                         'Stock Transfer Header' = First(colTransferOutHeader).'Stock Transfer Header'
                                     ),
                                     SKU: LookUp(

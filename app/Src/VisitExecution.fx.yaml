@@ -1987,10 +1987,10 @@
                             amt,
                             txtPaymentAmountValue
                         );*/
-                        Set(
+                        /*Set(
                             var,
                             Blank()
-                        );
+                        );*/
                         Navigate(PaymentQR);
                     TabIndex: =0
                     Visible: |-
@@ -9346,7 +9346,7 @@
             Height: =50
             HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
             OnSelect: |
-                =Set(VarPaymentConfirm, false);
+                =/*Set(VarPaymentConfirm, false);*/
                 Set(varSelectedVisitActiveTab, 3);
                 Clear(colReasonsVisits)
             Size: =_VarGblAppFonts.Size.UpperMedium
@@ -9374,10 +9374,10 @@
                         'Check-out Time': Now()
                     }
                 );
-                Set(
+                /*Set(
                     VarPaymentConfirm,
                     false
-                );
+                );*/
                 Navigate('Visit Screen');
             Size: =_VarGblAppFonts.Size.UpperMedium
             Text: ="NO"
