@@ -4980,7 +4980,7 @@
                             _VarGblAppColors.LightText
                         DisplayMode: |-
                             =//DisplayMode.Edit
-                            If(OrderData.'Mode Of Payment'='Payment Type (choice)'.COUPON, DisplayMode.Disabled, DisplayMode.Edit)
+                            If(OrderData.'Mode Of Payment' = 'Payment Type (choice)'.COUPON , DisplayMode.Disabled, DisplayMode.Edit)
                         FocusedBorderThickness: =2
                         Format: =TextFormat.Number
                         Height: =45
@@ -5166,7 +5166,7 @@
                                 "[$-hi-IN]##,##,##,###",
                                 "hi-IN"
                             )
-                        DisplayMode: =If(varOrderData.'Mode Of Payment' = 'Payment Type (choice)'.CREDIT, DisplayMode.View, DisplayMode.Edit)
+                        DisplayMode: =If(varOrderData.'Mode Of Payment' = 'Payment Type (choice)'.CREDIT , DisplayMode.View, DisplayMode.Edit)
                         FocusedBorderThickness: =2
                         FontWeight: =FontWeight.Semibold
                         Format: =TextFormat.Number
