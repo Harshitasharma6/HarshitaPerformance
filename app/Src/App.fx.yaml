@@ -232,18 +232,19 @@ App As appinfo:
             ClearCollect(
                 colOfflineWarehouse,
                 Warehouses
-            );
-            ,
-            ClearCollect(
+                );
+                , 
+                ClearCollect(
                 colOfflineItemMasters,
                 'Item Masters'
             );
             ,
-               /* ClearCollect(
+            /* ClearCollect(
                     colOfflineCustomers,
                     Customers_1
                 );   
                 ,  */
+                
             ClearCollect(
                 colOfflineCustomerVisits,
                 Filter(

@@ -5698,7 +5698,8 @@
                                                         'SKU Masters',
                                                         'SKU Master' = ThissItem.SchemeOrderProductReference
                                                     ),
-                                                    'Scheme Order Item': LookUp(
+                                                    'Scheme Order Item': 
+                                                    LookUp(
                                                         'Scheme Orders',
                                                         'Scheme Order' = ThissItem.SchemeOrderLine. 'Scheme Order'
                                                     ),
@@ -9164,7 +9165,7 @@
                     Visits,
                     LookUp(
                         Visits,
-                        Customer.Account = OrderData.Account && IsBlank('Check-out Time') && IsToday('Created On') /*&& Customer.Salesperson.'Primary Email' = User().Email*/
+                        Customer.Account = OrderData.Account && IsBlank('Check-out Time') && 'Created On' >= Today() /*&& Customer.Salesperson.'Primary Email' = User().Email*/
                     ),
                     {
                         'Check-out Latitude': Location.Latitude,

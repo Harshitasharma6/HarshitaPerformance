@@ -1002,6 +1002,10 @@
       "lk_msdyn_bookableresourcecapacityprofile_createdonbehalfby": "Bookable Resource Capacity Profiles (lk_msdyn_bookableresourcecapacityprofile_createdonbehalfby)",
       "lk_msdyn_bookableresourcecapacityprofile_modifiedby": "Bookable Resource Capacity Profiles (lk_msdyn_bookableresourcecapacityprofile_modifiedby)",
       "lk_msdyn_bookableresourcecapacityprofile_modifiedonbehalfby": "Bookable Resource Capacity Profiles (lk_msdyn_bookableresourcecapacityprofile_modifiedonbehalfby)",
+      "lk_msdyn_botsession_createdby": "Bot Sessions (lk_msdyn_botsession_createdby)",
+      "lk_msdyn_botsession_createdonbehalfby": "Bot Sessions (lk_msdyn_botsession_createdonbehalfby)",
+      "lk_msdyn_botsession_modifiedby": "Bot Sessions (lk_msdyn_botsession_modifiedby)",
+      "lk_msdyn_botsession_modifiedonbehalfby": "Bot Sessions (lk_msdyn_botsession_modifiedonbehalfby)",
       "lk_msdyn_callablecontext_createdby": "Playbook Callable Contexts (lk_msdyn_callablecontext_createdby)",
       "lk_msdyn_callablecontext_createdonbehalfby": "Playbook Callable Contexts (lk_msdyn_callablecontext_createdonbehalfby)",
       "lk_msdyn_callablecontext_modifiedby": "Playbook Callable Contexts (lk_msdyn_callablecontext_modifiedby)",
@@ -1154,6 +1158,10 @@
       "lk_msdyn_conversationmessageblock_createdonbehalfby": "msdyn_conversationmessageblock (lk_msdyn_conversationmessageblock_createdonbehalfby)",
       "lk_msdyn_conversationmessageblock_modifiedby": "msdyn_conversationmessageblock (lk_msdyn_conversationmessageblock_modifiedby)",
       "lk_msdyn_conversationmessageblock_modifiedonbehalfby": "msdyn_conversationmessageblock (lk_msdyn_conversationmessageblock_modifiedonbehalfby)",
+      "lk_msdyn_conversationsuggestionrequestpayload_createdby": "conversationsuggestionsrequestpayload (lk_msdyn_conversationsuggestionrequestpayload_createdby)",
+      "lk_msdyn_conversationsuggestionrequestpayload_createdonbehalfby": "conversationsuggestionsrequestpayload (lk_msdyn_conversationsuggestionrequestpayload_createdonbehalfby)",
+      "lk_msdyn_conversationsuggestionrequestpayload_modifiedby": "conversationsuggestionsrequestpayload (lk_msdyn_conversationsuggestionrequestpayload_modifiedby)",
+      "lk_msdyn_conversationsuggestionrequestpayload_modifiedonbehalfby": "conversationsuggestionsrequestpayload (lk_msdyn_conversationsuggestionrequestpayload_modifiedonbehalfby)",
       "lk_msdyn_crmconnection_createdby": "CRM Connections (lk_msdyn_crmconnection_createdby)",
       "lk_msdyn_crmconnection_createdonbehalfby": "CRM Connections (lk_msdyn_crmconnection_createdonbehalfby)",
       "lk_msdyn_crmconnection_modifiedby": "CRM Connections (lk_msdyn_crmconnection_modifiedby)",
@@ -3335,9 +3343,13 @@
       "modifiedby_serviceendpoint": "Service Endpoints (modifiedby_serviceendpoint)",
       "modifiedon": "Modified On",
       "modifiedonbehalfby": "Modified By (Delegate)",
+      "msdyn_agentType": "User type",
       "msdyn_appconfiguration_systemuser": "App profiles (msdyn_appconfiguration_systemuser)",
+      "msdyn_botapplicationid": "Bot application ID",
       "msdyn_botdescription": "Description",
       "msdyn_botendpoint": "Endpoint",
+      "msdyn_bothandle": "Bot handle",
+      "msdyn_botprovider": "Bot Provider",
       "msdyn_botsecretkeys": "Secret Keys",
       "msdyn_capacity": "Capacity",
       "msdyn_ciprovider_systemuser_membership": "Channel Integration Framework v1.0 Providers (msdyn_ciprovider_systemuser_membership)",
@@ -3347,6 +3359,7 @@
       "msdyn_isexpertenabledforswarm": "Expert Enabled Swarm",
       "msdyn_msdyn_attributevalue_systemuser": "Attribute Values (msdyn_msdyn_attributevalue_systemuser)",
       "msdyn_msdyn_forecast_ownerid": "Forecasts (msdyn_msdyn_forecast_ownerid)",
+      "msdyn_msdyn_liveworkstream_systemuser": "Work Streams (msdyn_msdyn_liveworkstream_systemuser)",
       "msdyn_msdyn_shareasconfiguration_sharedbyuserid": "ShareAs Configuration (msdyn_msdyn_shareasconfiguration_sharedbyuserid)",
       "msdyn_msdyn_shareasconfiguration_sharedwithuserid": "ShareAs Configuration (msdyn_msdyn_shareasconfiguration_sharedwithuserid)",
       "msdyn_ocliveworkitem_systemuser_createdby": "Conversations (msdyn_ocliveworkitem_systemuser_createdby)",
@@ -3360,6 +3373,7 @@
       "msdyn_ocsession_systemuser_modifiedby": "Sessions (msdyn_ocsession_systemuser_modifiedby)",
       "msdyn_ocsession_systemuser_modifiedonbehalfby": "Sessions (msdyn_ocsession_systemuser_modifiedonbehalfby)",
       "msdyn_ocsession_systemuser_owninguser": "Sessions (msdyn_ocsession_systemuser_owninguser)",
+      "msdyn_owningenvironmentid": "Owning Environment Id",
       "msdyn_systemuser_msdyn_agentstatushistory_Agentid": "Agent Status Histories (msdyn_systemuser_msdyn_agentstatushistory_Agentid)",
       "msdyn_systemuser_msdyn_assignmentmap_systemuserid": "Assignmentmaps (msdyn_systemuser_msdyn_assignmentmap_systemuserid)",
       "msdyn_systemuser_msdyn_conversationmessageblock_msdyn_agentid": "msdyn_conversationmessageblock (msdyn_systemuser_msdyn_conversationmessageblock_msdyn_agentid)",
@@ -3647,6 +3661,7 @@
       "user_msdyn_autocapturerule": "Auto Capture Rules (user_msdyn_autocapturerule)",
       "user_msdyn_autocapturesettings": "Auto Capture Settings (user_msdyn_autocapturesettings)",
       "user_msdyn_bookableresourcecapacityprofile": "Bookable Resource Capacity Profiles (user_msdyn_bookableresourcecapacityprofile)",
+      "user_msdyn_botsession": "Bot Sessions (user_msdyn_botsession)",
       "user_msdyn_callablecontext": "Playbook Callable Contexts (user_msdyn_callablecontext)",
       "user_msdyn_capacityprofile": "Capacity Profiles (user_msdyn_capacityprofile)",
       "user_msdyn_cdsentityengagementctx": "Entity Routing Contexts (user_msdyn_cdsentityengagementctx)",
@@ -4106,6 +4121,7 @@
       "89939d86-f073-42ba-bfc4-da7999c78825": "Users: Primary Email (Pending Approval)",
       "8dd58e14-0138-47d4-ba2d-a7dc76094d05": "My Connections",
       "94b84e8f-2772-eb11-a812-000d3a374668": "Agents",
+      "99a522b5-e038-e911-a9aa-000d3a36c3bf": "Bot agents",
       "9c91ff7f-3df9-4aa9-9f00-aaa2beb3192f": "@Me",
       "aad628c6-f0dd-4d34-b0ed-9a78f9c23a20": "Unassigned Salespeople",
       "aba981c9-16a2-4dcc-b694-376ae95fa4b0": "Activity Sender Users Lookup View",
@@ -4120,6 +4136,47 @@
       "f79ad170-ae03-4f4c-8132-d4aa08520a0c": "Associated Record Team Members",
       "fcf02d37-524a-4332-8ac7-497ef6b739f9": "Users: Influenced Deals That We Won"
     }
+  },
+  {
+    "DisplayName": "User type (Users)",
+    "Name": "msdyn_systemuser_msdyn_agenttype",
+    "OptionSetInfoNameMapping": {
+      "192350000": "Application user",
+      "192350001": "Bot application user"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "msdyn_agentType",
+        "OptionSetReferenceEntityName": "Users"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "msdyn_agentType",
+    "RelatedEntityName": "Users",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Bot Provider (Users)",
+    "Name": "msdyn_systemuser_msdyn_botprovider",
+    "OptionSetInfoNameMapping": {
+      "192350000": "Virtual Agent",
+      "192350001": "Other",
+      "192350002": "None"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "msdyn_botprovider",
+        "OptionSetReferenceEntityName": "Users"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "msdyn_botprovider",
+    "RelatedEntityName": "Users",
+    "Type": "OptionSetInfo"
   },
   {
     "DisplayName": "GDPR Optout (Users)",
