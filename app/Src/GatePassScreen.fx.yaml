@@ -941,6 +941,7 @@ GatePassScreen As screen:
         ZIndex: =20
 
     Icon7_1 As icon.Reload:
+        AccessibleLabel: ="Icon7_1"
         Color: =RGBA(255, 255, 255, 1)
         Height: =58
         Icon: =Icon.Reload
@@ -957,6 +958,7 @@ GatePassScreen As screen:
                 )
             );
             Refresh('Stock Transfer Lines')
+        TabIndex: =0
         Width: =34
         X: =496
         Y: =9
