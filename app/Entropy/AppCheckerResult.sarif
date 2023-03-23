@@ -1144,7 +1144,7 @@
                 },
                 "region": {
                   "charLength": 28,
-                  "charOffset": 1566,
+                  "charOffset": 1617,
                   "snippet": {
                     "text": "DateValue(Item.'Created On')"
                   }
@@ -1184,9 +1184,9 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1595,
+                  "charOffset": 1646,
                   "snippet": {
-                    "text": ">="
+                    "text": "<="
                   }
                 }
               },
@@ -1224,47 +1224,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1563,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "NewOrder_2",
-                "type": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderRecEmpty_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderRecEmpty_1.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderRecEmpty_1.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 1625,
+                  "charOffset": 1614,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1304,7 +1264,7 @@
                 },
                 "region": {
                   "charLength": 28,
-                  "charOffset": 6026,
+                  "charOffset": 6067,
                   "snippet": {
                     "text": "DateValue(Item.'Created On')"
                   }
@@ -1344,9 +1304,9 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6055,
+                  "charOffset": 6096,
                   "snippet": {
-                    "text": ">="
+                    "text": "<="
                   }
                 }
               },
@@ -1384,47 +1344,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 6023,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "NewOrder_2",
-                "type": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderRecEmpty_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderRecEmpty_1.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderRecEmpty_1.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 6418,
+                  "charOffset": 6064,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1464,7 +1384,7 @@
                 },
                 "region": {
                   "charLength": 7,
-                  "charOffset": 7557,
+                  "charOffset": 7662,
                   "snippet": {
                     "text": "exactin"
                   }
@@ -1504,7 +1424,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 7594,
+                  "charOffset": 7699,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1544,7 +1464,7 @@
                 },
                 "region": {
                   "charLength": 28,
-                  "charOffset": 1094,
+                  "charOffset": 1552,
                   "snippet": {
                     "text": "DateValue(Item.'Created On')"
                   }
@@ -1584,9 +1504,9 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1123,
+                  "charOffset": 1581,
                   "snippet": {
-                    "text": ">="
+                    "text": "<="
                   }
                 }
               },
@@ -1624,7 +1544,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1090,
+                  "charOffset": 1549,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1640,126 +1560,6 @@
           "message": {
             "arguments": [
               "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderPcs_1.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderPcs_1.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 1492,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "NewOrder_2",
-                "type": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderPcs_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderPcs_1.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderPcs_1.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 14,
-                  "charOffset": 4395,
-                  "snippet": {
-                    "text": ".'Item Master'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "NewOrder_2",
-                "type": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderPcs_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderPcs_1.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderPcs_1.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 4214,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "NewOrder_2",
-                "type": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderPcs_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
             ],
             "id": "issue"
           },
@@ -1784,7 +1584,7 @@
                 },
                 "region": {
                   "charLength": 28,
-                  "charOffset": 5706,
+                  "charOffset": 6319,
                   "snippet": {
                     "text": "DateValue(Item.'Created On')"
                   }
@@ -1824,9 +1624,9 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5735,
+                  "charOffset": 6348,
                   "snippet": {
-                    "text": ">="
+                    "text": "<="
                   }
                 }
               },
@@ -1864,7 +1664,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 5702,
+                  "charOffset": 6316,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1880,126 +1680,6 @@
           "message": {
             "arguments": [
               "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderPcs_1.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderPcs_1.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 6104,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "NewOrder_2",
-                "type": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderPcs_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderPcs_1.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderPcs_1.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 14,
-                  "charOffset": 9367,
-                  "snippet": {
-                    "text": ".'Item Master'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "NewOrder_2",
-                "type": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderPcs_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderPcs_1.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderPcs_1.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 9186,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "NewOrder_2",
-                "type": "NewOrder_2.contNewOrderUpperVertical_1.contNewOrderUpper_1.contNewOrderLowerVertical_1.contNewOrderData_1.galNewOrderProduct_1.txtNewOrderPcs_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
             ],
             "id": "issue"
           },
