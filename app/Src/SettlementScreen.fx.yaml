@@ -1,5 +1,13 @@
 "SettlementScreen As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
     Fill: =_VarGblAppColors.LightText
+    OnVisible: |
+        =Set(
+            sumdataCahPayment,
+            Filter(
+                Payments,
+                'Created On' >= Today() && Salesperson.'Primary Email' = User().Email && 'Payment Mode' = 'Payment Mode (Choice)'.CASH
+            )
+        );
 
     canBaseScreen_1 As fluidGrid.fluidGridWithBlankCard:
         BorderThickness: =0
@@ -681,17 +689,16 @@
                                     OnSelect: =Select(Parent)
                                     Size: =_VarGblAppFonts.Size.Subtitle
                                     Text: |-
-                                        =/*Sum(Filter('Order Lines', 'Item SKU'.'SKU Code'=ThisItem.Value && IsToday('Created On') && Salesperson.'Primary Email'=User().Email && 'Order Number'.'Order Type'='Order Type (Choice)'.'Empty jar Order'),'Total Quantity')*/
-                                        Sum(
+                                        =Sum(
                                             Filter(
-                                                'Order Lines',!IsBlank('Order Number'.'Order Type') &&
-                                                'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && IsToday('Created On') && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Empty jar Order'
+                                                'Order Lines',
+                                                'Order Number'.'Order Type' <> Blank() && 'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && IsToday('Created On') && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Empty jar Order'
                                             ),
                                             'Total Quantity'
                                         ) + Sum(
                                             Filter(
-                                                'Order Lines',!IsBlank('Order Number'.'Order Type') &&
-                                                'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && IsToday('Created On') && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Sales Order'
+                                                'Order Lines',
+                                                'Order Number'.'Order Type' <> Blank() && 'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Created On' >= Today() && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Sales Order'
                                             ),
                                             'Empty Jars'
                                         )
@@ -713,14 +720,14 @@
                                             Sum(
                                                 Filter(
                                                     'Order Lines',
-                                                    !IsBlank('Order Number'.'Order Type') && 'Order Number'.'Payment Status' = 'Payment Status Choice'.Completed && 'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && IsToday('Created On') && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Sales Order'
+                                                    'Order Number'.'Order Type' <> Blank() && 'Order Number'.'Payment Status' = 'Payment Status Choice'.Completed && 'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Created On' >= Today() && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Sales Order'
                                                 ),
                                                 Cases
                                             ) > 0,
                                             Sum(
                                                 Filter(
                                                     'Order Lines',
-                                                    !IsBlank('Order Number'.'Order Type') && 'Order Number'.'Payment Status' = 'Payment Status Choice'.Completed && 'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && IsToday('Created On') && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Sales Order'
+                                                    'Order Number'.'Order Type' <> Blank() && 'Order Number'.'Payment Status' = 'Payment Status Choice'.Completed && 'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Created On' >= Today() && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Sales Order'
                                                 ),
                                                 Cases
                                             ),
@@ -744,14 +751,14 @@
                                             Sum(
                                                 Filter(
                                                     'Order Lines',
-                                                    !IsBlank('Order Number'.'Order Type') && 'Order Number'.'Payment Status' = 'Payment Status Choice'.Completed && 'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Sales Order' && IsToday('Created On') && Salesperson.'Primary Email' = User().Email
+                                                    'Order Number'.'Order Type' <> Blank() && 'Order Number'.'Payment Status' = 'Payment Status Choice'.Completed && 'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Sales Order' && 'Created On' >= Today() && Salesperson.'Primary Email' = User().Email
                                                 ),
                                                 PCs
                                             ) > 0,
                                             Sum(
                                                 Filter(
                                                     'Order Lines',
-                                                    !IsBlank('Order Number'.'Order Type') && 'Order Number'.'Payment Status' = 'Payment Status Choice'.Completed && 'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Sales Order' && IsToday('Created On') && Salesperson.'Primary Email' = User().Email
+                                                    'Order Number'.'Order Type' <> Blank() && 'Order Number'.'Payment Status' = 'Payment Status Choice'.Completed && 'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Sales Order' && 'Created On' >= Today() && Salesperson.'Primary Email' = User().Email
                                                 ),
                                                 PCs
                                             ),
@@ -771,19 +778,23 @@
                                     OnSelect: =Select(Parent)
                                     Size: =_VarGblAppFonts.Size.Subtitle
                                     Text: |-
-                                        =If(Sum(
-                                            Filter(
-                                                'Order Lines',!IsBlank('Order Number'.'Order Type') &&
-                                                'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Replacement Order' && IsToday('Created On') && Salesperson.'Primary Email' = User().Email
+                                        =If(
+                                            Sum(
+                                                Filter(
+                                                    'Order Lines',
+                                                    'Order Number'.'Order Type' <> Blank() && 'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Replacement Order' && 'Created On' >= Today() && Salesperson.'Primary Email' = User().Email
+                                                ),
+                                                Cases
+                                            ) > 0,
+                                            Sum(
+                                                Filter(
+                                                    'Order Lines',
+                                                    'Order Number'.'Order Type' <> Blank() && 'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Replacement Order' && 'Created On' >= Today() && Salesperson.'Primary Email' = User().Email
+                                                ),
+                                                Cases
                                             ),
-                                            Cases
-                                        )>0, Sum(
-                                            Filter(
-                                                'Order Lines',!IsBlank('Order Number'.'Order Type') &&
-                                                'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Replacement Order' && IsToday('Created On') && Salesperson.'Primary Email' = User().Email
-                                            ),
-                                            Cases
-                                        ),0)
+                                            0
+                                        )
                                     Width: =btnNewOrderHeaderPcs_30.Width
                                     X: =btnNewOrderHeaderPcs_30.X-5
                                     Y: =5
@@ -798,19 +809,23 @@
                                     OnSelect: =Select(Parent)
                                     Size: =_VarGblAppFonts.Size.Subtitle
                                     Text: |-
-                                        =If(Sum(
-                                            Filter(
-                                                'Order Lines',!IsBlank('Order Number'.'Order Type') &&
-                                                'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Replacement Order' && IsToday('Created On') && Salesperson.'Primary Email' = User().Email
+                                        =If(
+                                            Sum(
+                                                Filter(
+                                                    'Order Lines',
+                                                    'Order Number'.'Order Type' <> Blank() && 'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Replacement Order' && 'Created On' >= Today() && Salesperson.'Primary Email' = User().Email
+                                                ),
+                                                PCs
+                                            ) > 0,
+                                            Sum(
+                                                Filter(
+                                                    'Order Lines',
+                                                    'Order Number'.'Order Type' <> Blank() && 'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Replacement Order' && 'Created On' >= Today() && Salesperson.'Primary Email' = User().Email
+                                                ),
+                                                PCs
                                             ),
-                                            PCs
-                                        )>0, Sum(
-                                            Filter(
-                                                'Order Lines',!IsBlank('Order Number'.'Order Type') &&
-                                                'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'Replacement Order' && IsToday('Created On') && Salesperson.'Primary Email' = User().Email
-                                            ),
-                                            PCs
-                                        ),0)
+                                            0
+                                        )
                                     Width: =btnNewOrderHeaderPcs_31.Width
                                     X: =btnNewOrderHeaderPcs_31.X-5
                                     Y: =5
@@ -825,19 +840,23 @@
                                     OnSelect: =Select(Parent)
                                     Size: =_VarGblAppFonts.Size.Subtitle
                                     Text: |-
-                                        =If(Sum(
-                                            Filter(
-                                                'Order Lines',!IsBlank('Order Number'.'Order Type') &&
-                                                'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order' && IsToday('Created On') && Salesperson.'Primary Email' = User().Email
+                                        =If(
+                                            Sum(
+                                                Filter(
+                                                    'Order Lines',
+                                                    'Order Number'.'Order Type' <> Blank() && 'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order' && 'Created On' >= Today() && Salesperson.'Primary Email' = User().Email
+                                                ),
+                                                Cases
+                                            ) > 0,
+                                            Sum(
+                                                Filter(
+                                                    'Order Lines',
+                                                    'Order Number'.'Order Type' <> Blank() && 'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order' && 'Created On' >= Today() && Salesperson.'Primary Email' = User().Email
+                                                ),
+                                                Cases
                                             ),
-                                            Cases
-                                        )>0, Sum(
-                                            Filter(
-                                                'Order Lines',!IsBlank('Order Number'.'Order Type') &&
-                                                'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order' && IsToday('Created On') && Salesperson.'Primary Email' = User().Email
-                                            ),
-                                            Cases
-                                        ), 0)
+                                            0
+                                        )
                                     Width: =btnNewOrderHeaderPcs_32.Width
                                     X: =btnNewOrderHeaderPcs_32.X-5
                                     Y: =5
@@ -852,19 +871,23 @@
                                     OnSelect: =Select(Parent)
                                     Size: =_VarGblAppFonts.Size.Subtitle
                                     Text: |-
-                                        =If(Sum(
-                                            Filter(
-                                                'Order Lines',!IsBlank('Order Number'.'Order Type') &&
-                                                'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order' && IsToday('Created On') && Salesperson.'Primary Email' = User().Email
+                                        =If(
+                                            Sum(
+                                                Filter(
+                                                    'Order Lines',
+                                                    'Order Number'.'Order Type' <> Blank() && 'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order' && 'Created On' >= Today() && Salesperson.'Primary Email' = User().Email
+                                                ),
+                                                PCs
+                                            ) > 0,
+                                            Sum(
+                                                Filter(
+                                                    'Order Lines',
+                                                    'Order Number'.'Order Type' <> Blank() && 'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order' && 'Created On' >= Today() && Salesperson.'Primary Email' = User().Email
+                                                ),
+                                                PCs
                                             ),
-                                            PCs
-                                        )>0, Sum(
-                                            Filter(
-                                                'Order Lines',!IsBlank('Order Number'.'Order Type') &&
-                                                'Item SKU'.'SKU Master' = ThisItem.SKU.'SKU Master' && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order' && IsToday('Created On') && Salesperson.'Primary Email' = User().Email
-                                            ),
-                                            PCs
-                                        ),0)
+                                            0
+                                        )
                                     Width: =btnNewOrderHeaderPcs_33.Width
                                     X: =btnNewOrderHeaderPcs_33.X-5
                                     Y: =5
@@ -1459,13 +1482,9 @@
                 Size: =12
                 TabIndex: =0
                 Text: |-
-                    =//"₹"&Sum(Gallery1_3.AllItems, Label4_4)
-                    "₹" & Text(
+                    ="₹" & Text(
                         Sum(
-                            Filter(
-                                Payments,
-                                'Receipt Date' = Datetodays && Salesperson.'Primary Email' = User().Email && 'Payment Mode' = 'Payment Mode (Choice)'.CASH
-                            ),
+                            sumdataCahPayment,
                             Amount
                         )
                     )
@@ -1530,6 +1549,13 @@
         ZIndex: =4
 
     compBaseBottomBar_1 As BottomBar:
+        Fill: |-
+            =RGBA(
+                242,
+                242,
+                242,
+                0
+            )
         NavItem: |-
             =Table(
                 {
