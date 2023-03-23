@@ -5253,7 +5253,14 @@
           "NameMapSourceSchema": "?"
         },
         "Default",
-        "DefaultSelectedItems",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "LookUp(\r\n    Warehouses As OneWarehouse,\r\n    OneWarehouse.Name = LookUp(\r\n        'Location VAN Mappings' As itemLocation,\r\n        itemLocation.Area.'Name (zx_name)' = LookUp(\r\n            'User Area Mappings' As ItemUser,\r\n            ItemUser.Salesperson.'Primary Email' = varVaishaliMercedes\r\n        ).AreaCalculated /*Area.Area*/\r\n    ).VANCalculated /*Van.Warehouse*/\r\n)",
+          "InvariantPropertyName": "DefaultSelectedItems",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "OnChange",
         {
           "AFDDataSourceName": "",

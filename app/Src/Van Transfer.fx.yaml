@@ -1376,7 +1376,7 @@
                                 'User Area Mappings' As ItemUser,
                                 ItemUser.Salesperson.'Primary Email' = varVaishaliMercedes
                             ).AreaCalculated /*Area.Area*/
-                        ).VANCalculated /*Van.Warehouse*/
+                        ).VANCalculated /*Van.Warehouse*/ && OneWarehouse.'Site Code'.'Branch Master' = dataforbranch
                     )
                 DisplayFields: =["zx_name"]
                 DisplayMode: =//If(IsBlank(ComboBox4.Selected.'Full Name'), DisplayMode.Edit, DisplayMode.Disabled)
@@ -1387,8 +1387,7 @@
                 Items: |-
                     =Filter(
                         Warehouses,
-                        'Warehouse Type' = 'Warehouse Type (Warehouses)'.Vehicle && Not(Warehouse = varUserVanNo.Van.Warehouse)
-                    )
+                        'Warehouse Type' = 'Warehouse Type (Warehouses)'.Vehicle && Not(Warehouse = varUserVanNo.Van.Warehouse)&& 'Site Code'.'Branch Master' = dataforbranch)
                 OnChange: |-
                     =/*Set(
                         varSelectedWarehouseVan,
@@ -1414,8 +1413,7 @@
                 SearchItems: |-
                     =Search(Filter(
                         Warehouses,
-                        'Warehouse Type' = 'Warehouse Type (Warehouses)'.Vehicle && Not(Warehouse = varUserVanNo.Van.Warehouse)
-                    ),cmbVanTransferOutSelectVehicle.SearchText,"zx_name")
+                        'Warehouse Type' = 'Warehouse Type (Warehouses)'.Vehicle && Not(Warehouse = varUserVanNo.Van.Warehouse)&& 'Site Code'.'Branch Master' = dataforbranch),cmbVanTransferOutSelectVehicle.SearchText,"zx_name")
                 SelectionFill: =_VarGblAppColors.BisleriBlue
                 SelectMultiple: =false
                 Size: =21
