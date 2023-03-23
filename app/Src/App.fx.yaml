@@ -233,7 +233,7 @@ App As appinfo:
                 colOfflineWarehouse,
                 Filter(
                     Warehouses,
-                    'Salesman Code'.'Branch Master'.'Branch Master' = dataforbranch
+                    'Site Code'.'Branch Master' = dataforbranch
                 )
             );
             ,
@@ -259,15 +259,15 @@ App As appinfo:
                 colOfflineStockTransferHeader,
                 Filter(
                     'Stock Transfer Headers',
-                    'Created On' >= Today() &&
-        'From Location'.Warehouse = varUserVanNo.Van.Warehouse )
+                    'Created On' >= Today() && 'From Location'.Warehouse = StockTransferWarehouse && 'To Location'.Warehouse = StockTransferWarehouse
+                )
             );
             ,
             ClearCollect(
                 colOfflinePayments,
                 Filter(
                     Payments,
-                    Salesperson.'Primary Email' = User().Email
+                    Salesperson.'Primary Email' = User().Email && 'Created On' >= Today()
                 )
             );
             ClearCollect(
@@ -298,7 +298,10 @@ App As appinfo:
             ,
             ClearCollect(
                 colOfflineInvoiceSeries,
-                'Invoice Series'
+                Filter(
+                    'Invoice Series',
+                    'Route No'.Area = UserAreaGUID
+                )
             )
         );
         ///////////////////////////******LOAD DATA*****////////////////////////////
