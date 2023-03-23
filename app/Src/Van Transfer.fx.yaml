@@ -1262,10 +1262,10 @@
                         colOfflineUsers,
                         'Primary Email' = LookUp(
                             'User Area Mappings',
-                            Area.Area = LookUp(
+                            Area.Area = /*LookUp(
                                 'Location VAN Mappings',
                                 Van.Warehouse = varHarkamalAudi
-                            ).Area.Area
+                            ).Area.Area*/ varSelectedLocation
                         ).Salesperson.'Primary Email' && Not(IsBlank('Primary Email')) && Not('Full Name' = "INTEGRATION")
                     )
                 DisplayFields: =["fullname"]
@@ -1315,7 +1315,11 @@
                     Set(
                         varVaishaliMercedes,
                         Self.Selected.'Primary Email'
-                    )
+                    );
+                    Set(varSelectedLocation,LookUp(
+                                'Location VAN Mappings',
+                                Van.Warehouse = varHarkamalAudi
+                            ).Area.Area)
                 OnSelect: =
                 PressedFill: =_VarGblAppColors.BisleriBlue
                 SearchFields: =["firstname"]
@@ -1368,16 +1372,20 @@
                 ChevronHoverFill: =_VarGblAppColors.BisleriBlue
                 Default: =//If(!IsBlank(ComboBox4.Selected.'Full Name'), LookUp(Warehouses, Warehouse = varSelectedSalesmanVan.Van.Warehouse))
                 DefaultSelectedItems: |-
-                    =LookUp(
+                    =/*LookUp(
                         Warehouses As OneWarehouse,
-                        OneWarehouse.Name = LookUp(
+                        OneWarehouse.Name = varSelecteduserLocation /*LookUp(
                             'Location VAN Mappings' As itemLocation,
-                            itemLocation.Area.'Name (zx_name)' = LookUp(
+                            itemLocation.Area.'Name (zx_name)' = varSelectedUserArea 
+                            LookUp(
                                 'User Area Mappings' As ItemUser,
                                 ItemUser.Salesperson.'Primary Email' = varVaishaliMercedes
-                            ).AreaCalculated /*Area.Area*/
-                        ).VANCalculated /*Van.Warehouse*/ && OneWarehouse.'Site Code'.'Branch Master' = dataforbranch
-                    )
+                            ).Area.Area
+                        ).Van.Warehouse && OneWarehouse.'Site Code'.'Branch Master' = dataforbranch
+                    )*/
+                    LookUp(
+                        Warehouses As OneWarehouse,
+                        OneWarehouse.Name = varSelecteduserLocation && OneWarehouse.'Site Code'.'Branch Master' = dataforbranch)
                 DisplayFields: =["zx_name"]
                 DisplayMode: =//If(IsBlank(ComboBox4.Selected.'Full Name'), DisplayMode.Edit, DisplayMode.Disabled)
                 Height: =60
@@ -1406,7 +1414,17 @@
                     Set(
                         varHarkamalAudi,
                         Self.Selected.Warehouse
-                    )
+                    );
+                    
+                    Set(varSelectedUserArea,LookUp(
+                                'User Area Mappings' As ItemUser,
+                                ItemUser.Salesperson.'Primary Email' = varVaishaliMercedes
+                            ).AreaCalculated );
+                    
+                    Set(varSelecteduserLocation,LookUp(
+                            'Location VAN Mappings' As itemLocation,
+                            itemLocation.Area.'Name (zx_name)' = varSelectedUserArea 
+                        ).VANCalculated)
                 PressedFill: =_VarGblAppColors.BisleriBlue
                 Reset: =true
                 SearchFields: =["zx_name"]
