@@ -5253,14 +5253,7 @@
           "NameMapSourceSchema": "?"
         },
         "Default",
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "LookUp(\r\n    Warehouses As OneWarehouse,\r\n    OneWarehouse.Warehouse = LookUp(\r\n        'Location VAN Mappings' As itemLocation,\r\n        itemLocation.Area.Area = LookUp(\r\n            'User Area Mappings' As ItemUser,\r\n            ItemUser.Salesperson.'Primary Email' = varVaishaliMercedes\r\n        ).Area.Area\r\n    ).Van.Warehouse\r\n)",
-          "InvariantPropertyName": "DefaultSelectedItems",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        },
+        "DefaultSelectedItems",
         "OnChange",
         {
           "AFDDataSourceName": "",
@@ -5700,23 +5693,9 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "LookUp(\r\n    Users,\r\n    'Primary Email' = LookUp(\r\n        'User Area Mappings',\r\n        Area.Area = LookUp(\r\n            'Location VAN Mappings',\r\n            Van.Warehouse = varHarkamalAudi\r\n        ).Area.Area\r\n    ).Salesperson.'Primary Email' && Not(IsBlank('Primary Email')) && Not('Full Name' = \"INTEGRATION\")\r\n)",
-          "InvariantPropertyName": "DefaultSelectedItems",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        },
+        "DefaultSelectedItems",
         "OnChange",
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "",
-          "InvariantPropertyName": "IsSearchable",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        },
+        "IsSearchable",
         "OnSelect"
       ],
       "HasDynamicProperties": false,

@@ -45,7 +45,6 @@
       "zx_remainingqtycases": "Remaining Qty Cases",
       "zx_remainingqtypcs": "Remaining Qty Pcs",
       "zx_SKU": "SKU",
-      "zx_stockheadercalculated": "StockHeaderCalculated",
       "zx_stocktransferlines_AsyncOperations": "System Jobs",
       "zx_stocktransferlines_BulkDeleteFailures": "Bulk Delete Failures",
       "zx_stocktransferlines_DuplicateBaseRecord": "Duplicate Records (zx_stocktransferlines_DuplicateBaseRecord)",

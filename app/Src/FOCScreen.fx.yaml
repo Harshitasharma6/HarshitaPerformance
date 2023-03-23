@@ -17,18 +17,24 @@
                 If(
                     galOrderDateFilter_2.Selected.Value = "Today's Orders",
                     Filter(
-                        'Order Headers',
-                        IsToday('Order Date') && 'Order Type' = 'Order Type (Choice)'.'FOC Order' && Salesperson.'Primary Email' = User().Email
+                        colOfflineOrderHeader,
+                        'Order Type' = 'Order Type (Choice)'.'FOC Order'
                     ),
                     galOrderDateFilter_2.Selected.Value = "Last 7 Days",
                     Filter(
                         'Order Headers',
-                        'Order Date' <= Today() && 'Order Date' >= Today() - 7 && 'Order Type' = 'Order Type (Choice)'.'FOC Order' && Salesperson.'Primary Email' = User().Email
+                        'Order Date' >= DateAdd(
+                            Today(),
+                            -7
+                        ) && 'Order Type' = 'Order Type (Choice)'.'FOC Order' && Salesperson.'Primary Email' = User().Email
                     ),
                     galOrderDateFilter_2.Selected.Value = "Last 30 Days",
                     Filter(
                         'Order Headers',
-                        'Order Date' <= Today() && 'Order Date' >= Today() - 30 && 'Order Type' = 'Order Type (Choice)'.'FOC Order' && Salesperson.'Primary Email' = User().Email
+                        'Order Date' >= DateAdd(
+                            Today(),
+                            -30
+                        ) && 'Order Type' = 'Order Type (Choice)'.'FOC Order' && Salesperson.'Primary Email' = User().Email
                     )
                 ),
                 'Created On',
