@@ -179,7 +179,7 @@ NewOrder_2 As CanvasComponent:
                             =//Filter('Current Stocks', IsToday('Created On') && 'Van No'.Warehouse= varUserVanNo.Van.Warehouse)
                             Filter(
                                 'Current Stocks',
-                                'Created Date' = Datetodays && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
+                                'Created Date' >= Today() && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
                             )
                         Layout: =Layout.Vertical
                         LayoutMinHeight: =460
@@ -587,7 +587,11 @@ NewOrder_2 As CanvasComponent:
                                 =//RGBA(186, 202, 226, 1)
                                 ColorFade(_VarGblAppColors.BisleriBlue, 100%)
                             OnChange: |
-                                =If(
+                                =Set(varSku,LookUp(
+                                                                'SKU Masters',
+                                                                'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                                            ).'Item Code'.'Item Master');
+                                If(
                                     Value(Self.Text) <= ThisItem.Cases,
                                     If(
                                         !IsBlank(
@@ -610,17 +614,18 @@ NewOrder_2 As CanvasComponent:
                                                 OrderLinesSum: Sum(
                                                     Filter(
                                                         'Order Lines' As Item,
-                                                        (Item.'Customer no.'.Account = varOrderData.Account) && Item.'Item SKU'.'SKU Master' = ThisItem.'Item SKU'.'SKU Master' && (DateValue(Item.'Created On') >= DateValue(
+                                                        (Item.'Customer no.'.Account = varOrderData.Account) && Item.'Item SKU'.'SKU Master' = ThisItem.'Item SKU'.'SKU Master' && Item.'Created On' >= 
                                                             LookUp(
                                                                 'Discount Lines',
                                                                 'Applicable for'.'Customer group' = varCustomerGroup.'Customer group' && 'Discount Date' >= Today() && Variant.'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
                                                             ).'Discount Date'
-                                                        )) && (DateValue(Item.'Created On') <= DateValue(
+                                && Item.'Created On' <= 
+                                                    DateValue(
                                                             LookUp(
                                                                 'Discount Lines',
                                                                 'Applicable for'.'Customer group' = varCustomerGroup.'Customer group' && 'Discount Date' >= Today() && Variant.'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
                                                             ).'Discount Date'
-                                                        ))
+                                                        )
                                                     ),
                                                     'Total Quantity'
                                                 )
@@ -665,10 +670,10 @@ NewOrder_2 As CanvasComponent:
                                                     emptyJarValue: If(
                                                         LookUp(
                                                             'Item Masters',
-                                                            'Item Master' = LookUp(
+                                                            'Item Master' = varSku /*LookUp(
                                                                 'SKU Masters',
                                                                 'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
-                                                            ).'Item Code'.'Item Master'
+                                                            ).'Item Code'.'Item Master'*/
                                                         ).'Product group code' = 'Product group code (Item Masters)'.'2WAY',
                                                         (Value(Self.Text) - LookUp(
                                                             colCartItems,
@@ -767,10 +772,10 @@ NewOrder_2 As CanvasComponent:
                                                     emptyJarValue: If(
                                                         LookUp(
                                                             'Item Masters',
-                                                            'Item Master' = LookUp(
+                                                            'Item Master' = varSku /*LookUp(
                                                                 'SKU Masters',
                                                                 'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
-                                                            ).'Item Code'.'Item Master'
+                                                            ).'Item Code'.'Item Master'*/
                                                         ).'Product group code' = 'Product group code (Item Masters)'.'2WAY',
                                                         (Value(Self.Text) - LookUp(
                                                             colCartItems,
