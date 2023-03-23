@@ -29,6 +29,7 @@
       "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
       "versionnumber": "Version Number",
       "zx_baseprice": "Base Price",
+      "zx_branch": "Branch",
       "zx_enddate": "End date",
       "zx_itemdescription": "Item description",
       "zx_Itempriceheader": "Item price header",
