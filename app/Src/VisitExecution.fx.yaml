@@ -174,7 +174,7 @@
         DisplayMode: =DisplayMode.View
         FocusedBorderColor: =Color.Transparent
         FocusedBorderThickness: =0.1
-        Height: =62
+        Height: =73
         Items: |-
             =Table(
                 {
@@ -184,21 +184,23 @@
                 {
                     Title: "Payments",
                     id: 2
-                },
+                }
                 /*{
                     Title: "Return Requests",
                     id: 3
-                },*/
+                },
                 {
                     Title: "Return Preview",
                     id: 4
-                }
+                }*/
                 
             )
         OnSelect: =
         ShowScrollbar: =false
         TabIndex: =
-        TemplateSize: =243
+        TemplateSize: =300
+        Width: =620
+        X: =5
         Y: =80
         ZIndex: =2
 
@@ -222,7 +224,8 @@
             RadiusTopRight: =0
             Size: =18
             Text: =ThisItem.Title
-            Width: =242
+            Width: =292
+            X: =5
             Y: =3
             ZIndex: =1
 
@@ -8726,7 +8729,9 @@
     ReturnPreview As fluidGrid.fluidGridWithBlankCard:
         BorderThickness: =0
         Height: =908
-        Visible: =varSelectedVisitActiveTab = 4
+        Visible: |-
+            =//varSelectedVisitActiveTab = 4
+            false
         Width: =Parent.Width
         Y: =142
         ZIndex: =7
