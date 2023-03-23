@@ -5664,8 +5664,1602 @@
                   "relativeAddress": 0
                 },
                 "region": {
+                  "charLength": 7,
+                  "charOffset": 13436,
+                  "snippet": {
+                    "text": "colCart"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colCart"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 13444,
+                  "snippet": {
+                    "text": "As"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrBadType",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 7155,
+                  "charOffset": 13292,
+                  "snippet": {
+                    "text": "ForAll(\n                /*Filter(\n                    colCartItems,\n                    schemeOrder = true\n                )*/ \n                colCart As ThissItem,\n                If(\n                    IsBlank(\n                        LookUp(\n                            'Order Lines',\n                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Parent Item Code'.'SKU Master' = ThissItem.SchemeOrderProductReference\n                        )\n                    ),\n                    Patch(\n                        'Order Lines',\n                        Defaults('Order Lines'),\n                        {\n                            'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,\n                            Cases: ThissItem.qtyCases,\n                            PCs: ThissItem.qtyPcs,\n                            'Empty Jars': ThissItem.emptyJar,\n                            'Order Number': LookUp(\n                                'Order Headers',\n                                'Order Number' = CreateOrderRecorddata.'Order Number'\n                            ),\n                            Salesperson: LookUp(\n                                Users,\n                                'Primary Email' = User().Email\n                            ),\n                            'Van No': LookUp(\n                                Warehouses,\n                                Warehouse = varUserVanNo.Van.Warehouse\n                            ),\n                            'Item Type': If(\n                                ThissItem.schemeOrder = true,\n                                'Item Type (Choice)'.Free,\n                                'Item Type (Choice)'.Paid\n                            ),\n                            'Item SKU': LookUp(\n                                'SKU Masters',\n                                'SKU Master' = ThissItem.productId\n                            ),\n                            'Cases Unit Price': ThissItem.caseUnitPrice,\n                            'Pcs Unit Price': ThissItem.pcsUnitPrice,\n                            // 'Total Amount': (ThissItem.qtyCases * ThissItem.caseUnitPrice) + (ThissItem.qtyPcs * ThissItem.pcsUnitPrice),\n                            'Total Discount Amount': Value(ThissItem.discount),\n                            'Tax Amount': ThissItem.taxAmount,\n                            'Net Amount': ThissItem.netAmount,\n                            'Customer no.': LookUp(\n                                Customers_1,\n                                Account = OrderData.Account\n                            ),\n                            'Route No': LookUp(\n                                Areas,\n                                Area = varUserArea.Area.Area\n                            ),\n                            'Scheme Parent Item Code': LookUp(\n                                'SKU Masters',\n                                'SKU Master' = ThissItem.SchemeOrderProductReference\n                            ),\n                            'Scheme Order Item': LookUp(\n                                'Scheme Orders',\n                                'Scheme Order' = ThissItem.SchemeOrderLine. 'Scheme Order'\n                            ),\n                            'Scheme Offer Item': LookUp(\n                                'Scheme Offers',\n                                'Scheme Offers' = ThissItem.schemeOrderValue.'Scheme Offers'\n                            )\n                          //  'Manufacturing Date': DateValue(ThissItem.manDate)\n                        }\n                    ),\n                    Patch(\n                        'Order Lines',\n                        LookUp(\n                            'Order Lines',\n                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Parent Item Code'.'SKU Master' = ThissItem.SchemeOrderProductReference\n                        ),\n                        {\n                            'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,\n                            Cases: ThissItem.qtyCases,\n                            PCs: ThissItem.qtyPcs,\n                            'Empty Jars': ThissItem.emptyJar,\n                            'Order Number': LookUp(\n                                'Order Headers',\n                                'Order Number' = CreateOrderRecorddata.'Order Number'\n                            ),\n                            Salesperson: LookUp(\n                                Users,\n                                'Primary Email' = User().Email\n                            ),\n                            'Van No': LookUp(\n                                Warehouses,\n                                Warehouse = varUserVanNo.Van.Warehouse\n                            ),\n                            'Item Type': If(\n                                ThissItem.schemeOrder = true,\n                                'Item Type (Choice)'.Free,\n                                'Item Type (Choice)'.Paid\n                            ),\n                            'Item SKU': LookUp(\n                                'SKU Masters',\n                                'SKU Master' = ThissItem.productId\n                            ),\n                            'Cases Unit Price': ThissItem.caseUnitPrice,\n                            'Pcs Unit Price': ThissItem.pcsUnitPrice,\n                            // 'Total Amount': (ThissItem.qtyCases * ThissItem.caseUnitPrice) + (ThissItem.qtyPcs * ThissItem.pcsUnitPrice),\n                            'Total Discount Amount': Value(ThissItem.discount),\n                            'Tax Amount': ThissItem.taxAmount,\n                            'Net Amount': ThissItem.netAmount,\n                            'Customer no.': LookUp(\n                                Customers_1,\n                                Account = OrderData.Account\n                            ),\n                            'Route No': LookUp(\n                                Areas,\n                                Area = varUserArea.Area.Area\n                            ),\n                            'Scheme Parent Item Code': LookUp(\n                                'SKU Masters',\n                                'SKU Master' = ThissItem.SchemeOrderProductReference\n                            ),\n                            'Scheme Order Item': LookUp(\n                                'Scheme Orders',\n                                'Scheme Order' = ThissItem.SchemeOrderLine.'Scheme Order'\n                            ),\n                            'Scheme Offer Item': LookUp(\n                                'Scheme Offers',\n                                'Scheme Offers' = ThissItem.schemeOrderValue.'Scheme Offers'\n                            )\n                          //  'Manufacturing Date': DateValue(ThissItem.manDate)\n                        }\n                    )\n                )\n            )"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ForAll"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 13700,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 10,
+                  "charOffset": 13709,
+                  "snippet": {
+                    "text": ".productId"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 13698,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Guid",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 13807,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 28,
+                  "charOffset": 13816,
+                  "snippet": {
+                    "text": ".SchemeOrderProductReference"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 13805,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Guid",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 14081,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 14090,
+                  "snippet": {
+                    "text": ".qtyCases"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 14102,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 7,
+                  "charOffset": 14111,
+                  "snippet": {
+                    "text": ".qtyPcs"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 14155,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 14164,
+                  "snippet": {
+                    "text": ".qtyCases"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 14208,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 7,
+                  "charOffset": 14217,
+                  "snippet": {
+                    "text": ".qtyPcs"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 14268,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 14277,
+                  "snippet": {
+                    "text": ".emptyJar"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 14957,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 12,
+                  "charOffset": 14966,
+                  "snippet": {
+                    "text": ".schemeOrder"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 14979,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Error",
+              "Boolean"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 15277,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 10,
+                  "charOffset": 15286,
+                  "snippet": {
+                    "text": ".productId"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 15275,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Guid",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 15376,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 14,
+                  "charOffset": 15385,
+                  "snippet": {
+                    "text": ".caseUnitPrice"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 15447,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 13,
+                  "charOffset": 15456,
+                  "snippet": {
+                    "text": ".pcsUnitPrice"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 15671,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 15680,
+                  "snippet": {
+                    "text": ".discount"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 25,
+                  "charOffset": 15665,
+                  "snippet": {
+                    "text": "Value(ThissItem.discount)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Value"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 15734,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 10,
+                  "charOffset": 15743,
+                  "snippet": {
+                    "text": ".taxAmount"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 15797,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 10,
+                  "charOffset": 15806,
+                  "snippet": {
+                    "text": ".netAmount"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 16342,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 28,
+                  "charOffset": 16351,
+                  "snippet": {
+                    "text": ".SchemeOrderProductReference"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 16340,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Guid",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 16566,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
                   "charLength": 16,
-                  "charOffset": 16562,
+                  "charOffset": 16575,
+                  "snippet": {
+                    "text": ".SchemeOrderLine"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 16,
+                  "charOffset": 16591,
                   "snippet": {
                     "text": ". 'Scheme Order'"
                   }
@@ -5679,16 +7273,13 @@
             }
           ],
           "message": {
-            "arguments": [
-              "SchemeOrderLine.zx_schemeorderid"
-            ],
             "id": "issue"
           },
           "properties": {
-            "level": "Medium"
+            "level": "High"
           },
-          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -5705,7 +7296,2157 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 16535,
+                  "charOffset": 16564,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Guid",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 16795,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 17,
+                  "charOffset": 16804,
+                  "snippet": {
+                    "text": ".schemeOrderValue"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 16,
+                  "charOffset": 16821,
+                  "snippet": {
+                    "text": ".'Scheme Offers'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 16793,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Guid",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 3082,
+                  "charOffset": 13914,
+                  "snippet": {
+                    "text": "Patch(\n                        'Order Lines',\n                        Defaults('Order Lines'),\n                        {\n                            'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,\n                            Cases: ThissItem.qtyCases,\n                            PCs: ThissItem.qtyPcs,\n                            'Empty Jars': ThissItem.emptyJar,\n                            'Order Number': LookUp(\n                                'Order Headers',\n                                'Order Number' = CreateOrderRecorddata.'Order Number'\n                            ),\n                            Salesperson: LookUp(\n                                Users,\n                                'Primary Email' = User().Email\n                            ),\n                            'Van No': LookUp(\n                                Warehouses,\n                                Warehouse = varUserVanNo.Van.Warehouse\n                            ),\n                            'Item Type': If(\n                                ThissItem.schemeOrder = true,\n                                'Item Type (Choice)'.Free,\n                                'Item Type (Choice)'.Paid\n                            ),\n                            'Item SKU': LookUp(\n                                'SKU Masters',\n                                'SKU Master' = ThissItem.productId\n                            ),\n                            'Cases Unit Price': ThissItem.caseUnitPrice,\n                            'Pcs Unit Price': ThissItem.pcsUnitPrice,\n                            // 'Total Amount': (ThissItem.qtyCases * ThissItem.caseUnitPrice) + (ThissItem.qtyPcs * ThissItem.pcsUnitPrice),\n                            'Total Discount Amount': Value(ThissItem.discount),\n                            'Tax Amount': ThissItem.taxAmount,\n                            'Net Amount': ThissItem.netAmount,\n                            'Customer no.': LookUp(\n                                Customers_1,\n                                Account = OrderData.Account\n                            ),\n                            'Route No': LookUp(\n                                Areas,\n                                Area = varUserArea.Area.Area\n                            ),\n                            'Scheme Parent Item Code': LookUp(\n                                'SKU Masters',\n                                'SKU Master' = ThissItem.SchemeOrderProductReference\n                            ),\n                            'Scheme Order Item': LookUp(\n                                'Scheme Orders',\n                                'Scheme Order' = ThissItem.SchemeOrderLine. 'Scheme Order'\n                            ),\n                            'Scheme Offer Item': LookUp(\n                                'Scheme Offers',\n                                'Scheme Offers' = ThissItem.schemeOrderValue.'Scheme Offers'\n                            )\n                          //  'Manufacturing Date': DateValue(ThissItem.manDate)\n                        }\n                    )"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Patch"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2941,
+                  "charOffset": 14033,
+                  "snippet": {
+                    "text": "{\n                            'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,\n                            Cases: ThissItem.qtyCases,\n                            PCs: ThissItem.qtyPcs,\n                            'Empty Jars': ThissItem.emptyJar,\n                            'Order Number': LookUp(\n                                'Order Headers',\n                                'Order Number' = CreateOrderRecorddata.'Order Number'\n                            ),\n                            Salesperson: LookUp(\n                                Users,\n                                'Primary Email' = User().Email\n                            ),\n                            'Van No': LookUp(\n                                Warehouses,\n                                Warehouse = varUserVanNo.Van.Warehouse\n                            ),\n                            'Item Type': If(\n                                ThissItem.schemeOrder = true,\n                                'Item Type (Choice)'.Free,\n                                'Item Type (Choice)'.Paid\n                            ),\n                            'Item SKU': LookUp(\n                                'SKU Masters',\n                                'SKU Master' = ThissItem.productId\n                            ),\n                            'Cases Unit Price': ThissItem.caseUnitPrice,\n                            'Pcs Unit Price': ThissItem.pcsUnitPrice,\n                            // 'Total Amount': (ThissItem.qtyCases * ThissItem.caseUnitPrice) + (ThissItem.qtyPcs * ThissItem.pcsUnitPrice),\n                            'Total Discount Amount': Value(ThissItem.discount),\n                            'Tax Amount': ThissItem.taxAmount,\n                            'Net Amount': ThissItem.netAmount,\n                            'Customer no.': LookUp(\n                                Customers_1,\n                                Account = OrderData.Account\n                            ),\n                            'Route No': LookUp(\n                                Areas,\n                                Area = varUserArea.Area.Area\n                            ),\n                            'Scheme Parent Item Code': LookUp(\n                                'SKU Masters',\n                                'SKU Master' = ThissItem.SchemeOrderProductReference\n                            ),\n                            'Scheme Order Item': LookUp(\n                                'Scheme Orders',\n                                'Scheme Order' = ThissItem.SchemeOrderLine. 'Scheme Order'\n                            ),\n                            'Scheme Offer Item': LookUp(\n                                'Scheme Offers',\n                                'Scheme Offers' = ThissItem.schemeOrderValue.'Scheme Offers'\n                            )\n                          //  'Manufacturing Date': DateValue(ThissItem.manDate)\n                        }"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "cr8eb_emptyjars",
+              "Number",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrTypeError-Arg-Expected-Found",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 17257,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 10,
+                  "charOffset": 17266,
+                  "snippet": {
+                    "text": ".productId"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 17255,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Guid",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 17364,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 28,
+                  "charOffset": 17373,
+                  "snippet": {
+                    "text": ".SchemeOrderProductReference"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 17362,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Guid",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 17501,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 17510,
+                  "snippet": {
+                    "text": ".qtyCases"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 17522,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 7,
+                  "charOffset": 17531,
+                  "snippet": {
+                    "text": ".qtyPcs"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 17575,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 17584,
+                  "snippet": {
+                    "text": ".qtyCases"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 17628,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 7,
+                  "charOffset": 17637,
+                  "snippet": {
+                    "text": ".qtyPcs"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 17688,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 17697,
+                  "snippet": {
+                    "text": ".emptyJar"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 18377,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 12,
+                  "charOffset": 18386,
+                  "snippet": {
+                    "text": ".schemeOrder"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 18399,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Error",
+              "Boolean"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 18697,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 10,
+                  "charOffset": 18706,
+                  "snippet": {
+                    "text": ".productId"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 18695,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Guid",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 18796,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 14,
+                  "charOffset": 18805,
+                  "snippet": {
+                    "text": ".caseUnitPrice"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 18867,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 13,
+                  "charOffset": 18876,
+                  "snippet": {
+                    "text": ".pcsUnitPrice"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 19091,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 19100,
+                  "snippet": {
+                    "text": ".discount"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 25,
+                  "charOffset": 19085,
+                  "snippet": {
+                    "text": "Value(ThissItem.discount)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Value"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 19154,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 10,
+                  "charOffset": 19163,
+                  "snippet": {
+                    "text": ".taxAmount"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 19217,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 10,
+                  "charOffset": 19226,
+                  "snippet": {
+                    "text": ".netAmount"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 19762,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 28,
+                  "charOffset": 19771,
+                  "snippet": {
+                    "text": ".SchemeOrderProductReference"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 19760,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Guid",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 19986,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 16,
+                  "charOffset": 19995,
+                  "snippet": {
+                    "text": ".SchemeOrderLine"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 15,
+                  "charOffset": 20011,
+                  "snippet": {
+                    "text": ".'Scheme Order'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 19984,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Guid",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 20214,
+                  "snippet": {
+                    "text": "ThissItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThissItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 17,
+                  "charOffset": 20223,
+                  "snippet": {
+                    "text": ".schemeOrderValue"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 16,
+                  "charOffset": 20240,
+                  "snippet": {
+                    "text": ".'Scheme Offers'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 20212,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Guid",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 3397,
+                  "charOffset": 17018,
+                  "snippet": {
+                    "text": "Patch(\n                        'Order Lines',\n                        LookUp(\n                            'Order Lines',\n                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Parent Item Code'.'SKU Master' = ThissItem.SchemeOrderProductReference\n                        ),\n                        {\n                            'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,\n                            Cases: ThissItem.qtyCases,\n                            PCs: ThissItem.qtyPcs,\n                            'Empty Jars': ThissItem.emptyJar,\n                            'Order Number': LookUp(\n                                'Order Headers',\n                                'Order Number' = CreateOrderRecorddata.'Order Number'\n                            ),\n                            Salesperson: LookUp(\n                                Users,\n                                'Primary Email' = User().Email\n                            ),\n                            'Van No': LookUp(\n                                Warehouses,\n                                Warehouse = varUserVanNo.Van.Warehouse\n                            ),\n                            'Item Type': If(\n                                ThissItem.schemeOrder = true,\n                                'Item Type (Choice)'.Free,\n                                'Item Type (Choice)'.Paid\n                            ),\n                            'Item SKU': LookUp(\n                                'SKU Masters',\n                                'SKU Master' = ThissItem.productId\n                            ),\n                            'Cases Unit Price': ThissItem.caseUnitPrice,\n                            'Pcs Unit Price': ThissItem.pcsUnitPrice,\n                            // 'Total Amount': (ThissItem.qtyCases * ThissItem.caseUnitPrice) + (ThissItem.qtyPcs * ThissItem.pcsUnitPrice),\n                            'Total Discount Amount': Value(ThissItem.discount),\n                            'Tax Amount': ThissItem.taxAmount,\n                            'Net Amount': ThissItem.netAmount,\n                            'Customer no.': LookUp(\n                                Customers_1,\n                                Account = OrderData.Account\n                            ),\n                            'Route No': LookUp(\n                                Areas,\n                                Area = varUserArea.Area.Area\n                            ),\n                            'Scheme Parent Item Code': LookUp(\n                                'SKU Masters',\n                                'SKU Master' = ThissItem.SchemeOrderProductReference\n                            ),\n                            'Scheme Order Item': LookUp(\n                                'Scheme Orders',\n                                'Scheme Order' = ThissItem.SchemeOrderLine.'Scheme Order'\n                            ),\n                            'Scheme Offer Item': LookUp(\n                                'Scheme Offers',\n                                'Scheme Offers' = ThissItem.schemeOrderValue.'Scheme Offers'\n                            )\n                          //  'Manufacturing Date': DateValue(ThissItem.manDate)\n                        }\n                    )"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Patch"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2940,
+                  "charOffset": 17453,
+                  "snippet": {
+                    "text": "{\n                            'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,\n                            Cases: ThissItem.qtyCases,\n                            PCs: ThissItem.qtyPcs,\n                            'Empty Jars': ThissItem.emptyJar,\n                            'Order Number': LookUp(\n                                'Order Headers',\n                                'Order Number' = CreateOrderRecorddata.'Order Number'\n                            ),\n                            Salesperson: LookUp(\n                                Users,\n                                'Primary Email' = User().Email\n                            ),\n                            'Van No': LookUp(\n                                Warehouses,\n                                Warehouse = varUserVanNo.Van.Warehouse\n                            ),\n                            'Item Type': If(\n                                ThissItem.schemeOrder = true,\n                                'Item Type (Choice)'.Free,\n                                'Item Type (Choice)'.Paid\n                            ),\n                            'Item SKU': LookUp(\n                                'SKU Masters',\n                                'SKU Master' = ThissItem.productId\n                            ),\n                            'Cases Unit Price': ThissItem.caseUnitPrice,\n                            'Pcs Unit Price': ThissItem.pcsUnitPrice,\n                            // 'Total Amount': (ThissItem.qtyCases * ThissItem.caseUnitPrice) + (ThissItem.qtyPcs * ThissItem.pcsUnitPrice),\n                            'Total Discount Amount': Value(ThissItem.discount),\n                            'Tax Amount': ThissItem.taxAmount,\n                            'Net Amount': ThissItem.netAmount,\n                            'Customer no.': LookUp(\n                                Customers_1,\n                                Account = OrderData.Account\n                            ),\n                            'Route No': LookUp(\n                                Areas,\n                                Area = varUserArea.Area.Area\n                            ),\n                            'Scheme Parent Item Code': LookUp(\n                                'SKU Masters',\n                                'SKU Master' = ThissItem.SchemeOrderProductReference\n                            ),\n                            'Scheme Order Item': LookUp(\n                                'Scheme Orders',\n                                'Scheme Order' = ThissItem.SchemeOrderLine.'Scheme Order'\n                            ),\n                            'Scheme Offer Item': LookUp(\n                                'Scheme Offers',\n                                'Scheme Offers' = ThissItem.schemeOrderValue.'Scheme Offers'\n                            )\n                          //  'Manufacturing Date': DateValue(ThissItem.manDate)\n                        }"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "cr8eb_emptyjars",
+              "Number",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrTypeError-Arg-Expected-Found",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 7222,
+                  "charOffset": 13235,
+                  "snippet": {
+                    "text": "ClearCollect(\n            CreateItemsRecord,\n            ForAll(\n                /*Filter(\n                    colCartItems,\n                    schemeOrder = true\n                )*/ \n                colCart As ThissItem,\n                If(\n                    IsBlank(\n                        LookUp(\n                            'Order Lines',\n                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Parent Item Code'.'SKU Master' = ThissItem.SchemeOrderProductReference\n                        )\n                    ),\n                    Patch(\n                        'Order Lines',\n                        Defaults('Order Lines'),\n                        {\n                            'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,\n                            Cases: ThissItem.qtyCases,\n                            PCs: ThissItem.qtyPcs,\n                            'Empty Jars': ThissItem.emptyJar,\n                            'Order Number': LookUp(\n                                'Order Headers',\n                                'Order Number' = CreateOrderRecorddata.'Order Number'\n                            ),\n                            Salesperson: LookUp(\n                                Users,\n                                'Primary Email' = User().Email\n                            ),\n                            'Van No': LookUp(\n                                Warehouses,\n                                Warehouse = varUserVanNo.Van.Warehouse\n                            ),\n                            'Item Type': If(\n                                ThissItem.schemeOrder = true,\n                                'Item Type (Choice)'.Free,\n                                'Item Type (Choice)'.Paid\n                            ),\n                            'Item SKU': LookUp(\n                                'SKU Masters',\n                                'SKU Master' = ThissItem.productId\n                            ),\n                            'Cases Unit Price': ThissItem.caseUnitPrice,\n                            'Pcs Unit Price': ThissItem.pcsUnitPrice,\n                            // 'Total Amount': (ThissItem.qtyCases * ThissItem.caseUnitPrice) + (ThissItem.qtyPcs * ThissItem.pcsUnitPrice),\n                            'Total Discount Amount': Value(ThissItem.discount),\n                            'Tax Amount': ThissItem.taxAmount,\n                            'Net Amount': ThissItem.netAmount,\n                            'Customer no.': LookUp(\n                                Customers_1,\n                                Account = OrderData.Account\n                            ),\n                            'Route No': LookUp(\n                                Areas,\n                                Area = varUserArea.Area.Area\n                            ),\n                            'Scheme Parent Item Code': LookUp(\n                                'SKU Masters',\n                                'SKU Master' = ThissItem.SchemeOrderProductReference\n                            ),\n                            'Scheme Order Item': LookUp(\n                                'Scheme Orders',\n                                'Scheme Order' = ThissItem.SchemeOrderLine. 'Scheme Order'\n                            ),\n                            'Scheme Offer Item': LookUp(\n                                'Scheme Offers',\n                                'Scheme Offers' = ThissItem.schemeOrderValue.'Scheme Offers'\n                            )\n                          //  'Manufacturing Date': DateValue(ThissItem.manDate)\n                        }\n                    ),\n                    Patch(\n                        'Order Lines',\n                        LookUp(\n                            'Order Lines',\n                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Parent Item Code'.'SKU Master' = ThissItem.SchemeOrderProductReference\n                        ),\n                        {\n                            'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,\n                            Cases: ThissItem.qtyCases,\n                            PCs: ThissItem.qtyPcs,\n                            'Empty Jars': ThissItem.emptyJar,\n                            'Order Number': LookUp(\n                                'Order Headers',\n                                'Order Number' = CreateOrderRecorddata.'Order Number'\n                            ),\n                            Salesperson: LookUp(\n                                Users,\n                                'Primary Email' = User().Email\n                            ),\n                            'Van No': LookUp(\n                                Warehouses,\n                                Warehouse = varUserVanNo.Van.Warehouse\n                            ),\n                            'Item Type': If(\n                                ThissItem.schemeOrder = true,\n                                'Item Type (Choice)'.Free,\n                                'Item Type (Choice)'.Paid\n                            ),\n                            'Item SKU': LookUp(\n                                'SKU Masters',\n                                'SKU Master' = ThissItem.productId\n                            ),\n                            'Cases Unit Price': ThissItem.caseUnitPrice,\n                            'Pcs Unit Price': ThissItem.pcsUnitPrice,\n                            // 'Total Amount': (ThissItem.qtyCases * ThissItem.caseUnitPrice) + (ThissItem.qtyPcs * ThissItem.pcsUnitPrice),\n                            'Total Discount Amount': Value(ThissItem.discount),\n                            'Tax Amount': ThissItem.taxAmount,\n                            'Net Amount': ThissItem.netAmount,\n                            'Customer no.': LookUp(\n                                Customers_1,\n                                Account = OrderData.Account\n                            ),\n                            'Route No': LookUp(\n                                Areas,\n                                Area = varUserArea.Area.Area\n                            ),\n                            'Scheme Parent Item Code': LookUp(\n                                'SKU Masters',\n                                'SKU Master' = ThissItem.SchemeOrderProductReference\n                            ),\n                            'Scheme Order Item': LookUp(\n                                'Scheme Orders',\n                                'Scheme Order' = ThissItem.SchemeOrderLine.'Scheme Order'\n                            ),\n                            'Scheme Offer Item': LookUp(\n                                'Scheme Offers',\n                                'Scheme Offers' = ThissItem.schemeOrderValue.'Scheme Offers'\n                            )\n                          //  'Manufacturing Date': DateValue(ThissItem.manDate)\n                        }\n                    )\n                )\n            )\n        )"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ClearCollect"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 15,
+                  "charOffset": 37632,
+                  "snippet": {
+                    "text": ".'Scheme Order'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "VisitExecution",
+                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "SchemeOrderLine.zx_schemeorderid"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 37605,
                   "snippet": {
                     "text": "="
                   }
@@ -5745,7 +9486,7 @@
                 },
                 "region": {
                   "charLength": 16,
-                  "charOffset": 16792,
+                  "charOffset": 37861,
                   "snippet": {
                     "text": ".'Scheme Offers'"
                   }
@@ -5768,7 +9509,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -5785,7 +9526,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 16764,
+                  "charOffset": 37833,
                   "snippet": {
                     "text": "="
                   }
@@ -5825,7 +9566,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 19982,
+                  "charOffset": 41515,
                   "snippet": {
                     "text": ".'Scheme Order'"
                   }
@@ -5848,7 +9589,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -5865,7 +9606,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 19955,
+                  "charOffset": 41488,
                   "snippet": {
                     "text": "="
                   }
@@ -5905,7 +9646,7 @@
                 },
                 "region": {
                   "charLength": 16,
-                  "charOffset": 20211,
+                  "charOffset": 41744,
                   "snippet": {
                     "text": ".'Scheme Offers'"
                   }
@@ -5928,7 +9669,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -5945,7 +9686,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 20183,
+                  "charOffset": 41716,
                   "snippet": {
                     "text": "="
                   }
@@ -5985,7 +9726,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 37603,
+                  "charOffset": 61284,
                   "snippet": {
                     "text": ".'Scheme Order'"
                   }
@@ -6008,7 +9749,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -6025,7 +9766,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 37576,
+                  "charOffset": 61257,
                   "snippet": {
                     "text": "="
                   }
@@ -6065,7 +9806,7 @@
                 },
                 "region": {
                   "charLength": 16,
-                  "charOffset": 37832,
+                  "charOffset": 61545,
                   "snippet": {
                     "text": ".'Scheme Offers'"
                   }
@@ -6088,7 +9829,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -6105,7 +9846,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 37804,
+                  "charOffset": 61517,
                   "snippet": {
                     "text": "="
                   }
@@ -6145,7 +9886,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 41486,
+                  "charOffset": 64810,
                   "snippet": {
                     "text": ".'Scheme Order'"
                   }
@@ -6168,7 +9909,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -6185,7 +9926,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 41459,
+                  "charOffset": 64783,
                   "snippet": {
                     "text": "="
                   }
@@ -6225,7 +9966,7 @@
                 },
                 "region": {
                   "charLength": 16,
-                  "charOffset": 41715,
+                  "charOffset": 65071,
                   "snippet": {
                     "text": ".'Scheme Offers'"
                   }
@@ -6248,7 +9989,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -6265,7 +10006,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 41687,
+                  "charOffset": 65043,
                   "snippet": {
                     "text": "="
                   }
@@ -6305,7 +10046,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 61255,
+                  "charOffset": 85691,
                   "snippet": {
                     "text": ".'Scheme Order'"
                   }
@@ -6328,7 +10069,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -6345,7 +10086,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 61228,
+                  "charOffset": 85664,
                   "snippet": {
                     "text": "="
                   }
@@ -6385,7 +10126,7 @@
                 },
                 "region": {
                   "charLength": 16,
-                  "charOffset": 61516,
+                  "charOffset": 85952,
                   "snippet": {
                     "text": ".'Scheme Offers'"
                   }
@@ -6408,7 +10149,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -6425,7 +10166,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 61488,
+                  "charOffset": 85924,
                   "snippet": {
                     "text": "="
                   }
@@ -6465,7 +10206,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 64781,
+                  "charOffset": 90300,
                   "snippet": {
                     "text": ".'Scheme Order'"
                   }
@@ -6488,7 +10229,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -6505,7 +10246,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 64754,
+                  "charOffset": 90273,
                   "snippet": {
                     "text": "="
                   }
@@ -6545,7 +10286,7 @@
                 },
                 "region": {
                   "charLength": 16,
-                  "charOffset": 65042,
+                  "charOffset": 90561,
                   "snippet": {
                     "text": ".'Scheme Offers'"
                   }
@@ -6568,7 +10309,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -6585,7 +10326,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 65014,
+                  "charOffset": 90533,
                   "snippet": {
                     "text": "="
                   }
@@ -6625,7 +10366,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 85662,
+                  "charOffset": 111227,
                   "snippet": {
                     "text": ".'Scheme Order'"
                   }
@@ -6648,7 +10389,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -6665,7 +10406,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 85635,
+                  "charOffset": 111200,
                   "snippet": {
                     "text": "="
                   }
@@ -6705,7 +10446,7 @@
                 },
                 "region": {
                   "charLength": 16,
-                  "charOffset": 85923,
+                  "charOffset": 111488,
                   "snippet": {
                     "text": ".'Scheme Offers'"
                   }
@@ -6728,7 +10469,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -6745,7 +10486,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 85895,
+                  "charOffset": 111460,
                   "snippet": {
                     "text": "="
                   }
@@ -6785,7 +10526,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 90271,
+                  "charOffset": 114903,
                   "snippet": {
                     "text": ".'Scheme Order'"
                   }
@@ -6808,7 +10549,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -6825,7 +10566,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 90244,
+                  "charOffset": 114876,
                   "snippet": {
                     "text": "="
                   }
@@ -6865,7 +10606,7 @@
                 },
                 "region": {
                   "charLength": 16,
-                  "charOffset": 90532,
+                  "charOffset": 115164,
                   "snippet": {
                     "text": ".'Scheme Offers'"
                   }
@@ -6888,7 +10629,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -6905,7 +10646,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 90504,
+                  "charOffset": 115136,
                   "snippet": {
                     "text": "="
                   }
@@ -6945,7 +10686,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 111198,
+                  "charOffset": 135926,
                   "snippet": {
                     "text": ".'Scheme Order'"
                   }
@@ -6968,7 +10709,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -6985,7 +10726,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 111171,
+                  "charOffset": 135899,
                   "snippet": {
                     "text": "="
                   }
@@ -7025,7 +10766,7 @@
                 },
                 "region": {
                   "charLength": 16,
-                  "charOffset": 111459,
+                  "charOffset": 136187,
                   "snippet": {
                     "text": ".'Scheme Offers'"
                   }
@@ -7048,7 +10789,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -7065,7 +10806,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 111431,
+                  "charOffset": 136159,
                   "snippet": {
                     "text": "="
                   }
@@ -7105,7 +10846,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 114874,
+                  "charOffset": 140385,
                   "snippet": {
                     "text": ".'Scheme Order'"
                   }
@@ -7128,7 +10869,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -7145,7 +10886,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 114847,
+                  "charOffset": 140358,
                   "snippet": {
                     "text": "="
                   }
@@ -7185,7 +10926,7 @@
                 },
                 "region": {
                   "charLength": 16,
-                  "charOffset": 115135,
+                  "charOffset": 140646,
                   "snippet": {
                     "text": ".'Scheme Offers'"
                   }
@@ -7208,7 +10949,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -7225,327 +10966,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 115107,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "VisitExecution",
-                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 15,
-                  "charOffset": 135897,
-                  "snippet": {
-                    "text": ".'Scheme Order'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "VisitExecution",
-                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "SchemeOrderLine.zx_schemeorderid"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 135870,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "VisitExecution",
-                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 16,
-                  "charOffset": 136158,
-                  "snippet": {
-                    "text": ".'Scheme Offers'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "VisitExecution",
-                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "schemeOrderValue.zx_schemeoffersid"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 136130,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "VisitExecution",
-                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 15,
-                  "charOffset": 140356,
-                  "snippet": {
-                    "text": ".'Scheme Order'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "VisitExecution",
-                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "SchemeOrderLine.zx_schemeorderid"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 140329,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "VisitExecution",
-                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 16,
-                  "charOffset": 140617,
-                  "snippet": {
-                    "text": ".'Scheme Offers'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "VisitExecution",
-                "type": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "schemeOrderValue.zx_schemeoffersid"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "VisitExecution.PaymentsVisitsTest.DataCard1_10.Container7.btnPaymentConfirm_5.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 140589,
+                  "charOffset": 140618,
                   "snippet": {
                     "text": "="
                   }
@@ -7719,7 +11140,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 3
+          "ruleIndex": 8
         },
         {
           "locations": [
@@ -7749,7 +11170,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 4
+          "ruleIndex": 9
         },
         {
           "locations": [
@@ -7779,7 +11200,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 4
+          "ruleIndex": 9
         },
         {
           "locations": [
@@ -7809,7 +11230,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 4
+          "ruleIndex": 9
         },
         {
           "locations": [
@@ -7839,7 +11260,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 4
+          "ruleIndex": 9
         },
         {
           "locations": [
@@ -7869,7 +11290,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 4
+          "ruleIndex": 9
         },
         {
           "locations": [
@@ -7899,7 +11320,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 4
+          "ruleIndex": 9
         },
         {
           "locations": [
@@ -7929,7 +11350,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 4
+          "ruleIndex": 9
         },
         {
           "locations": [
@@ -7958,7 +11379,7 @@
             "level": "Medium"
           },
           "ruleId": "app-DataSourceDefaultMaxRowsLimit",
-          "ruleIndex": 5
+          "ruleIndex": 10
         },
         {
           "locations": [
@@ -7987,7 +11408,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 6
+          "ruleIndex": 11
         },
         {
           "locations": [
@@ -8017,7 +11438,7 @@
             "level": "Medium"
           },
           "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 7
+          "ruleIndex": 12
         },
         {
           "locations": [
@@ -8046,7 +11467,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 6
+          "ruleIndex": 11
         }
       ],
       "tool": {
@@ -8087,6 +11508,79 @@
                   "If you’re comparing records or tables, the field or column types must match exactly."
                 ],
                 "level": "Medium",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrInvalidName",
+              "messageStrings": {
+                "issue": {
+                  "text": "Name isn't valid. '{0}' isn't recognized."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Remove or correct the reference to the name that isn't valid."
+                ],
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrBadType",
+              "messageStrings": {
+                "issue": {
+                  "text": "Invalid argument type."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrInvalidArgs-Func",
+              "messageStrings": {
+                "issue": {
+                  "text": "The function '{0}' has some invalid arguments."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrInvalidDot",
+              "messageStrings": {
+                "issue": {
+                  "text": "Invalid use of '.'"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrTypeError-Arg-Expected-Found",
+              "messageStrings": {
+                "issue": {
+                  "text": "The type of this argument '{0}' does not match the expected type '{1}'. Found type '{2}'."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
                 "primaryCategory": "formula",
                 "whyFix": ""
               }

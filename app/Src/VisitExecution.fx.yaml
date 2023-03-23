@@ -5646,10 +5646,11 @@
                         ClearCollect(
                                     CreateItemsRecord,
                                     ForAll(
-                                        Filter(
+                                        /*Filter(
                                             colCartItems,
                                             schemeOrder = true
-                                        ) As ThissItem,
+                                        )*/ 
+                                        colCart As ThissItem,
                                         If(
                                             IsBlank(
                                                 LookUp(
