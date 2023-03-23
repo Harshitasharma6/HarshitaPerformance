@@ -308,6 +308,7 @@ NewOrder As CanvasComponent:
                                                                 'Item SKU'.'SKU Master'
                                                             ).skuID);
                                 
+                                
                                 If(
                                     Self.Text <> "" And Value(Self.Text) <> RoundDown(
                                         Value(Self.Text),
@@ -879,7 +880,7 @@ NewOrder As CanvasComponent:
                                                                 colFinalSchemeOrder,
                                                                 "SchemeOrder",
                                                                 'Scheme Order'
-                                                            ).SchemeOrder) && ('Offer Item Code'.'SKU Master' in  colSKU
+                                                            ).SchemeOrder) && ('Offer Item Code'.'SKU Master' in colSKU
                                                             /*AddColumns(
                                                                 Filter(
                                                                     'Current Stocks',
