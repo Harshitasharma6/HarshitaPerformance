@@ -638,7 +638,7 @@ NewOrder_2 As CanvasComponent:
                                                 OrderLinesSum: Sum(
                                                     Filter(
                                                         'Order Lines' As Item,
-                                                        (Item.'Customer no.'.Account = varOrderData.Account) && Item.'Item SKU'.'SKU Master' = ThisItem.'Item SKU'.'SKU Master' && Item.'Created On' >= DateValue(varDiscountDate) && DateValue(Item.'Created On') <= DateValue(varDiscountDate) 
+                                                        (Item.'Customer no.'.Account = varOrderData.Account) && Item.'Item SKU'.'SKU Master' = ThisItem.'Item SKU'.'SKU Master' && Item.'Created On'>= DateValue(varDiscountDate) && DateValue(Item.'Created On') <= DateValue(varDiscountDate) 
                                                         /*DateValue(
                                                             LookUp(
                                                                 'Discount Lines',
