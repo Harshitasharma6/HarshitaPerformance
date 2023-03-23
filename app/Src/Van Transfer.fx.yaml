@@ -339,18 +339,19 @@
                     ).Area.Area
                 ).Salesperson.'Full Name'*/
                 
-                LookUp(
+                /*LookUp(
                     'User Area Mappings',
-                    Area.Area = varstocktransfer
-                   /* LookUp(
+                    Area.Area = 
+                   LookUp(
                         'Location VAN Mappings',
                         Van.Warehouse = 
                         LookUp(
                             'Stock Transfer Headers',
                             'Stock Transfer Header' = ThisItem.'Transfer Order No'.'Stock Transfer Header'
                         ).'From Location'.Warehouse
-                    ).Area.Area*/
-                ).Salesperson.'Full Name'
+                    ).Area.Area
+                ).Salesperson.'Full Name'*/
+                ThisItem.ToSalesperson
             Width: =171
             X: =407
             Y: =70
@@ -1205,7 +1206,7 @@
             OnSelect: =Select(Parent)
             Size: =12
             Text: |-
-                =LookUp(
+                =/*LookUp(
                     'User Area Mappings',
                     Area.Area = 
                     LookUp(
@@ -1215,7 +1216,8 @@
                             'Stock Transfer Header' = ThisItem.'Transfer Order No'.'Stock Transfer Header'
                         ).'To Location'.Warehouse
                     ).Area.Area
-                ).Salesperson.'Full Name'
+                ).Salesperson.'Full Name'*/
+                ThisItem.ToSalesperson
             Width: =220
             X: =400
             Y: =70
