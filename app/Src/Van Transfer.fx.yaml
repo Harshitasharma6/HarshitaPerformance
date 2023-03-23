@@ -1262,10 +1262,10 @@
                         colOfflineUsers,
                         'Primary Email' = LookUp(
                             'User Area Mappings',
-                            Area.Area = LookUp(
+                            Area.Area = /*LookUp(
                                 'Location VAN Mappings',
                                 Van.Warehouse = varHarkamalAudi
-                            ).Area.Area
+                            ).Area.Area*/ varSelectedLocation
                         ).Salesperson.'Primary Email' && Not(IsBlank('Primary Email')) && Not('Full Name' = "INTEGRATION")
                     )
                 DisplayFields: =["fullname"]
@@ -1315,7 +1315,11 @@
                     Set(
                         varVaishaliMercedes,
                         Self.Selected.'Primary Email'
-                    )
+                    );
+                    Set(varSelectedLocation,LookUp(
+                                'Location VAN Mappings',
+                                Van.Warehouse = varHarkamalAudi
+                            ).Area.Area)
                 OnSelect: =
                 PressedFill: =_VarGblAppColors.BisleriBlue
                 SearchFields: =["firstname"]
