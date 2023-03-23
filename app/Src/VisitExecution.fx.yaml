@@ -1,13 +1,13 @@
 "VisitExecution As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
     Fill: =_VarGblAppColors.LightText
     OnVisible: |
-        =/*Set(
-            varCustomerGroupDetail,
+        =Set(
+            Customers_1Detail,
             LookUp(
-                'Customer group details',
-                Customer.Account = OrderData.Account
+                Customers_1,
+                Account = OrderData.Account
             )
-        );*/
+        );
         Clear(CreateInvHeader);
         Set(
             varOrderData,
@@ -21,20 +21,14 @@
             varCustomerGroup,
             LookUp(
                 'Customer groups',
-                'Customer group' = LookUp(
-                    Customers_1,
-                    Account = OrderData.Account
-                ).'Customer Group'.'Customer group'
+                'Customer group' = Customers_1Detail.'Customer Group'.'Customer group'
             )
         );
         Set(
             varPricingMaster,
             LookUp(
                 varOfflinePricingMaster,
-                'Branch/Site '.'Branch Master' = LookUp(
-                    Customers_1,
-                    Account = OrderData.Account
-                ).Branch.'Branch Master'
+                'Branch/Site '.'Branch Master' = Customers_1Detail.Branch.'Branch Master'
             )
         );
         Set(
@@ -2134,144 +2128,57 @@
                                     );
                                 );
                             );
-                            
-                        ////////////////////////////////////////////////////IRN Item Data Condition
+                             ////////////////////////////////////////////////////IRN Item Data Condition
                         Clear(ManipulatedCartCollection);
                             ForAll(
                                 CreateItemsRecord As Item,
-                                If(
-                                    !IsBlank(Item.'Reference Scheme '),
-                                    Collect(
-                                        ManipulatedCartCollection,
-                                        {
-                                            SlNo: Item.'Order Line No',
-                                            PrdDesc: Item.'Item SKU'.'Name (zx_namess)',
-                                            IsServc: "N",
-                                            HsnCd: "10019920",
-                                            Barcde: "",
-                                            FreeQty: Item.'Total Quantity',
-                                            Unit: "PCS",
-                                            UnitPrice: Item.'Cases Unit Price',
-                                            TotAmt: Item.'Total Discount Amount',
-                                            Discount: Item.'Total Discount Amount',
-                                            PreTaxVal: 1,
-                                            AssAmt: 9978.84,
-                                            GstRt: 12.0,
-                                            IgstAmt: 0,
-                                            CgstAmt: 0,
-                                            SgstAmt: 0,
-                                            CesRt: 5,
-                                            CesAmt: 498.94,
-                                            CesNonAdvlAmt: 10,
-                                            StateCesRt: 12,
-                                            StateCesAmt: 1197.46,
-                                            StateCesNonAdvlAmt: 5,
-                                            OthChrg: 10,
-                                            TotItemVal: Item.'Total Discount Amount',
-                                            OrdLineRef: "3256",
-                                            OrgCntry: "AG",
-                                            PrdSlNo: "12345",
-                                            AttribDtls: Table(
-                                                {
-                                                    Nm: "Rice",
-                                                    Val: "10000"
-                                                }
-                                            )
-                                        }
-                                    ),
-                                    Collect(
-                                        ManipulatedCartCollection,
-                                        {
-                                            SlNo: Item.'Order Line No',
-                                            PrdDesc: Item.'Item SKU'.'Name (zx_namess)',
-                                            IsServc: "N",
-                                            HsnCd: "10019920",
-                                            Barcde: "",
-                                            FreeQty: Item.'Total Quantity',
-                                            Unit: "PCS",
-                                            UnitPrice: Item.'Cases Unit Price',
-                                            TotAmt: Item.'Total Discount Amount',
-                                            Discount: Item.'Total Discount Amount',
-                                            PreTaxVal: 1,
-                                            AssAmt: 9978.84,
-                                            GstRt: 12.0,
-                                            IgstAmt: 0,
-                                            CgstAmt: 0,
-                                            SgstAmt: 0,
-                                            CesRt: 5,
-                                            CesAmt: 498.94,
-                                            CesNonAdvlAmt: 10,
-                                            StateCesRt: 12,
-                                            StateCesAmt: 1197.46,
-                                            StateCesNonAdvlAmt: 5,
-                                            OthChrg: 10,
-                                            TotItemVal: Item.'Total Discount Amount',
-                                            OrdLineRef: "3256",
-                                            OrgCntry: "AG",
-                                            PrdSlNo: "12345",
-                                            BchDtls: {
-                                                Nm: "361",
-                                                ExpDt: "26/01/2023",
-                                                WrDt: "26/01/2023"
-                                            },
-                                            AttribDtls: Table(
-                                                {
-                                                    Nm: "Rice",
-                                                    Val: "10000"
-                                                }
-                                            )
-                                        }
-                                    )
-                                )
-                            );
+                               {
+                              SlNo: "160000",
+                              PrdDesc: "BISLERI WATER 20LTR (MRP 90)",
+                              IsServc: "N",
+                              HsnCd: "22011010",
+                              Barcde: "FBW20000010090JRGN",
+                              Qty: 3,
+                              FreeQty: 0,
+                              Unit: "PCS",
+                              UnitPrice: 57.86,
+                              TotAmt: 173.58,
+                              Discount: 0,
+                              PreTaxVal: 0,
+                              AssAmt: 173.58,
+                              GstRt: 12,
+                              IgstAmt: 0,
+                              CgstAmt: 10.41,
+                              SgstAmt: 10.41,
+                              CesRt: 0,
+                              CesAmt: 0,
+                              CesNonAdvlAmt: 0,
+                              StateCesRt: 0,
+                              StateCesAmt: 0,
+                              StateCesNonAdvlAmt: 0,
+                              OthChrg: 0,
+                              TotItemVal: 194.4,
+                              OrdLineRef: "1234",
+                              OrgCntry: "IN",
+                              PrdSlNo: "12345",
+                              BchDtls: {
+                                   Nm: "361",
+                                            ExpDt : "26/01/2023",
+                                            WrDt: "26/01/2023"
+                              },
+                              
+                              AttribDtls: Table(
+                                {
+                                  Nm: "BISLERI WATER 20LTR (MRP 90)",
+                                  Val: "1000"
+                                })
+                              
+                            }
+                        
+                                );
+                                
+                                
                             
-                        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////IRN 
-                        Collect(
-                                Productline,
-                                {
-                                    Nm: "BISLERI WATER 20LTR (MRP 90)",
-                                    Val: "1000"
-                                }
-                            );
-                            Collect(
-                                ProductList,
-                                {
-                                    SlNo: "160000",
-                                    PrdDesc: "BISLERI WATER 20LTR (MRP 90)",
-                                    IsServc: "N",
-                                    HsnCd: "22011010",
-                                    Barcde: "FBW20000010090JRGN",
-                                    Qty: 3,
-                                    FreeQty: 0,
-                                    Unit: "PCS",
-                                    UnitPrice: 57,
-                                    TotAmt: 173,
-                                    Discount: 0,
-                                    PreTaxVal: 0,
-                                    AssAmt: 173,
-                                    GstRt: 12,
-                                    IgstAmt: 0,
-                                    CgstAmt: 10,
-                                    SgstAmt: 10,
-                                    CesRt: 0,
-                                    CesAmt: 0,
-                                    CesNonAdvlAmt: 0,
-                                    StateCesRt: 0,
-                                    StateCesAmt: 0,
-                                    StateCesNonAdvlAmt: 0,
-                                    OthChrg: 0,
-                                    TotItemVal: 194,
-                                    OrdLineRef: "1234",
-                                    OrgCntry: "IN",
-                                    PrdSlNo: "12345",
-                                    BchDtls: {
-                                        Nm: "361",
-                                        ExpDt: "26/01/2023",
-                                        WrDt: "26/01/2023"
-                                    },
-                                    AttribDtls: Productline
-                                }
-                            );
                             If(
                                 CountRows(CreateOrderRecord) > 0 && CountRows(CreateItemsRecord) > 0 
                                 /*&& !IsBlank(
@@ -2442,8 +2349,12 @@
                                                     2
                                                 )
                                             },
-                                            // ItemList: ManipulatedCartCollection
-                                            ItemList: First(ProductList)
+                                             BchDtls: {
+                                   Nm: "361",
+                                            ExpDt : "26/01/2023",
+                                            WrDt: "26/01/2023"
+                              }
+                                            //ItemList: First(ProductList)
                                         }
                                     )
                                 );
@@ -2452,7 +2363,7 @@
                                     "signedQRGenerated"
                                 );
                                 Notify(
-                                    "IRN has been generated sucessfully",
+                                    " ,
                                     NotificationType.Success,
                                     2000
                                 );
