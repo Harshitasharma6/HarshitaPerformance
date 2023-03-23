@@ -2135,55 +2135,6 @@
                             );
                              ////////////////////////////////////////////////////IRN Item Data Condition
                         Clear(ManipulatedCartCollection);
-                            ForAll(
-                                CreateItemsRecord As Item,
-                               {
-                              SlNo: "160000",
-                              PrdDesc: "BISLERI WATER 20LTR (MRP 90)",
-                              IsServc: "N",
-                              HsnCd: "22011010",
-                              Barcde: "FBW20000010090JRGN",
-                              Qty: 3,
-                              FreeQty: 0,
-                              Unit: "PCS",
-                              UnitPrice: 57.86,
-                              TotAmt: 173.58,
-                              Discount: 0,
-                              PreTaxVal: 0,
-                              AssAmt: 173.58,
-                              GstRt: 12,
-                              IgstAmt: 0,
-                              CgstAmt: 10.41,
-                              SgstAmt: 10.41,
-                              CesRt: 0,
-                              CesAmt: 0,
-                              CesNonAdvlAmt: 0,
-                              StateCesRt: 0,
-                              StateCesAmt: 0,
-                              StateCesNonAdvlAmt: 0,
-                              OthChrg: 0,
-                              TotItemVal: 194.4,
-                              OrdLineRef: "1234",
-                              OrgCntry: "IN",
-                              PrdSlNo: "12345",
-                              BchDtls: {
-                                   Nm: "361",
-                                            ExpDt : "26/01/2023",
-                                            WrDt: "26/01/2023"
-                              },
-                              
-                              AttribDtls: Table(
-                                {
-                                  Nm: "BISLERI WATER 20LTR (MRP 90)",
-                                  Val: "1000"
-                                })
-                              
-                            }
-                        
-                                );
-                                
-                                
-                            
                             If(
                                 CountRows(CreateOrderRecord) > 0 && CountRows(CreateItemsRecord) > 0 
                                 /*&& !IsBlank(
@@ -2211,164 +2162,13 @@
                                 ).Branch.Name = "Mumbai")),
                                 Set(
                                     testButton,
-                                    IRN.IRn(
-                                        {
-                                            'Content-Type': "applcattion/json",
-                                            'x-cleartax-auth-token': "1.dd8d5b2c-8056-4a40-8177-d9990708a3b4_bf12581e12b80c05d798d80ec47ebd29781a3e4ca42b69b2fdde125df2c934b9",
-                                            'x-cleartax-product': "EInvoice",
-                                            owner_id: "7005967e-8331-40a2-b437-f99ea6e74193",
-                                            gstin: "27AAFCD5862R013",
-                                            Version: "1.1",
-                                            TranDtls: {
-                                                TaxSch: "GST",
-                                                SupTyp: "B2B",
-                                                RegRev: "N",
-                                                IgstOnIntra: "N"
-                                            },
-                                            DocDtls: {
-                                                Typ: "INV",
-                                                No: "RI2223C064007302",
-                                                Dt: "24/12/2022"
-                                            },
-                                            SellerDtls: {
-                                                Gstin: "27AAFCD5862R013",
-                                                LglNm: "MH04GR6972",
-                                                TrdNm: "MH04GR6972",
-                                                Addr1: "JUPITOR HOSPITAL",
-                                                Addr2: "THANE",
-                                                Loc: "V433",
-                                                Pin: 400407,
-                                                Stcd: "27",
-                                                Ph: "982565858",
-                                                Em: "Test123@gmail.com"
-                                            },
-                                            /*    
-                                        BuyerDtls: {
-                                            Gstin: "27AABCJ1982E1ZN",
-                                            LglNm: "FORTUNE PARK LAKE CITY",
-                                            TrdNm: "FORTUNE PARK LAKE CITY",
-                                            Pos: "27",
-                                            Addr1: "JUPITER MEDIPARKEASTERN EXPRESS HIGHWAY THANE",
-                                            Addr2: "WEST",
-                                            Loc: "Maharashtra",
-                                            Pin: 400601,
-                                            Stcd: "27",
-                                            Ph: "859657852",
-                                            Em: "Test123@gmail.com"
-                                        },
-                                */
-                                            BuyerDtls: {
-                                                Gstin: LookUp(
-                                                    AllCustomerss,
-                                                    Account = OrderData.Account
-                                                ).GSTIN,
-                                                LglNm: OrderData.'Customer Name',
-                                                TrdNm: "",
-                                                Pos: Left(
-                                                    LookUp(
-                                                        AllCustomerss,
-                                                        Account = OrderData.Account
-                                                    ).GSTIN,
-                                                    2
-                                                ),
-                                                Addr1: LookUp(
-                                                    AllCustomerss,
-                                                    Account = OrderData.Account
-                                                ).'Address 1: Street 1',
-                                                Addr2: LookUp(
-                                                    AllCustomerss,
-                                                    Account = OrderData.Account
-                                                ).'Address 1: Street 2',
-                                                Loc: LookUp(
-                                                    AllCustomerss,
-                                                    Account = OrderData.Account
-                                                ).'Address 1: City',
-                                                Pin: LookUp(
-                                                    AllCustomerss,
-                                                    Account = OrderData.Account
-                                                ).'Address 1: ZIP/Postal Code',
-                                                Stcd: Left(
-                                                    LookUp(
-                                                        AllCustomerss,
-                                                        Account = OrderData.Account
-                                                    ).GSTIN,
-                                                    2
-                                                ),
-                                                Ph: LookUp(
-                                                    AllCustomerss,
-                                                    Account = OrderData.Account
-                                                ).'Mobile No',
-                                                Em: LookUp(
-                                                    AllCustomerss,
-                                                    Account = OrderData.Account
-                                                ).Email
-                                            },
-                                            DispDtls: {
-                                                Nm: "MH04GR6972",
-                                                Addr1: "JUPITOR HOSPITAL",
-                                                Addr2: "THANE",
-                                                Loc: "V433",
-                                                Pin: 400407,
-                                                Stcd: "27"
-                                            },
-                                            /*
-                                        ShipDtls: {
-                                            Gstin: "27AABCJ1982E1ZN",
-                                            LglNm: "FORTUNE PARK LAKE CITY",
-                                            TrdNm: "FORTUNE PARK LAKE CITY",
-                                            Addr1: "JUPITER MEDIPARKEASTERN EXPRESS HIGHWAY THANE",
-                                            Addr2: "WEST",
-                                            Loc: "Maharashtra",
-                                            Pin: 400601,
-                                            Stcd: "27"
-                                        },
-                                */
-                                            ShipDtls: {
-                                                Gstin: LookUp(
-                                                    AllCustomerss,
-                                                    Account = OrderData.Account
-                                                ).GSTIN,
-                                                LglNm: OrderData.'Customer Name',
-                                                TrdNm: "",
-                                                Addr1: LookUp(
-                                                    AllCustomerss,
-                                                    Account = OrderData.Account
-                                                ).'Address 1: Street 1',
-                                                Addr2: LookUp(
-                                                    AllCustomerss,
-                                                    Account = OrderData.Account
-                                                ).'Address 1: Street 2',
-                                                Loc: LookUp(
-                                                    AllCustomerss,
-                                                    Account = OrderData.Account
-                                                ).'Address 1: City',
-                                                Pin: LookUp(
-                                                    AllCustomerss,
-                                                    Account = OrderData.Account
-                                                ).'Address 1: ZIP/Postal Code',
-                                                Stcd: Left(
-                                                    LookUp(
-                                                        AllCustomerss,
-                                                        Account = OrderData.Account
-                                                    ).GSTIN,
-                                                    2
-                                                )
-                                            },
-                                             BchDtls: {
-                                   Nm: "361",
-                                            ExpDt : "26/01/2023",
-                                            WrDt: "26/01/2023"
-                              }
-                                            //ItemList: First(ProductList)
-                                        }
-                                    )
+                                    callprint.Run(Text(CreateInvHeaderdata.'Invoice Header'));
                                 );
                                 Set(
                                     varConfirmationIRN,
                                     "signedQRGenerated"
                                 );
                                 Notify(
-                                    " ,
                                     NotificationType.Success,
                                     2000
                                 );
@@ -2381,26 +2181,13 @@
                                             'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
                                         ),
                                         {
-                                            'Signed QR Code': Text(testButton.SignedQRCode),
-                                            'IRN Number': Text(testButton.Irn),
-                                            'IRN Message': Text(testButton.Success)
+                                            'Signed QR Code': Text(testButton.filedata),
+                                            'IRN Number': Text(testButton.filedata),
+                                            'IRN Message': Text(testButton.filedata)
                                         }
                                     )
                                 );
                                 ,
-                               /*   !(LookUp(
-                                    AllCustomerss,
-                                    Account = OrderData.Account
-                                ).'Customer Group'.Code = "KEY-RT") && !(LookUp(
-                                    AllCustomerss,
-                                    Account = OrderData.Account
-                                ).'Customer Group'.Code = "COR-RT"), */
-                                IsBlank(
-                                    LookUp(
-                                        AllCustomerss,
-                                        Account = OrderData.Account
-                                    ).GSTIN
-                                ),
                                 Patch(
                                     'Invoice Headers',
                                     LookUp(
@@ -4868,6 +4655,9 @@
                                 )
                             );
                             Refresh('Current Stocks');
+                            Collect(      testButton1,
+                                callprint.Run(CreateInvHeaderdata.'Invoice Header').filedata;
+                            );
                             /*Set(
                                 VarPaymentConfirm,
                                 true
@@ -9499,7 +9289,7 @@
                     Visits,
                     LookUp(
                         Visits,
-                        Customer.Account = OrderData.Account && IsBlank('Check-out Time') && IsToday('Created On')/*&& Customer.Salesperson.'Primary Email' = User().Email*/
+                        Customer.Account = OrderData.Account && IsBlank('Check-out Time') &&'Created On'>= Today()/*&& Customer.Salesperson.'Primary Email' = User().Email*/
                     ),
                     {
                         'Check-out Latitude': Location.Latitude,
@@ -9518,10 +9308,10 @@
                 );
                 //Set(varSelectedVisitActiveTab, 3);
                 //Clear(colReasonsVisits)
-                Navigate(
-                    'Visit Screen',
-                    ScreenTransition.CoverRight
-                )
+                //Navigate(
+                   // 'Visit Screen',
+                  //  ScreenTransition.CoverRight
+                //)
             Size: =_VarGblAppFonts.Size.UpperMedium
             Text: ="OK"
             Width: =150
