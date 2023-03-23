@@ -5355,10 +5355,13 @@
                                 Area = varUserArea.Area.Area
                             )
                         );
-                        ClearCollect(colCartData,Filter(
-                                            colCartItems,
-                                            schemeOrder = true
-                                        ));
+                        ClearCollect(
+                            colCartData,
+                            Filter(
+                                colCartItems,
+                                schemeOrder = true
+                            )
+                        );
                         If(
                             OrderData.'Mode Of Payment' = 'Payment Type (choice)'.CASH || OrderData.'Mode Of Payment' = 'Payment Type (choice)'.COUPON || OrderData.'Mode Of Payment' = 'Payment Type (choice)'.KOTAK || OrderData.'Mode Of Payment' = 'Payment Type (choice)'.PAYTM,
                             ClearCollect(
@@ -5703,9 +5706,8 @@
                                                     ),
                                                     'Scheme Order Item': LookUp(
                                                         'Scheme Orders',
-                                                        'Scheme Order' = ThissItem.SchemeOrderLine.
-                        'Scheme Order'
-                        ),
+                                                        'Scheme Order' = ThissItem.SchemeOrderLine. 'Scheme Order'
+                                                    ),
                                                     'Scheme Offer Item': LookUp(
                                                         'Scheme Offers',
                                                         'Scheme Offers' = ThissItem.schemeOrderValue.'Scheme Offers'
