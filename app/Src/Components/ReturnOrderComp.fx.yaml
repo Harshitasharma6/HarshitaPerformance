@@ -27,7 +27,7 @@ ReturnOrderComp As CanvasComponent:
             ZIndex: =1
 
             contReturnOrderLowerVertical As groupContainer.verticalAutoLayoutContainer:
-                Height: =App.Height + 50
+                Height: =713
                 LayoutDirection: =LayoutDirection.Vertical
                 LayoutMode: =LayoutMode.Auto
                 LayoutOverflowX: =LayoutOverflow.Scroll

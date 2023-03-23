@@ -237,12 +237,12 @@ App As appinfo:
                 )
             );
             ,
-            ClearCollect(
+            /*ClearCollect(
                 colOfflineItemMasters,
                 'Item Masters'
             );
             ,
-            /* ClearCollect(
+             ClearCollect(
                     colOfflineCustomers,
                     Customers_1
                 );   
@@ -518,6 +518,20 @@ App As appinfo:
                     SortOrder.Descending
                 )
             ).'Offline Order Number'
+        );
+        Set(
+            StockTransferWarehouse,
+            LookUp(
+                Warehouses,
+                Warehouse = varUserVanNo.Van.Warehouse
+            ).Warehouse
+        );
+        Set(
+            UserAreaGUID,
+            LookUp(
+                Areas,
+                Area = varUserArea.Area.Area
+            ).Area
         );
         /*ClearCollect(
             AllCustomerss,  
