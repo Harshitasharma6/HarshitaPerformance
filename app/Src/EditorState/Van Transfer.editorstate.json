@@ -5261,7 +5261,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "OnChange",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "/*Set(\r\n    varSelectedWarehouseVan,\r\n    LookUp(\r\n        'Location VAN Mappings',\r\n        Van.Warehouse = cmbVanTransferOutSelectVehicle.Selected.Warehouse\r\n    )\r\n);\r\nSet(\r\n    varSelectedWarehouseUser,\r\n    LookUp(\r\n        'User Area Mappings',\r\n        Area.Area = varSelectedWarehouseVan.Area.Area\r\n    )\r\n);*/\r\nSet(\r\n    varHarkamalAudi,\r\n    Self.Selected.Warehouse\r\n)",
+          "InvariantPropertyName": "OnChange",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
