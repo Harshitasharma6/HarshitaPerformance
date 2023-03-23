@@ -710,6 +710,7 @@ NewDemandScreen As screen:
         ZIndex: =6
 
     Icon4 As icon.Sync:
+        AccessibleLabel: ="Icon4"
         Color: =RGBA(255, 255, 255, 1)
         Height: =40
         Icon: =Icon.Sync
@@ -831,6 +832,7 @@ NewDemandScreen As screen:
                     );
                 )
             )
+        TabIndex: =0
         Width: =50
         X: =484
         Y: =20
