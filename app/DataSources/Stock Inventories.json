@@ -10,7 +10,6 @@
     "Name": "Stock Inventories",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",
-      "cr8eb_warehousecalculated": "WarehouseCalculated",
       "createdby": "Created By",
       "createdon": "Created On",
       "createdonbehalfby": "Created By (Delegate)",
