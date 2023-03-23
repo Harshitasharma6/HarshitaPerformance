@@ -178,7 +178,7 @@ NewOrder As CanvasComponent:
                         Items: |-
                             =Filter(
                                 'Current Stocks',
-                                IsToday('Created Date') && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
+                                'Created Date'>=Today() && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
                             )
                         Layout: =Layout.Vertical
                         LayoutMinHeight: =460
@@ -1071,6 +1071,11 @@ NewOrder As CanvasComponent:
                                     varLoading,
                                     true
                                 );
+                                Set(collorderheaderdata,LookUp(
+                                                            colOfflineVisitOrderHeader,
+                                                            Vists.'Visit ID' = First(VisitData).'Visit ID' && !IsBlank(Vists.'Visit ID')
+                                                        ));
+                                
                                 If(
                                     Self.Text <> "" And Value(Self.Text) <> RoundDown(
                                         Value(Self.Text),
@@ -1100,20 +1105,14 @@ NewOrder As CanvasComponent:
                                             'Order Lines',
                                             LookUp(
                                                 'Order Lines',
-                                                'Order Number'.'Order Id' = LookUp(
-                                                    colOfflineVisitOrderHeader,
-                                                    Vists.'Visit ID' = First(VisitData).'Visit ID' && !IsBlank(Vists.'Visit ID')
-                                                ).'Order Id' && 'Item SKU'.'SKU Master' = ThisItem.'Item SKU'.'SKU Master' && 'Item Type' = 'Item Type (Choice)'.Paid
+                                                'Order Number'.'Order Id' = collorderheaderdata.'Order Id' && 'Item SKU'.'SKU Master' = ThisItem.'Item SKU'.'SKU Master' && 'Item Type' = 'Item Type (Choice)'.Paid
                                             )
                                         );
                                         Remove(
                                             'Invoice Lines',
                                             LookUp(
                                                 'Invoice Lines',
-                                                'Order Number'.'Order Id' = LookUp(
-                                                    colOfflineVisitOrderHeader,
-                                                    Vists.'Visit ID' = First(VisitData).'Visit ID' && !IsBlank(Vists.'Visit ID')
-                                                ).'Order Id' && 'Item SKU'.'SKU Master' = ThisItem.'Item SKU'.'SKU Master' && 'Item Type' = 'Item Type (Choice)'.Paid
+                                                'Order Number'.'Order Id' = collorderheaderdata.'Order Id' && 'Item SKU'.'SKU Master' = ThisItem.'Item SKU'.'SKU Master' && 'Item Type' = 'Item Type (Choice)'.Paid
                                             )
                                         ),
                                         If(
@@ -1609,7 +1608,7 @@ NewOrder As CanvasComponent:
                                                             ).SchemeOrder) && ('Offer Item Code'.'SKU Master' in AddColumns(
                                                                 Filter(
                                                                     'Current Stocks',
-                                                                    IsToday('Created On') && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
+                                                                    'Created On' >=Today() && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse
                                                                 ),
                                                                 "skuID",
                                                                 'Item SKU'.'SKU Master'
@@ -1729,20 +1728,14 @@ NewOrder As CanvasComponent:
                                                     'Order Lines',
                                                     LookUp(
                                                         'Order Lines',
-                                                        'Order Number'.'Order Id' = LookUp(
-                                                            colOfflineVisitOrderHeader,
-                                                            Vists.'Visit ID' = First(VisitData).'Visit ID' && !IsBlank(Vists.'Visit ID')
-                                                        ).'Order Id' && 'Scheme Parent Item Code'.'SKU Master' = ThisItem.'Item SKU'.'SKU Master' && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Order Item'.'Ordered UOM' = 'UOM Choice'.CASE
+                                                        'Order Number'.'Order Id' = collorderheaderdata.'Order Id' && 'Scheme Parent Item Code'.'SKU Master' = ThisItem.'Item SKU'.'SKU Master' && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Order Item'.'Ordered UOM' = 'UOM Choice'.CASE
                                                     )
                                                 );
                                                 Remove(
                                                     'Invoice Lines',
                                                     LookUp(
                                                         'Invoice Lines',
-                                                        'Order Number'.'Order Id' = LookUp(
-                                                            colOfflineVisitOrderHeader,
-                                                            Vists.'Visit ID' = First(VisitData).'Visit ID' && !IsBlank(Vists.'Visit ID')
-                                                        ).'Order Id' && 'Scheme Parent Item Code'.'SKU Master' = ThisItem.'Item SKU'.'SKU Master' && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Order Item'.'Ordered UOM' = 'UOM Choice'.CASE
+                                                        'Order Number'.'Order Id' = collorderheaderdata.'Order Id' && 'Scheme Parent Item Code'.'SKU Master' = ThisItem.'Item SKU'.'SKU Master' && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Order Item'.'Ordered UOM' = 'UOM Choice'.CASE
                                                     )
                                                 );
                                             );
