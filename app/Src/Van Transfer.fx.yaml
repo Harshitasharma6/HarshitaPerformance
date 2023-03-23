@@ -93,7 +93,7 @@
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
             Fill: =If(ThisItem.IsSelected, _VarGblAppColors.BisleriBlue, _VarGblAppColors.BisleriBlueLight)
             FocusedBorderColor: =ColorFade(Self.Fill, 75%)
-            Height: =47
+            Height: =29
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(31, 31, 31, 1)
             HoverFill: =ColorFade(Self.Color, 10%)
@@ -144,7 +144,7 @@
             Text: =ThisItem.Title
             Width: =305
             X: =4
-            Y: =3
+            Y: =12
             ZIndex: =1
 
     galVanTransferInData As gallery.galleryVertical:

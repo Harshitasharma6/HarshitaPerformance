@@ -427,76 +427,36 @@ ReturnOrderComp As CanvasComponent:
                             Y: =23
                             ZIndex: =16
 
-    grpReturnOrder As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =20
-        ZIndex: =5
-
-        btnReturnOrderProceed As button:
-            Color: =_VarGblAppColors.LightText
-            DisplayMode: |-
-                =If(
-                    varVisitReturnOrMenuReturn,
-                    If(
-                        IsBlank(colReasonsVisits)  || IsBlank(cmbNewReplacementSelectCustomer.SelectedItems) || IsBlank(Label8_3),
-                        DisplayMode.Disabled,
-                        DisplayMode.Edit
-                    ),
-                    If(
-                        IsBlank(colReasonsVisits) && IsBlank(txtReturnOrderDataPcsValue) && IsBlank(Label8_3),
-                        DisplayMode.Disabled,
-                        DisplayMode.Edit
-                    )
+    btnReturnOrderProceed As button:
+        Color: =_VarGblAppColors.LightText
+        DisplayMode: |-
+            =If(
+                varVisitReturnOrMenuReturn,
+                If(
+                    IsBlank(colReasonsVisits)  || IsBlank(cmbNewReplacementSelectCustomer.SelectedItems) || IsBlank(Label8_3),
+                    DisplayMode.Disabled,
+                    DisplayMode.Edit
+                ),
+                If(
+                    IsBlank(colReasonsVisits) && IsBlank(txtReturnOrderDataPcsValue) && IsBlank(Label8_3),
+                    DisplayMode.Disabled,
+                    DisplayMode.Edit
                 )
-            Fill: =_VarGblAppColors.BisleriBlue
-            FocusedBorderThickness: =2
-            Height: =49
-            HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
-            OnSelect: |-
-                =//Set(_VarConfirmReplaceVisits, !_VarConfirmReplaceVisits);
-                If(varVisitReturnOrMenuReturn,Navigate(ReplacementPreviewScreen), Set(varSelectedVisitActiveTab, 4))
-            Size: =_VarGblAppFonts.Size.Title
-            Text: ="     PROCEED"
-            Tooltip: ="grpReturnOrder"
-            Width: =223
-            X: =387
-            Y: =822
-            ZIndex: =3
-
-        icnGrpReturnOrder As icon.OpenInNewWindow:
-            AccessibleLabel: ="icnGrpReturnOrder"
-            Color: =RGBA(255, 255, 255, 1)
-            DisplayMode: |-
-                =If(
-                    varVisitReturnOrMenuReturn,
-                    If(
-                        IsBlank(colReasonsVisits)  || IsBlank(cmbNewReplacementSelectCustomer.SelectedItems) || IsBlank(Label8_3),
-                        DisplayMode.Disabled,
-                        DisplayMode.Edit
-                    ),
-                    If(
-                        IsBlank(colReasonsVisits) && IsBlank(txtReturnOrderDataPcsValue) && IsBlank(Label8_3),
-                        DisplayMode.Disabled,
-                        DisplayMode.Edit
-                    )
-                )
-            Height: =36
-            Icon: =Icon.OpenInNewWindow
-            OnSelect: |-
-                =//Set(_VarConfirmReplaceVisits, !_VarConfirmReplaceVisits);
-                If(varVisitReturnOrMenuReturn,Navigate(ReplacementPreviewScreen), Set(varSelectedVisitActiveTab, 4))
-            PaddingBottom: =7
-            PaddingLeft: =6
-            PaddingRight: =7
-            PaddingTop: =7
-            TabIndex: =0
-            Tooltip: ="grpReturnOrder"
-            Width: =36
-            X: =399
-            Y: =835
-            ZIndex: =4
+            )
+        Fill: =_VarGblAppColors.BisleriBlue
+        FocusedBorderThickness: =2
+        Height: =49
+        HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
+        OnSelect: |-
+            =//Set(_VarConfirmReplaceVisits, !_VarConfirmReplaceVisits);
+            If(varVisitReturnOrMenuReturn,Navigate(ReplacementPreviewScreen), Set(varSelectedVisitActiveTab, 4))
+        Size: =_VarGblAppFonts.Size.Title
+        Text: ="     PROCEED"
+        Tooltip: ="grpReturnOrder"
+        Width: =223
+        X: =387
+        Y: =822
+        ZIndex: =3
 
     Group8_1 As group:
         Height: =5
