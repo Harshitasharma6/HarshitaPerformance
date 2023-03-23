@@ -587,10 +587,18 @@ NewOrder_2 As CanvasComponent:
                                 =//RGBA(186, 202, 226, 1)
                                 ColorFade(_VarGblAppColors.BisleriBlue, 100%)
                             OnChange: |
-                                =Set(varSku,LookUp(
-                                                                'SKU Masters',
-                                                                'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
-                                                            ).'Item Code'.'Item Master');
+                                =Set(
+                                    varSku,
+                                    LookUp(
+                                        'SKU Masters',
+                                        'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                    ).'Item Code'.'Item Master'
+                                );
+                                Set(varDiscountDate,DateValue(
+                                                            LookUp(
+                                                                'Discount Lines',
+                                                                'Applicable for'.'Customer group' = varCustomerGroup.'Customer group' && 'Discount Date' >= Today() && Variant.'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                                            ).'Discount Date'));
                                 If(
                                     Value(Self.Text) <= ThisItem.Cases,
                                     If(
@@ -614,18 +622,15 @@ NewOrder_2 As CanvasComponent:
                                                 OrderLinesSum: Sum(
                                                     Filter(
                                                         'Order Lines' As Item,
-                                                        (Item.'Customer no.'.Account = varOrderData.Account) && Item.'Item SKU'.'SKU Master' = ThisItem.'Item SKU'.'SKU Master' && Item.'Created On' >= 
+                                                        (Item.'Customer no.'.Account = varOrderData.Account) && Item.'Item SKU'.'SKU Master' = ThisItem.'Item SKU'.'SKU Master' && Item.'Created On' >=  varDiscountDate /*LookUp(
+                                                            'Discount Lines',
+                                                            'Applicable for'.'Customer group' = varCustomerGroup.'Customer group' && 'Discount Date' >= Today() && Variant.'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                                        ).'Discount Date'*/ && Item.'Created On' <= varDiscountDate /*DateValue(
                                                             LookUp(
                                                                 'Discount Lines',
                                                                 'Applicable for'.'Customer group' = varCustomerGroup.'Customer group' && 'Discount Date' >= Today() && Variant.'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
                                                             ).'Discount Date'
-                                && Item.'Created On' <= 
-                                                    DateValue(
-                                                            LookUp(
-                                                                'Discount Lines',
-                                                                'Applicable for'.'Customer group' = varCustomerGroup.'Customer group' && 'Discount Date' >= Today() && Variant.'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
-                                                            ).'Discount Date'
-                                                        )
+                                                        )*/
                                                     ),
                                                     'Total Quantity'
                                                 )
@@ -670,7 +675,7 @@ NewOrder_2 As CanvasComponent:
                                                     emptyJarValue: If(
                                                         LookUp(
                                                             'Item Masters',
-                                                            'Item Master' = varSku /*LookUp(
+                                                            'Item Master' = varSku/*LookUp(
                                                                 'SKU Masters',
                                                                 'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
                                                             ).'Item Code'.'Item Master'*/
@@ -699,12 +704,12 @@ NewOrder_2 As CanvasComponent:
                                                 OrderLinesSum: Sum(
                                                     Filter(
                                                         'Order Lines' As Item,
-                                                        (Item.'Customer no.'.Account = varOrderData.Account) && Item.'Item SKU'.'SKU Master' = ThisItem.'Item SKU'.'SKU Master' && (DateValue(Item.'Created On') >= DateValue(
+                                                        (Item.'Customer no.'.Account = varOrderData.Account) && Item.'Item SKU'.'SKU Master' = ThisItem.'Item SKU'.'SKU Master' && DateValue(Item.'Created On') >= DateValue(
                                                             LookUp(
                                                                 'Discount Lines',
                                                                 'Applicable for'.'Customer group' = varCustomerGroup.'Customer group' && 'Discount Date' >= Today() && Variant.'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
                                                             ).'Discount Date'
-                                                        )) && (DateValue(Item.'Created On') <= DateValue(
+                                                        ) && (DateValue(Item.'Created On') <= DateValue(
                                                             LookUp(
                                                                 'Discount Lines',
                                                                 'Applicable for'.'Customer group' = varCustomerGroup.'Customer group' && 'Discount Date' >= Today() && Variant.'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
@@ -772,7 +777,7 @@ NewOrder_2 As CanvasComponent:
                                                     emptyJarValue: If(
                                                         LookUp(
                                                             'Item Masters',
-                                                            'Item Master' = varSku /*LookUp(
+                                                            'Item Master' = varSku/*LookUp(
                                                                 'SKU Masters',
                                                                 'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
                                                             ).'Item Code'.'Item Master'*/
@@ -984,7 +989,7 @@ NewOrder_2 As CanvasComponent:
                             Height: =50
                             OnSelect: =Select(Parent)
                             Size: =_VarGblAppFonts.Size.Tiny
-                            Text: =ThisItem.'Item SKU'.'Name (zx_namess)'
+                            Text: =ThisItem.'Item SKU'.'Item Description '
                             Width: =220
                             Y: =30
                             ZIndex: =14
