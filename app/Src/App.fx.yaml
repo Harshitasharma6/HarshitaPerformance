@@ -231,10 +231,13 @@ App As appinfo:
             ,
             ClearCollect(
                 colOfflineWarehouse,
-                Warehouses
-                );
-                , 
-                ClearCollect(
+                Filter(
+                    Warehouses,
+                    'Salesman Code'.'Branch Master'.'Branch Master' = dataforbranch
+                )
+            );
+            ,
+            ClearCollect(
                 colOfflineItemMasters,
                 'Item Masters'
             );
@@ -244,7 +247,6 @@ App As appinfo:
                     Customers_1
                 );   
                 ,  */
-                
             ClearCollect(
                 colOfflineCustomerVisits,
                 Filter(
@@ -255,7 +257,11 @@ App As appinfo:
             ,
             ClearCollect(
                 colOfflineStockTransferHeader,
-               Filter( 'Stock Transfer Headers','Created On'>= Today() ));
+                Filter(
+                    'Stock Transfer Headers',
+                    'Created On' >= Today()
+                )
+            );
             ,
             ClearCollect(
                 colOfflinePayments,
@@ -410,7 +416,6 @@ App As appinfo:
                 User.'Primary Email' = User().Email && 'Created Date' = Datetodays
             )
         );
-        
         ClearCollect(
             varOfflinePricingMaster,
             Filter(
