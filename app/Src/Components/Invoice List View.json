@@ -7286,7 +7286,7 @@
       },
       "CustomerRecord"
     ],
-    "LastModifiedTimestamp": "638151681222005603",
+    "LastModifiedTimestamp": "638151632828911147",
     "Name": "Invoice List View",
     "Rules": [
       {
@@ -7376,7 +7376,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638151681222005603",
+  "LastModifiedTimestamp": "638151632828911147",
   "Name": "2dc826e94932495ab74095a8f2ec5346",
   "OverridableProperties": {},
   "TemplateOriginalName": "f403aadad82d4272bc528edc7b5ea384",
