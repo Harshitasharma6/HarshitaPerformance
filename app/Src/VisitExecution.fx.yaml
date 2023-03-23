@@ -2135,13 +2135,14 @@
                             );
                              ////////////////////////////////////////////////////IRN Item Data Condition
                         Clear(ManipulatedCartCollection);
+                         Set(
+                                    testButton,
+                                    'PowerAppV2->RespondtoaPowerApporflow'.Run(CreateInvHeaderdata.'Invoice Header');
+                                );
+                        
                             If(
                                 CountRows(CreateOrderRecord) > 0 && CountRows(CreateItemsRecord) > 0 
-                                /*&& !IsBlank(
-                                    LookUp(
-                                        AllCustomerss,
-                                        Account = OrderData.Account
-                                    ).GSTIN) */
+                                
                         && !IsBlank(
                                     LookUp(
                                         AllCustomerss,
@@ -2162,8 +2163,20 @@
                                 ).Branch.Name = "Mumbai")),
                                 Set(
                                     testButton,
-                                    callprint.Run(Text(CreateInvHeaderdata.'Invoice Header'));
+                                    'PowerAppV2->RespondtoaPowerApporflow'.Run(CreateInvHeaderdata.'Invoice Header');
                                 );
+                                Patch(
+                                        'Invoice Headers',
+                                        LookUp(
+                                            'Invoice Headers',
+                                            'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
+                                        ),
+                                        {
+                                            'Signed QR Code': Text(testButton.qr),
+                                            'IRN Number': Text(testButton.qrno),
+                                            'IRN Message': Text(testButton.status)
+                                        }
+                                    );
                                 Set(
                                     varConfirmationIRN,
                                     "signedQRGenerated"
@@ -2181,9 +2194,9 @@
                                             'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
                                         ),
                                         {
-                                            'Signed QR Code': Text(testButton.filedata),
-                                            'IRN Number': Text(testButton.filedata),
-                                            'IRN Message': Text(testButton.filedata)
+                                            'Signed QR Code': Text(testButton.qr),
+                                            'IRN Number': Text(testButton.qrno),
+                                            'IRN Message': Text(testButton.status)
                                         }
                                     )
                                 );
@@ -4655,9 +4668,7 @@
                                 )
                             );
                             Refresh('Current Stocks');
-                            Collect(      testButton1,
-                                callprint.Run(CreateInvHeaderdata.'Invoice Header').filedata;
-                            );
+                            
                             /*Set(
                                 VarPaymentConfirm,
                                 true
