@@ -1938,8 +1938,8 @@
                                         Warehouses,
                                         Warehouse = cmbVanTransferOutSelectVehicle.Selected.Warehouse
                                     ),
-                                    'Manufacturing date': OneProduct.manDate
-                                }
+                                    'Manufacturing date': OneProduct.manDate,
+                                    ToSalesperson:ComboBox4.Selected.'Full Name'}
                             );
                         );
                         
@@ -2282,7 +2282,8 @@
                                                             transferOutProductLines,
                                                             productId = ThisItem.'Item SKU'.'SKU Master'
                                                         ),
-                                                        {qtyCases: Value(Self.Text)}
+                                                        {qtyCases: Value(Self.Text),
+                                                        Salesperson:ComboBox4.Selected.'Full Name'}
                                                     );
                                                     ,
                                                     Collect(
@@ -2290,7 +2291,8 @@
                                                         {
                                                             productId: ThisItem.'Item SKU'.'SKU Master',
                                                             qtyCases: Value(Self.Text),
-                                                            qtyPcs: 0
+                                                            qtyPcs: 0,
+                                                            Salesperson:ComboBox4.Selected.'Full Name'
                                                         }
                                                     );
                                                 );
@@ -2391,7 +2393,8 @@
                                                             transferOutProductLines,
                                                             productId = ThisItem.'Item SKU'.'SKU Master'
                                                         ),
-                                                        {qtyPcs: Value(Self.Text)}
+                                                        {qtyPcs: Value(Self.Text),
+                                                        Salesperson:ComboBox4.Selected.'Full Name'}
                                                     );
                                                     ,
                                                     Collect(
@@ -2399,7 +2402,8 @@
                                                         {
                                                             productId: ThisItem.'Item SKU'.'SKU Master',
                                                             qtyCases: 0,
-                                                            qtyPcs: Value(Self.Text)
+                                                            qtyPcs: Value(Self.Text),
+                                                            Salesperson:ComboBox4.Selected.'Full Name'
                                                         }
                                                     );
                                                 );
