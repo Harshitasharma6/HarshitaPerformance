@@ -9316,10 +9316,10 @@
                 );
                 //Set(varSelectedVisitActiveTab, 3);
                 //Clear(colReasonsVisits)
-                //Navigate(
-                   // 'Visit Screen',
-                  //  ScreenTransition.CoverRight
-                //)
+                Navigate(
+                    'Visit Screen',
+                    ScreenTransition.CoverRight
+                )
             Size: =_VarGblAppFonts.Size.UpperMedium
             Text: ="OK"
             Width: =150
