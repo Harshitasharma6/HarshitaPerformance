@@ -111,7 +111,28 @@
                         'Location VAN Mappings',
                         Van.Warehouse = varSalesperson
                     ).Area.Area
+                ),//Transfer out
+                Set(
+                    varSalesperson,
+                    LookUp(
+                        'Stock Transfer Headers',
+                        'Stock Transfer Header' = galVanTransferOutData_1.Selected.'Transfer Order No'.'Stock Transfer Header'
+                    ).'To Location'.Warehouse
+                );
+                Set(
+                    varstocktransfer,
+                    LookUp(
+                        'Location VAN Mappings',
+                        Van.Warehouse = varSalesperson
+                    ).Area.Area
                 ))
+                /*LookUp(
+                        'Location VAN Mappings',
+                        Van.Warehouse = LookUp(
+                            'Stock Transfer Headers',
+                            'Stock Transfer Header' = ThisItem.'Transfer Order No'.'Stock Transfer Header'
+                        ).'To Location'.Warehouse
+                    ).Area.Area*/
             PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
             PressedColor: =RGBA(31, 31, 31, 1)
             PressedFill: =ColorFade(Self.Color, 30%)
@@ -1186,7 +1207,8 @@
             Text: |-
                 =LookUp(
                     'User Area Mappings',
-                    Area.Area = LookUp(
+                    Area.Area = 
+                    LookUp(
                         'Location VAN Mappings',
                         Van.Warehouse = LookUp(
                             'Stock Transfer Headers',
