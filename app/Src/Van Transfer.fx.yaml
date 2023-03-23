@@ -1262,10 +1262,10 @@
                         colOfflineUsers,
                         'Primary Email' = LookUp(
                             'User Area Mappings',
-                            Area.Area = /*LookUp(
+                            Area.Area = varSelectedLocation/*LookUp(
                                 'Location VAN Mappings',
                                 Van.Warehouse = varHarkamalAudi
-                            ).Area.Area*/ varSelectedLocation
+                            ).Area.Area*/
                         ).Salesperson.'Primary Email' && Not(IsBlank('Primary Email')) && Not('Full Name' = "INTEGRATION")
                     )
                 DisplayFields: =["fullname"]
@@ -1297,7 +1297,7 @@
                         ),
                         !IsBlank('Primary Email')
                     )
-                OnChange: |-
+                OnChange: |
                     =/*Set(
                         varSelectedSalesmanArea,
                         LookUp(
@@ -1316,10 +1316,16 @@
                         varVaishaliMercedes,
                         Self.Selected.'Primary Email'
                     );
-                    Set(varSelectedLocation,LookUp(
-                                'Location VAN Mappings',
-                                Van.Warehouse = varHarkamalAudi
-                            ).Area.Area)
+                    
+                    Set(varSelectedUserArea,LookUp(
+                                'User Area Mappings' As ItemUser,
+                                ItemUser.Salesperson.'Primary Email' = varVaishaliMercedes
+                            ).AreaCalculated );
+                    
+                    Set(varSelecteduserLocation,LookUp(
+                            'Location VAN Mappings' As itemLocation,
+                            itemLocation.Area.'Name (zx_name)' = varSelectedUserArea 
+                        ).VANCalculated)
                 OnSelect: =
                 PressedFill: =_VarGblAppColors.BisleriBlue
                 SearchFields: =["firstname"]
@@ -1415,16 +1421,9 @@
                         varHarkamalAudi,
                         Self.Selected.Warehouse
                     );
-                    
-                    Set(varSelectedUserArea,LookUp(
-                                'User Area Mappings' As ItemUser,
-                                ItemUser.Salesperson.'Primary Email' = varVaishaliMercedes
-                            ).AreaCalculated );
-                    
-                    Set(varSelecteduserLocation,LookUp(
-                            'Location VAN Mappings' As itemLocation,
-                            itemLocation.Area.'Name (zx_name)' = varSelectedUserArea 
-                        ).VANCalculated)
+                    Set(varSelectedLocation,LookUp(
+                                'Location VAN Mappings',
+                                Van.Warehouse = varHarkamalAudi ).Area.Area);
                 PressedFill: =_VarGblAppColors.BisleriBlue
                 Reset: =true
                 SearchFields: =["zx_name"]

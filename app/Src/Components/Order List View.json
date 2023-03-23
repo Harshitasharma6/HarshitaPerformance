@@ -34,7 +34,7 @@
             "Name": "galleryTemplate4_9",
             "Parent": "galOrderDateFilter",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1646,
+            "PublishOrderIndex": 176,
             "Rules": [
               {
                 "Category": "Design",
@@ -253,7 +253,7 @@
             "Name": "btnGalOrderDateFilter",
             "Parent": "galOrderDateFilter",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1647,
+            "PublishOrderIndex": 177,
             "Rules": [
               {
                 "Category": "Data",
@@ -571,7 +571,7 @@
         "Name": "galOrderDateFilter",
         "Parent": "Order List View",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1645,
+        "PublishOrderIndex": 173,
         "Rules": [
           {
             "Category": "Data",
@@ -776,7 +776,7 @@
             "Name": "galleryTemplate4_5",
             "Parent": "galOrderStatusFilter",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1649,
+            "PublishOrderIndex": 178,
             "Rules": [
               {
                 "Category": "Design",
@@ -1009,7 +1009,7 @@
             "Name": "btnGalOrderStatusFilter",
             "Parent": "galOrderStatusFilter",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1650,
+            "PublishOrderIndex": 179,
             "Rules": [
               {
                 "Category": "Data",
@@ -1327,7 +1327,7 @@
         "Name": "galOrderStatusFilter",
         "Parent": "Order List View",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1648,
+        "PublishOrderIndex": 174,
         "Rules": [
           {
             "Category": "Data",
@@ -1532,7 +1532,7 @@
             "Name": "galleryTemplate3_7",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1652,
+            "PublishOrderIndex": 180,
             "Rules": [
               {
                 "Category": "Design",
@@ -1640,7 +1640,7 @@
             "Name": "htmOrderListBackground",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1653,
+            "PublishOrderIndex": 181,
             "Rules": [
               {
                 "Category": "Data",
@@ -1906,7 +1906,7 @@
             "Name": "btnOrdersListOrderNo.",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1654,
+            "PublishOrderIndex": 182,
             "Rules": [
               {
                 "Category": "Data",
@@ -2337,7 +2337,7 @@
             "Name": "btnGalOrderStatus_3",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1655,
+            "PublishOrderIndex": 183,
             "Rules": [
               {
                 "Category": "Data",
@@ -2771,7 +2771,7 @@
             "Name": "btnGalOrderStatus",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1656,
+            "PublishOrderIndex": 184,
             "Rules": [
               {
                 "Category": "Data",
@@ -3062,7 +3062,7 @@
             "Name": "htmOrderListBillTo",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1658,
+            "PublishOrderIndex": 185,
             "Rules": [
               {
                 "Category": "Data",
@@ -3253,7 +3253,7 @@
             "Name": "htmOrderListDate",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1659,
+            "PublishOrderIndex": 186,
             "Rules": [
               {
                 "Category": "Data",
@@ -3510,7 +3510,7 @@
             "Name": "lblOrderListBillTo",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1660,
+            "PublishOrderIndex": 187,
             "Rules": [
               {
                 "Category": "Data",
@@ -3904,7 +3904,7 @@
             "Name": "lblOrderListDate",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1661,
+            "PublishOrderIndex": 188,
             "Rules": [
               {
                 "Category": "Data",
@@ -4298,7 +4298,7 @@
             "Name": "lblOrderListBillToValue",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1662,
+            "PublishOrderIndex": 189,
             "Rules": [
               {
                 "Category": "Data",
@@ -4678,7 +4678,7 @@
             "Name": "lblOrderListDateValue",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1663,
+            "PublishOrderIndex": 190,
             "Rules": [
               {
                 "Category": "Data",
@@ -5013,7 +5013,7 @@
             "Name": "htmOrderListQty",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1664,
+            "PublishOrderIndex": 191,
             "Rules": [
               {
                 "Category": "Data",
@@ -5211,7 +5211,7 @@
             "Name": "htmOrderListQty_2",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1665,
+            "PublishOrderIndex": 192,
             "Rules": [
               {
                 "Category": "Data",
@@ -5402,7 +5402,7 @@
             "Name": "htmOrderListTotalAmount",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1666,
+            "PublishOrderIndex": 193,
             "Rules": [
               {
                 "Category": "Data",
@@ -5659,7 +5659,7 @@
             "Name": "lblOrderListQty",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1667,
+            "PublishOrderIndex": 194,
             "Rules": [
               {
                 "Category": "Data",
@@ -6067,7 +6067,7 @@
             "Name": "lblOrderListQty_2",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1668,
+            "PublishOrderIndex": 195,
             "Rules": [
               {
                 "Category": "Data",
@@ -6461,7 +6461,7 @@
             "Name": "lblOrderListTotalAmount",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1669,
+            "PublishOrderIndex": 196,
             "Rules": [
               {
                 "Category": "Data",
@@ -6848,7 +6848,7 @@
             "Name": "lblOrderListQtyValue",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1670,
+            "PublishOrderIndex": 197,
             "Rules": [
               {
                 "Category": "Data",
@@ -7242,7 +7242,7 @@
             "Name": "lblOrderListQtyValue_2",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1671,
+            "PublishOrderIndex": 198,
             "Rules": [
               {
                 "Category": "Data",
@@ -7622,7 +7622,7 @@
             "Name": "lblOrderListTotalAmountValue",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1672,
+            "PublishOrderIndex": 199,
             "Rules": [
               {
                 "Category": "Data",
@@ -7922,7 +7922,7 @@
             "Name": "grpOrderListDetails",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1657,
+            "PublishOrderIndex": 200,
             "Rules": [
               {
                 "Category": "Design",
@@ -8028,7 +8028,7 @@
         "Name": "galOrdersList",
         "Parent": "Order List View",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 1651,
+        "PublishOrderIndex": 175,
         "Rules": [
           {
             "Category": "Data",
@@ -8232,7 +8232,7 @@
       "Y",
       "ZIndex"
     ],
-    "LastModifiedTimestamp": "638151522654487509",
+    "LastModifiedTimestamp": "638151564823169755",
     "Name": "Order List View",
     "Rules": [
       {
@@ -8291,7 +8291,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638151522654487509",
+  "LastModifiedTimestamp": "638151564823169755",
   "Name": "f403aadad82d4272bc528edc7b5ea384",
   "OverridableProperties": {},
   "Version": "638075005431189027"
