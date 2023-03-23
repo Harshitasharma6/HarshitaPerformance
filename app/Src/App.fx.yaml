@@ -259,8 +259,8 @@ App As appinfo:
                 colOfflineStockTransferHeader,
                 Filter(
                     'Stock Transfer Headers',
-                    'Created On' >= Today()
-                )
+                    'Created On' >= Today() &&
+        'From Location'.Warehouse = varUserVanNo.Van.Warehouse )
             );
             ,
             ClearCollect(
