@@ -297,15 +297,19 @@
                         ).'From Location'.Warehouse
                     ).Area.Area
                 ).Salesperson.'Full Name'*/
-                
                 LookUp(
                     'User Area Mappings',
                     Area.Area = LookUp(
                         'Location VAN Mappings',
-                        Van.Warehouse = LookUp(
-                            colOfflineStockTransferHeader,
+                       /*Van.Warehouse*/
+                        VANCalculated = /*LookUp(
+                            'Stock Transfer Headers',
                             'Stock Transfer Header' = ThisItem.'Transfer Order No'.'Stock Transfer Header'
-                        ).'From Location'.Warehouse
+                        ).'From Location'.Warehouse*/
+                 LookUp(
+                            'Stock Transfer Headers',
+                            'Transfer Order No' = ThisItem.StockHeaderCalculated
+                        ).FromWarehouseCalculated
                     ).Area.Area
                 ).Salesperson.'Full Name'
             Width: =171
@@ -1253,7 +1257,7 @@
                 ChevronHoverFill: =_VarGblAppColors.BisleriBlue
                 DefaultSelectedItems: |-
                     =LookUp(
-                        Users,
+                        colOfflineUsers,
                         'Primary Email' = LookUp(
                             'User Area Mappings',
                             Area.Area = LookUp(
@@ -1268,7 +1272,6 @@
                 HoverColor: =_VarGblAppColors.BisleriBlue
                 HoverFill: =_VarGblAppColors.BisleriBlueLight
                 InputTextPlaceholder: ="Find Salesman"
-                IsSearchable: =false
                 Items: |-
                     =/*Filter(
                         Filter(
@@ -1283,7 +1286,7 @@
                     )*/
                     Filter(
                         Filter(
-                            Users,
+                            colOfflineUsers,
                             'Primary Email' in AddColumns(
                                 'User Area Mappings',
                                 "UserEmail",
@@ -1314,7 +1317,29 @@
                 OnSelect: =
                 PressedFill: =_VarGblAppColors.BisleriBlue
                 SearchFields: =["firstname"]
-                SearchItems: =[]
+                SearchItems: |-
+                    =Search(/*Filter(
+                        Filter(
+                            Users,
+                            'Primary Email' in AddColumns(
+                                'User Area Mappings',
+                                "UserEmail",
+                                Salesperson.'Primary Email'
+                            ).UserEmail && Not('Primary Email' = User().Email)
+                        ),
+                        !IsBlank('Primary Email')
+                    )*/
+                    Filter(
+                        Filter(
+                            colOfflineUsers,
+                            'Primary Email' in AddColumns(
+                                'User Area Mappings',
+                                "UserEmail",
+                                Salesperson.'Primary Email'
+                            ).UserEmail && Not('Primary Email' = User().Email)
+                        ),
+                        !IsBlank('Primary Email')
+                    ),ComboBox4.SearchText,"firstname")
                 SelectionFill: =_VarGblAppColors.BisleriBlue
                 SelectMultiple: =false
                 Size: =21
@@ -1343,13 +1368,13 @@
                 DefaultSelectedItems: |-
                     =LookUp(
                         Warehouses As OneWarehouse,
-                        OneWarehouse.Warehouse = LookUp(
+                        OneWarehouse.Name = LookUp(
                             'Location VAN Mappings' As itemLocation,
-                            itemLocation.Area.Area = LookUp(
+                            itemLocation.Area.'Name (zx_name)' = LookUp(
                                 'User Area Mappings' As ItemUser,
                                 ItemUser.Salesperson.'Primary Email' = varVaishaliMercedes
-                            ).Area.Area
-                        ).Van.Warehouse
+                            ).AreaCalculated /*Area.Area*/
+                        ).VANCalculated /*Van.Warehouse*/
                     )
                 DisplayFields: =["zx_name"]
                 DisplayMode: =//If(IsBlank(ComboBox4.Selected.'Full Name'), DisplayMode.Edit, DisplayMode.Disabled)
@@ -1859,6 +1884,7 @@
                             }
                         )
                     );
+                    ClearCollect(colOfflineStockTransferHeader,'Stock Transfer Headers');
                     ForAll(
                         colManipulatedTransferLines As OneProduct,
                         Collect(
@@ -1871,7 +1897,7 @@
                                     PCs: OneProduct.qtyPcs,
                                     Date: Today(),
                                     'Transfer Order No': LookUp(
-                                        'Stock Transfer Headers',
+                                        colOfflineStockTransferHeader,
                                         'Stock Transfer Header' = First(colTransferOutHeader).'Stock Transfer Header'
                                     ),
                                     SKU: LookUp(
