@@ -2237,7 +2237,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "OnSelect",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "Set(orderId,RandBetween(0,9999));\r\nClearCollect(payments,Payment.Payment1({Orderid:orderId,Amount:\"90\"}));\r\nSet(amt,txtPaymentAmountValue);\r\nNavigate(PaymentQR);\r\n",
+          "InvariantPropertyName": "OnSelect",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "AccessibleLabel",
         "TabIndex"
       ],
