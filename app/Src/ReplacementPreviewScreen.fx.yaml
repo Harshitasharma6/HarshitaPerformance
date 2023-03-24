@@ -302,7 +302,9 @@
         FontWeight: =FontWeight.Bold
         Height: =70
         Size: =_VarGblAppFonts.Size.Title
-        Text: =cmbNewReplacementSelectCustomer.Selected.'Customer Name'
+        Text: |-
+            =//cmbNewReplacementSelectCustomer.Selected.'Customer Name'
+            varCustomerNameReplace
         Width: =560
         X: =39
         Y: =77
