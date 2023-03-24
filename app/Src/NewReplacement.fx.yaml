@@ -202,11 +202,11 @@ NewReplacement As screen:
                             DisplayMode: |-
                                 =If(
                                     LookUp(
-                                      colOfflineItemMasters,
-                                        'Item Master' = LookUp(
+                                      'Item Masters',
+                                        'Item Master' = varItemMaster /*LookUp(
                                            colOfflineVariantMaster,
                                             'SKU Master' = ThisItem.'SKU Master'
-                                        ).'Item Code'.'Item Master'
+                                        ).'Item Code'.'Item Master'*/
                                     ).UOM = 'UOM (Item Masters)'.CASE,
                                     DisplayMode.Edit,
                                     DisplayMode.Disabled
@@ -218,7 +218,11 @@ NewReplacement As screen:
                                 =//RGBA(186, 202, 226, 1)
                                 ColorFade(_VarGblAppColors.BisleriBlue, 100%)
                             OnChange: |
-                                =If(
+                                =Set(varItemMaster,LookUp(
+                                           colOfflineVariantMaster,
+                                            'SKU Master' = ThisItem.'SKU Master'
+                                        ).'Item Code'.'Item Master');
+                                If(
                                     IsBlank(
                                         LookUp(
                                             colReasons,
@@ -262,11 +266,11 @@ NewReplacement As screen:
                             DisplayMode: |-
                                 =If(
                                     LookUp(
-                                        colOfflineItemMasters,
-                                        'Item Master' = LookUp(
+                                        'Item Masters',
+                                        'Item Master' = varItemMaster/*LookUp(
                                             colOfflineVariantMaster,
                                             'SKU Master' = ThisItem.'SKU Master'
-                                        ).'Item Code'.'Item Master'
+                                        ).'Item Code'.'Item Master'*/
                                     ).UOM = 'UOM (Item Masters)'.PCS,
                                     DisplayMode.Edit,
                                     DisplayMode.Disabled
@@ -278,7 +282,11 @@ NewReplacement As screen:
                                 =//RGBA(186, 202, 226, 1)
                                 ColorFade(_VarGblAppColors.BisleriBlue, 100%)
                             OnChange: |-
-                                =If(
+                                =Set(varItemMaster,LookUp(
+                                            colOfflineVariantMaster,
+                                            'SKU Master' = ThisItem.'SKU Master'
+                                        ).'Item Code'.'Item Master');
+                                If(
                                     IsBlank(
                                         LookUp(
                                             colReasons,

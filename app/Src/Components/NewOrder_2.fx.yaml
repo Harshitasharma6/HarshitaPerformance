@@ -255,7 +255,7 @@ NewOrder_2 As CanvasComponent:
                                 
                                 If(
                                     LookUp(
-                                        colOfflineItemMasters,
+                                        'Item Masters',
                                         'Item Master' = LookUp(
                                             colOfflineVariantMaster,
                                             'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
@@ -421,7 +421,7 @@ NewOrder_2 As CanvasComponent:
                                                 taxStructure: LookUp(
                                                     colOfflineHSNMasters,
                                                     'HSN Code' = LookUp(
-                                                        colOfflineItemMasters,
+                                                        'Item Masters',
                                                         'Item Master' = LookUp(
                                                             colOfflineVariantMaster,
                                                             'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
@@ -557,8 +557,8 @@ NewOrder_2 As CanvasComponent:
                                 );
                             OnSelect: =Select(Parent)
                             Size: =_VarGblAppFonts.Size.Subtitle
-                            Width: =65
-                            X: =480
+                            Width: =59
+                            X: =483
                             Y: =20
                             ZIndex: =6
 
@@ -571,7 +571,7 @@ NewOrder_2 As CanvasComponent:
                             Default: |-
                                 =If(
                                     LookUp(
-                                        colOfflineItemMasters,
+                                        'Item Masters',
                                         'Item Master' = LookUp(
                                             colOfflineVariantMaster,
                                             'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
@@ -735,7 +735,7 @@ NewOrder_2 As CanvasComponent:
                                                 taxStructure: LookUp(
                                                     colOfflineHSNMasters,
                                                     'HSN Code' = LookUp(
-                                                        colOfflineItemMasters,
+                                                        'Item Masters',
                                                         'Item Master' = LookUp(
                                                             colOfflineVariantMaster,
                                                             'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
@@ -746,9 +746,9 @@ NewOrder_2 As CanvasComponent:
                                                     Filter(
                                                         Filter(
                                                             'Stock Transfer Lines',
-                                                            'Transfer Order No'.'Stock Transfer Header' exactin varGatePassHeader.headerGUID && SKU.'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                                            'Transfer Order No'.'Stock Transfer Header' in varGatePassHeader.headerGUID && SKU.'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
                                                         ),
-                                                        IsToday('Created On')
+                                                        'Created On'>=Today()
                                                     ),
                                                     'Manufacturing date',
                                                     SortOrder.Ascending
@@ -951,7 +951,7 @@ NewOrder_2 As CanvasComponent:
                                 )*/
                                 If(
                                     LookUp(
-                                        colOfflineItemMasters,
+                                        'Item Masters',
                                         'Item Master' = LookUp(
                                             colOfflineVariantMaster,
                                             'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
