@@ -419,15 +419,22 @@ NewOrder_2 As CanvasComponent:
                                                     'Total Quantity'
                                                 ),
                                                 taxStructure: LookUp(
+                                                            'HSN Masters' As ItemHsn,
+                                                            ItemHsn.'HSN Code' = LookUp(
+                                                                'SKU Masters',
+                                                                'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                                            ).'HSN Code'.'HSN Code'
+                                                        )
+                                                        /*LookUp(
                                                     colOfflineHSNMasters,
                                                     'HSN Code' = LookUp(
                                                         'Item Masters',
-                                                        'Item Master' = varSku /*LookUp(
+                                                        'Item Master' = varSku lookUp(
                                                             colOfflineVariantMaster,
                                                             'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
-                                                        ).'Item Code'.'Item Master'*/
+                                                        ).'Item Code'.'Item Master'
                                                     ).HSNSAC
-                                                )
+                                                )*/
                                             },
                                             Collect(
                                                 colCartItems,
@@ -732,16 +739,22 @@ NewOrder_2 As CanvasComponent:
                                                     ),
                                                     'Total Quantity'
                                                 ),
-                                                taxStructure: LookUp(
+                                                taxStructure:LookUp(
+                                                            'HSN Masters' As ItemHsn,
+                                                            ItemHsn.'HSN Code' = LookUp(
+                                                                'SKU Masters',
+                                                                'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                                            ).'HSN Code'.'HSN Code'
+                                                        ), /*LookUp(
                                                     colOfflineHSNMasters,
                                                     'HSN Code' = LookUp(
                                                         'Item Masters',
                                                         'Item Master' = LookUp(
-                                                            colOfflineVariantMaster,
+                                                            'SKU Masters',
                                                             'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
                                                         ).'Item Code'.'Item Master'
                                                     ).HSNSAC
-                                                ),
+                                                )*/
                                                 stockLines: Sort(
                                                     Filter(
                                                         Filter(
@@ -806,7 +819,7 @@ NewOrder_2 As CanvasComponent:
                                                     uom: "Cases",
                                                     schemeOrderValue: Blank(),
                                                     tax: taxStructure.CESS + taxStructure.CGST + taxStructure.IGST + taxStructure.'SGST/UGST (zx_sgstugst)',
-                                                    cess: taxStructure.CESS
+                                                    cess: Value(taxStructure.CESS)
                                                 }
                                             );
                                         )

@@ -343,47 +343,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 14,
-                  "charOffset": 7276,
+                  "charLength": 11,
+                  "charOffset": 7448,
                   "snippet": {
-                    "text": "'Item Masters'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "NewOrder_2",
-                "type": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderRecEmpty_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrColumnNotAccessibleInCurrentContext",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderRecEmpty_2.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderRecEmpty_2.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 304,
-                  "charOffset": 7243,
-                  "snippet": {
-                    "text": "LookUp(\r\n                        'Item Masters',\r\n                        'Item Master' = LookUp(\r\n                            colOfflineVariantMaster,\r\n                            'SKU Master' = ThisItem.'Item SKU'.'SKU Master'\r\n                        ).'Item Code'.'Item Master'\r\n                    )"
+                    "text": ".'HSN Code'"
                   }
                 }
               },
@@ -401,50 +364,10 @@
             "id": "issue"
           },
           "properties": {
-            "level": "High"
+            "level": "Medium"
           },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderRecEmpty_2.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderRecEmpty_2.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 13,
-                  "charOffset": 7317,
-                  "snippet": {
-                    "text": "'Item Master'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "NewOrder_2",
-                "type": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderRecEmpty_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Item Master"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 3
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -461,7 +384,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 7331,
+                  "charOffset": 7268,
                   "snippet": {
                     "text": "="
                   }
@@ -476,94 +399,15 @@
           ],
           "message": {
             "arguments": [
-              "Error",
-              "Guid"
+              "LookUp"
             ],
             "id": "issue"
           },
           "properties": {
-            "level": "High"
+            "level": "Medium"
           },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderRecEmpty_2.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderRecEmpty_2.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 7,
-                  "charOffset": 7547,
-                  "snippet": {
-                    "text": ".HSNSAC"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "NewOrder_2",
-                "type": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderRecEmpty_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderRecEmpty_2.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderRecEmpty_2.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 7241,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "NewOrder_2",
-                "type": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderRecEmpty_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Text",
-              "Error"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 4
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -899,47 +743,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 14,
-                  "charOffset": 7414,
+                  "charLength": 11,
+                  "charOffset": 7587,
                   "snippet": {
-                    "text": "'Item Masters'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "NewOrder_2",
-                "type": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderPcs_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrColumnNotAccessibleInCurrentContext",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderPcs_2.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderPcs_2.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 315,
-                  "charOffset": 7381,
-                  "snippet": {
-                    "text": "LookUp(\r\n                        'Item Masters',\r\n                        'Item Master' = varSku /*LookUp(\r\n                            colOfflineVariantMaster,\r\n                            'SKU Master' = ThisItem.'Item SKU'.'SKU Master'\r\n                        ).'Item Code'.'Item Master'*/\r\n                    )"
+                    "text": ".'HSN Code'"
                   }
                 }
               },
@@ -957,50 +764,10 @@
             "id": "issue"
           },
           "properties": {
-            "level": "High"
+            "level": "Medium"
           },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderPcs_2.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderPcs_2.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 13,
-                  "charOffset": 7455,
-                  "snippet": {
-                    "text": "'Item Master'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "NewOrder_2",
-                "type": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderPcs_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Item Master"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 3
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -1017,7 +784,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 7469,
+                  "charOffset": 7407,
                   "snippet": {
                     "text": "="
                   }
@@ -1032,94 +799,15 @@
           ],
           "message": {
             "arguments": [
-              "Error",
-              "Guid"
+              "LookUp"
             ],
             "id": "issue"
           },
           "properties": {
-            "level": "High"
+            "level": "Medium"
           },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderPcs_2.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderPcs_2.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 7,
-                  "charOffset": 7696,
-                  "snippet": {
-                    "text": ".HSNSAC"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "NewOrder_2",
-                "type": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderPcs_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderPcs_2.OnChange"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderPcs_2.OnChange",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 7379,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnChange",
-                "module": "NewOrder_2",
-                "type": "NewOrder_2.contNewOrderUpperVertical_2.contNewOrderUpper_2.contNewOrderLowerVertical_2.contNewOrderData_2.galNewOrderProduct_2.txtNewOrderPcs_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Text",
-              "Error"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 4
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -4039,7 +3727,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -4119,7 +3807,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -4199,7 +3887,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -4279,7 +3967,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -4359,7 +4047,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -4439,7 +4127,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -4519,7 +4207,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -4599,7 +4287,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -4679,7 +4367,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -4759,7 +4447,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -4839,7 +4527,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -4919,7 +4607,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -4999,7 +4687,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -5079,7 +4767,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -5159,7 +4847,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -5239,7 +4927,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -5319,7 +5007,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -5399,7 +5087,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -5479,7 +5167,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -5559,7 +5247,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -5639,7 +5327,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -5719,7 +5407,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -5799,7 +5487,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -5879,7 +5567,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -5960,7 +5648,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 4
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -5990,7 +5678,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 7
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -6019,7 +5707,7 @@
             "level": "Medium"
           },
           "ruleId": "app-DataSourceDefaultMaxRowsLimit",
-          "ruleIndex": 8
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -6048,7 +5736,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 9
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -6077,7 +5765,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 9
+          "ruleIndex": 5
         }
       ],
       "tool": {
@@ -6105,46 +5793,20 @@
               }
             },
             {
-              "id": "app-ErrColumnNotAccessibleInCurrentContext",
+              "id": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
               "messageStrings": {
                 "issue": {
-                  "text": "The specified column is not accessible in this context."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrInvalidArgs-Func",
-              "messageStrings": {
-                "issue": {
-                  "text": "The function '{0}' has some invalid arguments."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrInvalidName",
-              "messageStrings": {
-                "issue": {
-                  "text": "Name isn't valid. '{0}' isn't recognized."
+                  "text": "Delegation warning. The highlighted part of this formula might not work correctly with column \"{0}\" on large data sets."
                 }
               },
               "properties": {
                 "componentType": "app",
                 "howToFix": [
-                  "Remove or correct the reference to the name that isn't valid."
+                  "If your data set exceeds the 500 record limit but contains less than 2,000 records, try resetting the limit.",
+                  "Try simplifying the formula.",
+                  "Try moving your data to a different data source."
                 ],
-                "level": "High",
+                "level": "Medium",
                 "primaryCategory": "formula",
                 "whyFix": ""
               }
@@ -6161,39 +5823,6 @@
                 "howToFix": [
                   "You might need to convert the value to be the same type, such as converting a date string (e.g., \"12/31/2018\") to a date value.",
                   "If you’re comparing records or tables, the field or column types must match exactly."
-                ],
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrInvalidDot",
-              "messageStrings": {
-                "issue": {
-                  "text": "Invalid use of '.'"
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-              "messageStrings": {
-                "issue": {
-                  "text": "Delegation warning. The highlighted part of this formula might not work correctly with column \"{0}\" on large data sets."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "If your data set exceeds the 500 record limit but contains less than 2,000 records, try resetting the limit.",
-                  "Try simplifying the formula.",
-                  "Try moving your data to a different data source."
                 ],
                 "level": "Medium",
                 "primaryCategory": "formula",
