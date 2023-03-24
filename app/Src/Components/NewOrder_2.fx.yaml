@@ -422,10 +422,10 @@ NewOrder_2 As CanvasComponent:
                                                     colOfflineHSNMasters,
                                                     'HSN Code' = LookUp(
                                                         'Item Masters',
-                                                        'Item Master' = LookUp(
+                                                        'Item Master' = varSku /*LookUp(
                                                             colOfflineVariantMaster,
                                                             'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
-                                                        ).'Item Code'.'Item Master'
+                                                        ).'Item Code'.'Item Master'*/
                                                     ).HSNSAC
                                                 )
                                             },

@@ -936,10 +936,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 304,
+                  "charLength": 315,
                   "charOffset": 7381,
                   "snippet": {
-                    "text": "LookUp(\r\n                        'Item Masters',\r\n                        'Item Master' = LookUp(\r\n                            colOfflineVariantMaster,\r\n                            'SKU Master' = ThisItem.'Item SKU'.'SKU Master'\r\n                        ).'Item Code'.'Item Master'\r\n                    )"
+                    "text": "LookUp(\r\n                        'Item Masters',\r\n                        'Item Master' = varSku /*LookUp(\r\n                            colOfflineVariantMaster,\r\n                            'SKU Master' = ThisItem.'Item SKU'.'SKU Master'\r\n                        ).'Item Code'.'Item Master'*/\r\n                    )"
                   }
                 }
               },
@@ -1058,7 +1058,7 @@
                 },
                 "region": {
                   "charLength": 7,
-                  "charOffset": 7685,
+                  "charOffset": 7696,
                   "snippet": {
                     "text": ".HSNSAC"
                   }
@@ -5991,36 +5991,6 @@
           },
           "ruleId": "app-UnusedVariables",
           "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.OnStart"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.OnStart",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "OnStart",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 8
         },
         {
           "locations": [
