@@ -6057,36 +6057,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Van Transfer'.canVanTransferOutData.dataCardVanTransferOut.btnVanTransferOutConfirm.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Van Transfer'.canVanTransferOutData.dataCardVanTransferOut.btnVanTransferOutConfirm.OnSelect",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "Van Transfer",
-                "type": "'Van Transfer'.canVanTransferOutData.dataCardVanTransferOut.btnVanTransferOutConfirm"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 8
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App"
                 }
               ],
