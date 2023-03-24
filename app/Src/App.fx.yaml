@@ -67,6 +67,13 @@ App As appinfo:
                 Day(Today())
             )
         );
+        Set(
+            varFilterVariantMaster,
+            LookUp(
+                'Current Stocks',
+                'Van No'.Warehouse = varUserVanNo.Van.Warehouse
+            ).'Item SKU'.'SKU Master'
+        );
         /*Concurrent(
             SaveData(
                 colOfflineTodayDemandsHeader,
@@ -272,7 +279,10 @@ App As appinfo:
             );
             ClearCollect(
                 colOfflineVariantMaster,
-                'SKU Masters'
+                Filter(
+                    'SKU Masters',
+                    'SKU Master' = varFilterVariantMaster
+                )
             );
             ,
             ClearCollect(

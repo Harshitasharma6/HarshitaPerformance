@@ -22,6 +22,7 @@ NewReplacement As screen:
                 Customers_1,
                 'Customer status' = 'Customer status (Choice)'.Customer && Salesperson.'Primary Email' = User().Email
             )
+        OnChange: =Set(VarReplaceCustomerName, cmbNewReplacementSelectCustomer.SelectedItems)
         PressedFill: =_VarGblAppColors.BisleriBlueMediumLight
         SearchFields: =["zx_customername"]
         SearchItems: |-

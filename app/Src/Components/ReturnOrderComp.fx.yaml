@@ -746,3 +746,96 @@ ReturnOrderComp As CanvasComponent:
             Y: =34
             ZIndex: =3
 
+    grpReturnOrder_1 As group:
+        Height: =5
+        Width: =5
+        X: =-347
+        Y: =-782
+        ZIndex: =23
+
+        btnReturnOrderProceed_1 As button:
+            Color: =_VarGblAppColors.LightText
+            DisplayMode: |-
+                =If(
+                    varVisitReturnOrMenuReturn,
+                    If(
+                        IsBlank(colReasonsVisits) || IsBlank(VarReplaceCustomerName) || IsBlank(Label8_3),
+                        DisplayMode.Disabled,
+                        DisplayMode.Edit
+                    ),
+                    If(
+                        IsBlank(colReasonsVisits) && IsBlank(txtReturnOrderDataPcsValue) && IsBlank(Label8_3),
+                        DisplayMode.Disabled,
+                        DisplayMode.Edit
+                    )
+                )
+            Fill: =_VarGblAppColors.BisleriBlue
+            FocusedBorderThickness: =2
+            Height: =49
+            HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
+            OnSelect: |-
+                =//Set(_VarConfirmReplaceVisits, !_VarConfirmReplaceVisits);
+                If(
+                    varVisitReturnOrMenuReturn,
+                    Navigate(ReplacementPreviewScreen);
+                    Set(
+                        varCustomerNameReplace,
+                        cmbNewReplacementSelectCustomer.Selected.'Customer Name'
+                    ),
+                    Set(
+                        varSelectedVisitActiveTab,
+                        4
+                    )
+                )
+            Size: =_VarGblAppFonts.Size.Title
+            Text: ="     PROCEED"
+            Tooltip: ="grpReturnOrder"
+            Width: =223
+            X: =396
+            Y: =826
+            ZIndex: =21
+
+        icnGrpReturnOrder_1 As icon.OpenInNewWindow:
+            AccessibleLabel: ="icnGrpReturnOrder"
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: |-
+                =If(
+                    varVisitReturnOrMenuReturn,
+                    If(
+                        IsBlank(colReasonsVisits) || IsBlank(VarReplaceCustomerName) || IsBlank(Label8_3),
+                        DisplayMode.Disabled,
+                        DisplayMode.Edit
+                    ),
+                    If(
+                        IsBlank(colReasonsVisits) && IsBlank(txtReturnOrderDataPcsValue) && IsBlank(Label8_3),
+                        DisplayMode.Disabled,
+                        DisplayMode.Edit
+                    )
+                )
+            Height: =36
+            Icon: =Icon.OpenInNewWindow
+            OnSelect: |-
+                =//Set(_VarConfirmReplaceVisits, !_VarConfirmReplaceVisits);
+                If(
+                    varVisitReturnOrMenuReturn,
+                    Navigate(ReplacementPreviewScreen);
+                    Set(
+                        varCustomerNameReplace,
+                        cmbNewReplacementSelectCustomer.Selected.'Customer Name'
+                    ),
+                    Set(
+                        varSelectedVisitActiveTab,
+                        4
+                    )
+                )
+            PaddingBottom: =7
+            PaddingLeft: =6
+            PaddingRight: =7
+            PaddingTop: =7
+            TabIndex: =0
+            Tooltip: ="grpReturnOrder"
+            Width: =36
+            X: =399
+            Y: =835
+            ZIndex: =22
+

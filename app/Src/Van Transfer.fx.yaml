@@ -1908,7 +1908,13 @@
                             }
                         )
                     );
-                    ClearCollect(colOfflineStockTransferHeader,'Stock Transfer Headers');
+                    ClearCollect(
+                            colOfflineStockTransferHeader,
+                            Filter(
+                                'Stock Transfer Headers',
+                                'Created On' >= Today() && 'From Location'.Warehouse = StockTransferWarehouse && 'To Location'.Warehouse = StockTransferWarehouse
+                            )
+                        );
                     ForAll(
                         colManipulatedTransferLines As OneProduct,
                         Collect(

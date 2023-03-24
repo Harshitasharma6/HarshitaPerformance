@@ -1,7 +1,8 @@
 GatePassScreen As screen:
     Fill: =_VarGblAppColors.BackgroundColor
     OnVisible: |
-        =Set(
+        =Set(varShowGatePassFile,false);
+        Set(
             varGatePassHeader,
             AddColumns(
                 Filter(
@@ -459,6 +460,8 @@ GatePassScreen As screen:
                         }
                     ).'Stock Transfer Header'
                 );
+                
+                Set(varShowGatePassFile, true);
             PaddingLeft: =25
             Size: =_VarGblAppFonts.Size.Title
             Text: ="PRINT"
@@ -1012,6 +1015,7 @@ GatePassScreen As screen:
         DataSource: ='Stock Transfer Headers'
         Height: =69
         Item: =LookUp('Stock Transfer Headers','Stock Transfer Header'=GUID(varrd))
+        Visible: =varShowGatePassFile
         Width: =150
         X: =10
         Y: =939
