@@ -31,6 +31,7 @@
       "zx_batchno": "Batch No",
       "zx_checkindate": "Check-in Date",
       "zx_Customer": "Customer",
+      "zx_employeecode": "Employee Code",
       "zx_emptiesreturned": "Empties Returned",
       "zx_filledcases": "Filled Cases",
       "zx_filledunits": "Filled Units",

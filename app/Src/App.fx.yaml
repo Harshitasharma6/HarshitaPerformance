@@ -295,7 +295,10 @@ App As appinfo:
             ,
             ClearCollect(
                 colOfflineHSNMasters,
-                'HSN Masters'
+                Filter(
+                    'HSN Masters',
+                    'HSN Masters (Views)'.'All HSN Master'
+                )
             );
             ,
             ClearCollect(
