@@ -116,10 +116,12 @@ NewDemandScreen As screen:
                     If(
                         !IsBlank(compDemandSearch.SearchText),
                         Filter(
-                            colOfflineVariantMaster,
+                            //colOfflineVariantMaster,
+                            'SKU Masters',
                             compDemandSearch.SearchText in 'Pack Title' || compDemandSearch.SearchText in 'Item Description '
                         ),
-                        colOfflineVariantMaster
+                        //colOfflineVariantMaster
+                        'SKU Masters'
                     )
                 Layout: =Layout.Vertical
                 LayoutMinHeight: =250
@@ -565,7 +567,8 @@ NewDemandScreen As screen:
                                                 'Check-in Demand Header' = First(colOfflineTodayDemandsHeader).'Check-in Demand Header'
                                             ),
                                             'SKU Master': LookUp(
-                                                colOfflineVariantMaster,
+                                                //colOfflineVariantMaster,
+                                                'SKU Masters',
                                                 'SKU Master' = OneProduct.productId
                                             )
                                         }
@@ -577,7 +580,8 @@ NewDemandScreen As screen:
                                             PCs: OneProduct.qtyPcs,
                                             Date: dteCheckInDemand.SelectedDate,
                                             Product: LookUp(
-                                                colOfflineVariantMaster,
+                                                //colOfflineVariantMaster,
+                                                'SKU Masters',
                                                 'SKU Master' = OneProduct.productId
                                             ).'SKU Master'
                                     /*'SKU Master': LookUp(
@@ -623,7 +627,8 @@ NewDemandScreen As screen:
                                                 PCs: OneProduct.qtyPcs,
                                                 Date: dteCheckInDemand.SelectedDate,
                                                 Product: LookUp(
-                                                    colOfflineVariantMaster,
+                                                    //colOfflineVariantMaster,
+                                                    'SKU Masters',
                                                     'SKU Master' = OneProduct.productId
                                                 ).'SKU Master'
                                             }
@@ -639,7 +644,8 @@ NewDemandScreen As screen:
                                                 PCs: OneProduct.qtyPcs,
                                                 Date: dteCheckInDemand.SelectedDate,
                                                 Product: LookUp(
-                                                    colOfflineVariantMaster,
+                                                    //colOfflineVariantMaster,
+                                                    'SKU Masters',
                                                     'SKU Master' = OneProduct.productId
                                                 ).'SKU Master'
                                         /*'SKU Master':LookUp(colOfflineVariantMaster, 'SKU Master'=OneProduct.productId).'SKU Master'*/
