@@ -226,6 +226,10 @@
                         HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
                         OnSelect: |
                             =////////////////////////////////////////////////////////////////PAYMENTS RECORD
+                            Set(varInvoiceHeader,LookUp(
+                                                'Invoice Headers',
+                                                'Order Number'.'Order Number' = paymentData.'Order Number'
+                                            ).'Invoice Number');
                             ClearCollect(
                                 colPaymentsRec,
                                 Patch(
@@ -258,10 +262,11 @@
                                         ),
                                         Invoice: LookUp(
                                             'Invoice Headers',
-                                            'Invoice Number' = LookUp(
+                                            'Invoice Number' = varInvoiceHeader
+                                             /*LookUp(
                                                 'Invoice Headers',
                                                 'Order Number'.'Order Number' = paymentData.'Order Number'
-                                            ).'Invoice Number'
+                                            ).'Invoice Number'*/
                                         )
                                     }
                                 );
