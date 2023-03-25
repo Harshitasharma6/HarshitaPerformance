@@ -1763,13 +1763,13 @@
                                                 'Stock Transfer Lines',
                                                 LookUp(
                                                     'Stock Transfer Lines' As oneStockLine,
-                                                    ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.Date = Datetodays)
+                                                    ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.Date >= Today())
                                                 ),
                                                 {
                                                     'Remaining Qty Cases': OneFifoItem.'Remaining Qty Cases' - First(CurrentQtyCases).Value,
                                                     'Invoiced Qty Cases': ((LookUp(
                                                         'Stock Transfer Lines' As oneStockLine,
-                                                        ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.Date = Datetodays)
+                                                        ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.Date >= Today())
                                                     ).'Invoiced Qty Cases') + First(CurrentQtyCases).Value)
                                                 }
                                             );
@@ -1828,13 +1828,13 @@
                                                 'Stock Transfer Lines',
                                                 LookUp(
                                                     'Stock Transfer Lines' As oneStockLine,
-                                                    ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.Date = Datetodays)
+                                                    ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.Date >= Today())
                                                 ),
                                                 {
                                                     'Remaining Qty Cases': 0,
                                                     'Invoiced Qty Cases': ((LookUp(
                                                         'Stock Transfer Lines' As oneStockLine,
-                                                        ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.Date = Datetodays)
+                                                        ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.Date >= Today())
                                                     ).'Invoiced Qty Cases') + OneFifoItem.'Remaining Qty Cases')
                                                 }
                                             );
@@ -1939,7 +1939,7 @@
                                                 'Stock Transfer Lines',
                                                 LookUp(
                                                     'Stock Transfer Lines' As oneStockLine,
-                                                    ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.Date >= Datetodays)
+                                                    ((oneStockLine.'Transfer Order No'.'Stock Transfer Header' = OneFifoItem.'Transfer Order No'.'Stock Transfer Header') && (oneStockLine.SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master') && (oneStockLine.'Manufacturing date' = OneFifoItem.'Manufacturing date') && oneStockLine.Date >= Today())
                                                 ),
                                                 {
                                                     'Remaining Qty Pcs': OneFifoItem.'Remaining Qty Pcs' - First(CurrentQty).Value,
