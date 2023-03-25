@@ -423,7 +423,7 @@
                             If(
                                 CountIf(
                                     Visits,
-                                    'Visit Date' = Datetodays && IsBlank('Check-out Time'),
+                                    'Visit Date' >= Today() && IsBlank('Check-out Time'),
                                     Customer.Account = ThisItem.Account
                                 ) > 0,
                                 Notify(

@@ -312,7 +312,7 @@ NewOrder_2 As CanvasComponent:
                                             {
                                                 DiscountLine: LookUp(
                                                     'Discount Lines',
-                                                    'Applicable for'.'Customer group' = varCustomerGroup.'Customer group' && 'Discount Date' = Datetodays && Variant.'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                                    'Applicable for'.'Customer group' = varCustomerGroup.'Customer group' && 'Discount Date' >= Today() && Variant.'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
                                                 ),
                                                 PriceLine: LookUp(
                                                     'Item Pricing lines',
