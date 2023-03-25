@@ -59,14 +59,14 @@ App As appinfo:
                 'Primary Email' = User().Email
             ).'Branch Master'.'Branch Master'
         );
-        Set(
+        /*Set(
             Datetodays,
             Date(
                 Year(Today()),
                 Month(Today()),
                 Day(Today())
             )
-        );
+        );*/
         Set(
             varFilterVariantMaster,
             LookUp(
