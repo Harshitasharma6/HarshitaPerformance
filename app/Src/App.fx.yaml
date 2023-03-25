@@ -433,7 +433,7 @@ App As appinfo:
             colOfflineTodayAttendance,
             LookUp(
                 Attendances,
-                User.'Primary Email' = User().Email && 'Created Date' = Datetodays
+                User.'Primary Email' = User().Email && 'Created Date' >= Today()
             )
         );
         ClearCollect(
