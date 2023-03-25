@@ -2528,7 +2528,8 @@
                         FontWeight: =FontWeight.Bold
                         Height: =39
                         Size: =_VarGblAppFonts.Size.Title
-                        Text: =CountRows(galHomeOrdersData_2.AllItems)
+                        Text: |
+                            =CountRows(galHomeOrdersData_2.AllItems)
                         Width: =168
                         X: =434
                         Y: =42
