@@ -17,7 +17,8 @@
                 If(
                     galOrderDateFilter_2.Selected.Value = "Today's Orders",
                     Filter(
-                        colOfflineOrderHeader,
+                        //colOfflineOrderHeader,
+                        'Order Headers', 'Order Date'>=Today() &&
                         'Order Type' = 'Order Type (Choice)'.'FOC Order'
                     ),
                     galOrderDateFilter_2.Selected.Value = "Last 7 Days",
