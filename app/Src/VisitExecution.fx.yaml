@@ -152,7 +152,7 @@
             AddColumns(
                 Filter(
                     'Stock Transfer Headers',
-                    'To Location'.Warehouse = Warehousesdata && Date >= Today
+                    'To Location'.Warehouse = Warehousesdata && Date >= Today()
                 ),
                 "headerGUID",
                 'Stock Transfer Header'
