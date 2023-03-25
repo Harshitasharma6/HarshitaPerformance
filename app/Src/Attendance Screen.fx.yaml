@@ -12,7 +12,7 @@
                 IsBlank(
                     LookUp(
                         Attendances,
-                        User.'Primary Email' = User().Email && Date=Today()
+                        User.'Primary Email' = User().Email && Date = Today()
                     )
                 ),
                 Patch(
@@ -44,7 +44,7 @@
                     colOfflineTodayAttendance,
                     LookUp(
                         Attendances,
-                        User.'Primary Email' = User().Email && Date=Today()
+                        User.'Primary Email' = User().Email && Date = Today()
                     )
                 );
                 Navigate(GatePassScreen);
@@ -53,13 +53,20 @@
                     IsBlank(
                         LookUp(
                             Attendances,
-                            User.'Primary Email' = User().Email && !IsBlank('Check-out Time') && Date=Today()
+                            User.'Primary Email' = User().Email && !IsBlank('Check-out Time') && Date = Today()
                         )
                     ),
                     Notify(
                         "Your Day has already been Started",
                         NotificationType.Error,
                         5000
+                    );
+                    ClearCollect(
+                        colOfflineTodayAttendance,
+                        LookUp(
+                            Attendances,
+                            User.'Primary Email' = User().Email && Date = Today()
+                        )
                     );
                     Navigate(GatePassScreen),
                     If(
