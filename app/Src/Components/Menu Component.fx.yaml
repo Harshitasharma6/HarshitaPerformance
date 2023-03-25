@@ -242,7 +242,7 @@
                 !IsBlank(
                     LookUp(
                         Attendances,
-                        Date = Datetodays && 'Owning User'.User = LookUp(
+                        Date >= Today() && 'Owning User'.User = LookUp(
                             Users,
                             'Primary Email' = User().Email
                         ).User
@@ -312,7 +312,7 @@
                 !IsBlank(
                     LookUp(
                         Attendances,
-                       Date = Datetodays && 'Owning User'.User = LookUp(
+                       Date >= Today() && 'Owning User'.User = LookUp(
                             Users,
                             'Primary Email' = User().Email
                         ).User
@@ -321,7 +321,7 @@
                 Text(
                     LookUp(
                         Attendances,
-                         Date = Datetodays && 'Owning User'.User = LookUp(
+                         Date >= Today() && 'Owning User'.User = LookUp(
                             Users,
                             'Primary Email' = User().Email
                         ).User
