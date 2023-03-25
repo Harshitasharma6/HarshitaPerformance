@@ -1064,7 +1064,7 @@
                 },
                 "region": {
                   "charLength": 7,
-                  "charOffset": 28155,
+                  "charOffset": 28125,
                   "snippet": {
                     "text": "exactin"
                   }
@@ -1104,7 +1104,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 28193,
+                  "charOffset": 28163,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1144,48 +1144,48 @@
                 },
                 "region": {
                   "charLength": 7,
+                  "charOffset": 36433,
+                  "snippet": {
+                    "text": "exactin"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Pending Payment Screen",
+                "type": "'Pending Payment Screen'.canPayment_1.dataCardPayment_1.Container7_1.btnPaymentConfirm_7"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Pending Payment Screen'.canPayment_1.dataCardPayment_1.Container7_1.btnPaymentConfirm_7.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Pending Payment Screen'.canPayment_1.dataCardPayment_1.Container7_1.btnPaymentConfirm_7.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
                   "charOffset": 36471,
                   "snippet": {
-                    "text": "exactin"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "Pending Payment Screen",
-                "type": "'Pending Payment Screen'.canPayment_1.dataCardPayment_1.Container7_1.btnPaymentConfirm_7"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Pending Payment Screen'.canPayment_1.dataCardPayment_1.Container7_1.btnPaymentConfirm_7.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Pending Payment Screen'.canPayment_1.dataCardPayment_1.Container7_1.btnPaymentConfirm_7.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 36509,
-                  "snippet": {
                     "text": "&&"
                   }
                 }
@@ -1224,7 +1224,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 54079,
+                  "charOffset": 54041,
                   "snippet": {
                     "text": ".'Order Number'"
                   }
@@ -1264,7 +1264,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 54053,
+                  "charOffset": 54015,
                   "snippet": {
                     "text": "="
                   }
@@ -1304,7 +1304,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 56201,
+                  "charOffset": 56163,
                   "snippet": {
                     "text": ".'Order Number'"
                   }
@@ -1344,7 +1344,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 56175,
+                  "charOffset": 56137,
                   "snippet": {
                     "text": "="
                   }
@@ -1384,7 +1384,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 56217,
+                  "charOffset": 56179,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1424,7 +1424,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 59130,
+                  "charOffset": 59092,
                   "snippet": {
                     "text": ".'Order Number'"
                   }
@@ -1464,7 +1464,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 59104,
+                  "charOffset": 59066,
                   "snippet": {
                     "text": "="
                   }
@@ -1504,7 +1504,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 61554,
+                  "charOffset": 61516,
                   "snippet": {
                     "text": ".'Invoice Header'"
                   }
@@ -1544,7 +1544,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 61530,
+                  "charOffset": 61492,
                   "snippet": {
                     "text": "="
                   }
@@ -1584,7 +1584,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 61765,
+                  "charOffset": 61727,
                   "snippet": {
                     "text": ".'Order Number'"
                   }
@@ -1624,7 +1624,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 61739,
+                  "charOffset": 61701,
                   "snippet": {
                     "text": "="
                   }
@@ -1664,7 +1664,7 @@
                 },
                 "region": {
                   "charLength": 7,
-                  "charOffset": 64136,
+                  "charOffset": 64098,
                   "snippet": {
                     "text": "exactin"
                   }
@@ -1704,7 +1704,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 64173,
+                  "charOffset": 64135,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1744,7 +1744,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 64209,
+                  "charOffset": 64171,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1784,7 +1784,7 @@
                 },
                 "region": {
                   "charLength": 7,
-                  "charOffset": 64525,
+                  "charOffset": 64487,
                   "snippet": {
                     "text": "exactin"
                   }
@@ -1824,7 +1824,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 64562,
+                  "charOffset": 64524,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1864,7 +1864,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 64598,
+                  "charOffset": 64560,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1904,7 +1904,7 @@
                 },
                 "region": {
                   "charLength": 252,
-                  "charOffset": 66015,
+                  "charOffset": 65977,
                   "snippet": {
                     "text": "Sum(\r\n                    Filter(\r\n                        'Order Headers',\r\n                        Customer.Account = paymentData.Customer.Account && 'Created On' >= Today()\r\n                    ),\r\n                    'Net Amount'\r\n                )"
                   }
@@ -1944,7 +1944,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 70757,
+                  "charOffset": 70719,
                   "snippet": {
                     "text": ".'Order Number'"
                   }
@@ -1984,7 +1984,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 70731,
+                  "charOffset": 70693,
                   "snippet": {
                     "text": "="
                   }
@@ -2024,7 +2024,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 73165,
+                  "charOffset": 73127,
                   "snippet": {
                     "text": ".'Order Number'"
                   }
@@ -2064,7 +2064,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 73139,
+                  "charOffset": 73101,
                   "snippet": {
                     "text": "="
                   }
@@ -2104,7 +2104,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 73181,
+                  "charOffset": 73143,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2144,7 +2144,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 76462,
+                  "charOffset": 76424,
                   "snippet": {
                     "text": ".'Order Number'"
                   }
@@ -2184,7 +2184,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 76436,
+                  "charOffset": 76398,
                   "snippet": {
                     "text": "="
                   }
@@ -2224,7 +2224,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 79582,
+                  "charOffset": 79544,
                   "snippet": {
                     "text": ".'Invoice Header'"
                   }
@@ -2264,7 +2264,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 79558,
+                  "charOffset": 79520,
                   "snippet": {
                     "text": "="
                   }
@@ -2304,7 +2304,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 79841,
+                  "charOffset": 79803,
                   "snippet": {
                     "text": ".'Order Number'"
                   }
@@ -2344,7 +2344,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 79815,
+                  "charOffset": 79777,
                   "snippet": {
                     "text": "="
                   }
@@ -2384,7 +2384,7 @@
                 },
                 "region": {
                   "charLength": 7,
-                  "charOffset": 82666,
+                  "charOffset": 82628,
                   "snippet": {
                     "text": "exactin"
                   }
@@ -2424,7 +2424,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 82703,
+                  "charOffset": 82665,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2464,7 +2464,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 82739,
+                  "charOffset": 82701,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2504,7 +2504,7 @@
                 },
                 "region": {
                   "charLength": 7,
-                  "charOffset": 83111,
+                  "charOffset": 83073,
                   "snippet": {
                     "text": "exactin"
                   }
@@ -2544,7 +2544,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 83148,
+                  "charOffset": 83110,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2584,7 +2584,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 83184,
+                  "charOffset": 83146,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2624,7 +2624,7 @@
                 },
                 "region": {
                   "charLength": 252,
-                  "charOffset": 85255,
+                  "charOffset": 85217,
                   "snippet": {
                     "text": "Sum(\r\n                    Filter(\r\n                        'Order Headers',\r\n                        Customer.Account = paymentData.Customer.Account && 'Created On' >= Today()\r\n                    ),\r\n                    'Net Amount'\r\n                )"
                   }
@@ -2664,7 +2664,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 89998,
+                  "charOffset": 89960,
                   "snippet": {
                     "text": ".'Order Number'"
                   }
@@ -2704,7 +2704,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 89972,
+                  "charOffset": 89934,
                   "snippet": {
                     "text": "="
                   }
@@ -2744,7 +2744,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 92406,
+                  "charOffset": 92368,
                   "snippet": {
                     "text": ".'Order Number'"
                   }
@@ -2784,7 +2784,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 92380,
+                  "charOffset": 92342,
                   "snippet": {
                     "text": "="
                   }
@@ -2824,7 +2824,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 92422,
+                  "charOffset": 92384,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2864,7 +2864,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 95703,
+                  "charOffset": 95665,
                   "snippet": {
                     "text": ".'Order Number'"
                   }
@@ -2904,7 +2904,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 95677,
+                  "charOffset": 95639,
                   "snippet": {
                     "text": "="
                   }
@@ -2944,7 +2944,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 98663,
+                  "charOffset": 98625,
                   "snippet": {
                     "text": ".'Invoice Header'"
                   }
@@ -2984,7 +2984,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 98639,
+                  "charOffset": 98601,
                   "snippet": {
                     "text": "="
                   }
@@ -3024,7 +3024,7 @@
                 },
                 "region": {
                   "charLength": 15,
-                  "charOffset": 98922,
+                  "charOffset": 98884,
                   "snippet": {
                     "text": ".'Order Number'"
                   }
@@ -3064,7 +3064,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 98896,
+                  "charOffset": 98858,
                   "snippet": {
                     "text": "="
                   }
@@ -3104,7 +3104,7 @@
                 },
                 "region": {
                   "charLength": 7,
-                  "charOffset": 101747,
+                  "charOffset": 101709,
                   "snippet": {
                     "text": "exactin"
                   }
@@ -3144,7 +3144,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 101784,
+                  "charOffset": 101746,
                   "snippet": {
                     "text": "&&"
                   }
@@ -3184,7 +3184,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 101820,
+                  "charOffset": 101782,
                   "snippet": {
                     "text": "&&"
                   }
@@ -3224,7 +3224,7 @@
                 },
                 "region": {
                   "charLength": 7,
-                  "charOffset": 102192,
+                  "charOffset": 102154,
                   "snippet": {
                     "text": "exactin"
                   }
@@ -3264,7 +3264,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 102229,
+                  "charOffset": 102191,
                   "snippet": {
                     "text": "&&"
                   }
@@ -3304,7 +3304,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 102265,
+                  "charOffset": 102227,
                   "snippet": {
                     "text": "&&"
                   }
