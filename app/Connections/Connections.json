@@ -210,7 +210,8 @@
   },
   "55f72745-b50d-456c-87c4-787c319fa6eb": {
     "connectionParameters": {
-      "sku": "Enterprise"
+      "sku": "Enterprise",
+      "token:grantType": "code"
     },
     "connectionRef": {
       "displayName": "Microsoft Dataverse",

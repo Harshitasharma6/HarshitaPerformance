@@ -267,7 +267,7 @@
                         )
                     );
                     If(
-                        OrderData.'Mode Of Payment' = 'Payment Type (choice)'.CREDIT && LookUp(
+                        (OrderData.'Mode Of Payment' = 'Payment Type (choice)'.CREDIT || OrderData.'Mode Of Payment' = 'Payment Type (choice)'.COUPON) && LookUp(
                             Customers_1,
                             Account = OrderData.Account
                         ).'Credit Activated' = 'Credit Activated (Customers_1)'.Yes,
@@ -3799,7 +3799,7 @@
                             ); */
                         ,
                             ///////////////////////////////////////////////////////////////////////////////////////////////Credit Customer____
-                                OrderData.'Mode Of Payment' = 'Payment Type (choice)'.CREDIT && LookUp(
+                                (OrderData.'Mode Of Payment' = 'Payment Type (choice)'.CREDIT || OrderData.'Mode Of Payment' = 'Payment Type (choice)'.COUPON) && LookUp(
                                     Customers_1,
                                     Account = OrderData.Account
                                 ).'Credit Activated' = 'Credit Activated (Customers_1)'.Yes,
@@ -4848,10 +4848,11 @@
                 DatePicker3_1 As datepicker:
                     AccessibleLabel: ="DatePicker3_1"
                     BorderColor: =_VarGblAppColors.BisleriBlue
+                    DefaultDate: =
                     FocusedBorderThickness: =2
                     Height: =45
                     IconBackground: =_VarGblAppColors.BisleriBlue
-                    OnChange: =If(Self.SelectedDate >=Today(), false, Reset(Self); Notify("Kindly select only Today's or future date", NotificationType.Information, 2000))
+                    OnChange: =If(Self.SelectedDate <= Today() && Self.SelectedDate>= Today()-15, false, Reset(Self); Notify("Kindly select only Today's or last 15 date", NotificationType.Information, 5000))
                     Size: =_VarGblAppFonts.Size.UpperMedium
                     StartYear: =2023
                     Visible: =If(rdbModeOfPayment_2.Selected.Value='Payment Mode (Choice)'.KOTAK, true, false)
@@ -6300,7 +6301,7 @@
                             ); */
                         ,
                             ///////////////////////////////////////////////////////////////////////////////////////////////Credit Customer____
-                            OrderData.'Mode Of Payment' = 'Payment Type (choice)'.CREDIT && LookUp(
+                            (OrderData.'Mode Of Payment' = 'Payment Type (choice)'.CREDIT || OrderData.'Mode Of Payment' = 'Payment Type (choice)'.COUPON) && LookUp(
                                 Customers_1,
                                 Account = OrderData.Account
                             ).'Credit Activated' = 'Credit Activated (Customers_1)'.Yes,

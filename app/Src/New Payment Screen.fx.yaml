@@ -376,7 +376,7 @@
                 FocusedBorderThickness: =2
                 Height: =45
                 IconBackground: =_VarGblAppColors.BisleriBlue
-                OnChange: =If(Self.SelectedDate >=Today(), false, Reset(Self); Notify("Kindly select only Today's or future date", NotificationType.Information, 2000))
+                OnChange: =If(Self.SelectedDate <= Today() && Self.SelectedDate>= Today()-15, false, Reset(Self); Notify("Kindly select only Today's or last 15 date", NotificationType.Information, 5000))
                 Size: =_VarGblAppFonts.Size.UpperMedium
                 StartYear: =2023
                 Visible: |-
