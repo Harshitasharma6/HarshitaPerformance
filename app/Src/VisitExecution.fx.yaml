@@ -2076,6 +2076,12 @@
                                 NotificationType.Warning,
                                 5000
                             ),
+                            IsBlank(DatePicker3_1.SelectedDate) && rdbModeOfPayment_2.Selected.Value = 'Payment Mode (Choice)'.KOTAK,
+                            Notify(
+                                "Please enter Cheque Date",
+                                NotificationType.Warning,
+                                5000
+                            ),
                             Patch(
                                 'Order Headers',
                                 LookUp(
