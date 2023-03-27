@@ -198,7 +198,7 @@ App As appinfo:
             colOfflineTodayDemandsHeader,
             Filter(
                 'Check-in Demand Headers',
-                Salesperson.'Primary Email' = User().Email && Date >=Today()+
+                Salesperson.'Primary Email' = User().Email && Date >=Today()+1
             )
         );
         ClearCollect(
