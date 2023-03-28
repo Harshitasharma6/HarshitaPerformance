@@ -24,7 +24,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3969,
+                  "charOffset": 3968,
                   "snippet": {
                     "text": "+"
                   }
@@ -63,10 +63,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 2,
+                  "charLength": 1,
                   "charOffset": 3960,
                   "snippet": {
-                    "text": ">="
+                    "text": ">"
                   }
                 }
               },
@@ -144,7 +144,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4559,
+                  "charOffset": 4557,
                   "snippet": {
                     "text": "+"
                   }
@@ -183,10 +183,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 2,
-                  "charOffset": 4550,
+                  "charLength": 1,
+                  "charOffset": 4549,
                   "snippet": {
-                    "text": ">="
+                    "text": ">"
                   }
                 }
               },
@@ -224,7 +224,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 4542,
+                  "charOffset": 4541,
                   "snippet": {
                     "text": "&&"
                   }
