@@ -4,7 +4,7 @@ OrderScreen As screen:
                 colOfflineOrderHeader,
                 Filter(
                     'Order Headers',
-                    'Order Date' > Today() && 'Owning User'.'Primary Email' = User().Email
+                    'Order Date' >= Today() && 'Owning User'.'Primary Email' = User().Email
                 )
             );
 
