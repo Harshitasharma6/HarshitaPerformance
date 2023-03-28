@@ -1181,7 +1181,8 @@
                         ).'To Location'.Warehouse
                     ).Area.Area
                 ).Salesperson.'Full Name'*/
-                ThisItem.ToSalesperson
+                //ThisItem.ToSalesperson
+                LookUp(Warehouses,Name = lblVanTransferInVehicleValue_1.Text).'Salesman Code'.'Full Name'
             Width: =220
             X: =400
             Y: =70
@@ -2288,8 +2289,7 @@
                                                             transferOutProductLines,
                                                             productId = ThisItem.'Item SKU'.'SKU Master'
                                                         ),
-                                                        {qtyCases: Value(Self.Text),
-                                                        Salesperson:ComboBox4.Selected.'Full Name'}
+                                                        {qtyCases: Value(Self.Text)}
                                                     );
                                                     ,
                                                     Collect(
@@ -2297,8 +2297,7 @@
                                                         {
                                                             productId: ThisItem.'Item SKU'.'SKU Master',
                                                             qtyCases: Value(Self.Text),
-                                                            qtyPcs: 0,
-                                                            Salesperson:ComboBox4.Selected.'Full Name'
+                                                            qtyPcs: 0
                                                         }
                                                     );
                                                 );
@@ -2399,8 +2398,7 @@
                                                             transferOutProductLines,
                                                             productId = ThisItem.'Item SKU'.'SKU Master'
                                                         ),
-                                                        {qtyPcs: Value(Self.Text),
-                                                        Salesperson:ComboBox4.Selected.'Full Name'}
+                                                        {qtyPcs: Value(Self.Text)}
                                                     );
                                                     ,
                                                     Collect(
@@ -2408,8 +2406,7 @@
                                                         {
                                                             productId: ThisItem.'Item SKU'.'SKU Master',
                                                             qtyCases: 0,
-                                                            qtyPcs: Value(Self.Text),
-                                                            Salesperson:ComboBox4.Selected.'Full Name'
+                                                            qtyPcs: Value(Self.Text)
                                                         }
                                                     );
                                                 );
