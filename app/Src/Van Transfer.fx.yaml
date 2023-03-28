@@ -1271,7 +1271,7 @@
                         colOfflineUsers,
                         'Primary Email' = LookUp(
                             'User Area Mappings',
-                            Area.Area = varSelectedLocation/*LookUp(
+                            Area.Area = varSelectedLocation /*LookUp(
                                 'Location VAN Mappings',
                                 Van.Warehouse = varHarkamalAudi
                             ).Area.Area*/
@@ -1427,7 +1427,7 @@
                         )
                     );*/
                     Set(
-                        varHarkamalAudi,
+                        varHarkaamalAudi,
                         Self.Selected.Warehouse
                     );
                     Set(varSelectedLocation,LookUp(
@@ -1917,6 +1917,7 @@
                                 'Created On' >= Today() && 'From Location'.Warehouse = StockTransferWarehouse && 'To Location'.Warehouse = StockTransferWarehouse
                             )
                         );
+                        Set(varStockHeader,First(colTransferOutHeader).'Stock Transfer Header');
                     ForAll(
                         colManipulatedTransferLines As OneProduct,
                         Collect(
@@ -1929,8 +1930,8 @@
                                     PCs: OneProduct.qtyPcs,
                                     Date: Today(),
                                     'Transfer Order No': LookUp(
-                                        colOfflineStockTransferHeader,
-                                        'Stock Transfer Header' = First(colTransferOutHeader).'Stock Transfer Header'
+                                        'Stock Transfer Headers',
+                                        'Stock Transfer Header' = varStockHeader /*First(colTransferOutHeader).'Stock Transfer Header'*/
                                     ),
                                     SKU: LookUp(
                                         'SKU Masters',
