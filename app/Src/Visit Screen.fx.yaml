@@ -827,7 +827,9 @@
                             2000
                         )
                     );
-                Size: =_VarGblAppFonts.Size.Medium
+                Size: |-
+                    =//_VarGblAppFonts.Size.Medium
+                    14
                 TabIndex: =
                 Text: =ThisItem.Customer.'Customer Name'
                 Width: =350
