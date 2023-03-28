@@ -315,7 +315,8 @@
                         ).'From Location'.Warehouse
                     ).Area.Area
                 ).Salesperson.'Full Name'*/
-                ThisItem.ToSalesperson
+                //ThisItem.ToSalesperson
+                LookUp(Warehouses,Name=lblVanTransferInVehicleValue.Text).'Salesman Code'.'Full Name'
             Width: =171
             X: =407
             Y: =70
