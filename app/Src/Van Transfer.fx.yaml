@@ -1427,12 +1427,12 @@
                         )
                     );*/
                     Set(
-                        varHarkaamalAudi,
+                        varHarkamalAudi,
                         Self.Selected.Warehouse
                     );
                     Set(varSelectedLocation,LookUp(
                                 'Location VAN Mappings',
-                                Van.Warehouse = varHarkaamalAudi ).Area.Area);
+                                Van.Warehouse = varHarkamalAudi ).Area.Area);
                 PressedFill: =_VarGblAppColors.BisleriBlue
                 Reset: =true
                 SearchFields: =["zx_name"]
