@@ -2214,8 +2214,12 @@
                                         'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
                                     ),
                                     {
+                                         'Signed QR Code': Text(testButton.qr),
+                                            'IRN Number': Text(testButton.qrno),
+                                            'IRN Message': Text(testButton.status),
                                         'Local QR ': JSON(
                                             {
+                        
                                                 gstin: "27AAFCD5862R013",
                                                 TranDtls: {
                                                     TaxSch: "GST",
