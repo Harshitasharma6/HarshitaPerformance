@@ -32,6 +32,8 @@
       "versionnumber": "Version Number",
       "zx_branchname": "Branch Name",
       "zx_cashcustomer": "Cash Customer",
+      "zx_cessvalue": "Cess Value",
+      "zx_cessvalue_base": "Cess Value (Base)",
       "zx_cgstvalue": "CGST Value",
       "zx_cgstvalue_base": "CGST Value (Base)",
       "zx_Customer": "Customer",

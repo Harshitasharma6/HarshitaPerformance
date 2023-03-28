@@ -5877,6 +5877,10 @@
                                                     colCartItems,
                                                     discount
                                                 ),
+                                                'Cess Value':Sum(colCartItems,cessValue),
+                                                'CGST Value':Sum(colCartItems, cgstValue),
+                                                'SGST Value':Sum(colCartItems, sgstValue),
+                                                'Taxable Value':Sum(colCartItems, discountedPrice),
                                                 'Net Amount': Sum(
                                                     colCartItems,
                                                     netAmount
@@ -5927,6 +5931,10 @@
                                                     colCartItems,
                                                     discount
                                                 ),
+                                                'Cess Value':Sum(colCartItems,cessValue),
+                                                'CGST Value':Sum(colCartItems, cgstValue),
+                                                'SGST Value':Sum(colCartItems, sgstValue),
+                                                'Taxable Value':Sum(colCartItems, discountedPrice),
                                                 'Net Amount': Sum(
                                                     colCartItems,
                                                     netAmount
@@ -6002,6 +6010,10 @@
                                                     PCs: OrdrItems.qtyPcs,
                                                     'Total Discount Amount': Value(OrdrItems.discount),
                                                     'Tax Amount': OrdrItems.taxAmount,
+                                                    'Cess Value': OrdrItems.cessValue,
+                                                    'CGST Value': OrdrItems.cgstValue,
+                                                    'SGST Value': OrdrItems.sgstValue,
+                                                    'Taxable Value':OrdrItems.discountedPrice,
                                                     Rate: OrdrItems.netAmount,
                                                     Customer: LookUp(
                                                         Customers_1,
@@ -6062,6 +6074,10 @@
                                                     PCs: OrdrItems.qtyPcs,
                                                     'Total Discount Amount': Value(OrdrItems.discount),
                                                     'Tax Amount': OrdrItems.taxAmount,
+                                                    'Cess Value': OrdrItems.cessValue,
+                                                    'CGST Value': OrdrItems.cgstValue,
+                                                    'SGST Value': OrdrItems.sgstValue,
+                                                    'Taxable Value':OrdrItems.discountedPrice,
                                                     Rate: OrdrItems.netAmount,
                                                     Customer: LookUp(
                                                         Customers_1,
@@ -6138,6 +6154,10 @@
                                                     'Total Discount Amount': Value(OrdrItems.discount),
                                                     'Tax Amount': OrdrItems.taxAmount,
                                                     Rate: OrdrItems.netAmount,
+                                                    'Cess Value': OrdrItems.cessValue,
+                                                    'CGST Value': OrdrItems.cgstValue,
+                                                    'SGST Value': OrdrItems.sgstValue,
+                                                    'Taxable Value':OrdrItems.discountedPrice,
                                                     Customer: LookUp(
                                                         Customers_1,
                                                         Account = OrderData.Account
@@ -6209,6 +6229,10 @@
                                                     PCs: OrdrItems.qtyPcs,
                                                     'Total Discount Amount': Value(OrdrItems.discount),
                                                     'Tax Amount': OrdrItems.taxAmount,
+                                                    'Cess Value': OrdrItems.cessValue,
+                                                    'CGST Value': OrdrItems.cgstValue,
+                                                    'SGST Value': OrdrItems.sgstValue,
+                                                    'Taxable Value':OrdrItems.discountedPrice,
                                                     Rate: OrdrItems.netAmount,
                                                     Customer: LookUp(
                                                         Customers_1,
@@ -6801,6 +6825,10 @@
                                                             colCartItems,
                                                             discount
                                                         ),
+                                                        'Cess Value':Sum(colCartItems,cessValue),
+                                                'CGST Value':Sum(colCartItems, cgstValue),
+                                                'SGST Value':Sum(colCartItems, sgstValue),
+                                                'Taxable Value':Sum(colCartItems, discountedPrice),
                                                         'Net Amount': (Sum(
                                                             colCartItems,
                                                             netAmount
@@ -6851,6 +6879,10 @@
                                                             colCartItems,
                                                             discount
                                                         ),
+                                                        'Cess Value':Sum(colCartItems,cessValue),
+                                                'CGST Value':Sum(colCartItems, cgstValue),
+                                                'SGST Value':Sum(colCartItems, sgstValue),
+                                                'Taxable Value':Sum(colCartItems, discountedPrice),
                                                         'Net Amount': (Sum(
                                                             colCartItems,
                                                             netAmount
@@ -6926,6 +6958,10 @@
                                                             PCs: OrdrItems.qtyPcs,
                                                             'Total Discount Amount': Value(OrdrItems.discount),
                                                             'Tax Amount': OrdrItems.taxAmount,
+                                                            'Cess Value': OrdrItems.cessValue,
+                                                    'CGST Value': OrdrItems.cgstValue,
+                                                    'SGST Value': OrdrItems.sgstValue,
+                                                    'Taxable Value':OrdrItems.discountedPrice,
                                                             Rate: OrdrItems.netAmount,
                                                             Customer: LookUp(
                                                                 Customers_1,
@@ -6989,6 +7025,10 @@
                                                             PCs: OrdrItems.qtyPcs,
                                                             'Total Discount Amount': Value(OrdrItems.discount),
                                                             'Tax Amount': OrdrItems.taxAmount,
+                                                            'Cess Value': OrdrItems.cessValue,
+                                                    'CGST Value': OrdrItems.cgstValue,
+                                                    'SGST Value': OrdrItems.sgstValue,
+                                                    'Taxable Value':OrdrItems.discountedPrice,
                                                             Rate: OrdrItems.netAmount,
                                                             Customer: LookUp(
                                                                 Customers_1,
@@ -7068,6 +7108,10 @@
                                                             PCs: OrdrItems.qtyPcs,
                                                             'Total Discount Amount': Value(OrdrItems.discount),
                                                             'Tax Amount': OrdrItems.taxAmount,
+                                                            'Cess Value': OrdrItems.cessValue,
+                                                    'CGST Value': OrdrItems.cgstValue,
+                                                    'SGST Value': OrdrItems.sgstValue,
+                                                    'Taxable Value':OrdrItems.discountedPrice,
                                                             Rate: OrdrItems.netAmount,
                                                             Customer: LookUp(
                                                                 Customers_1,
@@ -7143,6 +7187,10 @@
                                                             PCs: OrdrItems.qtyPcs,
                                                             'Total Discount Amount': Value(OrdrItems.discount),
                                                             'Tax Amount': OrdrItems.taxAmount,
+                                                            'Cess Value': OrdrItems.cessValue,
+                                                    'CGST Value': OrdrItems.cgstValue,
+                                                    'SGST Value': OrdrItems.sgstValue,
+                                                    'Taxable Value':OrdrItems.discountedPrice,
                                                             Rate: OrdrItems.netAmount,
                                                             Customer: LookUp(
                                                                 Customers_1,
@@ -7885,6 +7933,10 @@
                                                             PCs: OrdrItems.qtyPcs,
                                                             'Total Discount Amount': Value(OrdrItems.discount),
                                                             'Tax Amount': OrdrItems.taxAmount,
+                                                            'Cess Value': OrdrItems.cessValue,
+                                                    'CGST Value': OrdrItems.cgstValue,
+                                                    'SGST Value': OrdrItems.sgstValue,
+                                                    'Taxable Value':OrdrItems.discountedPrice,
                                                             Rate: OrdrItems.netAmount,
                                                             Customer: LookUp(
                                                                 Customers_1,
@@ -7948,6 +8000,10 @@
                                                             PCs: OrdrItems.qtyPcs,
                                                             'Total Discount Amount': Value(OrdrItems.discount),
                                                             'Tax Amount': OrdrItems.taxAmount,
+                                                            'Cess Value': OrdrItems.cessValue,
+                                                    'CGST Value': OrdrItems.cgstValue,
+                                                    'SGST Value': OrdrItems.sgstValue,
+                                                    'Taxable Value':OrdrItems.discountedPrice,
                                                             Rate: OrdrItems.netAmount,
                                                             Customer: LookUp(
                                                                 Customers_1,
@@ -8027,6 +8083,10 @@
                                                             PCs: OrdrItems.qtyPcs,
                                                             'Total Discount Amount': Value(OrdrItems.discount),
                                                             'Tax Amount': OrdrItems.taxAmount,
+                                                            'Cess Value': OrdrItems.cessValue,
+                                                    'CGST Value': OrdrItems.cgstValue,
+                                                    'SGST Value': OrdrItems.sgstValue,
+                                                    'Taxable Value':OrdrItems.discountedPrice,
                                                             Rate: OrdrItems.netAmount,
                                                             Customer: LookUp(
                                                                 Customers_1,
@@ -8102,6 +8162,10 @@
                                                             PCs: OrdrItems.qtyPcs,
                                                             'Total Discount Amount': Value(OrdrItems.discount),
                                                             'Tax Amount': OrdrItems.taxAmount,
+                                                            'Cess Value': OrdrItems.cessValue,
+                                                    'CGST Value': OrdrItems.cgstValue,
+                                                    'SGST Value': OrdrItems.sgstValue,
+                                                    'Taxable Value':OrdrItems.discountedPrice,
                                                             Rate: OrdrItems.netAmount,
                                                             Customer: LookUp(
                                                                 Customers_1,

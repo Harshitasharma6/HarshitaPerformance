@@ -67,12 +67,16 @@ App As appinfo:
                 Day(Today())
             )
         );*/
-        Set(
+        ClearCollect(
             varFilterVariantMaster,
-            LookUp(
-                'Current Stocks',
-                'Van No'.Warehouse = varUserVanNo.Van.Warehouse
-            ).'Item SKU'.'SKU Master'
+            AddColumns(
+                Filter(
+                    'Current Stocks',
+                    'Van No'.Warehouse = varUserVanNo.Van.Warehouse && 'Created On' >= Today()
+                ),
+                "HeadGUID",
+                'Item SKU'.'SKU Master'
+            )
         );
         /*Concurrent(
             SaveData(
@@ -281,7 +285,7 @@ App As appinfo:
                 colOfflineVariantMaster,
                 Filter(
                     'SKU Masters',
-                    'SKU Master' = varFilterVariantMaster
+                    'SKU Master' in varFilterVariantMaster.HeadGUID
                 )
             );
             ,
