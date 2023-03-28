@@ -4695,17 +4695,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.varHarkaamalAudi"
+                  "fullyQualifiedName": "App.varHarkamalAudi"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.varHarkaamalAudi",
+                  "fullyQualifiedName": "App.varHarkamalAudi",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "varHarkaamalAudi",
+                "member": "varHarkamalAudi",
                 "module": "App",
                 "type": "App"
               }
