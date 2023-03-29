@@ -2,6 +2,20 @@
     Fill: =_VarGblAppColors.LightText
     OnVisible: |-
         =ClearCollect(
+            colOfflineTodayDemandsHeader,
+            Filter(
+                'Check-in Demand Headers',
+                Salesperson.'Primary Email' = User().Email && Date >Today()
+            )
+        );
+        Set(
+            DemandHeadersdata,
+            LookUp(
+                'Check-in Demand Headers',
+                Salesperson.'Primary Email' = User().Email && Date >Today()
+            )
+        );
+        ClearCollect(
             colOfflineTodayDemandsLines,
             If(
                 CountRows(colOfflineTodayDemandsHeader) > 0,
