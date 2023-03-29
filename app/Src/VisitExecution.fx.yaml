@@ -2216,9 +2216,9 @@
                                         'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
                                     ),
                                     {
-                                         /*'Signed QR Code': Text(testButton.qr),
+                                         'Signed QR Code': Text(testButton.qr),
                                             'IRN Number': Text(testButton.qrno),
-                                            'IRN Message': Text(testButton.status),*/
+                                            'IRN Message': Text(testButton.status),
                                         'Local QR ': JSON(
                                             {
                         

@@ -387,7 +387,9 @@
       "id": "/providers/microsoft.powerapps/apis/shared_irn-20-2d-201-5f7ae3c468c3353edd-5f69d4af27be7bcb24"
     },
     "datasets": {},
-    "dataSources": [],
+    "dataSources": [
+      "IRN_1"
+    ],
     "dependencies": {},
     "dependents": [
       "52a41ef5-ff70-4a7e-8c28-1c93ea424ca0"
