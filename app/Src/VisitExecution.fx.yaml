@@ -2142,10 +2142,11 @@
                             );
                              ////////////////////////////////////////////////////IRN Item Data Condition
                         Clear(ManipulatedCartCollection);
-                         Set(
+                        
+                         /*Set(
                                     testButton,
                                     'PowerAppV2->RespondtoaPowerApporflow'.Run(CreateInvHeaderdata.'Invoice Header');
-                                );
+                                );*/
                         
                             If(
                                 CountRows(CreateOrderRecord) > 0 && CountRows(CreateItemsRecord) > 0 
@@ -2215,9 +2216,9 @@
                                         'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
                                     ),
                                     {
-                                         'Signed QR Code': Text(testButton.qr),
+                                         /*'Signed QR Code': Text(testButton.qr),
                                             'IRN Number': Text(testButton.qrno),
-                                            'IRN Message': Text(testButton.status),
+                                            'IRN Message': Text(testButton.status),*/
                                         'Local QR ': JSON(
                                             {
                         
@@ -9198,80 +9199,6 @@
         Y: =1026
         ZIndex: =8
 
-    Rectangle2 As rectangle:
-        DisplayMode: =DisplayMode.Disabled
-        Fill: =RGBA(0, 0, 0, 0.49)
-        Height: =App.Height
-        Visible: |-
-            =//If(varIRN || VarPaymentConfirm, true, false)
-            If(varIRN, true, false)
-        Width: =App.Width
-        ZIndex: =9
-
-    Container2 As groupContainer.manualLayoutContainer:
-        Fill: =Color.White
-        Height: =271
-        Visible: =//If(VarPaymentConfirm, true, false)
-        X: =70
-        Y: =421
-        ZIndex: =10
-
-        Label5 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =102
-            Size: =_VarGblAppFonts.Size.Title
-            Text: ="Do you want to create a replacement return order?"
-            Width: =379
-            X: =61
-            Y: =37
-            ZIndex: =1
-
-        Button4 As button:
-            Fill: =_VarGblAppColors.BisleriBlue
-            FocusedBorderThickness: =2
-            Height: =50
-            HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
-            OnSelect: |
-                =/*Set(VarPaymentConfirm, false);*/
-                Set(varSelectedVisitActiveTab, 3);
-                Clear(colReasonsVisits)
-            Size: =_VarGblAppFonts.Size.UpperMedium
-            Text: ="YES"
-            Width: =150
-            X: =85
-            Y: =156
-            ZIndex: =2
-
-        Button4_3 As button:
-            Fill: =_VarGblAppColors.BisleriBlue
-            FocusedBorderThickness: =2
-            Height: =50
-            HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
-            OnSelect: |
-                =Patch(
-                    Visits,
-                    LookUp(
-                        Visits,
-                        Customer.Account = OrderData.Account && IsBlank('Check-out Time') && 'Created On' >= Today() /*&& Customer.Salesperson.'Primary Email' = User().Email*/
-                    ),
-                    {
-                        'Check-out Latitude': Location.Latitude,
-                        'Check-out Longitude': Location.Longitude,
-                        'Check-out Time': Now()
-                    }
-                );
-                /*Set(
-                    VarPaymentConfirm,
-                    false
-                );*/
-                Navigate('Visit Screen');
-            Size: =_VarGblAppFonts.Size.UpperMedium
-            Text: ="NO"
-            Width: =150
-            X: =272
-            Y: =156
-            ZIndex: =3
-
     Icon7_2 As icon.Reload:
         AccessibleLabel: ="Icon7_2"
         Color: =RGBA(255, 255, 255, 1)
@@ -9282,7 +9209,7 @@
         Width: =38
         X: =496
         Y: =22
-        ZIndex: =12
+        ZIndex: =9
 
     Icon5_1 As icon.Print:
         AccessibleLabel: ="Icon5_1"
@@ -9343,7 +9270,81 @@
         Width: =55
         X: =407
         Y: =11
-        ZIndex: =14
+        ZIndex: =10
+
+    Rectangle2 As rectangle:
+        DisplayMode: =DisplayMode.Disabled
+        Fill: =RGBA(0, 0, 0, 0.49)
+        Height: =App.Height
+        Visible: |-
+            =//If(varIRN || VarPaymentConfirm, true, false)
+            If(varIRN, true, false)
+        Width: =App.Width
+        ZIndex: =11
+
+    Container2 As groupContainer.manualLayoutContainer:
+        Fill: =Color.White
+        Height: =271
+        Visible: =//If(VarPaymentConfirm, true, false)
+        X: =70
+        Y: =421
+        ZIndex: =12
+
+        Label5 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =102
+            Size: =_VarGblAppFonts.Size.Title
+            Text: ="Do you want to create a replacement return order?"
+            Width: =379
+            X: =61
+            Y: =37
+            ZIndex: =1
+
+        Button4 As button:
+            Fill: =_VarGblAppColors.BisleriBlue
+            FocusedBorderThickness: =2
+            Height: =50
+            HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
+            OnSelect: |
+                =/*Set(VarPaymentConfirm, false);*/
+                Set(varSelectedVisitActiveTab, 3);
+                Clear(colReasonsVisits)
+            Size: =_VarGblAppFonts.Size.UpperMedium
+            Text: ="YES"
+            Width: =150
+            X: =85
+            Y: =156
+            ZIndex: =2
+
+        Button4_3 As button:
+            Fill: =_VarGblAppColors.BisleriBlue
+            FocusedBorderThickness: =2
+            Height: =50
+            HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
+            OnSelect: |
+                =Patch(
+                    Visits,
+                    LookUp(
+                        Visits,
+                        Customer.Account = OrderData.Account && IsBlank('Check-out Time') && 'Created On' >= Today() /*&& Customer.Salesperson.'Primary Email' = User().Email*/
+                    ),
+                    {
+                        'Check-out Latitude': Location.Latitude,
+                        'Check-out Longitude': Location.Longitude,
+                        'Check-out Time': Now()
+                    }
+                );
+                /*Set(
+                    VarPaymentConfirm,
+                    false
+                );*/
+                Navigate('Visit Screen');
+            Size: =_VarGblAppFonts.Size.UpperMedium
+            Text: ="NO"
+            Width: =150
+            X: =272
+            Y: =156
+            ZIndex: =3
 
     "'IRN Container' As groupContainer.manualLayoutContainer":
         Fill: =Color.White
@@ -9351,7 +9352,7 @@
         Visible: =If(varIRN, true, false)
         X: =70
         Y: =441
-        ZIndex: =15
+        ZIndex: =13
 
         Label5_1 As label:
             FontWeight: =FontWeight.Semibold
@@ -9408,7 +9409,7 @@
         Height: =App.Height
         Visible: =If(_varCreditLimitPopup, true, false)
         Width: =App.Width
-        ZIndex: =16
+        ZIndex: =14
 
     Container9 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(255, 255, 255, 1)
@@ -9416,7 +9417,7 @@
         Visible: =If(_varCreditLimitPopup, true, false)
         X: =70
         Y: =375
-        ZIndex: =17
+        ZIndex: =15
 
         Label15 As label:
             Align: =Align.Center
