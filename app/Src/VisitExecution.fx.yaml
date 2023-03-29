@@ -164,6 +164,7 @@
         );
         Reset(txtPaymentAmountValue_9);
         Reset(ComboBox1_1);
+        Reset(txtPaymentAmountValue_3);
 
     Header_15 As Header:
         HeaderText: ="Order"

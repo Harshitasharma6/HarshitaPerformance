@@ -1,5 +1,16 @@
 "'Attendance Screen' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
     Fill: =_VarGblAppColors.LightText
+    OnVisible: |-
+        =ClearCollect(
+            colOfflineTodayDemandsLines,
+            If(
+                CountRows(colOfflineTodayDemandsHeader) > 0,
+                Filter(
+                    'Check-in Demand Lines',
+                    CheckInDemandHeaderCalculated = DemandHeadersdata.'Demand Header No'
+                )
+            )
+        );
 
     btnAttendanceStart As button:
         Color: =_VarGblAppColors.LightText
