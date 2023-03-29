@@ -2149,7 +2149,7 @@
                                 );*/
                         
                             If(
-                                CountRows(CreateOrderRecord) > 0 && CountRows(CreateItemsRecord) > 0 
+                                CountRows(CreateOrderRecord) > 0 /*&& CountRows(CreateItemsRecord) > 0 */
                                 
                         && !IsBlank(
                                     LookUp(

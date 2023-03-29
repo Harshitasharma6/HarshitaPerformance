@@ -1151,10 +1151,30 @@
                             }
                         )
                     );
+                    
                    
                 );
                 If(
                     !IsBlank(CreateInvHeaderFOC),
+                    Patch(
+                        'Invoice Series',
+                        LookUp(
+                            'Invoice Series',
+                            'Route No'.Area = LookUp(
+                                Areas,
+                                Area = varUserArea.Area.Area
+                            ).Area
+                        ),
+                        {
+                            'Sequence No': LookUp(
+                                'Invoice Series',
+                                'Route No'.Area = LookUp(
+                                    Areas,
+                                    Area = varUserArea.Area.Area
+                                ).Area
+                            ).'Sequence No' + 1
+                        }
+                    );
                     ClearCollect(
                         CreateInvLineFOC,
                         ForAll(

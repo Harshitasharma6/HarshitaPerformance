@@ -14,6 +14,166 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "NewFOCScreen.contFOCFinalConfirmation.btnFOCFinalConfirmationYes.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "NewFOCScreen.contFOCFinalConfirmation.btnFOCFinalConfirmationYes.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 5,
+                  "charOffset": 30375,
+                  "snippet": {
+                    "text": ".Area"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "NewFOCScreen",
+                "type": "NewFOCScreen.contFOCFinalConfirmation.btnFOCFinalConfirmationYes"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "NewFOCScreen.contFOCFinalConfirmation.btnFOCFinalConfirmationYes.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "NewFOCScreen.contFOCFinalConfirmation.btnFOCFinalConfirmationYes.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 30281,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "NewFOCScreen",
+                "type": "NewFOCScreen.contFOCFinalConfirmation.btnFOCFinalConfirmationYes"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "NewFOCScreen.contFOCFinalConfirmation.btnFOCFinalConfirmationYes.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "NewFOCScreen.contFOCFinalConfirmation.btnFOCFinalConfirmationYes.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 5,
+                  "charOffset": 30614,
+                  "snippet": {
+                    "text": ".Area"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "NewFOCScreen",
+                "type": "NewFOCScreen.contFOCFinalConfirmation.btnFOCFinalConfirmationYes"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "NewFOCScreen.contFOCFinalConfirmation.btnFOCFinalConfirmationYes.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "NewFOCScreen.contFOCFinalConfirmation.btnFOCFinalConfirmationYes.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 30508,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "NewFOCScreen",
+                "type": "NewFOCScreen.contFOCFinalConfirmation.btnFOCFinalConfirmationYes"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "'Pending Payment Screen'.canPayment_1.dataCardPayment_1.Container7_1.btnPaymentConfirm_7.OnSelect"
                 }
               ],
