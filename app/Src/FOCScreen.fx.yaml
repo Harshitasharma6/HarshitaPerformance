@@ -19,7 +19,7 @@
                     Filter(
                         //colOfflineOrderHeader,
                         'Order Headers', 'Order Date'>=Today() &&
-                        'Order Type' = 'Order Type (Choice)'.'FOC Order'
+                        'Order Type' = 'Order Type (Choice)'.'FOC Order' && Salesperson.'Primary Email' = User().Email
                     ),
                     galOrderDateFilter_2.Selected.Value = "Last 7 Days",
                     Filter(
