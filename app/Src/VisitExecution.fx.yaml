@@ -2143,13 +2143,13 @@
                              ////////////////////////////////////////////////////IRN Item Data Condition
                         Clear(ManipulatedCartCollection);
                         
-                         /*Set(
+                         Set(
                                     testButton,
                                     'PowerAppV2->RespondtoaPowerApporflow'.Run(CreateInvHeaderdata.'Invoice Header');
-                                );*/
+                                );
                         
                             If(
-                                CountRows(CreateOrderRecord) > 0 && CountRows(CreateItemsRecord) > 0 
+                                CountRows(CreateOrderRecord) > 0 /*&& CountRows(CreateItemsRecord) > 0 */
                                 
                         && !IsBlank(
                                     LookUp(
@@ -2216,9 +2216,9 @@
                                         'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
                                     ),
                                     {
-                                         /*'Signed QR Code': Text(testButton.qr),
+                                         'Signed QR Code': Text(testButton.qr),
                                             'IRN Number': Text(testButton.qrno),
-                                            'IRN Message': Text(testButton.status),*/
+                                            'IRN Message': Text(testButton.status),
                                         'Local QR ': JSON(
                                             {
                         

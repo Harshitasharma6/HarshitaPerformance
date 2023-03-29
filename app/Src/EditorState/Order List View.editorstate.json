@@ -2189,14 +2189,7 @@
     "galOrdersList": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "Sort(\r\n            Switch(\r\n                galOrderDateFilter.Selected.Value,\r\n                \"Last 30 Days\",\r\n                Filter(\r\n                    Filter(\r\n                        Filter(\r\n                            colOfflineOrderHeader,\r\n                            Salesperson.'Primary Email' = User().Email && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse\r\n                        ),\r\n                        'Order Type' = galOrderStatusFilter.Selected.Value\r\n                    ),\r\n                    'Order Date' > (Today() - 30)\r\n                ),\r\n                \"Last 7 Days\",\r\n                Filter(\r\n                    Filter(\r\n                        Filter(\r\n                            colOfflineOrderHeader,\r\n                           Salesperson.'Primary Email' = User().Email && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse\r\n                        ),\r\n                        'Order Type' = galOrderStatusFilter.Selected.Value\r\n                    ),\r\n                    'Order Date' > (Today() - 7)\r\n                ),\r\n                \"Today's Orders\",\r\n                Filter(\r\n                    Filter(\r\n                        Filter(\r\n                            colOfflineOrderHeader,\r\n                           Salesperson.'Primary Email' = User().Email && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse\r\n                        ),\r\n                        'Order Type' = galOrderStatusFilter.Selected.Value\r\n                    ),\r\n                    'Order Date'>= Today()\r\n                )\r\n            ),\r\n            'Created On',\r\n            SortOrder.Descending\r\n        )",
-          "InvariantPropertyName": "Items",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        },
+        "Items",
         "WrapCount",
         "TemplateSize",
         "TemplatePadding",
