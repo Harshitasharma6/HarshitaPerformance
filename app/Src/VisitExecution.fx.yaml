@@ -7814,6 +7814,10 @@
                                                             colCartItems,
                                                             discount
                                                         ),
+                                                        'Cess Value':Sum(colCartItems,cessValue),
+                                                'CGST Value':Sum(colCartItems, cgstValue),
+                                                'SGST Value':Sum(colCartItems, sgstValue),
+                                                'Taxable Value':Sum(colCartItems, discountedPrice),
                                                         'Net Amount': (Sum(
                                                             colCartItems,
                                                             netAmount
@@ -7864,6 +7868,10 @@
                                                             colCartItems,
                                                             discount
                                                         ),
+                                                        'Cess Value':Sum(colCartItems,cessValue),
+                                                'CGST Value':Sum(colCartItems, cgstValue),
+                                                'SGST Value':Sum(colCartItems, sgstValue),
+                                                'Taxable Value':Sum(colCartItems, discountedPrice),
                                                         'Net Amount': (Sum(
                                                             colCartItems,
                                                             netAmount
