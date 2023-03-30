@@ -862,7 +862,7 @@
                                         Height: =50
                                         OnSelect: =Select(Parent)
                                         Size: =_VarGblAppFonts.Size.Subtitle
-                                        Text: =ThisItem.'Mode of Payment'
+                                        Text: =ThisItem.'Payment Mode'
                                         Width: =100
                                         X: =510
                                         Y: =5
