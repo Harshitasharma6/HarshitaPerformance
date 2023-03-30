@@ -976,7 +976,6 @@
                 AddColumns(
                     Filter(
                         'Stock Transfer Headers',
-                        
                         'To Location'.Warehouse = StockTransferWarehouse && 'Stock transfer type' = 'Stock transfer type (Stock Transfer Headers)'.'Warehouse to van transfer' && 'Created On' >= Today()
                     ),
                     "headerGUID",
