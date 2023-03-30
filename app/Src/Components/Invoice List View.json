@@ -7071,6 +7071,14 @@
             "InvariantPropertyName": "TabIndex",
             "IsLockable": false,
             "NameMapSourceSchema": "?"
+          },
+          {
+            "AFDDataSourceName": "",
+            "AutoRuleBindingEnabled": false,
+            "AutoRuleBindingString": "",
+            "InvariantPropertyName": "ShowScrollbar",
+            "IsLockable": false,
+            "NameMapSourceSchema": "?"
           }
         ],
         "ControlUniqueId": "218",
@@ -7243,6 +7251,12 @@
             "InvariantScript": "",
             "Property": "TabIndex",
             "RuleProviderType": "Unknown"
+          },
+          {
+            "Category": "Design",
+            "InvariantScript": "false",
+            "Property": "ShowScrollbar",
+            "RuleProviderType": "Unknown"
           }
         ],
         "StyleName": "defaultGalleryStyle",
@@ -7307,7 +7321,7 @@
         "NameMapSourceSchema": "?"
       }
     ],
-    "LastModifiedTimestamp": "638157448153866215",
+    "LastModifiedTimestamp": "638157449789064673",
     "Name": "Invoice List View",
     "Rules": [
       {
@@ -7397,7 +7411,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638157448153866215",
+  "LastModifiedTimestamp": "638157449789064673",
   "Name": "2dc826e94932495ab74095a8f2ec5346",
   "OverridableProperties": {},
   "TemplateOriginalName": "f403aadad82d4272bc528edc7b5ea384",

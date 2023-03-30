@@ -6053,7 +6053,7 @@
                                                 'Invoice Lines',
                                                 LookUp(
                                                     'Invoice Lines',
-                                                    'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId
+                                                    'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Paid
                                                 ),
                                                 {
                                                     'Invoice Number': LookUp(
@@ -6128,7 +6128,7 @@
                                             IsBlank(
                                                 LookUp(
                                                     'Invoice Lines',
-                                                    'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                    'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Parent Item Code'.'SKU Master' = OrdrItems.SchemeOrderProductReference
                                                 )
                                             ),
                                             Patch(
@@ -6208,7 +6208,7 @@
                                                 'Invoice Lines',
                                                 LookUp(
                                                     'Invoice Lines',
-                                                    'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                    'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Parent Item Code'.'SKU Master' = OrdrItems.SchemeOrderProductReference
                                                 ),
                                                 {
                                                     'Invoice Number': LookUp(
@@ -6632,7 +6632,7 @@
                                                     IsBlank(
                                                         LookUp(
                                                             'Order Lines',
-                                                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Parent Item Code'.'SKU Master' = ThissItem.SchemeOrderProductReference
                                                         )
                                                     ),
                                                     Patch(
@@ -6693,7 +6693,7 @@
                                                         'Order Lines',
                                                         LookUp(
                                                             'Order Lines',
-                                                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Parent Item Code'.'SKU Master' = ThissItem.SchemeOrderProductReference
                                                         ),
                                                         {
                                                             'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,
@@ -7083,7 +7083,7 @@
                                                     IsBlank(
                                                         LookUp(
                                                             'Invoice Lines',
-                                                            'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                            'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Parent Item Code'.'SKU Master' = OrdrItems.SchemeOrderProductReference
                                                         )
                                                     ),
                                                     Patch(
@@ -7166,7 +7166,7 @@
                                                         'Invoice Lines',
                                                         LookUp(
                                                             'Invoice Lines',
-                                                            'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                            'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Parent Item Code'.'SKU Master' = OrdrItems.SchemeOrderProductReference
                                                         ),
                                                         {
                                                             'Invoice Number': LookUp(
@@ -7606,7 +7606,7 @@
                                                     IsBlank(
                                                         LookUp(
                                                             'Order Lines',
-                                                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Parent Item Code'.'SKU Master' = ThissItem.SchemeOrderProductReference
                                                         )
                                                     ),
                                                     Patch(
@@ -7670,7 +7670,7 @@
                                                         'Order Lines',
                                                         LookUp(
                                                             'Order Lines',
-                                                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                            'Order Number'.'Order Id' = CreateOrderRecorddata.'Order Id' && 'Item SKU'.'SKU Master' = ThissItem.productId && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Parent Item Code'.'SKU Master' = ThissItem.SchemeOrderProductReference
                                                         ),
                                                         {
                                                             'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,
@@ -8058,7 +8058,7 @@
                                                     IsBlank(
                                                         LookUp(
                                                             'Invoice Lines',
-                                                            'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                            'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Parent Item Code'.'SKU Master' = OrdrItems.SchemeOrderProductReference
                                                         )
                                                     ),
                                                     Patch(
@@ -8141,7 +8141,7 @@
                                                         'Invoice Lines',
                                                         LookUp(
                                                             'Invoice Lines',
-                                                            'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free
+                                                            'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.productId && 'Item Type' = 'Item Type (Choice)'.Free && 'Scheme Parent Item Code'.'SKU Master' = OrdrItems.SchemeOrderProductReference
                                                         ),
                                                         {
                                                             'Invoice Number': LookUp(

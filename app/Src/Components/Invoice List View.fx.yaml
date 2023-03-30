@@ -29,6 +29,7 @@
             )
         Layout: =Layout.Vertical
         OnSelect: =
+        ShowScrollbar: =false
         TabIndex: =
         TemplateSize: =268
         Width: =App.Width
