@@ -7047,7 +7047,14 @@
           "X",
           "Y",
           "Width",
-          "Height",
+          {
+            "AFDDataSourceName": "",
+            "AutoRuleBindingEnabled": false,
+            "AutoRuleBindingString": "",
+            "InvariantPropertyName": "Height",
+            "IsLockable": false,
+            "NameMapSourceSchema": "?"
+          },
           "ZIndex",
           {
             "AFDDataSourceName": "",
@@ -7083,7 +7090,7 @@
         "Rules": [
           {
             "Category": "Data",
-            "InvariantScript": "LastN(\r\n    Sort(\r\n        Filter(\r\n            'Invoice Headers',\r\n            Customer.Account = 'Invoice List View'.CustomerRecord.accountid\r\n        ),\r\n        'Invoice Date',\r\n        SortOrder.Descending\r\n    ),\r\n    5\r\n)",
+            "InvariantScript": "LastN(\r\n    Sort(\r\n        Filter(\r\n            'Invoice Headers',\r\n            Customer.Account = 'Invoice List View'.CustomerRecord.accountid\r\n        ),\r\n        'Invoice Date',\r\n        SortOrder.Ascending\r\n    ),\r\n    5\r\n)",
             "Property": "Items",
             "RuleProviderType": "Unknown"
           },
@@ -7167,7 +7174,7 @@
           },
           {
             "Category": "Design",
-            "InvariantScript": "950",
+            "InvariantScript": "726",
             "Property": "Height",
             "RuleProviderType": "Unknown"
           },
@@ -7291,9 +7298,16 @@
         "IsLockable": false,
         "NameMapSourceSchema": "?"
       },
-      "CustomerRecord"
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "First(Customers_1)",
+        "InvariantPropertyName": "CustomerRecord",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      }
     ],
-    "LastModifiedTimestamp": "638157433031969339",
+    "LastModifiedTimestamp": "638157448153866215",
     "Name": "Invoice List View",
     "Rules": [
       {
@@ -7304,7 +7318,7 @@
       },
       {
         "Category": "Data",
-        "InvariantScript": "First(Customers_1)",
+        "InvariantScript": "//First(Customers_1)\r\nvarCustomerDetails",
         "Property": "CustomerRecord",
         "RuleProviderType": "System"
       },
@@ -7316,9 +7330,9 @@
       },
       {
         "Category": "Design",
-        "InvariantScript": "950",
+        "InvariantScript": "726",
         "Property": "Height",
-        "RuleProviderType": "Unknown"
+        "RuleProviderType": "System"
       },
       {
         "Category": "Design",
@@ -7383,7 +7397,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638157433031969339",
+  "LastModifiedTimestamp": "638157448153866215",
   "Name": "2dc826e94932495ab74095a8f2ec5346",
   "OverridableProperties": {},
   "TemplateOriginalName": "f403aadad82d4272bc528edc7b5ea384",

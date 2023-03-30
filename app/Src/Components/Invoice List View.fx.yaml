@@ -1,8 +1,10 @@
 "'Invoice List View' As CanvasComponent":
     CustomerDataSource: =
-    CustomerRecord: =First(Customers_1)
+    CustomerRecord: |-
+        =//First(Customers_1)
+        varCustomerDetails
     Fill: =_VarGblAppColors.BackgroundColor
-    Height: =950
+    Height: =726
     Width: =App.Width
     X: =0
     Y: =0
@@ -12,7 +14,7 @@
         AccessibleLabel: ="galOrdersList"
         BorderColor: =RGBA(109, 109, 109, 1)
         Fill: =_VarGblAppColors.BackgroundColor
-        Height: =950
+        Height: =726
         Items: |-
             =LastN(
                 Sort(
@@ -21,7 +23,7 @@
                         Customer.Account = 'Invoice List View'.CustomerRecord.accountid
                     ),
                     'Invoice Date',
-                    SortOrder.Descending
+                    SortOrder.Ascending
                 ),
                 5
             )
