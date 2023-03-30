@@ -209,9 +209,9 @@
                         If(
                             Len(Self.Text) < 30,
                             Notify(
-                                "Please enter valid mobile no.",
+                                "Please enter valid Address",
                                 NotificationType.Warning,
-                                2000
+                                5000
                             )
                         )
                     Size: =_VarGblAppFonts.Size.UpperMedium
