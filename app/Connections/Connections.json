@@ -13,7 +13,9 @@
       "IRN_2"
     ],
     "dependencies": {},
-    "dependents": [],
+    "dependents": [
+      "8aa4af2e-a7f5-4440-9aee-c138b55ed9f0"
+    ],
     "id": "095fdbff-58da-49ce-8dd0-03e75073ae96"
   },
   "0b2e8b71-cf2b-4ea4-9c96-3a21300305f8": {
@@ -136,9 +138,7 @@
       "IRN_1"
     ],
     "dependencies": {},
-    "dependents": [
-      "660f6a2d-5f17-4436-8f2c-8e35677dcd5e"
-    ],
+    "dependents": [],
     "id": "3320c2dd-af4e-4207-b19f-5cf78339a28e"
   },
   "368b98f0-4187-41d5-b34c-4286dcef34de": {
@@ -257,7 +257,7 @@
     "dependencies": {},
     "dependents": [
       "88540a79-971a-4ec4-a435-4d2b17fd8f34",
-      "660f6a2d-5f17-4436-8f2c-8e35677dcd5e"
+      "8aa4af2e-a7f5-4440-9aee-c138b55ed9f0"
     ],
     "id": "55f72745-b50d-456c-87c4-787c319fa6eb"
   },
@@ -365,7 +365,7 @@
     "dependents": [],
     "id": "88540a79-971a-4ec4-a435-4d2b17fd8f34"
   },
-  "8b6fcf79-be74-4d76-8266-2b6ab4f6ddcd": {
+  "8aa4af2e-a7f5-4440-9aee-c138b55ed9f0": {
     "connectionParameters": {
       "logicAppHostType": "ARM",
       "workFlowCallbackUri": "https://prod-06.centralindia.logic.azure.com:443/workflows/f70a035546754e9da7768cd7410eabaa/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Dex4UEHq381JaoxplKJlPEdnZt43_vCNgZHM0weouT4",
@@ -378,12 +378,24 @@
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
+        "095fdbff-58da-49ce-8dd0-03e75073ae96": {
+          "value": "shared_irn-20-2d-201-5f7ae3c468c3353edd-5f69d4af27be7bcb24_1"
+        },
+        "55f72745-b50d-456c-87c4-787c319fa6eb": {
+          "value": "shared_commondataserviceforapps_1"
+        },
         "workflowEntityId": {},
         "workflowName": {
           "value": "a62e66d0-78fa-46f3-aa43-011cafd7a8ff"
         }
       },
       "parameterHintsV2": {
+        "shared_commondataserviceforapps_1": {
+          "value": "55f72745-b50d-456c-87c4-787c319fa6eb"
+        },
+        "shared_irn-20-2d-201-5f7ae3c468c3353edd-5f69d4af27be7bcb24_1": {
+          "value": "095fdbff-58da-49ce-8dd0-03e75073ae96"
+        },
         "workflowEntityId": {},
         "workflowName": {
           "value": "a62e66d0-78fa-46f3-aa43-011cafd7a8ff"
@@ -399,7 +411,7 @@
       "shared_irn-20-2d-201-5f7ae3c468c3353edd-5f69d4af27be7bcb24_1": "095fdbff-58da-49ce-8dd0-03e75073ae96"
     },
     "dependents": [],
-    "id": "8b6fcf79-be74-4d76-8266-2b6ab4f6ddcd"
+    "id": "8aa4af2e-a7f5-4440-9aee-c138b55ed9f0"
   },
   "cdd0cfec-d272-4928-abc7-3479f9b77706": {
     "connectionParameters": {

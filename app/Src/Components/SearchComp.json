@@ -1114,7 +1114,7 @@
       },
       "SearchHintText"
     ],
-    "LastModifiedTimestamp": "638157595512166540",
+    "LastModifiedTimestamp": "638157615143402586",
     "Name": "SearchComp",
     "Rules": [
       {
@@ -1210,7 +1210,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638157595512166540",
+  "LastModifiedTimestamp": "638157615143402586",
   "Name": "b58dc360fd85467589b37fba8655146d",
   "OverridableProperties": {},
   "TemplateOriginalName": "bb70b3c079264f63a6a227510340b05a",
