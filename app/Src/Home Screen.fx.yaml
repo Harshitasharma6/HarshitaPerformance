@@ -662,12 +662,19 @@
                         Height: =39
                         Size: =_VarGblAppFonts.Size.Title
                         Text: |-
-                            =CountRows(
+                            =/*CountRows(
                                 ForAll(Distinct(
                                     Filter(
                                         'Order Lines',
                                         'Order Number'.'Order Type' = 'Order Type (Choice)'.'Replacement Order' && 'Order Number'.'Order Date' = Today() && Salesperson.'Primary Email' = User().Email
                                     ),
+                                    'Customer no.'.'Customer Name'
+                                ), {Result: ThisRecord.Value})
+                            )*/
+                            
+                            CountRows(
+                                ForAll(Distinct(
+                                    galHomeReplacementData.AllItems,
                                     'Customer no.'.'Customer Name'
                                 ), {Result: ThisRecord.Value})
                             )
@@ -945,18 +952,11 @@
                         Height: =39
                         Size: =_VarGblAppFonts.Size.Title
                         Text: |-
-                            =If(
+                            ="₹" & Text(
                                 Sum(
                                     galHomePaymentsData.AllItems,
                                     lblHomePaymentsDataValue
-                                ) > 0,
-                                "₹" & Text(
-                                    Sum(
-                                        galHomePaymentsData.AllItems,
-                                        lblHomePaymentsDataValue
-                                    )
-                                ),
-                                "-"
+                                )
                             )
                         Width: =168
                         X: =32
@@ -1013,24 +1013,14 @@
                         Height: =39
                         Size: =_VarGblAppFonts.Size.Title
                         Text: |-
-                            =If(
+                            ="₹" & Text(
                                 Sum(
                                     Filter(
                                         colOfflinePayments,
-                                        'Mode of Payment' = 'Payment Type (choice)'.CASH && Salesperson.'Primary Email' = User().Email && 'Receipt Date' = Today()
+                                        'Payment Mode' = 'Payment Mode (Choice)'.CASH && Salesperson.'Primary Email' = User().Email && 'Receipt Date' = Today()
                                     ),
                                     Amount
-                                ) > 0,
-                                "₹" & Text(
-                                    Sum(
-                                        Filter(
-                                            colOfflinePayments,
-                                            'Mode of Payment' = 'Payment Type (choice)'.CASH && Salesperson.'Primary Email' = User().Email && 'Receipt Date' = Today()
-                                        ),
-                                        Amount
-                                    )
-                                ),
-                                "-"
+                                )
                             )
                         Width: =168
                         X: =232
@@ -1091,7 +1081,7 @@
                                 Sum(
                                     Filter(
                                         colOfflinePayments,
-                                        Not('Mode of Payment' = 'Payment Type (choice)'.CASH) && Salesperson.'Primary Email' = User().Email && 'Receipt Date' = Today()
+                                        Not('Payment Mode' = 'Payment Mode (Choice)'.CASH) && Salesperson.'Primary Email' = User().Email && 'Receipt Date' = Today()
                                     ),
                                     Amount
                                 ) > 0,
@@ -1099,7 +1089,7 @@
                                     Sum(
                                         Filter(
                                             colOfflinePayments,
-                                            Not('Mode of Payment' = 'Payment Type (choice)'.CASH) && Salesperson.'Primary Email' = User().Email && 'Receipt Date' = Today()
+                                            Not('Payment Mode' = 'Payment Mode (Choice)'.CASH) && Salesperson.'Primary Email' = User().Email && 'Receipt Date' = Today()
                                         ),
                                         Amount
                                     )
@@ -1369,17 +1359,17 @@
                             =If(
                                 Sum(
                                     Filter(
-                                'Order Lines',
-                                'Order Number'.'Order Date' = Today() && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order'
-                            ),
+                                        'Order Lines',
+                                        'Order Number'.'Order Date' = Today() && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order'
+                                    ),
                                     Cases
                                 ) > 0,
                                 Text(
                                     Sum(
                                         Filter(
-                                'Order Lines',
-                                'Order Number'.'Order Date' = Today() && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order'
-                            ),
+                                            'Order Lines',
+                                            'Order Number'.'Order Date' = Today() && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order'
+                                        ),
                                         Cases
                                     )
                                 ),
@@ -2316,7 +2306,7 @@
                                         Height: =50
                                         OnSelect: =Select(Parent)
                                         Size: =_VarGblAppFonts.Size.Subtitle
-                                        Text: =ThisItem.'Item SKU'.'Name (zx_namess)'
+                                        Text: =ThisItem.'Item SKU'.'Item Description '
                                         Width: =340
                                         X: =300
                                         Y: =5
@@ -2528,8 +2518,14 @@
                         FontWeight: =FontWeight.Bold
                         Height: =39
                         Size: =_VarGblAppFonts.Size.Title
-                        Text: |
-                            =CountRows(galHomeOrdersData_2.AllItems)
+                        Text: |-
+                            =//CountRows(galHomeOrdersData_2.AllItems)
+                            CountRows(
+                                ForAll(Distinct(
+                                    galHomeOrdersData_2.AllItems,
+                                    'Customer no.'.'Customer Name'
+                                ), {Result: ThisRecord.Value})
+                            )
                         Width: =168
                         X: =434
                         Y: =42
