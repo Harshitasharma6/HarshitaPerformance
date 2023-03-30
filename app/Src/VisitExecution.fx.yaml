@@ -2142,15 +2142,12 @@
                             );
                              ////////////////////////////////////////////////////IRN Item Data Condition
                         Clear(ManipulatedCartCollection);
-                        
-                         Set(
-                                    testButton,
-                                    'PowerApp->RespondtoaPowerApporflow'.Run(CreateInvHeaderdata.'Invoice Header');
-                                );
-                        
+                            Set(
+                                testButton,
+                                'PowerApp->RespondtoaPowerApporflow'.Run(CreateInvHeaderdata.'Invoice Header');
+                            );
                             If(
                                 CountRows(CreateOrderRecord) > 0 /*&& CountRows(CreateItemsRecord) > 0 */
-                                
                         && !IsBlank(
                                     LookUp(
                                         AllCustomerss,
@@ -2174,22 +2171,22 @@
                                     'PowerAppV2->RespondtoaPowerApporflow'.Run(CreateInvHeaderdata.'Invoice Header');
                                 );*/
                                 Patch(
+                                    'Invoice Headers',
+                                    LookUp(
                                         'Invoice Headers',
-                                        LookUp(
-                                            'Invoice Headers',
-                                            'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
-                                        ),
+                                        'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
+                                    ),
                                         /*{
                                             'Signed QR Code': Text(testButton.qr),
                                             'IRN Number': Text(testButton.qrno),
                                             'IRN Message': Text(testButton.status)
                                         }*/
-                                        {
-                                            'Signed QR Code': "123",
-                                            'IRN Number': "123",
-                                            'IRN Message': "123"
-                                        }
-                                    );
+                                    {
+                                        'Signed QR Code': "123",
+                                        'IRN Number': "123",
+                                        'IRN Message': "123"
+                                    }
+                                );
                                 Set(
                                     varConfirmationIRN,
                                     "signedQRGenerated"
@@ -2221,12 +2218,11 @@
                                         'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
                                     ),
                                     {
-                                         'Signed QR Code': Text(testButton.qr),
-                                            'IRN Number': Text(testButton.qrno),
-                                            'IRN Message': Text(testButton.status),
+                                        'Signed QR Code': Text(testButton.qr),
+                                        'IRN Number': Text(testButton.qrno),
+                                        'IRN Message': Text(testButton.status),
                                         'Local QR ': JSON(
                                             {
-                        
                                                 gstin: "27AAFCD5862R013",
                                                 TranDtls: {
                                                     TaxSch: "GST",
@@ -4685,7 +4681,6 @@
                                 )
                             );
                             Refresh('Current Stocks');
-                            
                             /*Set(
                                 VarPaymentConfirm,
                                 true
