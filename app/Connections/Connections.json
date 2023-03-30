@@ -13,9 +13,7 @@
       "IRN_2"
     ],
     "dependencies": {},
-    "dependents": [
-      "8b6fcf79-be74-4d76-8266-2b6ab4f6ddcd"
-    ],
+    "dependents": [],
     "id": "095fdbff-58da-49ce-8dd0-03e75073ae96"
   },
   "0b2e8b71-cf2b-4ea4-9c96-3a21300305f8": {
@@ -138,7 +136,9 @@
       "IRN_1"
     ],
     "dependencies": {},
-    "dependents": [],
+    "dependents": [
+      "660f6a2d-5f17-4436-8f2c-8e35677dcd5e"
+    ],
     "id": "3320c2dd-af4e-4207-b19f-5cf78339a28e"
   },
   "368b98f0-4187-41d5-b34c-4286dcef34de": {
@@ -257,7 +257,7 @@
     "dependencies": {},
     "dependents": [
       "88540a79-971a-4ec4-a435-4d2b17fd8f34",
-      "8b6fcf79-be74-4d76-8266-2b6ab4f6ddcd"
+      "660f6a2d-5f17-4436-8f2c-8e35677dcd5e"
     ],
     "id": "55f72745-b50d-456c-87c4-787c319fa6eb"
   },
