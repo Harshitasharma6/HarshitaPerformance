@@ -510,7 +510,7 @@ NewOrder As CanvasComponent:
                                                             cessValue: ((LookUp(
                                                                 colCartItems,
                                                                 productId = ThisItem.'Item SKU'.'SKU Master'
-                                                            ).cessValue) * ((PriceLine * Value(Self.Text)) - Value(
+                                                            ).discountedPriceCases) + (((PriceLine * Value(Self.Text)) - Value(
                                                                 If(
                                                                     OrderLinesSum >= DiscountLine.'Maximum Quantity',
                                                                     "0",
@@ -521,14 +521,17 @@ NewOrder As CanvasComponent:
                                                                         (DiscountLine.'Discount Amount') * (DiscountLine.'Maximum Quantity' - OrderLinesSum)
                                                                     )
                                                                 )
-                                                            ))) / (1 + (LookUp(
+                                                            ))/(1 + (LookUp(
                                                                 colCartItems,
                                                                 productId = ThisItem.'Item SKU'.'SKU Master'
-                                                            ).tax * 0.01)),
+                                                            ).tax * 0.01))))* LookUp(
+                                                                colCartItems,
+                                                                productId = ThisItem.'Item SKU'.'SKU Master'
+                                                            ).cess * 0.01,
                                                             cgstValue: ((LookUp(
                                                                 colCartItems,
                                                                 productId = ThisItem.'Item SKU'.'SKU Master'
-                                                            ).cgstValue) * ((PriceLine * Value(Self.Text)) - Value(
+                                                            ).discountedPriceCases) + (((PriceLine * Value(Self.Text)) - Value(
                                                                 If(
                                                                     OrderLinesSum >= DiscountLine.'Maximum Quantity',
                                                                     "0",
@@ -539,14 +542,17 @@ NewOrder As CanvasComponent:
                                                                         (DiscountLine.'Discount Amount') * (DiscountLine.'Maximum Quantity' - OrderLinesSum)
                                                                     )
                                                                 )
-                                                            ))) / (1 + (LookUp(
+                                                            ))/(1 + (LookUp(
                                                                 colCartItems,
                                                                 productId = ThisItem.'Item SKU'.'SKU Master'
-                                                            ).tax * 0.01)),
+                                                            ).tax * 0.01))))* LookUp(
+                                                                colCartItems,
+                                                                productId = ThisItem.'Item SKU'.'SKU Master'
+                                                            ).cgst * 0.01,
                                                             sgstValue: ((LookUp(
                                                                 colCartItems,
                                                                 productId = ThisItem.'Item SKU'.'SKU Master'
-                                                            ).sgstValue) * ((PriceLine * Value(Self.Text)) - Value(
+                                                            ).discountedPriceCases) + (((PriceLine * Value(Self.Text)) - Value(
                                                                 If(
                                                                     OrderLinesSum >= DiscountLine.'Maximum Quantity',
                                                                     "0",
@@ -557,10 +563,13 @@ NewOrder As CanvasComponent:
                                                                         (DiscountLine.'Discount Amount') * (DiscountLine.'Maximum Quantity' - OrderLinesSum)
                                                                     )
                                                                 )
-                                                            ))) / (1 + (LookUp(
+                                                            ))/(1 + (LookUp(
                                                                 colCartItems,
                                                                 productId = ThisItem.'Item SKU'.'SKU Master'
-                                                            ).tax * 0.01)),
+                                                            ).tax * 0.01))))* LookUp(
+                                                                colCartItems,
+                                                                productId = ThisItem.'Item SKU'.'SKU Master'
+                                                            ).sgst * 0.01,
                                                             netAmount: ((((LookUp(
                                                                 colCartItems,
                                                                 productId = ThisItem.'Item SKU'.'SKU Master'
@@ -761,7 +770,39 @@ NewOrder As CanvasComponent:
                                                                 ).'Exceptional Tax %'),
                                                                 (taxStructure.CESS + taxStructure.CGST + taxStructure.IGST + taxStructure.'SGST/UGST (zx_sgstugst)')
                                                             ),
-                                                            cess: taxStructure.CESS,
+                                                            cess: If(
+                                                                LookUp(
+                                                                    colOfflineVariantMaster,
+                                                                    'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                                                ).'Exceptional Tax Case' = 'Exceptional Tax Case (SKU Masters)'.Yes,
+                                                                (LookUp(
+                                                                    colOfflineVariantMaster,
+                                                                    'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                                                ).'Exceptional Tax %'*0),
+                                                                taxStructure.CESS
+                                                            ),
+                                                            sgst:If(
+                                                                LookUp(
+                                                                    colOfflineVariantMaster,
+                                                                    'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                                                ).'Exceptional Tax Case' = 'Exceptional Tax Case (SKU Masters)'.Yes,
+                                                                (LookUp(
+                                                                    colOfflineVariantMaster,
+                                                                    'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                                                ).'Exceptional Tax %'/2),
+                                                                taxStructure.'SGST/UGST (zx_sgstugst)'
+                                                            ),
+                                                            cgst:If(
+                                                                LookUp(
+                                                                    colOfflineVariantMaster,
+                                                                    'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                                                ).'Exceptional Tax Case' = 'Exceptional Tax Case (SKU Masters)'.Yes,
+                                                                (LookUp(
+                                                                    colOfflineVariantMaster,
+                                                                    'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                                                ).'Exceptional Tax %'/2),
+                                                                taxStructure.CGST
+                                                            ),
                                                             cessValue: (((If(
                                                                 LookUp(
                                                                     colOfflineVariantMaster,
@@ -770,7 +811,7 @@ NewOrder As CanvasComponent:
                                                                 (LookUp(
                                                                     colOfflineVariantMaster,
                                                                     'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
-                                                                ).'Exceptional Tax %' * 0),
+                                                                ).'Exceptional Tax %'*0),
                                                                 taxStructure.CESS
                                                             )) * 0.01) * ((PriceLine * Value(Self.Text)) - Value(
                                                                 If(
@@ -802,7 +843,7 @@ NewOrder As CanvasComponent:
                                                                 (LookUp(
                                                                     colOfflineVariantMaster,
                                                                     'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
-                                                                ).'Exceptional Tax %' / 2),
+                                                                ).'Exceptional Tax %'/2),
                                                                 taxStructure.CGST
                                                             )) * 0.01) * ((PriceLine * Value(Self.Text)) - Value(
                                                                 If(
@@ -834,7 +875,7 @@ NewOrder As CanvasComponent:
                                                                 (LookUp(
                                                                     colOfflineVariantMaster,
                                                                     'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
-                                                                ).'Exceptional Tax %' / 2),
+                                                                ).'Exceptional Tax %'/2),
                                                                 taxStructure.'SGST/UGST (zx_sgstugst)'
                                                             )) * 0.01) * ((PriceLine * Value(Self.Text)) - Value(
                                                                 If(
@@ -998,7 +1039,7 @@ NewOrder As CanvasComponent:
                                                             (ThissItemm.'Ordered Quantity' < Value(Self.Text)),
                                                             Collect(
                                                                 colFinalSchemeOrder,
-                                                                First(
+                                                                Index(
                                                                     Sort(
                                                                         Filter(
                                                                             colSchemeOrder,
@@ -1006,7 +1047,8 @@ NewOrder As CanvasComponent:
                                                                         ),
                                                                         'Ordered Quantity',
                                                                         SortOrder.Descending
-                                                                    )
+                                                                    ),
+                                                                    1
                                                                 )
                                                             )
                                                         )
@@ -1048,7 +1090,12 @@ NewOrder As CanvasComponent:
                                 If(
                                                     Not(CountRows(colSchemeOffers) = 0),
                                                     ForAll(
-                                                        Table(First(colSchemeOffers)) As ThisItemmmm,
+                                                        Table(/*First(colSchemeOffers)*/
+                                                            Index(
+                                                                colSchemeOffers,
+                                                                1
+                                                            )
+                                                        ) As ThisItemmmm,
                                                         If(
                                                             IsBlank(
                                                                 LookUp(
@@ -1443,7 +1490,7 @@ NewOrder As CanvasComponent:
                                                             cessValue: ((LookUp(
                                                                 colCartItems,
                                                                 productId = ThisItem.'Item SKU'.'SKU Master'
-                                                            ).cessValue) * ((PriceLine.'Sales Price' * Value(Self.Text)) - Value(
+                                                            ).discountedPricePcs) + (((PriceLine.'Sales Price' * Value(Self.Text)) - Value(
                                                                 If(
                                                                     OrderLinesSum >= DiscountLine.'Maximum Quantity',
                                                                     "0",
@@ -1454,14 +1501,17 @@ NewOrder As CanvasComponent:
                                                                         (DiscountLine.'Discount Amount') * (DiscountLine.'Maximum Quantity' - OrderLinesSum)
                                                                     )
                                                                 )
-                                                            ))) / (1 + (LookUp(
+                                                            ))/(1 + (LookUp(
                                                                 colCartItems,
                                                                 productId = ThisItem.'Item SKU'.'SKU Master'
-                                                            ).tax * 0.01)),
+                                                            ).tax * 0.01))))* LookUp(
+                                                                colCartItems,
+                                                                productId = ThisItem.'Item SKU'.'SKU Master'
+                                                            ).cess * 0.01,
                                                             cgstValue: ((LookUp(
                                                                 colCartItems,
                                                                 productId = ThisItem.'Item SKU'.'SKU Master'
-                                                            ).cgstValue) * ((PriceLine.'Sales Price' * Value(Self.Text)) - Value(
+                                                            ).discountedPricePcs) + (((PriceLine.'Sales Price' * Value(Self.Text)) - Value(
                                                                 If(
                                                                     OrderLinesSum >= DiscountLine.'Maximum Quantity',
                                                                     "0",
@@ -1472,14 +1522,17 @@ NewOrder As CanvasComponent:
                                                                         (DiscountLine.'Discount Amount') * (DiscountLine.'Maximum Quantity' - OrderLinesSum)
                                                                     )
                                                                 )
-                                                            ))) / (1 + (LookUp(
+                                                            ))/(1 + (LookUp(
                                                                 colCartItems,
                                                                 productId = ThisItem.'Item SKU'.'SKU Master'
-                                                            ).tax * 0.01)),
+                                                            ).tax * 0.01))))* LookUp(
+                                                                colCartItems,
+                                                                productId = ThisItem.'Item SKU'.'SKU Master'
+                                                            ).cgst * 0.01,
                                                             sgstValue: ((LookUp(
                                                                 colCartItems,
                                                                 productId = ThisItem.'Item SKU'.'SKU Master'
-                                                            ).sgstValue) * ((PriceLine.'Sales Price' * Value(Self.Text)) - Value(
+                                                            ).discountedPricePcs) + (((PriceLine.'Sales Price' * Value(Self.Text)) - Value(
                                                                 If(
                                                                     OrderLinesSum >= DiscountLine.'Maximum Quantity',
                                                                     "0",
@@ -1490,10 +1543,13 @@ NewOrder As CanvasComponent:
                                                                         (DiscountLine.'Discount Amount') * (DiscountLine.'Maximum Quantity' - OrderLinesSum)
                                                                     )
                                                                 )
-                                                            ))) / (1 + (LookUp(
+                                                            ))/(1 + (LookUp(
                                                                 colCartItems,
                                                                 productId = ThisItem.'Item SKU'.'SKU Master'
-                                                            ).tax * 0.01)),
+                                                            ).tax * 0.01))))* LookUp(
+                                                                colCartItems,
+                                                                productId = ThisItem.'Item SKU'.'SKU Master'
+                                                            ).sgst * 0.01,
                                                             netAmount: (((LookUp(
                                                                 colCartItems,
                                                                 productId = ThisItem.'Item SKU'.'SKU Master'
@@ -1678,7 +1734,39 @@ NewOrder As CanvasComponent:
                                                                 ).'Exceptional Tax %'),
                                                                 (taxStructure.CESS + taxStructure.CGST + taxStructure.IGST + taxStructure.'SGST/UGST (zx_sgstugst)')
                                                             ),
-                                                            cess: taxStructure.CESS,
+                                                            cess: If(
+                                                                LookUp(
+                                                                    colOfflineVariantMaster,
+                                                                    'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                                                ).'Exceptional Tax Case' = 'Exceptional Tax Case (SKU Masters)'.Yes,
+                                                                (LookUp(
+                                                                    colOfflineVariantMaster,
+                                                                    'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                                                ).'Exceptional Tax %'*0),
+                                                                taxStructure.CESS
+                                                            ),
+                                                            sgst:If(
+                                                                LookUp(
+                                                                    colOfflineVariantMaster,
+                                                                    'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                                                ).'Exceptional Tax Case' = 'Exceptional Tax Case (SKU Masters)'.Yes,
+                                                                (LookUp(
+                                                                    colOfflineVariantMaster,
+                                                                    'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                                                ).'Exceptional Tax %'/2),
+                                                                taxStructure.'SGST/UGST (zx_sgstugst)'
+                                                            ),
+                                                            cgst:If(
+                                                                LookUp(
+                                                                    colOfflineVariantMaster,
+                                                                    'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                                                ).'Exceptional Tax Case' = 'Exceptional Tax Case (SKU Masters)'.Yes,
+                                                                (LookUp(
+                                                                    colOfflineVariantMaster,
+                                                                    'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
+                                                                ).'Exceptional Tax %'/2),
+                                                                taxStructure.CGST
+                                                            ),
                                                             cessValue: (((If(
                                                                 LookUp(
                                                                     colOfflineVariantMaster,
@@ -1687,7 +1775,7 @@ NewOrder As CanvasComponent:
                                                                 (LookUp(
                                                                     colOfflineVariantMaster,
                                                                     'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
-                                                                ).'Exceptional Tax %' * 0),
+                                                                ).'Exceptional Tax %'*0),
                                                                 taxStructure.CESS
                                                             )) * 0.01) * ((PriceLine.'Sales Price' * Value(Self.Text)) - Value(
                                                                 If(
@@ -1719,7 +1807,7 @@ NewOrder As CanvasComponent:
                                                                 (LookUp(
                                                                     colOfflineVariantMaster,
                                                                     'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
-                                                                ).'Exceptional Tax %' / 2),
+                                                                ).'Exceptional Tax %'/2),
                                                                 taxStructure.CGST
                                                             )) * 0.01) * ((PriceLine.'Sales Price' * Value(Self.Text)) - Value(
                                                                 If(
@@ -1751,7 +1839,7 @@ NewOrder As CanvasComponent:
                                                                 (LookUp(
                                                                     colOfflineVariantMaster,
                                                                     'SKU Master' = ThisItem.'Item SKU'.'SKU Master'
-                                                                ).'Exceptional Tax %' / 2),
+                                                                ).'Exceptional Tax %'/2),
                                                                 taxStructure.'SGST/UGST (zx_sgstugst)'
                                                             )) * 0.01) * ((PriceLine.'Sales Price' * Value(Self.Text)) - Value(
                                                                 If(
@@ -1915,7 +2003,7 @@ NewOrder As CanvasComponent:
                                                             (ThissItemm.'Ordered Quantity' < Value(Self.Text)),
                                                             Collect(
                                                                 colFinalSchemeOrder,
-                                                                First(
+                                                                /*First(
                                                                     Sort(
                                                                         Filter(
                                                                             colSchemeOrder,
@@ -1924,6 +2012,17 @@ NewOrder As CanvasComponent:
                                                                         'Ordered Quantity',
                                                                         SortOrder.Descending
                                                                     )
+                                                                )*/
+                                                                Index(
+                                                                    Sort(
+                                                                        Filter(
+                                                                            colSchemeOrder,
+                                                                            'Ordered Quantity' < Value(Self.Text)
+                                                                        ),
+                                                                        'Ordered Quantity',
+                                                                        SortOrder.Descending
+                                                                    ),
+                                                                    1
                                                                 )
                                                             )
                                                         )
@@ -1963,7 +2062,12 @@ NewOrder As CanvasComponent:
                                 If(
                                                     Not(CountRows(colSchemeOffers) = 0),
                                                     ForAll(
-                                                        Table(First(colSchemeOffers)) As ThisItemmmm,
+                                                        Table(/*First(colSchemeOffers)*/
+                                                            Index(
+                                                                colSchemeOffers,
+                                                                1
+                                                            )
+                                                        ) As ThisItemmmm,
                                                         If(
                                                             IsBlank(
                                                                 LookUp(
