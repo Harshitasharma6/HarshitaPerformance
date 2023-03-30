@@ -7973,7 +7973,14 @@
           }
         ],
         "ControlPropertyState": [
-          "Items",
+          {
+            "AFDDataSourceName": "",
+            "AutoRuleBindingEnabled": false,
+            "AutoRuleBindingString": "Sort(\r\n            Switch(\r\n                galOrderDateFilter.Selected.Value,\r\n                \"Last 30 Days\",\r\n                Filter(\r\n                    Filter(\r\n                        Filter(\r\n                            'Order Headers',\r\n                            Salesperson.'Primary Email' = User().Email && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse\r\n                        ),\r\n                        'Order Type' = galOrderStatusFilter.Selected.Value\r\n                    ),\r\n                    'Order Date' > DateAdd(\r\n                Today(),\r\n                -30\r\n            )\r\n                ),\r\n                \"Last 7 Days\",\r\n                Filter(\r\n                    Filter(\r\n                        Filter(\r\n                          'Order Headers',\r\n                           Salesperson.'Primary Email' = User().Email && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse\r\n                        ),\r\n                        'Order Type' = galOrderStatusFilter.Selected.Value\r\n                    ),\r\n                    'Order Date' > DateAdd(\r\n                Today(),\r\n                -7\r\n            )\r\n                ),\r\n                \"Today's Orders\",\r\n                Filter(\r\n                    Filter(\r\n                        Filter(\r\n                            colOfflineOrderHeader,\r\n                           Salesperson.'Primary Email' = User().Email && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse\r\n                        ),\r\n                        'Order Type' = galOrderStatusFilter.Selected.Value\r\n                    ),\r\n                    'Order Date'>= Today()\r\n                )\r\n            ),\r\n            'Created On',\r\n            SortOrder.Descending\r\n        )",
+            "InvariantPropertyName": "Items",
+            "IsLockable": false,
+            "NameMapSourceSchema": "?"
+          },
           "WrapCount",
           "TemplateSize",
           "TemplatePadding",
@@ -8032,7 +8039,7 @@
         "Rules": [
           {
             "Category": "Data",
-            "InvariantScript": "Sort(\r\n            Switch(\r\n                galOrderDateFilter.Selected.Value,\r\n                \"Last 30 Days\",\r\n                Filter(\r\n                    Filter(\r\n                        Filter(\r\n                            'Order Headers',\r\n                            Salesperson.'Primary Email' = User().Email && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse\r\n                        ),\r\n                        'Order Type' = galOrderStatusFilter.Selected.Value\r\n                    ),\r\n                    'Order Date' > DateAdd(\r\n                Today(),\r\n                -30\r\n            )\r\n                ),\r\n                \"Last 7 Days\",\r\n                Filter(\r\n                    Filter(\r\n                        Filter(\r\n                          'Order Headers',\r\n                           Salesperson.'Primary Email' = User().Email && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse\r\n                        ),\r\n                        'Order Type' = galOrderStatusFilter.Selected.Value\r\n                    ),\r\n                    'Order Date' > DateAdd(\r\n                Today(),\r\n                -7\r\n            )\r\n                ),\r\n                \"Today's Orders\",\r\n                Filter(\r\n                    Filter(\r\n                        Filter(\r\n                            colOfflineOrderHeader,\r\n                           Salesperson.'Primary Email' = User().Email && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse\r\n                        ),\r\n                        'Order Type' = galOrderStatusFilter.Selected.Value\r\n                    ),\r\n                    'Order Date'>= Today()\r\n                )\r\n            ),\r\n            'Created On',\r\n            SortOrder.Descending\r\n        )",
+            "InvariantScript": "Sort(\r\n            Switch(\r\n                galOrderDateFilter.Selected.Value,\r\n                \"Last 30 Days\",\r\n                Filter(\r\n                    Filter(\r\n                        Filter(\r\n                            'Order Headers',\r\n                            Salesperson.'Primary Email' = User().Email && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse\r\n                        ),\r\n                        'Order Type' = galOrderStatusFilter.Selected.Value\r\n                    ),\r\n                    'Order Date' > DateAdd(\r\n                Today(),\r\n                -30\r\n            )\r\n                ),\r\n                \"Last 7 Days\",\r\n                Filter(\r\n                    Filter(\r\n                        Filter(\r\n                          'Order Headers',\r\n                           Salesperson.'Primary Email' = User().Email && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse\r\n                        ),\r\n                        'Order Type' = galOrderStatusFilter.Selected.Value\r\n                    ),\r\n                    'Order Date' > DateAdd(\r\n                Today(),\r\n                -7\r\n            )\r\n                ),\r\n                \"Today's Orders\",\r\n                Filter(\r\n                    Filter(\r\n                        Filter(\r\n                            //colOfflineOrderHeader,\r\n                            'Order Headers',\r\n                           Salesperson.'Primary Email' = User().Email && 'Van No'.Warehouse = varUserVanNo.Van.Warehouse\r\n                        ),\r\n                        'Order Type' = galOrderStatusFilter.Selected.Value\r\n                    ),\r\n                    'Order Date'>= Today()\r\n                )\r\n            ),\r\n            'Created On',\r\n            SortOrder.Descending\r\n        )",
             "Property": "Items",
             "RuleProviderType": "Unknown"
           },
@@ -8232,7 +8239,7 @@
       "Y",
       "ZIndex"
     ],
-    "LastModifiedTimestamp": "638157706048053053",
+    "LastModifiedTimestamp": "638157719111241139",
     "Name": "Order List View",
     "Rules": [
       {
@@ -8291,7 +8298,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638157706048053053",
+  "LastModifiedTimestamp": "638157719111241139",
   "Name": "f403aadad82d4272bc528edc7b5ea384",
   "OverridableProperties": {},
   "Version": "638075005431189027"
