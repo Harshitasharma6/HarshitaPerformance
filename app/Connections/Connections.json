@@ -220,8 +220,7 @@
     "dataSources": [],
     "dependencies": {},
     "dependents": [
-      "88540a79-971a-4ec4-a435-4d2b17fd8f34",
-      "52a41ef5-ff70-4a7e-8c28-1c93ea424ca0"
+      "88540a79-971a-4ec4-a435-4d2b17fd8f34"
     ],
     "id": "55f72745-b50d-456c-87c4-787c319fa6eb"
   },
@@ -328,23 +327,6 @@
     },
     "dependents": [],
     "id": "88540a79-971a-4ec4-a435-4d2b17fd8f34"
-  },
-  "9c1ee7a2-559b-415d-8fa0-e71d6883b870": {
-    "connectionParameters": {
-      "sku": "Enterprise"
-    },
-    "connectionRef": {
-      "displayName": "IRN - 1",
-      "iconUri": "https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_irn-20-2d-201-5f7ae3c468c3353edd-5f69d4af27be7bcb24"
-    },
-    "datasets": {},
-    "dataSources": [],
-    "dependencies": {},
-    "dependents": [
-      "52a41ef5-ff70-4a7e-8c28-1c93ea424ca0"
-    ],
-    "id": "9c1ee7a2-559b-415d-8fa0-e71d6883b870"
   },
   "cdd0cfec-d272-4928-abc7-3479f9b77706": {
     "connectionParameters": {

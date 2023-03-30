@@ -1,5 +1,24 @@
 EmptyJarScreen As screen:
     Fill: =_VarGblAppColors.LightText
+    OnVisible: |-
+        =ClearCollect(
+                colOfflineOrderHeader,
+                Filter(
+                    'Order Headers',
+                    'Order Date' >= Today() && 'Owning User'.'Primary Email' = User().Email
+                )
+            );
+        ClearCollect(
+            colOfflineAllOrderLines,
+            Filter(
+                'Order Lines',
+                'Order Number'.'Order Id' in AddColumns(
+                    colOfflineOrderHeader,
+                    "orderId",
+                    'Order Id'
+                ).orderId && 'Owning User'.'Primary Email' = User().Email
+            )
+        );
 
     compEmptyJarHeader As Header:
         HeaderText: ="Empty Jar"

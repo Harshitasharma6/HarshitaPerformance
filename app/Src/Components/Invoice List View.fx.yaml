@@ -86,7 +86,7 @@
             RadiusTopRight: =0
             Size: =18
             Text: =ThisItem.'Invoice Number'
-            Width: =229
+            Width: =350
             X: =56
             Y: =21
             ZIndex: =23
