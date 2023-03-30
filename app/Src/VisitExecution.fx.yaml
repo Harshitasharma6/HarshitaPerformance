@@ -2142,10 +2142,10 @@
                             );
                              ////////////////////////////////////////////////////IRN Item Data Condition
                         Clear(ManipulatedCartCollection);
-                            Set(
+                            /*Set(
                                 testButton,
                                 'PowerApp->RespondtoaPowerApporflow'.Run(CreateInvHeaderdata.'Invoice Header');
-                            );
+                            );*/
                             If(
                                 CountRows(CreateOrderRecord) > 0 /*&& CountRows(CreateItemsRecord) > 0 */
                         && !IsBlank(
@@ -2166,27 +2166,22 @@
                                     AllCustomerss,
                                     Account = OrderData.Account
                                 ).Branch.Name = "Mumbai")),
-                                /*Set(
+                                Set(
                                     testButton,
                                     'PowerApp->RespondtoaPowerApporflow'.Run(CreateInvHeaderdata.'Invoice Header');
-                                );*/
-                                Patch(
+                                );
+                                /*Patch(
                                     'Invoice Headers',
                                     LookUp(
                                         'Invoice Headers',
                                         'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
                                     ),
-                                        /*{
+                                        {
                                             'Signed QR Code': Text(testButton.qr),
                                             'IRN Number': Text(testButton.qrno),
                                             'IRN Message': Text(testButton.status)
-                                        }*/
-                                    {
-                                        'Signed QR Code': "123",
-                                        'IRN Number': "123",
-                                        'IRN Message': "123"
-                                    }
-                                );
+                                        }
+                                );*/
                                 Set(
                                     varConfirmationIRN,
                                     "signedQRGenerated"
@@ -2218,9 +2213,9 @@
                                         'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
                                     ),
                                     {
-                                        'Signed QR Code': Text(testButton.qr),
+                                        /*'Signed QR Code': Text(testButton.qr),
                                         'IRN Number': Text(testButton.qrno),
-                                        'IRN Message': Text(testButton.status),
+                                        'IRN Message': Text(testButton.status),*/
                                         'Local QR ': JSON(
                                             {
                                                 gstin: "27AAFCD5862R013",
@@ -2359,7 +2354,7 @@
                                     "localQRGenerated"
                                 );
                                 Notify(
-                                    "IRN/QR has been generated sucessfully",
+                                    "QR has been generated sucessfully",
                                     NotificationType.Success,
                                     2000
                                 );
@@ -4687,10 +4682,34 @@
                             );*/
                         If(
                                 !IsBlank(varConfirmationIRN),
-                                Set(
+                                
+                                If(
+                                    IsBlank(Text(testButton.SignedQRCode)),
+                                    Set(
                                     varIRN,
                                     true
-                                )
+                                );
+                                Notify(
+                                        "QR Code generated successfully.",
+                                        NotificationType.Success,
+                                        4000
+                                    );
+                                    ,
+                                    Set(
+                                    varIRN,
+                                    true
+                                );
+                                Notify(
+                                        "IRN has been generated successfully.",
+                                        NotificationType.Success,
+                                        4000
+                                    )
+                                ),
+                                Notify(
+                                    "IRN not generated.",
+                                    NotificationType.Warning,
+                                    4000
+                                );
                             );
                             
                         )
@@ -9366,7 +9385,12 @@
             FontWeight: =FontWeight.Semibold
             Height: =102
             Size: =_VarGblAppFonts.Size.Title
-            Text: ="IRN Generated Successfully!"
+            Text: |-
+                =If(
+                    IsBlank(Text(testButton.SignedQRCode)),
+                    "QR Code Generated Successfully!",
+                    "IRN Generated Successfully!"
+                )
             Width: =379
             X: =61
             Y: =37
