@@ -2143,10 +2143,10 @@
                              ////////////////////////////////////////////////////IRN Item Data Condition
                         Clear(ManipulatedCartCollection);
                         
-                         Set(
+                         /*Set(
                                     testButton,
-                                    'PowerAppV2->RespondtoaPowerApporflow'.Run(CreateInvHeaderdata.'Invoice Header');
-                                );
+                                    'PowerApp->RespondtoaPowerApporflow'.Run(CreateInvHeaderdata.'Invoice Header');
+                                );*/
                         
                             If(
                                 CountRows(CreateOrderRecord) > 0 /*&& CountRows(CreateItemsRecord) > 0 */
@@ -2169,20 +2169,25 @@
                                     AllCustomerss,
                                     Account = OrderData.Account
                                 ).Branch.Name = "Mumbai")),
-                                Set(
+                                /*Set(
                                     testButton,
                                     'PowerAppV2->RespondtoaPowerApporflow'.Run(CreateInvHeaderdata.'Invoice Header');
-                                );
+                                );*/
                                 Patch(
                                         'Invoice Headers',
                                         LookUp(
                                             'Invoice Headers',
                                             'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
                                         ),
-                                        {
+                                        /*{
                                             'Signed QR Code': Text(testButton.qr),
                                             'IRN Number': Text(testButton.qrno),
                                             'IRN Message': Text(testButton.status)
+                                        }*/
+                                        {
+                                            'Signed QR Code': "123",
+                                            'IRN Number': "123",
+                                            'IRN Message': "123"
                                         }
                                     );
                                 Set(
