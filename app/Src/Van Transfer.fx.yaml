@@ -42,10 +42,6 @@
     Header_1 As Header:
         HeaderText: ="Van Tranfer"
 
-    BottomBar_3 As BottomBar:
-        Y: =1026
-        ZIndex: =2
-
     Gallery13_3 As gallery.galleryHorizontal:
         AccessibleLabel: ="Gallery13_3"
         BorderColor: =RGBA(109, 109, 109, 1)
@@ -85,7 +81,7 @@
         TabIndex: =0
         TemplateSize: =312
         Y: =90
-        ZIndex: =3
+        ZIndex: =2
 
         Button31_13 As button:
             BorderColor: =RGBA(0, 0, 0, 0)
@@ -145,8 +141,8 @@
         TemplateSize: =146
         Visible: |
             =Gallery13_3.Selected.Title = "Transfer IN"
-        Y: =196
-        ZIndex: =4
+        Y: =210
+        ZIndex: =3
 
         htmlblVanTransferInBackground As htmlViewer:
             Color: =RGBA(242, 242, 242, 1)
@@ -391,6 +387,10 @@
             X: =16
             Y: =18
             ZIndex: =13
+
+    BottomBar_3 As BottomBar:
+        Y: =1026
+        ZIndex: =4
 
     btnVanTransferConfirm As button:
         Color: =_VarGblAppColors.BisleriBlueLight
@@ -1235,7 +1235,7 @@
         Visible: =Gallery13_3.Selected.Title = "Transfer OUT" && varNewTransferRequest
         Width: =Parent.Width
         Y: =154
-        ZIndex: =13
+        ZIndex: =12
 
         dataCardVanTransferOut As dataCard:
             BorderColor: =RGBA(0, 0, 0, 1)
