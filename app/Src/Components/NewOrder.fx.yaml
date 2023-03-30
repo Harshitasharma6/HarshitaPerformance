@@ -331,7 +331,7 @@ NewOrder As CanvasComponent:
                                             colCartItems,
                                             LookUp(
                                                 colCartItems,
-                                                productId = ThisItem.'Item SKU'.'SKU Master' && schemeOrder = false
+                                                productId = ThisItem.'Item SKU'.'SKU Master' /*&& schemeOrder = false*/
                                             )
                                         );
                                         Remove(
@@ -1337,7 +1337,7 @@ NewOrder As CanvasComponent:
                                             colCartItems,
                                             LookUp(
                                                 colCartItems,
-                                                productId = ThisItem.'Item SKU'.'SKU Master' && schemeOrder = false
+                                                productId = ThisItem.'Item SKU'.'SKU Master' /*&& schemeOrder = false*/
                                             )
                                         );
                                         Remove(
