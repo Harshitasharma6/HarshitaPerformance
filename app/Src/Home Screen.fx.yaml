@@ -1355,8 +1355,8 @@
                         FontWeight: =FontWeight.Bold
                         Height: =39
                         Size: =_VarGblAppFonts.Size.Title
-                        Text: |-
-                            =If(
+                        Text: |+
+                            =/*If(
                                 Sum(
                                     Filter(
                                         'Order Lines',
@@ -1374,7 +1374,27 @@
                                     )
                                 ),
                                 "-"
+                            )*/
+                            If(
+                                Sum(
+                                    Filter(
+                                        'Order Lines',
+                                'Order Number'.'Order Date' >= Today() && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order'
+                                    ),
+                                    Cases
+                                ) > 0,
+                                Text(
+                                    Sum(
+                                        Filter(
+                                            'Order Lines',
+                                'Order Number'.'Order Date' >= Today() && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order'
+                                        ),
+                                        Cases
+                                    )
+                                ),
+                                "-"
                             )
+                            
                         Width: =168
                         X: =85
                         Y: =42
@@ -1434,7 +1454,7 @@
                                 Sum(
                                     Filter(
                                 'Order Lines',
-                                'Order Number'.'Order Date' = Today() && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order'
+                                'Order Number'.'Order Date' >= Today() && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order'
                             ),
                                     PCs
                                 ) > 0,
@@ -1442,7 +1462,7 @@
                                     (Sum(
                                         Filter(
                                 'Order Lines',
-                                'Order Number'.'Order Date' = Today() && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order'
+                                'Order Number'.'Order Date' >= Today() && Salesperson.'Primary Email' = User().Email && 'Order Number'.'Order Type' = 'Order Type (Choice)'.'FOC Order'
                             ),
                                         PCs
                                     ) )
