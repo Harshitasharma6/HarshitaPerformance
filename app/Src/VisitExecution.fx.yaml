@@ -2146,7 +2146,7 @@
                                 testButton,
                                 'PowerApp->RespondtoaPowerApporflow'.Run(CreateInvHeaderdata.'Invoice Header');
                             );*/
-                            If(
+                        If(
                                 CountRows(CreateOrderRecord) > 0 /*&& CountRows(CreateItemsRecord) > 0 */
                         && !IsBlank(
                                     LookUp(
@@ -2182,7 +2182,7 @@
                                             'IRN Message': Text(testButton.status)
                                         }
                                 );*/
-                                Set(
+                        Set(
                                     varConfirmationIRN,
                                     "signedQRGenerated"
                                 );
@@ -4682,24 +4682,23 @@
                             );*/
                         If(
                                 !IsBlank(varConfirmationIRN),
-                                
                                 If(
-                                    IsBlank(Text(testButton.SignedQRCode)),
+                                    IsBlank(Text(testButton.qr)),
                                     Set(
-                                    varIRN,
-                                    true
-                                );
-                                Notify(
+                                        varIRN,
+                                        true
+                                    );
+                                    Notify(
                                         "QR Code generated successfully.",
                                         NotificationType.Success,
                                         4000
                                     );
                                     ,
                                     Set(
-                                    varIRN,
-                                    true
-                                );
-                                Notify(
+                                        varIRN,
+                                        true
+                                    );
+                                    Notify(
                                         "IRN has been generated successfully.",
                                         NotificationType.Success,
                                         4000
@@ -9387,7 +9386,7 @@
             Size: =_VarGblAppFonts.Size.Title
             Text: |-
                 =If(
-                    IsBlank(Text(testButton.SignedQRCode)),
+                    IsBlank(Text(testButton.qr)),
                     "QR Code Generated Successfully!",
                     "IRN Generated Successfully!"
                 )
