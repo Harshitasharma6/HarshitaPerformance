@@ -30,7 +30,8 @@
                     Filter(
                         Filter(
                             Filter(
-                                colOfflinePayments,
+                                //colOfflinePayments,
+                                Payments,
                                 Salesperson.'Primary Email' = User().Email
                             ),
                             'Payment Mode' = galPaymentTypeFilter.Selected.Value
@@ -41,7 +42,8 @@
                     Filter(
                         Filter(
                             Filter(
-                                colOfflinePayments,
+                                //colOfflinePayments,
+                                Payments,
                                 Salesperson.'Primary Email' = User().Email
                             ),
                             'Payment Mode' = galPaymentTypeFilter.Selected.Value
