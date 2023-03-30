@@ -2143,10 +2143,10 @@
                              ////////////////////////////////////////////////////IRN Item Data Condition
                         Clear(ManipulatedCartCollection);
                         
-                         /*Set(
+                         Set(
                                     testButton,
                                     'PowerApp->RespondtoaPowerApporflow'.Run(CreateInvHeaderdata.'Invoice Header');
-                                );*/
+                                );
                         
                             If(
                                 CountRows(CreateOrderRecord) > 0 /*&& CountRows(CreateItemsRecord) > 0 */
