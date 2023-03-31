@@ -1,7 +1,7 @@
 "SettlementScreen As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
     Fill: =_VarGblAppColors.LightText
     OnVisible: |-
-        =Set(sumdataCahPayment,Filter(
+        =ClearCollect(sumdataCahPayment,Filter(
                     Payments,
                   'Created On'>=Today() && Salesperson.'Primary Email' = User().Email && 'Payment Mode' = 'Payment Mode (Choice)'.CASH
                 ));
