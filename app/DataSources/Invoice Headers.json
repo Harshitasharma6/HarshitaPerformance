@@ -56,6 +56,8 @@
       "zx_name": "Invoice Number",
       "zx_netamount": "Net Amount",
       "zx_netamount_base": "Net Amount (Base)",
+      "zx_netamountwithoutejar": "Net Amount (Without E Jar)",
+      "zx_netamountwithoutejar_base": "Net Amount (Without E Jar) (Base)",
       "zx_OrderNumber": "Order Number",
       "zx_ordertype": "Order Type",
       "zx_RouteNo": "Route No",

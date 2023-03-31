@@ -5909,6 +5909,10 @@
                                                     colCartItems,
                                                     netAmount
                                                 ),
+                                                'Net Amount (Without E Jar)':Sum(
+                                                    colCartItems,
+                                                    netAmountWithoutEJar
+                                                ),
                                                 'Mode of Payment': OrderData.'Mode Of Payment'
                                             //'IRN Number':,
                                             //'IRN Status':,
@@ -5962,6 +5966,10 @@
                                                 'Net Amount': Sum(
                                                     colCartItems,
                                                     netAmount
+                                                ),
+                                                'Net Amount (Without E Jar)':Sum(
+                                                    colCartItems,
+                                                    netAmountWithoutEJar
                                                 ),
                                                 'Mode of Payment': OrderData.'Mode Of Payment'
                                             //'IRN Number':,
@@ -6039,6 +6047,7 @@
                                                     'SGST Value': OrdrItems.sgstValue,
                                                     'Taxable Value':OrdrItems.discountedPrice,
                                                     Rate: OrdrItems.netAmount,
+                                                    'Net Amount (Without E Jar)':OrdrItems.netAmountWithoutEJar,
                                                     Customer: LookUp(
                                                         Customers_1,
                                                         Account = OrderData.Account
@@ -6103,6 +6112,7 @@
                                                     'SGST Value': OrdrItems.sgstValue,
                                                     'Taxable Value':OrdrItems.discountedPrice,
                                                     Rate: OrdrItems.netAmount,
+                                                    'Net Amount (Without E Jar)':OrdrItems.netAmountWithoutEJar,                            
                                                     Customer: LookUp(
                                                         Customers_1,
                                                         Account = OrderData.Account
@@ -6178,6 +6188,7 @@
                                                     'Total Discount Amount': Value(OrdrItems.discount),
                                                     'Tax Amount': OrdrItems.taxAmount,
                                                     Rate: OrdrItems.netAmount,
+                                                    'Net Amount (Without E Jar)':OrdrItems.netAmountWithoutEJar,
                                                     'Cess Value': OrdrItems.cessValue,
                                                     'CGST Value': OrdrItems.cgstValue,
                                                     'SGST Value': OrdrItems.sgstValue,
@@ -6258,6 +6269,7 @@
                                                     'SGST Value': OrdrItems.sgstValue,
                                                     'Taxable Value':OrdrItems.discountedPrice,
                                                     Rate: OrdrItems.netAmount,
+                                                    'Net Amount (Without E Jar)':OrdrItems.netAmountWithoutEJar,
                                                     Customer: LookUp(
                                                         Customers_1,
                                                         Account = OrderData.Account
@@ -6857,6 +6869,10 @@
                                                             colCartItems,
                                                             netAmount
                                                         )),
+                                                        'Net Amount (Without E Jar)':Sum(
+                                                    colCartItems,
+                                                    netAmountWithoutEJar
+                                                ),
                                                         'Mode of Payment': 'Payment Type (choice)'.CREDIT
                                                 //'IRN Number':,
                                                 //'IRN Status':,
@@ -6911,6 +6927,10 @@
                                                             colCartItems,
                                                             netAmount
                                                         ) ),
+                                                        'Net Amount (Without E Jar)':Sum(
+                                                    colCartItems,
+                                                    netAmountWithoutEJar
+                                                ),
                                                         'Mode of Payment': 'Payment Type (choice)'.CREDIT
                                                 //'IRN Number':,
                                                 //'IRN Status':,
@@ -6987,6 +7007,7 @@
                                                     'SGST Value': OrdrItems.sgstValue,
                                                     'Taxable Value':OrdrItems.discountedPrice,
                                                             Rate: OrdrItems.netAmount,
+                                                            'Net Amount (Without E Jar)':OrdrItems.netAmountWithoutEJar,
                                                             Customer: LookUp(
                                                                 Customers_1,
                                                                 Account = OrderData.Account
@@ -7054,6 +7075,7 @@
                                                     'SGST Value': OrdrItems.sgstValue,
                                                     'Taxable Value':OrdrItems.discountedPrice,
                                                             Rate: OrdrItems.netAmount,
+                                                            'Net Amount (Without E Jar)':OrdrItems.netAmountWithoutEJar,
                                                             Customer: LookUp(
                                                                 Customers_1,
                                                                 Account = OrderData.Account
@@ -7137,6 +7159,7 @@
                                                     'SGST Value': OrdrItems.sgstValue,
                                                     'Taxable Value':OrdrItems.discountedPrice,
                                                             Rate: OrdrItems.netAmount,
+                                                            'Net Amount (Without E Jar)':OrdrItems.netAmountWithoutEJar,
                                                             Customer: LookUp(
                                                                 Customers_1,
                                                                 Account = OrderData.Account
@@ -7216,6 +7239,7 @@
                                                     'SGST Value': OrdrItems.sgstValue,
                                                     'Taxable Value':OrdrItems.discountedPrice,
                                                             Rate: OrdrItems.netAmount,
+                                                            'Net Amount (Without E Jar)':OrdrItems.netAmountWithoutEJar,
                                                             Customer: LookUp(
                                                                 Customers_1,
                                                                 Account = OrderData.Account
@@ -7840,6 +7864,10 @@
                                                             colCartItems,
                                                             netAmount
                                                         ) ),
+                                                        'Net Amount (Without E Jar)':Sum(
+                                                    colCartItems,
+                                                    netAmountWithoutEJar
+                                                ),
                                                         'Mode of Payment': 'Payment Type (choice)'.CREDIT
                                                 //'IRN Number':,
                                                 //'IRN Status':,
@@ -7894,6 +7922,10 @@
                                                             colCartItems,
                                                             netAmount
                                                         ) ),
+                                                        'Net Amount (Without E Jar)':Sum(
+                                                    colCartItems,
+                                                    netAmountWithoutEJar
+                                                ),
                                                         'Mode of Payment': 'Payment Type (choice)'.CREDIT
                                                 //'IRN Number':,
                                                 //'IRN Status':,
@@ -7970,6 +8002,7 @@
                                                     'SGST Value': OrdrItems.sgstValue,
                                                     'Taxable Value':OrdrItems.discountedPrice,
                                                             Rate: OrdrItems.netAmount,
+                                                            'Net Amount (Without E Jar)':OrdrItems.netAmountWithoutEJar,
                                                             Customer: LookUp(
                                                                 Customers_1,
                                                                 Account = OrderData.Account
@@ -8037,6 +8070,7 @@
                                                     'SGST Value': OrdrItems.sgstValue,
                                                     'Taxable Value':OrdrItems.discountedPrice,
                                                             Rate: OrdrItems.netAmount,
+                                                            'Net Amount (Without E Jar)':OrdrItems.netAmountWithoutEJar,
                                                             Customer: LookUp(
                                                                 Customers_1,
                                                                 Account = OrderData.Account
@@ -8120,6 +8154,7 @@
                                                     'SGST Value': OrdrItems.sgstValue,
                                                     'Taxable Value':OrdrItems.discountedPrice,
                                                             Rate: OrdrItems.netAmount,
+                                                            'Net Amount (Without E Jar)':OrdrItems.netAmountWithoutEJar,
                                                             Customer: LookUp(
                                                                 Customers_1,
                                                                 Account = OrderData.Account
@@ -8199,6 +8234,7 @@
                                                     'SGST Value': OrdrItems.sgstValue,
                                                     'Taxable Value':OrdrItems.discountedPrice,
                                                             Rate: OrdrItems.netAmount,
+                                                            'Net Amount (Without E Jar)':OrdrItems.netAmountWithoutEJar,
                                                             Customer: LookUp(
                                                                 Customers_1,
                                                                 Account = OrderData.Account
