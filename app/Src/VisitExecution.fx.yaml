@@ -1,6 +1,6 @@
 "VisitExecution As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
     Fill: =_VarGblAppColors.LightText
-    OnVisible: |
+    OnVisible: |-
         =Set(
             Customers_1Detail,
             LookUp(
@@ -165,6 +165,7 @@
         Reset(txtPaymentAmountValue_9);
         Reset(ComboBox1_1);
         Reset(txtPaymentAmountValue_3);
+        Reset(DatePicker3_1);
 
     Header_15 As Header:
         HeaderText: ="Order"
