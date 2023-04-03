@@ -4682,19 +4682,21 @@
                                 true
                             );*/
                         If(
-                                !IsBlank(varConfirmationIRN),
+                            !IsBlank(varConfirmationIRN),
+                            If(
+                                IsBlank(Text(testButton.qr)) && CreateInvHeaderdata.'IRN Message' = "N",
+                                Set(
+                                    varIRN,
+                                    true
+                                );
+                                Notify(
+                                    "QR Code generated successfully.",
+                                    NotificationType.Success,
+                                    4000
+                                );
+                                ,
                                 If(
-                                    IsBlank(Text(testButton.qr)),
-                                    Set(
-                                        varIRN,
-                                        true
-                                    );
-                                    Notify(
-                                        "QR Code generated successfully.",
-                                        NotificationType.Success,
-                                        4000
-                                    );
-                                    ,
+                                    CreateInvHeaderdata.'IRN Message' = "N",
                                     Set(
                                         varIRN,
                                         true
@@ -4704,13 +4706,15 @@
                                         NotificationType.Success,
                                         4000
                                     )
-                                ),
-                                Notify(
-                                    "IRN not generated.",
-                                    NotificationType.Warning,
-                                    4000
-                                );
+                                )
+                            ),
+                            Notify(
+                                "IRN not generated.",
+                                NotificationType.Warning,
+                                4000
                             );
+                            
+                        );
                             
                         )
                     Size: =_VarGblAppFonts.Size.UpperMedium
@@ -5166,7 +5170,7 @@
                         If(
                             !IsBlank(varConfirmationIRN),
                             If(
-                                IsBlank(Text(testButton.qr)) && CreateInvHeaderdata.,
+                                IsBlank(Text(testButton.qr)) && CreateInvHeaderdata.'IRN Message' = "N",
                                 Set(
                                     varIRN,
                                     true
@@ -5177,14 +5181,17 @@
                                     4000
                                 );
                                 ,
-                                Set(
-                                    varIRN,
-                                    true
-                                );
-                                Notify(
-                                    "IRN has been generated successfully.",
-                                    NotificationType.Success,
-                                    4000
+                                If(
+                                    CreateInvHeaderdata.'IRN Message' = "N",
+                                    Set(
+                                        varIRN,
+                                        true
+                                    );
+                                    Notify(
+                                        "IRN has been generated successfully.",
+                                        NotificationType.Success,
+                                        4000
+                                    )
                                 )
                             ),
                             Notify(
@@ -5196,6 +5203,7 @@
                         );
                     Size: =_VarGblAppFonts.Size.Medium
                     Text: ="Regenerate IRN"
+                    Visible: =If(CreateInvHeaderdata.'IRN Message' = "N",true, false)
                     Width: =200
                     X: =380
                     Y: =635
