@@ -2187,10 +2187,10 @@
                                     varConfirmationIRN,
                                     "signedQRGenerated"
                                 );
-                                Notify(
+                                /*Notify(
                                     NotificationType.Success,
                                     2000
-                                );
+                                );*/
                                 If(
                                     !IsBlank(testButton),
                                     Patch(
@@ -4684,7 +4684,7 @@
                         If(
                             !IsBlank(varConfirmationIRN),
                             If(
-                                IsBlank(Text(testButton.qr)) && CreateInvHeaderdata.'IRN Message' = "N",
+                                IsBlank(Text(testButton.qr)) && Not(CreateInvHeaderdata.'IRN Message' = "N"),
                                 Set(
                                     varIRN,
                                     true
@@ -4696,7 +4696,7 @@
                                 );
                                 ,
                                 If(
-                                    CreateInvHeaderdata.'IRN Message' = "N",
+                                    Not(CreateInvHeaderdata.'IRN Message' = "N"),
                                     Set(
                                         varIRN,
                                         true
@@ -5170,7 +5170,7 @@
                         If(
                             !IsBlank(varConfirmationIRN),
                             If(
-                                IsBlank(Text(testButton.qr)) && CreateInvHeaderdata.'IRN Message' = "N",
+                                IsBlank(Text(testButton.qr)) && Not(CreateInvHeaderdata.'IRN Message' = "N"),
                                 Set(
                                     varIRN,
                                     true
@@ -5182,7 +5182,7 @@
                                 );
                                 ,
                                 If(
-                                    CreateInvHeaderdata.'IRN Message' = "N",
+                                    Not(CreateInvHeaderdata.'IRN Message' = "N"),
                                     Set(
                                         varIRN,
                                         true
