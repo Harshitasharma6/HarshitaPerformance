@@ -995,7 +995,7 @@ GatePassScreen As screen:
                 
                 <p style=""line-height:2px;font-size:27px"">Route Code:"& Routecodedata &" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date:"&Text(First(dataliness).Date,DateTimeFormat.ShortDate) &"</p>
                 <p></p>
-                <font size=""2"" face=""Courier New"" >
+                <font size=""5"" face=""Courier New"" >
                 <table  width='100%'>" &
                 "<thead><tr><th>Item</th><th>Cases</th><th>Pcs</th></thead>" &
                 "<tbody>" &
