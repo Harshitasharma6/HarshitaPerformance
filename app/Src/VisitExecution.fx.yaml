@@ -4684,7 +4684,7 @@
                         If(
                                 !IsBlank(varConfirmationIRN),
                                 If(
-                                    IsBlank(Text(testButton.qr)) && Not(Text(testButton.status) = "N"),
+                                    IsBlank(Text(testButton.qr)) && Not(First(CreateInvHeader).'IRN Message' = "N"),
                                     Set(
                                         varIRN,
                                         true
@@ -4696,7 +4696,7 @@
                                     );
                                     ,
                                     If(
-                                        Not(Text(testButton.status) = "N"),
+                                        Not(First(CreateInvHeader).'IRN Message' = "N"),
                                         Set(
                                             varIRN,
                                             true
@@ -4709,7 +4709,7 @@
                                     )
                                 ),
                                 If(
-                                    Text(testButton.status) = "N",
+                                    First(CreateInvHeader).'IRN Message' = "N",
                                     Notify(
                                         "IRN not generated.",
                                         NotificationType.Warning,
@@ -4949,7 +4949,9 @@
                     ZIndex: =28
 
                 btnPaymentConfirm_8 As button:
-                    DisplayMode: =If(IsBlank(lblPaymentInvoiceNoValue_2.Text), DisplayMode.Disabled, DisplayMode.Edit)
+                    DisplayMode: |-
+                        =//If(IsBlank(lblPaymentInvoiceNoValue_2.Text), DisplayMode.Disabled, DisplayMode.Edit)
+                        DisplayMode.Edit
                     Fill: =_VarGblAppColors.BisleriBlue
                     FocusedBorderThickness: =2
                     HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
@@ -5167,12 +5169,11 @@
                                 NotificationType.Success,
                                 2000
                             );*/
-                            
                         );
                         If(
                             !IsBlank(varConfirmationIRN),
                             If(
-                                IsBlank(Text(testButton.qr)) && Not(Text(testButton.status) = "N"),
+                                IsBlank(Text(testButton.qr)) && First(CreateInvHeader).'IRN Message' = "N",
                                 Set(
                                     varIRN,
                                     true
@@ -5184,7 +5185,7 @@
                                 );
                                 ,
                                 If(
-                                    Not(Text(testButton.status) = "N"),
+                                    Not(First(CreateInvHeader).'IRN Message' = "N"),
                                     Set(
                                         varIRN,
                                         true
@@ -5197,7 +5198,7 @@
                                 )
                             ),
                             If(
-                                Text(testButton.status) = "N",
+                                First(CreateInvHeader).'IRN Message' = "N",
                                 Notify(
                                     "IRN not generated.",
                                     NotificationType.Warning,
@@ -5209,7 +5210,7 @@
                     Text: ="Regenerate IRN"
                     Visible: |-
                         =If(
-                            Text(testButton.status) = "N",
+                           First(CreateInvHeader).'IRN Message'="N",
                             true,
                             false
                         )
