@@ -4942,6 +4942,265 @@
                     Y: =228
                     ZIndex: =28
 
+                btnPaymentConfirm_8 As button:
+                    DisplayMode: =If(IsBlank(lblPaymentInvoiceNoValue_2.Text), DisplayMode.Disabled, DisplayMode.Edit)
+                    Fill: =_VarGblAppColors.BisleriBlue
+                    FocusedBorderThickness: =2
+                    HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
+                    OnSelect: |
+                        =Clear(ManipulatedCartCollection);
+                        If(
+                            CountRows(CreateOrderRecord) > 0 /*&& CountRows(CreateItemsRecord) > 0 */
+                        && !IsBlank(
+                                LookUp(
+                                    AllCustomerss,
+                                    Account = OrderData.Account
+                                ).GSTIN
+                            ) && ((!(LookUp(
+                                AllCustomerss,
+                                Account = OrderData.Account
+                            ).'Customer Group'.Code = "KEY-RT") && LookUp(
+                                AllCustomerss,
+                                Account = OrderData.Account
+                            ).Branch.Name = "PUNE") || (!(LookUp(
+                                AllCustomerss,
+                                Account = OrderData.Account
+                            ).'Customer Group'.Code = "COR-RT") && LookUp(
+                                AllCustomerss,
+                                Account = OrderData.Account
+                            ).Branch.Name = "Mumbai")),
+                            Set(
+                                testButton,
+                                'PowerApp->RespondtoaPowerApporflow'.Run(CreateInvHeaderdata.'Invoice Header');
+                            );
+                                /*Patch(
+                                    'Invoice Headers',
+                                    LookUp(
+                                        'Invoice Headers',
+                                        'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
+                                    ),
+                                        {
+                                            'Signed QR Code': Text(testButton.qr),
+                                            'IRN Number': Text(testButton.qrno),
+                                            'IRN Message': Text(testButton.status)
+                                        }
+                                );*/
+                        Set(
+                                varConfirmationIRN,
+                                "signedQRGenerated"
+                            );
+                            Notify(
+                                NotificationType.Success,
+                                2000
+                            );
+                            If(
+                                !IsBlank(testButton),
+                                Patch(
+                                    'Invoice Headers',
+                                    LookUp(
+                                        'Invoice Headers',
+                                        'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
+                                    ),
+                                    {
+                                        'Signed QR Code': Text(testButton.qr),
+                                        'IRN Number': Text(testButton.qrno),
+                                        'IRN Message': Text(testButton.status)
+                                    }
+                                )
+                            );
+                            ,
+                            Patch(
+                                'Invoice Headers',
+                                LookUp(
+                                    'Invoice Headers',
+                                    'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
+                                ),
+                                {
+                                    /*'Signed QR Code': Text(testButton.qr),
+                                        'IRN Number': Text(testButton.qrno),
+                                        'IRN Message': Text(testButton.status),*/
+                                    'Local QR ': JSON(
+                                        {
+                                            gstin: "27AAFCD5862R013",
+                                            TranDtls: {
+                                                TaxSch: "GST",
+                                                SupTyp: "B2B",
+                                                RegRev: "N",
+                                                IgstOnIntra: "N"
+                                            },
+                                            DocDtls: {
+                                                Typ: "INV",
+                                                No: "RI2223C064007302",
+                                                Dt: "24/12/2022"
+                                            },
+                                            SellerDtls: {
+                                                Gstin: "27AAFCD5862R013",
+                                                LglNm: "MH04GR6972",
+                                                TrdNm: "MH04GR6972",
+                                                Addr1: "JUPITOR HOSPITAL",
+                                                Addr2: "THANE",
+                                                Loc: "V433",
+                                                Pin: 400407,
+                                                Stcd: "27",
+                                                Ph: "982565858",
+                                                Em: "Test123@gmail.com"
+                                            },
+                                            /*    
+                                        BuyerDtls: {
+                                            Gstin: "27AABCJ1982E1ZN",
+                                            LglNm: "FORTUNE PARK LAKE CITY",
+                                            TrdNm: "FORTUNE PARK LAKE CITY",
+                                            Pos: "27",
+                                            Addr1: "JUPITER MEDIPARKEASTERN EXPRESS HIGHWAY THANE",
+                                            Addr2: "WEST",
+                                            Loc: "Maharashtra",
+                                            Pin: 400601,
+                                            Stcd: "27",
+                                            Ph: "859657852",
+                                            Em: "Test123@gmail.com"
+                                        },
+                                */
+                                            BuyerDtls: {
+                                                LglNm: OrderData.'Customer Name',
+                                                TrdNm: "",
+                                                Addr1: LookUp(
+                                                    AllCustomerss,
+                                                    Account = OrderData.Account
+                                                ).'Address 1: Street 1',
+                                                Addr2: LookUp(
+                                                    AllCustomerss,
+                                                    Account = OrderData.Account
+                                                ).'Address 1: Street 2',
+                                                Loc: LookUp(
+                                                    AllCustomerss,
+                                                    Account = OrderData.Account
+                                                ).'Address 1: City',
+                                                Pin: LookUp(
+                                                    AllCustomerss,
+                                                    Account = OrderData.Account
+                                                ).'Address 1: ZIP/Postal Code',
+                                                Stcd: Left(
+                                                    LookUp(
+                                                        AllCustomerss,
+                                                        Account = OrderData.Account
+                                                    ).GSTIN,
+                                                    2
+                                                ),
+                                                Ph: LookUp(
+                                                    AllCustomerss,
+                                                    Account = OrderData.Account
+                                                ).'Mobile No',
+                                                Em: LookUp(
+                                                    AllCustomerss,
+                                                    Account = OrderData.Account
+                                                ).Email
+                                            },
+                                            DispDtls: {
+                                                Nm: "MH04GR6972",
+                                                Addr1: "JUPITOR HOSPITAL",
+                                                Addr2: "THANE",
+                                                Loc: "V433",
+                                                Pin: 400407,
+                                                Stcd: "27"
+                                            },
+                                            /*
+                                        ShipDtls: {
+                                            Gstin: "27AABCJ1982E1ZN",
+                                            LglNm: "FORTUNE PARK LAKE CITY",
+                                            TrdNm: "FORTUNE PARK LAKE CITY",
+                                            Addr1: "JUPITER MEDIPARKEASTERN EXPRESS HIGHWAY THANE",
+                                            Addr2: "WEST",
+                                            Loc: "Maharashtra",
+                                            Pin: 400601,
+                                            Stcd: "27"
+                                        },
+                                */
+                                            ShipDtls: {
+                                                Gstin: LookUp(
+                                                    AllCustomerss,
+                                                    Account = OrderData.Account
+                                                ).GSTIN,
+                                                LglNm: OrderData.'Customer Name',
+                                                TrdNm: "",
+                                                Addr1: LookUp(
+                                                    AllCustomerss,
+                                                    Account = OrderData.Account
+                                                ).'Address 1: Street 1',
+                                                Addr2: LookUp(
+                                                    AllCustomerss,
+                                                    Account = OrderData.Account
+                                                ).'Address 1: Street 2',
+                                                Loc: LookUp(
+                                                    AllCustomerss,
+                                                    Account = OrderData.Account
+                                                ).'Address 1: City',
+                                                Pin: LookUp(
+                                                    AllCustomerss,
+                                                    Account = OrderData.Account
+                                                ).'Address 1: ZIP/Postal Code',
+                                                Stcd: Left(
+                                                    LookUp(
+                                                        AllCustomerss,
+                                                        Account = OrderData.Account
+                                                    ).GSTIN,
+                                                    2
+                                                )
+                                            },
+                                            ItemList: ManipulatedCartCollection
+                                    //  ItemList: First(ProductList)
+                                        }
+                                    )
+                                }
+                            );
+                            Set(
+                                varConfirmationIRN,
+                                "localQRGenerated"
+                            );
+                            Notify(
+                                "QR has been generated sucessfully",
+                                NotificationType.Success,
+                                2000
+                            );
+                            
+                        );
+                        If(
+                            !IsBlank(varConfirmationIRN),
+                            If(
+                                IsBlank(Text(testButton.qr)) && CreateInvHeaderdata.,
+                                Set(
+                                    varIRN,
+                                    true
+                                );
+                                Notify(
+                                    "QR Code generated successfully.",
+                                    NotificationType.Success,
+                                    4000
+                                );
+                                ,
+                                Set(
+                                    varIRN,
+                                    true
+                                );
+                                Notify(
+                                    "IRN has been generated successfully.",
+                                    NotificationType.Success,
+                                    4000
+                                )
+                            ),
+                            Notify(
+                                "IRN not generated.",
+                                NotificationType.Warning,
+                                4000
+                            );
+                            
+                        );
+                    Size: =_VarGblAppFonts.Size.Medium
+                    Text: ="Regenerate IRN"
+                    Width: =200
+                    X: =380
+                    Y: =635
+                    ZIndex: =29
+
                 Group13 As group:
                     Height: =5
                     Width: =5
@@ -8676,7 +8935,7 @@
             =//varSelectedVisitActiveTab = 4
             false
         Width: =Parent.Width
-        Y: =142
+        Y: =228
         ZIndex: =7
 
         DataCard1_13 As dataCard:
@@ -9418,6 +9677,7 @@
         ZIndex: =13
 
         Label5_1 As label:
+            Align: =Align.Center
             FontWeight: =FontWeight.Semibold
             Height: =102
             Size: =_VarGblAppFonts.Size.Title
