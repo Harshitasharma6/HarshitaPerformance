@@ -1,6 +1,6 @@
 "VisitExecution As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
     Fill: =_VarGblAppColors.LightText
-    OnVisible: |-
+    OnVisible: |
         =Set(
             Customers_1Detail,
             LookUp(
@@ -166,6 +166,10 @@
         Reset(ComboBox1_1);
         Reset(txtPaymentAmountValue_3);
         Reset(DatePicker3_1);
+        Set(
+            varShowGatePassFile2,
+            false
+        );
 
     Header_15 As Header:
         HeaderText: ="Order"
@@ -8891,44 +8895,49 @@
                         <p style=""line-height:2px;""></p>
                         <p style=""line-height:5px;font-size:27px"">CIN:015540MH1984PC12572</p>
                         <p style=""line-height:2px;font-size:27px"">GSTIN:27AACCA4355K12L </p>
-                        <p style=""line-height:2px;font-size:27px"">FSSAI Lic No:10013022001539​ </p>
-                        <p style=""line-height:2px;font-size:27px"">State Code:27, MAHARASHTRA​ </p>
+                        <p style=""line-height:2px;font-size:27px"">FSSAI Lic No:10013022001539 </p>
+                        <p style=""line-height:2px;font-size:27px"">State Code:27, MAHARASHTRA </p>
                         <p></p>
                         <p><center style=""font-size:27px""><b>TAX INVOICE </b></center></p>
                         <p></p>
-                        <p style=""line-height:2px;font-size:27px"">Invoice No.:"& First(Invoicedata).'Invoice Number'&" </p>
-                        <p style=""line-height:2px;font-size:27px"">Invoice Date:" & Text(First(Invoicedata).'Invoice Date',DateTimeFormat.ShortDate)  &" ​Route No.: "& First(Invoicedata).'Route No'.'Name (zx_name)' &"</p>
-                        <p style=""line-height:2px;font-size:27px"">Customer Code:"& First(Invoicedata).Customer.'Customer Code' &"​ </p>
-                        <p style=""line-height:2px;font-size:27px"">Name & Add of Customer:"& First(Invoicedata).Customer.'Customer Name' &" ​                                      ​ </p>
-                        <p style=""line-height:2px;font-size:27px"">State Code:"&First(Invoicedata).Customer.'Address 1: Street 1' & "  ​                             ​ </p>
-                        <p style=""line-height:2px;font-size:27px"">GSTIN No.:"&First(Invoicedata).Customer.GSTIN &" ​                                                        ​ </p>
-                        <p style=""line-height:2px;font-size:27px"">Reverse Charge: ​No"&"​ </p>
-                        <p style=""line-height:2px;font-size:27px"">IRN No.:"&First(Invoicedata).'IRN Number' &" ​ </p>
+                        <p style=""line-height:2px;font-size:27px"">Invoice No.:" & First(Invoicedata).'Invoice Number' & " </p>
+                        <p style=""line-height:2px;font-size:27px"">Invoice Date:" & Text(
+                            First(Invoicedata).'Invoice Date',
+                            DateTimeFormat.ShortDate
+                        ) & " Route No.: " & First(Invoicedata).'Route No'.'Name (zx_name)' & "</p>
+                        <p style=""line-height:2px;font-size:27px"">Customer Code:" & First(Invoicedata).Customer.'Customer Code' & " </p>
+                        <p style=""line-height:2px;font-size:27px"">Name & Add of Customer:" & First(Invoicedata).Customer.'Customer Name' & "                                        </p>
+                        <p style=""line-height:2px;font-size:27px"">State Code:" & First(Invoicedata).Customer.'Address 1: Street 1' & "                                </p>
+                        <p style=""line-height:2px;font-size:27px"">GSTIN No.:" & First(Invoicedata).Customer.GSTIN & "                                                          </p>
+                        <p style=""line-height:2px;font-size:27px"">Reverse Charge: No" & " </p>
+                        <p style=""line-height:2px;font-size:27px"">IRN No.:" & First(Invoicedata).'IRN Number' & "  </p>
                         <p></p>
                         <font size=""2"" face=""Courier New"" >
-                        <table  width='100%'>" &
-                        "<thead><tr><th>HSN No</th><th>Cases</th><th>Pcs</th><th>Rate</th><th>Amt</th></thead>" &
-                        "<tbody>" &
-                        Concat(dataliness As item, "<tr><td>"  &item.SKU.'SKU Code' &"</td><td>"  &item.Cases& "</td><td>"  &item.PCs& "</td></tr>" & "<tr><td>"  &item.SKU.'Item Description ' &"</td></tr><tr><td>Batch:"  &item.'Batch no.'& "</td><td>Mfg Dt."  & Text(item.'Manufacturing date',DateTimeFormat.ShortDate)& "</td></tr>") &
-                        "</tbody></table>""
+                        <table  width='100%'>" & "<thead><tr><th>HSN No</th><th>Cases</th><th>Pcs</th><th>Rate</th><th>Amt</th></thead>" & "<tbody>" & Concat(
+                            CreateInvLine As item,
+                            "<tr><td>" & item.'Item SKU'.'SKU Code' & "</td><td>" & item.Cases & "</td><td>" & item.PCs & "</td></tr>" & "<tr><td>" & item.'Item SKU'.'Item Description ' & "</td></tr><tr><td>Batch:" & item.'Batch No' & "</td><td>Mfg Dt." & Text(
+                                item.'Manufacturing Date',
+                                DateTimeFormat.ShortDate
+                            ) & "</td></tr>"
+                        ) & "</tbody></table>""
                         </font>
                         <p></p>
-                        <p style=""line-height:2px;font-size:27px"">Total Price of Goods (INR) :"&First(Invoicedata).'Net Amount' &" </p>
+                        <p style=""line-height:2px;font-size:27px"">Total Price of Goods (INR) :" & First(Invoicedata).'Net Amount' & " </p>
                         <p style=""line-height:2px;font-size:27px"">CGST @9% </p>
                         <p style=""line-height:2px;font-size:27px"">SGST @9% </p>
                         <p style=""line-height:2px;font-size:27px"">Deposit (INR) </p>
                         <p style=""line-height:2px;font-size:27px"">Rounding Off </p>
                         <p></p>
-                        <p style=""font-size:27px"">Total (INR)"&First(Invoicedata).'Total Amount (Base)' &" </p>
+                        <p style=""font-size:27px"">Total (INR)" & First(Invoicedata).'Total Amount (Base)' & " </p>
                         <p></p>
                         <p style=""line-height:2px;font-size:27px"">Invoice Amount (In Words):</p>
                         <p></p>
                         <p></p>
                         <p style=""font-size:27px"">Please make all Payment in following Bank Account: </p>
                         <p></p>
-                        <p style=""line-height:2px;font-size:27px"">Bank Name: KOTAK MAHINDRA BANK​ </p>
-                        <p style=""line-height:2px;font-size:27px"">Bank Account No.: ​7311278470 </p>
-                        <p style=""line-height:2px;font-size:27px"">IFS/NEFT: ​KKBK0000674 </p>
+                        <p style=""line-height:2px;font-size:27px"">Bank Name: KOTAK MAHINDRA BANK </p>
+                        <p style=""line-height:2px;font-size:27px"">Bank Account No.: 7311278470 </p>
+                        <p style=""line-height:2px;font-size:27px"">IFS/NEFT: KKBK0000674 </p>
                         <p></p>
                         <p> </p>
                         <p></p>
@@ -9572,31 +9581,34 @@
                 Invoicelinedata,
                 Filter(
                     'Invoice Lines',
-                    'Invoice Number'.'Invoice Header' = GUID("32d81e3d-6abe-ed11-83ff-002248d5da52")
+                    'Invoice Number'.'Invoice Header' = INVID
                 )
             );
             Set(
-                varpdf,
+                varpdf2,
                 PDF(
                     Container10,
                     {ExpandContainers: true}
                 )
             );
             Set(
-                varr,
+                varrr2,
                 Patch(
                     'Invoice Headers',
-                    Defaults('Invoice Headers'),
+                      LookUp(
+                        'Invoice Headers',
+                        'Invoice Header' = INVID
+                    ),
                     {
-                        zx_name: "test",
+                        zx_name: "File",
                         File: {
-                            FileName: "TEst.pdf",
-                            Value: varpdf
+                            FileName: "File.pdf",
+                            Value: varpdf2
                         }
                     }
                 ).'Invoice Header'
             );
-            Launch("https://org3b853e7d.crm8.dynamics.com/api/data/v9.0/zx_invoiceheaders(" & varr & ")/new_file/$value");
+            Set(varShowGatePassFile2, true);
         PaddingBottom: =7
         PaddingLeft: =7
         PaddingRight: =7
@@ -9789,4 +9801,84 @@
             X: =169
             Y: =175
             ZIndex: =2
+
+    FormViewer2 As formViewer:
+        DataSource: ='Invoice Headers'
+        Height: =81
+        Item: =LookUp('Invoice Headers','Invoice Header'=varrr2)
+        Visible: =varShowGatePassFile2
+        Width: =162
+        X: =195
+        ZIndex: =16
+
+        File_DataCard2 As typedDataCard.fileViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="new_file"
+            Default: |-
+                =If(!IsBlank(ThisItem.File.FileName), Table({DisplayName: ThisItem.File.FileName, Value: ThisItem.File.Value}), Blank())
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Invoice Headers'],DataSourceInfo.DisplayName,"new_file")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =129
+            Required: =false
+            Visible: =varShowGatePassFile2
+            Width: =162
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey1 As label:
+                Height: =76
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                ZIndex: =1
+
+            DataCardValue1 As attachments:
+                AddAttachmentText: ="Upload file"
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DisplayMode: =Parent.DisplayMode
+                Height: =100
+                IsInDataCard: =true
+                Items: =Parent.Default
+                MaxAttachments: =1
+                MaxAttachmentsText: =""
+                NoAttachmentsText: ="There is no file."
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                Size: =21
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey1.Y + DataCardKey1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage1 As label:
+                AutoHeight: =true
+                Height: =10
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue1.Y + DataCardValue1.Height
+                ZIndex: =3
+
+            StarVisible1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey1.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey1.Y
+                ZIndex: =4
 

@@ -477,7 +477,7 @@
                 FocusedBorderThickness: =2
                 HoverColor: =_VarGblAppColors.HeaderBg
                 HoverFill: =_VarGblAppColors.BisleriBlueLight
-                Items: =Choices([@'Order Headers'].Reason)
+                Items: =Choices([@'Order Headers'].'Reason (zx_reason)')
                 PressedColor: =_VarGblAppColors.LightText
                 PressedFill: =_VarGblAppColors.BisleriBlueMediumLight
                 SelectionColor: =_VarGblAppColors.HeaderBg
