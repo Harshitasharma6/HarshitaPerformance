@@ -7552,14 +7552,7 @@
         "DisabledColor",
         "PressedColor",
         "HoverColor",
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "If(IsBlank(lblPaymentInvoiceNoValue_2.Text), DisplayMode.Disabled, DisplayMode.Edit)",
-          "InvariantPropertyName": "DisplayMode",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        },
+        "DisplayMode",
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
