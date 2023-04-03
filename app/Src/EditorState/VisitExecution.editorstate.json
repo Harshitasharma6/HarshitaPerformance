@@ -5483,7 +5483,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btnPaymentCancel_2",
-      "ParentIndex": 27,
+      "ParentIndex": 28,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6390,7 +6390,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btnPaymentConfirm_2",
-      "ParentIndex": 26,
+      "ParentIndex": 27,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7659,7 +7659,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btnPaymentConfirm_8",
-      "ParentIndex": 28,
+      "ParentIndex": 26,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
