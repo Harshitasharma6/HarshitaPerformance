@@ -1788,7 +1788,7 @@
 
             Container5 As groupContainer.manualLayoutContainer:
                 Height: =771
-                Visible: =CountRows(CreateOrderRecord) > 0
+                Visible: =CountRows(CreateOrderRecord) > 0 || First(CreateInvHeader).'IRN Message'="N"
                 Width: =640
                 Y: =Container7.Height + Container7.Y + 20
                 ZIndex: =39
