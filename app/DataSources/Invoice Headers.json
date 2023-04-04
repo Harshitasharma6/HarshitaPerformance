@@ -154,12 +154,12 @@
         "OptionSetReferenceEntityName": "Invoice Headers"
       },
       "OptionSetReferenceItem1": {
-        "OptionSetReferenceColumnName": "zx_reasoncode",
-        "OptionSetReferenceEntityName": "Invoice Lines"
-      },
-      "OptionSetReferenceItem2": {
         "OptionSetReferenceColumnName": "zx_reason_t_",
         "OptionSetReferenceEntityName": "Order Headers"
+      },
+      "OptionSetReferenceItem2": {
+        "OptionSetReferenceColumnName": "zx_reasoncode",
+        "OptionSetReferenceEntityName": "Invoice Lines"
       }
     },
     "OptionSetTypeKey": "PicklistType",
