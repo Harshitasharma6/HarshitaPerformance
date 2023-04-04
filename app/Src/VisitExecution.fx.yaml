@@ -9748,22 +9748,22 @@
                     "QR Code Generated Successfully!",
                     "IRN Generated Successfully!"
                 )*/
-                /*If(
-                    IsBlank(CreateInvHeaderdata.'Local QR ') && IsBlank(CreateInvHeaderdata.'IRN Number'),
-                    "Your order has been placed",
-                    !IsBlank(CreateInvHeaderdata.'Local QR ') && IsBlank(CreateInvHeaderdata.'IRN Number'),
-                    "QR Code Generated Successfully!",
-                    !IsBlank(CreateInvHeaderdata.'IRN Number') && IsBlank(CreateInvHeaderdata.'Local QR '),
-                    "IRN Generated Successfully!"
-                )*/
                 If(
-                    IsBlank(CreateInvHeader.'Local QR ') && IsBlank(CreateInvHeader.'IRN Number'),
+                    IsBlank(Text(CreateInvHeaderdata.'Local QR ')) && IsBlank(Text(CreateInvHeaderdata.'IRN Number')),
                     "Your order has been placed",
-                    !IsBlank(CreateInvHeader.'Local QR ') && IsBlank(CreateInvHeader.'IRN Number'),
+                    !IsBlank(Text(CreateInvHeaderdata.'Local QR ')) && IsBlank(Text(CreateInvHeaderdata.'IRN Number')),
                     "QR Code Generated Successfully!",
-                    !IsBlank(CreateInvHeader.'IRN Number') && IsBlank(CreateInvHeader.'Local QR '),
+                    !IsBlank(Text(CreateInvHeaderdata.'IRN Number')) && IsBlank(Text(CreateInvHeaderdata.'Local QR ')),
                     "IRN Generated Successfully!"
                 )
+                /*If(
+                    
+                    !IsBlank(Text(CreateInvHeader.'Local QR ')) && IsBlank(Text(CreateInvHeader.'IRN Number')),
+                    "QR Code Generated Successfully!",
+                    !IsBlank(Text(CreateInvHeader.'IRN Number')) && IsBlank(Text(CreateInvHeader.'Local QR ')),
+                    "IRN Generated Successfully!",
+                    "Your order has been placed"
+                )*/
             Width: =379
             X: =61
             Y: =37

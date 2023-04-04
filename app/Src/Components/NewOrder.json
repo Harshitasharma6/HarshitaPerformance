@@ -13376,7 +13376,7 @@
       "ZIndex",
       "Customer"
     ],
-    "LastModifiedTimestamp": "638161989938427672",
+    "LastModifiedTimestamp": "638162025867038921",
     "Name": "NewOrder",
     "Rules": [
       {
@@ -13451,7 +13451,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638161989938427672",
+  "LastModifiedTimestamp": "638162025867038921",
   "Name": "3e9279facdc34347aebf39461b7865fe",
   "OverridableProperties": {},
   "Version": "638061594329874087"
