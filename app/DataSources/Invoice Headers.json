@@ -286,6 +286,10 @@
       "OptionSetReferenceItem1": {
         "OptionSetReferenceColumnName": "zx_ordertype",
         "OptionSetReferenceEntityName": "Order Headers"
+      },
+      "OptionSetReferenceItem2": {
+        "OptionSetReferenceColumnName": "zx_ordertype",
+        "OptionSetReferenceEntityName": "Invoice Lines"
       }
     },
     "OptionSetTypeKey": "PicklistType",

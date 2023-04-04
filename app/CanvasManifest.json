@@ -32,8 +32,10 @@
       "enablecomponentnamemaps": false,
       "enablecomponentscopeoldbehavior": false,
       "enablecopilotcontrol": false,
+      "enabledataverseoffline": false,
       "enableeditcacherefreshfrequency": false,
       "enableexcelonlinebusinessv2connector": true,
+      "enableexperimentaldataverseoffline": false,
       "enableideaspanel": true,
       "enablelegacybarcodescanner": false,
       "enableonstart": true,
@@ -64,6 +66,7 @@
       "longlivingcache": false,
       "namedformulas": false,
       "nativecdsexperimental": true,
+      "onegrid": false,
       "optimizedforteamsmeeting": false,
       "packagemodernruntime": false,
       "parallelcodegen": false,
@@ -101,7 +104,7 @@
     "FileID": "39cc0832-0209-409a-aabb-75e3b372b828",
     "Id": "06f8bc97-b406-4f0e-b6ac-77a4055006f4",
     "InstrumentationKey": "",
-    "Name": "Van+v2.msapp",
+    "Name": "Van v2",
     "OriginatingVersion": "1.326"
   },
   "PublishInfo": {
