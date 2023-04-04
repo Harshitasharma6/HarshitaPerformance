@@ -568,7 +568,7 @@
                         'Invoice Header' = datainv
                     ),
                     {
-                        zx_name: "File",
+                       
                         File: {
                             FileName: "File.pdf",
                             Value: varpdf23
