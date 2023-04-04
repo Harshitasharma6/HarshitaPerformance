@@ -89,7 +89,7 @@
         "Name": "lblHeader",
         "Parent": "Header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 17,
+        "PublishOrderIndex": 1750,
         "Rules": [
           {
             "Category": "Data",
@@ -395,7 +395,7 @@
         "Name": "shpCircleHeader",
         "Parent": "Header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 18,
+        "PublishOrderIndex": 1751,
         "Rules": [
           {
             "Category": "Design",
@@ -640,7 +640,7 @@
         "Name": "imgHeaderProfile",
         "Parent": "Header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 19,
+        "PublishOrderIndex": 1752,
         "Rules": [
           {
             "Category": "Data",
@@ -971,7 +971,7 @@
         "Name": "icoHeaderBack",
         "Parent": "Header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 20,
+        "PublishOrderIndex": 1753,
         "Rules": [
           {
             "Category": "Data",

@@ -481,7 +481,7 @@
                         <p style=""line-height:2px;font-size:27px"">IRN No.:" & First(Invoicedata2).'IRN Number' & "  </p>
                         <p></p>
                         <font size=""5"" face=""Courier New"" >
-                        <table  width='90%'>" & "<thead><tr><th>HSN No</th><th>Cases</th><th>Pcs</th><th>Rate</th><th>Amt</th></thead>" & "<tbody>" & Concat(
+                        <table  width='70%'>" & "<thead><tr><th>HSN No</th><th>Cases</th><th>Pcs</th><th>Rate</th><th>Amt</th></thead>" & "<tbody>" & Concat(
                             Invoicelinedata2 As item,
                             "<tr><td>" & item.'Item SKU'.'SKU Code' & "</td><td>" & item.Cases & "</td><td>" & item.PCs & "</td><td>" & item.'Base Amount' & "</td><td>" & item.Rate & "</td></tr>" & "<tr><td>" & item.'Item SKU'.'Item Description ' & "</td></tr><tr><td>Batch:" & item.'Batch No' & "</td><td>Mfg Dt." & Text(
                                 item.'Manufacturing Date',
