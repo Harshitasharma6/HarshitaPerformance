@@ -2158,19 +2158,20 @@
                                         AllCustomerss,
                                         Account = OrderData.Account
                                     ).GSTIN
-                                ) && ((!(LookUp(
+                                ) && (((LookUp(
                                     AllCustomerss,
                                     Account = OrderData.Account
-                                ).'Customer Group'.Code = "KEY-RT") && LookUp(
+                                ).'Customer Group'.Name <> "KEY-RT") && LookUp(
                                     AllCustomerss,
                                     Account = OrderData.Account
-                                ).Branch.Name = "PUNE") || (!(LookUp(
+                                ).Branch.Name = "PUNE") || ((LookUp(
                                     AllCustomerss,
                                     Account = OrderData.Account
-                                ).'Customer Group'.Code = "COR-RT") && LookUp(
+                                ).'Customer Group'.Name <> "COR-RT") && LookUp(
                                     AllCustomerss,
                                     Account = OrderData.Account
-                                ).Branch.Name = "Mumbai")),
+                                ).Branch.Name = "Mumbai")
+                                ),
                                 Set(
                                     testButton,
                                     'PowerApp->RespondtoaPowerApporflow'.Run(CreateInvHeaderdata.'Invoice Header');
@@ -2211,13 +2212,12 @@
                                     )
                                 );
                                 ,
-                        IsBlank(
+                                IsBlank(
                                     LookUp(
                                         AllCustomerss,
                                         Account = OrderData.Account
                                     ).GSTIN
                                 ),
-                        
                                 Patch(
                                     'Invoice Headers',
                                     LookUp(
@@ -2370,26 +2370,29 @@
                                     NotificationType.Success,
                                     2000
                                 );
-                        
-                        , !IsBlank(
+                                ,
+                                !IsBlank(
                                     LookUp(
                                         AllCustomerss,
                                         Account = OrderData.Account
                                     ).GSTIN
-                                ) && (((LookUp(
+                                ) && ((LookUp(
                                     AllCustomerss,
                                     Account = OrderData.Account
-                                ).'Customer Group'.Code = "KEY-RT") && LookUp(
+                                ).'Customer Group'.Name = "KEY-RT" && LookUp(
                                     AllCustomerss,
                                     Account = OrderData.Account
-                                ).Branch.Name = "PUNE") || ((LookUp(
+                                ).Branch.Name = "PUNE") || (LookUp(
                                     AllCustomerss,
                                     Account = OrderData.Account
-                                ).'Customer Group'.Code = "COR-RT") && LookUp(
+                                ).'Customer Group'.Name = "COR-RT" && LookUp(
                                     AllCustomerss,
                                     Account = OrderData.Account
-                                ).Branch.Name = "Mumbai")),Set(varIRN,true);
-                        
+                                ).Branch.Name = "Mumbai")),
+                                Set(
+                                    varIRN,
+                                    true
+                                );
                             );
                           /*  If(
                                 !IsBlank(testButton),
@@ -9745,12 +9748,20 @@
                     "QR Code Generated Successfully!",
                     "IRN Generated Successfully!"
                 )*/
-                If(
+                /*If(
                     IsBlank(CreateInvHeaderdata.'Local QR ') && IsBlank(CreateInvHeaderdata.'IRN Number'),
                     "Your order has been placed",
                     !IsBlank(CreateInvHeaderdata.'Local QR ') && IsBlank(CreateInvHeaderdata.'IRN Number'),
                     "QR Code Generated Successfully!",
                     !IsBlank(CreateInvHeaderdata.'IRN Number') && IsBlank(CreateInvHeaderdata.'Local QR '),
+                    "IRN Generated Successfully!"
+                )*/
+                If(
+                    IsBlank(CreateInvHeader.'Local QR ') && IsBlank(CreateInvHeader.'IRN Number'),
+                    "Your order has been placed",
+                    !IsBlank(CreateInvHeader.'Local QR ') && IsBlank(CreateInvHeader.'IRN Number'),
+                    "QR Code Generated Successfully!",
+                    !IsBlank(CreateInvHeader.'IRN Number') && IsBlank(CreateInvHeader.'Local QR '),
                     "IRN Generated Successfully!"
                 )
             Width: =379
