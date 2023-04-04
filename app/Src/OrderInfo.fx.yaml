@@ -371,6 +371,8 @@
             lblCustomer360CustomerIdValue_2 As label:
                 FontWeight: =FontWeight.Semibold
                 Height: =35
+                OnSelect: |
+                    =oh
                 Size: =_VarGblAppFonts.Size.Medium
                 Text: =oh.'Order Id'
                 Width: =155
@@ -440,6 +442,83 @@
                 Y: =37
                 ZIndex: =11
 
+            Container10_1 As groupContainer.manualLayoutContainer:
+                Height: =0
+                Width: =640
+                Y: =1741
+                ZIndex: =12
+
+                HtmlText2_1 As htmlViewer:
+                    Height: =1070
+                    HtmlText: |-
+                        ="
+                         <p ><center style=""font-size:27px""><b>Bisleri International Pvt.Ltd.</b></center> </p>
+                        <p style=""font-size:27px"">Western Express Highway,Andheri<E>, Mumbai- 400099 Tel No. +(91)-22-61447000, Fax: +(91)-22-61447145</p>
+                        
+                        
+                        <p style=""line-height:2px;""></p>
+                        <p style=""line-height:5px;font-size:27px"">CIN:015540MH1984PC12572</p>
+                        <p style=""line-height:2px;font-size:27px"">GSTIN:27AACCA4355K12L </p>
+                        <p style=""line-height:2px;font-size:27px"">FSSAI Lic No:10013022001539 </p>
+                        <p style=""line-height:2px;font-size:27px"">State Code:27, MAHARASHTRA </p>
+                        <p></p>
+                        <p><center style=""font-size:27px""><b>TAX INVOICE </b></center></p>
+                        <p></p>
+                        <p style=""line-height:2px;font-size:27px"">Invoice No.:" & First(Invoicedata2).'Invoice Number' & " </p>
+                        <p style=""line-height:2px;font-size:27px"">Invoice Date:" & Text(
+                            First(Invoicedata2).'Invoice Date',
+                            DateTimeFormat.ShortDate
+                        ) & " Route No.: " & First(Invoicedata2).'Route No'.'Name (zx_name)' & "</p>
+                        <p style=""line-height:2px;font-size:27px"">Customer Code:" & First(Invoicedata2).Customer.'Customer Code' & " </p>
+                        <p style=""line-height:2px;font-size:27px"">Name & Add of Customer:" & First(Invoicedata2).Customer.'Customer Name' & "                                        </p>
+                        <p style=""line-height:2px;font-size:27px"">State Code:" & First(Invoicedata2).Customer.'Address 1: Street 1' & "                                </p>
+                        <p style=""line-height:2px;font-size:27px"">GSTIN No.:" & First(Invoicedata2).Customer.GSTIN & "                                                          </p>
+                        <p style=""line-height:2px;font-size:27px"">Reverse Charge: No" & " </p>
+                        <p style=""line-height:2px;font-size:27px"">IRN No.:" & First(Invoicedata2).'IRN Number' & "  </p>
+                        <p></p>
+                        <font size=""5"" face=""Courier New"" >
+                        <table  width='100%'>" & "<thead><tr><th>HSN No</th><th>Cases</th><th>Pcs</th><th>Rate</th><th>Amt</th></thead>" & "<tbody>" & Concat(
+                            Invoicelinedata2 As item,
+                            "<tr><td>" & item.'Item SKU'.'SKU Code' & "</td><td>" & item.Cases & "</td><td>" & item.PCs & "</td></tr>" & "<tr><td>" & item.'Item SKU'.'Item Description ' & "</td></tr><tr><td>Batch:" & item.'Batch No' & "</td><td>Mfg Dt." & Text(
+                                item.'Manufacturing Date',
+                                DateTimeFormat.ShortDate
+                            ) & "</td></tr>"
+                        ) & "</tbody></table>""
+                        </font>
+                        <p></p>
+                        <p style=""line-height:2px;font-size:27px"">Total Price of Goods (INR) :" & First(Invoicedata).'Net Amount' & " </p>
+                        <p style=""line-height:2px;font-size:27px"">CGST @9% </p>
+                        <p style=""line-height:2px;font-size:27px"">SGST @9% </p>
+                        <p style=""line-height:2px;font-size:27px"">Deposit (INR) </p>
+                        <p style=""line-height:2px;font-size:27px"">Rounding Off </p>
+                        <p></p>
+                        <p style=""font-size:27px"">Total (INR)" & First(Invoicedata).'Total Amount (Base)' & " </p>
+                        <p></p>
+                        <p style=""line-height:2px;font-size:27px"">Invoice Amount (In Words):</p>
+                        <p></p>
+                        <p></p>
+                        <p style=""font-size:27px"">Please make all Payment in following Bank Account: </p>
+                        <p></p>
+                        <p style=""line-height:2px;font-size:27px"">Bank Name: KOTAK MAHINDRA BANK </p>
+                        <p style=""line-height:2px;font-size:27px"">Bank Account No.: 7311278470 </p>
+                        <p style=""line-height:2px;font-size:27px"">IFS/NEFT: KKBK0000674 </p>
+                        <p></p>
+                        <p> </p>
+                        <p></p>
+                        <p>We reserve to ourselves the right to demand payments of this bill at any time before due date. A 11 disputes are subject to Mumbai Jurisdiction. The Company reserves its right to charge interest on overdue unpaid bill. Claim of any nature whatsoever will lapse unless raised in 3 days from the date of Invoice. Goods once sold cannot be returned and/or exchanged. No claim for shortage, damage, breakage etc will be entertained. </p>
+                        <p></p>
+                        <p>We hereby declare that statutory details in respect of customer mentioned in this invoice are as per information provided by the customer. The receiver of the invoice should confirm the statutory details mentioned on the Invoice. The customer may revert to the company if any variations are observed in the Invoice details within 7 days from the date of Invoice. No claims and alternation would be entertained thereafter. </p>
+                        <p></p>
+                        <p>Certified that the particular's given above are true and correct. </p>
+                        <p></p>
+                        <p>For BISLERI INTERNATIONAL PVT. LTD. </p>
+                        
+                        "
+                    Width: =560
+                    X: =40
+                    Y: =40
+                    ZIndex: =1
+
     Header_5 As Header:
         HeaderText: ="Order Info"
         ZIndex: =4
@@ -447,4 +526,133 @@
     BottomBar_1 As BottomBar:
         Y: =1026
         ZIndex: =5
+
+    Icon10 As icon.Print:
+        Height: =56
+        Icon: =Icon.Print
+        OnSelect: |
+            =
+            ClearCollect(
+                Invoicedata2,
+                Filter(
+                    'Invoice Headers',
+                    'Order Number'.'Order Number' = oh.'Order Number'
+                )
+            );
+            Set(datainv,First(Invoicedata2).'Invoice Header');
+            ClearCollect(
+                Invoicelinedata2,
+                Filter(
+                    'Invoice Lines',
+                    'Invoice Number'.'Invoice Header' = datainv
+                )
+            );
+            Set(
+                varpdf23,
+                PDF(
+                    Container10_1,
+                    {ExpandContainers: true}
+                )
+            );
+            Set(
+                varrr23,
+                Patch(
+                    'Invoice Headers',
+                      LookUp(
+                        'Invoice Headers',
+                        'Invoice Header' = datainv
+                    ),
+                    {
+                        zx_name: "File",
+                        File: {
+                            FileName: "File.pdf",
+                            Value: varpdf23
+                        }
+                    }
+                ).'Invoice Header'
+            );
+            Set(varShowGatePassFile23, true);
+        X: =458
+        Y: =16
+        ZIndex: =6
+
+    FormViewer3 As formViewer:
+        DataSource: ='Invoice Headers'
+        Height: =52
+        Item: =LookUp('Invoice Headers','Invoice Header'=varrr23)
+        Width: =140
+        X: =275
+        Y: =14
+        ZIndex: =7
+
+        File_DataCard3 As typedDataCard.fileViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="new_file"
+            Default: |-
+                =If(!IsBlank(ThisItem.File.FileName), Table({DisplayName: ThisItem.File.FileName, Value: ThisItem.File.Value}), Blank())
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Invoice Headers'],DataSourceInfo.DisplayName,"new_file")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =232
+            Required: =false
+            Width: =140
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey2 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                Y: =78
+                ZIndex: =1
+
+            DataCardValue2 As attachments:
+                AddAttachmentText: ="Upload file"
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DisplayMode: =Parent.DisplayMode
+                Height: =100
+                IsInDataCard: =true
+                Items: =Parent.Default
+                MaxAttachments: =1
+                MaxAttachmentsText: =""
+                NoAttachmentsText: ="There is no file."
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                Size: =21
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey2.Y + DataCardKey2.Height + 5
+                ZIndex: =2
+
+            ErrorMessage3 As label:
+                AutoHeight: =true
+                Height: =10
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue2.Y + DataCardValue2.Height
+                ZIndex: =3
+
+            StarVisible3 As label:
+                Align: =Align.Center
+                Height: =DataCardKey2.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey2.Y
+                ZIndex: =4
 
