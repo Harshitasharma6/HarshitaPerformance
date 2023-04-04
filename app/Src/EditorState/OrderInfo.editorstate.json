@@ -236,7 +236,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btnCustomer360InfoBackground_2",
-      "ParentIndex": 10,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -824,7 +824,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Button15_1",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1828,7 +1828,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Container10_1",
-      "ParentIndex": 0,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2416,7 +2416,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "%FieldValue.ID%",
       "Name": "DataCardValue2",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2782,7 +2782,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "%ErrorMessage.ID%",
       "Name": "ErrorMessage3",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3337,7 +3337,7 @@
       },
       "MetaDataIDKey": "",
       "Name": "Header_5",
-      "ParentIndex": 2,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3810,7 +3810,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "htmPaymentSummary_2",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3962,7 +3962,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Icon10",
-      "ParentIndex": 0,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4198,7 +4198,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lblCustomer360Beat_2",
-      "ParentIndex": 7,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4495,7 +4495,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lblCustomer360BeatValue_2",
-      "ParentIndex": 8,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4806,7 +4806,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lblCustomer360ContactPerson_2",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5103,7 +5103,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lblCustomer360ContactPersonValue_2",
-      "ParentIndex": 6,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5407,7 +5407,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lblCustomer360CustomerId_2",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5712,7 +5712,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lblCustomer360CustomerIdValue_2",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9798,7 +9798,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "OrderHeader",
-      "ParentIndex": 9,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10067,7 +10067,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "OrderLine",
-      "ParentIndex": 11,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10436,7 +10436,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "%FieldRequired.ID%",
       "Name": "StarVisible3",
-      "ParentIndex": 3,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
