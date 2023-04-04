@@ -369,11 +369,14 @@
                 ZIndex: =5
 
             lblCustomer360CustomerIdValue_2 As label:
+                FocusedBorderColor: =Color.Transparent
+                FocusedBorderThickness: =0.5
                 FontWeight: =FontWeight.Semibold
                 Height: =35
                 OnSelect: |
                     =oh
                 Size: =_VarGblAppFonts.Size.Medium
+                TabIndex: =
                 Text: =oh.'Order Id'
                 Width: =155
                 X: =253
@@ -529,6 +532,7 @@
         ZIndex: =5
 
     Icon10 As icon.Print:
+        AccessibleLabel: ="Icon10"
         Height: =56
         Icon: =Icon.Print
         OnSelect: |
@@ -573,6 +577,7 @@
                 ).'Invoice Header'
             );
             Set(varShowGatePassFile23, true);
+        TabIndex: =0
         X: =458
         Y: =16
         ZIndex: =6
@@ -612,6 +617,7 @@
                 ZIndex: =1
 
             DataCardValue2 As attachments:
+                AccessibleLabel: ="DataCardValue2"
                 AddAttachmentText: ="Upload file"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DisplayMode: =Parent.DisplayMode

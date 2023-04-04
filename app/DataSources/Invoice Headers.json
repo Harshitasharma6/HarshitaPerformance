@@ -156,10 +156,6 @@
       "OptionSetReferenceItem1": {
         "OptionSetReferenceColumnName": "zx_reason_t_",
         "OptionSetReferenceEntityName": "Order Headers"
-      },
-      "OptionSetReferenceItem2": {
-        "OptionSetReferenceColumnName": "zx_reasoncode",
-        "OptionSetReferenceEntityName": "Invoice Lines"
       }
     },
     "OptionSetTypeKey": "PicklistType",
@@ -289,11 +285,11 @@
       },
       "OptionSetReferenceItem1": {
         "OptionSetReferenceColumnName": "zx_ordertype",
-        "OptionSetReferenceEntityName": "Invoice Lines"
+        "OptionSetReferenceEntityName": "Order Headers"
       },
       "OptionSetReferenceItem2": {
         "OptionSetReferenceColumnName": "zx_ordertype",
-        "OptionSetReferenceEntityName": "Order Headers"
+        "OptionSetReferenceEntityName": "Invoice Lines"
       }
     },
     "OptionSetTypeKey": "PicklistType",

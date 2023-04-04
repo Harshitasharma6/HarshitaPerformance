@@ -9838,6 +9838,7 @@
                 ZIndex: =1
 
             DataCardValue1 As attachments:
+                AccessibleLabel: ="DataCardValue1"
                 AddAttachmentText: ="Upload file"
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 DisplayMode: =Parent.DisplayMode
