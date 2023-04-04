@@ -9749,11 +9749,50 @@
                     "IRN Generated Successfully!"
                 )*/
                 If(
-                    IsBlank(Text(CreateInvHeaderdata.'Local QR ')) && IsBlank(Text(CreateInvHeaderdata.'IRN Number')),
+                    !IsBlank(
+                        LookUp(
+                            AllCustomerss,
+                            Account = OrderData.Account
+                        ).GSTIN
+                    ) && ((LookUp(
+                        AllCustomerss,
+                        Account = OrderData.Account
+                    ).'Customer Group'.Name = "KEY-RT" && LookUp(
+                        AllCustomerss,
+                        Account = OrderData.Account
+                    ).Branch.Name = "PUNE") || (LookUp(
+                        AllCustomerss,
+                        Account = OrderData.Account
+                    ).'Customer Group'.Name = "COR-RT" && LookUp(
+                        AllCustomerss,
+                        Account = OrderData.Account
+                    ).Branch.Name = "Mumbai")),
                     "Your order has been placed",
-                    !IsBlank(Text(CreateInvHeaderdata.'Local QR ')) && IsBlank(Text(CreateInvHeaderdata.'IRN Number')),
+                    IsBlank(
+                        LookUp(
+                            AllCustomerss,
+                            Account = OrderData.Account
+                        ).GSTIN
+                    ),
                     "QR Code Generated Successfully!",
-                    !IsBlank(Text(CreateInvHeaderdata.'IRN Number')) && IsBlank(Text(CreateInvHeaderdata.'Local QR ')),
+                    !IsBlank(
+                        LookUp(
+                            AllCustomerss,
+                            Account = OrderData.Account
+                        ).GSTIN
+                    ) && (((LookUp(
+                        AllCustomerss,
+                        Account = OrderData.Account
+                    ).'Customer Group'.Name <> "KEY-RT") && LookUp(
+                        AllCustomerss,
+                        Account = OrderData.Account
+                    ).Branch.Name = "PUNE") || ((LookUp(
+                        AllCustomerss,
+                        Account = OrderData.Account
+                    ).'Customer Group'.Name <> "COR-RT") && LookUp(
+                        AllCustomerss,
+                        Account = OrderData.Account
+                    ).Branch.Name = "Mumbai")),
                     "IRN Generated Successfully!"
                 )
                 /*If(
