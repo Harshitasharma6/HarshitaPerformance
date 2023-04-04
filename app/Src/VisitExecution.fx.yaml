@@ -2211,6 +2211,13 @@
                                     )
                                 );
                                 ,
+                        IsBlank(
+                                    LookUp(
+                                        AllCustomerss,
+                                        Account = OrderData.Account
+                                    ).GSTIN
+                                ),
+                        
                                 Patch(
                                     'Invoice Headers',
                                     LookUp(
@@ -2363,6 +2370,9 @@
                                     NotificationType.Success,
                                     2000
                                 );
+                        
+                        , Set(varIRN,true);
+                        
                             );
                           /*  If(
                                 !IsBlank(testButton),
@@ -9713,9 +9723,17 @@
             Height: =102
             Size: =_VarGblAppFonts.Size.Title
             Text: |-
-                =If(
+                =/*If(
                     IsBlank(Text(testButton.qr)) && Not(CreateInvHeaderdata.'IRN Message' = "N"),
                     "QR Code Generated Successfully!",
+                    "IRN Generated Successfully!"
+                )*/
+                If(
+                    IsBlank(CreateInvHeaderdata.'Local QR ') && IsBlank(CreateInvHeaderdata.'IRN Number'),
+                    "Your order has been placed",
+                    !IsBlank(CreateInvHeaderdata.'Local QR ') && IsBlank(CreateInvHeaderdata.'IRN Number'),
+                    "QR Code Generated Successfully!",
+                    !IsBlank(CreateInvHeaderdata.'IRN Number') && IsBlank(CreateInvHeaderdata.'Local QR '),
                     "IRN Generated Successfully!"
                 )
             Width: =379
