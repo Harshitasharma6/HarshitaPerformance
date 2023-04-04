@@ -2371,7 +2371,24 @@
                                     2000
                                 );
                         
-                        , Set(varIRN,true);
+                        , !IsBlank(
+                                    LookUp(
+                                        AllCustomerss,
+                                        Account = OrderData.Account
+                                    ).GSTIN
+                                ) && (((LookUp(
+                                    AllCustomerss,
+                                    Account = OrderData.Account
+                                ).'Customer Group'.Code = "KEY-RT") && LookUp(
+                                    AllCustomerss,
+                                    Account = OrderData.Account
+                                ).Branch.Name = "PUNE") || ((LookUp(
+                                    AllCustomerss,
+                                    Account = OrderData.Account
+                                ).'Customer Group'.Code = "COR-RT") && LookUp(
+                                    AllCustomerss,
+                                    Account = OrderData.Account
+                                ).Branch.Name = "Mumbai")),Set(varIRN,true);
                         
                             );
                           /*  If(
