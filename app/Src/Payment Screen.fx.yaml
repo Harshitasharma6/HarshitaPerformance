@@ -59,7 +59,7 @@
                             ),
                             'Payment Mode' = galPaymentTypeFilter.Selected.Value
                         ),
-                        IsToday('Created On')
+                       'Created On' >= Today()
                     )
                 ),
                 'Created On',
