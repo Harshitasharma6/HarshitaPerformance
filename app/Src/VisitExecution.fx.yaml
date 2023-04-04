@@ -3720,7 +3720,7 @@
                                                     'Invoice Lines',
                                                     LookUp(
                                                         'Invoice Lines',
-                                                        'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
+                                                        'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.skuId
                                                     ),
                                                     {
                                                         'Invoice Number': LookUp(
@@ -4135,7 +4135,7 @@
                                                             'Invoice Lines',
                                                             LookUp(
                                                                 'Invoice Lines',
-                                                                'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
+                                                                'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.skuId
                                                             ),
                                                             {
                                                                 'Invoice Number': LookUp(
@@ -4566,7 +4566,7 @@
                                                             'Invoice Lines',
                                                             LookUp(
                                                                 'Invoice Lines',
-                                                                'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
+                                                                'Invoice Number'.'Invoice Number' = CreateInvHeaderdata.'Invoice Number' && 'Item SKU'.'SKU Master' = OrdrItems.skuId
                                                             ),
                                                             {
                                                                 'Invoice Number': LookUp(
