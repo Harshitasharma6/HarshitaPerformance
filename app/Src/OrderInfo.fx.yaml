@@ -449,7 +449,8 @@
                 ZIndex: =12
 
                 HtmlText2_1 As htmlViewer:
-                    Height: =1070
+                    AutoHeight: =true
+                    Height: =0
                     HtmlText: |-
                         ="
                          <p ><center style=""font-size:27px""><b>Bisleri International Pvt.Ltd.</b></center> </p>

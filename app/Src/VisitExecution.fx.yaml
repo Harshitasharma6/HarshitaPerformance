@@ -8885,6 +8885,7 @@
                 ZIndex: =41
 
                 HtmlText2 As htmlViewer:
+                    AutoHeight: =true
                     Height: =1070
                     HtmlText: |-
                         ="
