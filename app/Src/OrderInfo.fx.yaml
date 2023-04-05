@@ -456,7 +456,7 @@
                     Height: =0
                     HtmlText: |-
                         ="
-                        <img src=""data:image/svg+xml;base64," & First(Invoicedata).zx_signedqrcode & "
+                        <img src=""data:image/svg+xml;base64," & First(Invoicedata).'Signed QR Code' & "
                         alt=""Testing"" width=""500"" height=""100>""
                          <p ><center style=""font-size:27px""><b>Bisleri International Pvt.Ltd.</b></center> </p>
                         <p style=""font-size:27px"">Western Express Highway,Andheri<E>, Mumbai- 400099 Tel No. +(91)-22-61447000, Fax: +(91)-22-61447145</p>
