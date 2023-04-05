@@ -456,7 +456,7 @@
                     Height: =388
                     HtmlText: |-
                         ="
-                        <img src="& First(Invoicedata).QR.Value & ">""
+                        <img src="&First(Invoicedata).QR.Full & ">""
                          <p ><center style=""font-size:27px""><b>Bisleri International Pvt.Ltd.</b></center> </p>
                         <p style=""font-size:27px"">Western Express Highway,Andheri<E>, Mumbai- 400099 Tel No. +(91)-22-61447000, Fax: +(91)-22-61447145</p>
                         
@@ -535,7 +535,7 @@
 
                 Image1 As image:
                     Height: =150
-                    Image: =First(Invoicedata).QR.Full
+                    Image: =First(Invoicedata2).QR.Value
                     Width: =157
                     X: =226
                     ZIndex: =2
