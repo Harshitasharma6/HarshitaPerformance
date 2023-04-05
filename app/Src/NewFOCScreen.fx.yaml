@@ -819,7 +819,7 @@
                                         }
                                     );
                                 );
-                               
+                                
                 //Testingggggg__________________________________________________________________________________________________
                 Patch(
                                     SequenceTestingVariable,
@@ -999,10 +999,11 @@
                             'Net Amount': 0,
                             'Total Amount': 0,
                             'Total Tax Amount': 0,
-                            'Total Discount Amount': 0
+                            'Total Discount Amount': 0,
+                            'Payment Status': 'Payment Status Choice'.Completed
                         }
                     );
-                   
+                    
                 );
                 /*---Create FOC Order Line----------------*/
                 If(
@@ -1073,7 +1074,7 @@
                             )*/
                         )
                     );
-                   
+                    
                 );
                       //////////////////////create invoice 18-03-2023 ///////////////////////////
                 If(
@@ -1152,7 +1153,6 @@
                         )
                     );
                     
-                   
                 );
                 If(
                     !IsBlank(CreateInvHeaderFOC),
