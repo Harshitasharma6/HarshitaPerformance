@@ -1802,14 +1802,7 @@
         "X",
         "Y",
         "Width",
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "",
-          "InvariantPropertyName": "Height",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        },
+        "Height",
         "DisplayMode",
         "LayoutMode",
         "LayoutDirection",
@@ -3451,7 +3444,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "HtmlText2_1",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

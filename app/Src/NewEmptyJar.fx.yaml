@@ -271,7 +271,8 @@ NewEmptyJar As screen:
                                     Qty
                                 ) * 150,
                                 Customer: cmbNewEmptyJarSelectCustomer.Selected,
-                                'Total Quantity': Value(Label10_13.Text)
+                                'Total Quantity': Value(Label10_13.Text),
+                                'Payment Status':'Payment Status Choice'.Completed
                             }
                         )
                     );
