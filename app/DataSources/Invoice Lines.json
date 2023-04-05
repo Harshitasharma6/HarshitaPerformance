@@ -53,7 +53,7 @@
       "zx_invoicelines_PrincipalObjectAttributeAccesses": "Field Sharing",
       "zx_invoicelines_ProcessSession": "Process Sessions",
       "zx_invoicelines_SyncErrors": "Sync Errors",
-      "zx_invoicelinesid": "Invoice Lines",
+      "zx_invoicelinesid": "Invoice Lines (zx_invoicelinesid)",
       "zx_InvoiceNumber": "Invoice Number",
       "zx_itemdescription": "Item Description",
       "zx_itemtype": "Item Type",
@@ -65,6 +65,7 @@
       "zx_netamountwithoutejar_base": "Net Amount (Without E Jar) (Base)",
       "zx_OrderNumber": "Order Number",
       "zx_ordertype": "Order Type",
+      "zx_ParentInvoiceLine": "Parent Invoice Line",
       "zx_pcs": "PCs",
       "zx_pcsunitprice": "Pcs Unit Price",
       "zx_pcsunitprice_base": " Pcs Unit Price (Base)",
@@ -96,7 +97,8 @@
       "zx_totalquantity_base": "Total Quantity (Base)",
       "zx_uom": "UOM",
       "zx_uomcodename": "UOM code Name",
-      "zx_VanNo": "Van No"
+      "zx_VanNo": "Van No",
+      "zx_zx_invoicelines_ParentInvoiceLine_zx_invo": "Invoice Lines (zx_zx_invoicelines_ParentInvoiceLine_zx_invo)"
     },
     "PreferredName": "Invoice Lines",
     "Type": "NativeCDSDataSourceInfo"
