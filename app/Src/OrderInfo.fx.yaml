@@ -446,17 +446,19 @@
                 ZIndex: =11
 
             Container10_1 As groupContainer.manualLayoutContainer:
-                Height: =0
+                Height: =500
                 Width: =640
                 Y: =1741
                 ZIndex: =12
 
                 HtmlText2_1 As htmlViewer:
                     AutoHeight: =true
-                    Height: =388
+                    Height: =68
                     HtmlText: |-
-                        ="
-                        <img src="&First(Invoicedata).QR.Full & ">""
+                        =
+                        
+                        
+                        "
                          <p ><center style=""font-size:27px""><b>Bisleri International Pvt.Ltd.</b></center> </p>
                         <p style=""font-size:27px"">Western Express Highway,Andheri<E>, Mumbai- 400099 Tel No. +(91)-22-61447000, Fax: +(91)-22-61447145</p>
                         
@@ -530,14 +532,14 @@
                         "
                     Width: =560
                     X: =40
-                    Y: =112
+                    Y: =432
                     ZIndex: =1
 
                 Image1 As image:
-                    Height: =150
+                    Height: =450
                     Image: =First(Invoicedata2).QR.Value
-                    Width: =157
-                    X: =226
+                    Width: =450
+                    X: =58
                     ZIndex: =2
 
     Header_5 As Header:
