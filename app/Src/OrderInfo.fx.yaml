@@ -490,13 +490,13 @@
                         ) & "</tbody></table>""
                         </font>
                         <p></p>
-                        <p style=""line-height:2px;font-size:27px"">Total Price of Goods (INR) :" & First(Invoicedata2).'Net Amount' & " </p>
+                        <p style=""line-height:2px;font-size:27px"">Total Price of Goods (INR) :" & First(Invoicedata2).'Total Amount (Base)' & " </p>
                         <p style=""line-height:2px;font-size:27px"">CGST @9% </p>
                         <p style=""line-height:2px;font-size:27px"">SGST @9% </p>
                         <p style=""line-height:2px;font-size:27px"">Deposit (INR) </p>
                         <p style=""line-height:2px;font-size:27px"">Rounding Off </p>
                         <p></p>
-                        <p style=""font-size:27px"">Total (INR)" & First(Invoicedata2).'Total Amount (Base)' & " </p>
+                        <p style=""font-size:27px"">Total (INR)" & First(Invoicedata2).'Net Amount' & " </p>
                         <p></p>
                         <p style=""line-height:2px;font-size:27px"">Invoice Amount (In Words):</p>
                         <p></p>
