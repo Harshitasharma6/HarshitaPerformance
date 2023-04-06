@@ -6,7 +6,6 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "zx_beatplan",
-    "MaxGetRowsCount": 2000,
     "Name": "Beat Plans",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",
