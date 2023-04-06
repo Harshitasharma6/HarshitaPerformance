@@ -43,6 +43,13 @@
       }
     },
     {
+      "Kind": "default.cds_zx_beatplan_forms",
+      "Namespace": "Beat Plans (Forms)",
+      "Values": {
+        "Information": "cd5136b5-9f71-4367-a933-c4a89fe19358"
+      }
+    },
+    {
       "Kind": "default.cds_new_branchmaster_forms",
       "Namespace": "Branch Masters (Forms)",
       "Values": {
@@ -106,10 +113,10 @@
       }
     },
     {
-      "Kind": "default.cds_zx_beatplan_forms",
-      "Namespace": "Beat Plans (Forms)",
+      "Kind": "default.cds_zx_customer_forms",
+      "Namespace": "Customers (Forms)",
       "Values": {
-        "Information": "cd5136b5-9f71-4367-a933-c4a89fe19358"
+        "Information": "956ec530-bfa3-45ab-bddc-ea1e63b31cbb"
       }
     },
     {
@@ -393,13 +400,6 @@
       "Namespace": "Warehouses (Forms)",
       "Values": {
         "Information": "b72f83a5-92e6-4cf7-b95b-db6a6395a851"
-      }
-    },
-    {
-      "Kind": "default.cds_zx_customer_forms",
-      "Namespace": "Customers (Forms)",
-      "Values": {
-        "Information": "956ec530-bfa3-45ab-bddc-ea1e63b31cbb"
       }
     },
     {
