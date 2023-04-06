@@ -541,43 +541,72 @@
 
             btnPaymentConfirm_9 As button:
                 DisplayMode: |-
-                    =//If(IsBlank(lblPaymentInvoiceNoValue_2.Text), DisplayMode.Disabled, DisplayMode.Edit)
-                    DisplayMode.Edit
+                    =If(
+                        (!IsBlank(
+                            LookUp(
+                                AllCustomerss,
+                                Account = oh.Customer.Account
+                            ).GSTIN
+                        ) && (((LookUp(
+                            AllCustomerss,
+                            Account = oh.Customer.Account
+                        ).'Customer Group'.Name <> "KEY-RT") && LookUp(
+                            AllCustomerss,
+                            Account = oh.Customer.Account
+                        ).Branch.Name = "PUNE") || ((LookUp(
+                            AllCustomerss,
+                            Account = oh.Customer.Account
+                        ).'Customer Group'.Name <> "COR-RT") && LookUp(
+                            AllCustomerss,
+                            Account = oh.Customer.Account
+                        ).Branch.Name = "Mumbai"))) && LookUp(
+                            'Invoice Headers',
+                            'Order Number'.'Order Number' = oh.'Order Number'
+                        ).'IRN Message' = "N",
+                        DisplayMode.Edit,
+                        DisplayMode.Disabled
+                    )
                 Fill: =_VarGblAppColors.BisleriBlue
                 FocusedBorderThickness: =2
                 Height: =38
                 HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
                 OnSelect: |
-                    =Clear(ManipulatedCartCollection);
+                    =//Clear(ManipulatedCartCollection);
                     If(
-                        CountRows(CreateOrderRecord) > 0 /*&& CountRows(CreateItemsRecord) > 0 */
-                    && !IsBlank(
-                            LookUp(
+                            !IsBlank(
+                                LookUp(
+                                    AllCustomerss,
+                                    Account = oh.Customer.Account
+                                ).GSTIN
+                            ) && (((LookUp(
                                 AllCustomerss,
                                 Account = oh.Customer.Account
-                            ).GSTIN
-                        ) && ((!(LookUp(
-                            AllCustomerss,
-                            Account = oh.Customer.Account
-                        ).'Customer Group'.Code = "KEY-RT") && LookUp(
-                            AllCustomerss,
-                            Account = oh.Customer.Account
-                        ).Branch.Name = "PUNE") || (!(LookUp(
-                            AllCustomerss,
-                            Account = oh.Customer.Account
-                        ).'Customer Group'.Code = "COR-RT") && LookUp(
-                            AllCustomerss,
-                            Account = oh.Customer.Account
-                        ).Branch.Name = "Mumbai")),
-                        Set(
-                            testButton,
-                            'PowerApp->RespondtoaPowerApporflow'.Run(CreateInvHeaderdata.'Invoice Header');
-                        );
+                            ).'Customer Group'.Name <> "KEY-RT") && LookUp(
+                                AllCustomerss,
+                                Account = oh.Customer.Account
+                            ).Branch.Name = "PUNE") || ((LookUp(
+                                AllCustomerss,
+                                Account = oh.Customer.Account
+                            ).'Customer Group'.Name <> "COR-RT") && LookUp(
+                                AllCustomerss,
+                                Account = oh.Customer.Account
+                            ).Branch.Name = "Mumbai")
+                            ),
+                            Set(
+                                testButton,
+                                'PowerApp->RespondtoaPowerApporflow'.Run(LookUp(
+                            'Invoice Headers',
+                            'Order Number'.'Order Number' = oh.'Order Number'
+                        ).'Invoice Header');
+                            );
                             /*Patch(
                                 'Invoice Headers',
                                 LookUp(
                                     'Invoice Headers',
-                                    'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
+                                    'Invoice Number' = LookUp(
+                            'Invoice Headers',
+                            'Order Number'.'Order Number' = oh.'Order Number'
+                        ).'Invoice Number'
                                 ),
                                     {
                                         'Signed QR Code': Text(testButton.qr),
@@ -586,66 +615,78 @@
                                     }
                             );*/
                     Set(
-                            varConfirmationIRN,
-                            "signedQRGenerated"
-                        );
-                        Notify(
-                            NotificationType.Success,
-                            2000
-                        );
-                        If(
-                            !IsBlank(testButton),
+                                varConfirmationIRN,
+                                "signedQRGenerated"
+                            );
+                            /*Notify(
+                                NotificationType.Success,
+                                2000
+                            );*/
+                    If(
+                                !IsBlank(testButton),
+                                Patch(
+                                    'Invoice Headers',
+                                    LookUp(
+                                        'Invoice Headers',
+                                        'Invoice Number' = LookUp(
+                            'Invoice Headers',
+                            'Order Number'.'Order Number' = oh.'Order Number'
+                        ).'Invoice Number'
+                                    ),
+                                    {
+                                        'Signed QR Code': Text(testButton.qr),
+                                        'IRN Number': Text(testButton.qrno),
+                                        'IRN Message': Text(testButton.status)
+                                    }
+                                )
+                            );
+                            ,
+                            IsBlank(
+                                LookUp(
+                                    AllCustomerss,
+                                    Account = oh.Customer.Account
+                                ).GSTIN
+                            ),
                             Patch(
                                 'Invoice Headers',
                                 LookUp(
                                     'Invoice Headers',
-                                    'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
+                                    'Invoice Number' = LookUp(
+                            'Invoice Headers',
+                            'Order Number'.'Order Number' = oh.'Order Number'
+                        ).'Invoice Number'
                                 ),
                                 {
-                                    'Signed QR Code': Text(testButton.qr),
-                                    'IRN Number': Text(testButton.qrno),
-                                    'IRN Message': Text(testButton.status)
-                                }
-                            )
-                        );
-                        ,
-                        Patch(
-                            'Invoice Headers',
-                            LookUp(
-                                'Invoice Headers',
-                                'Invoice Number' = CreateInvHeaderdata.'Invoice Number'
-                            ),
-                            {
-                                /*'Signed QR Code': Text(testButton.qr),
+                                    /*'Signed QR Code': Text(testButton.qr),
                                     'IRN Number': Text(testButton.qrno),
                                     'IRN Message': Text(testButton.status),*/
-                                'Local QR ': JSON(
-                                    {
-                                        gstin: "27AAFCD5862R013",
-                                        TranDtls: {
-                                            TaxSch: "GST",
-                                            SupTyp: "B2B",
-                                            RegRev: "N",
-                                            IgstOnIntra: "N"
-                                        },
-                                        DocDtls: {
-                                            Typ: "INV",
-                                            No: "RI2223C064007302",
-                                            Dt: "24/12/2022"
-                                        },
-                                        SellerDtls: {
-                                            Gstin: "27AAFCD5862R013",
-                                            LglNm: "MH04GR6972",
-                                            TrdNm: "MH04GR6972",
-                                            Addr1: "JUPITOR HOSPITAL",
-                                            Addr2: "THANE",
-                                            Loc: "V433",
-                                            Pin: 400407,
-                                            Stcd: "27",
-                                            Ph: "982565858",
-                                            Em: "Test123@gmail.com"
-                                        },
-                                        /*    
+                                    'Local QR ': JSON(
+                                        {
+                                            gstin: "27AAFCD5862R013",
+                                            TranDtls: {
+                                                TaxSch: "GST",
+                                                SupTyp: "B2B",
+                                                RegRev: "N",
+                                                IgstOnIntra: "N"
+                                            },
+                                            DocDtls: {
+                                                Typ: "INV",
+                                                No: "RI2223C064007302",
+                                                Dt: "24/12/2022"
+                                            },
+                                            SellerDtls: {
+                                                Gstin: "27AAFCD5862R013",
+                                                LglNm: "MH04GR6972",
+                                                TrdNm: "MH04GR6972",
+                                                Addr1: "JUPITOR HOSPITAL",
+                                                Addr2: "THANE",
+                                                Loc: "V433",
+                                                Pin: 400407,
+                                                Stcd: "27",
+                                                Ph: "982565858",
+                                                Em: "Test123@gmail.com"
+                                            },
+                                            /*    
                                     BuyerDtls: {
                                         Gstin: "27AABCJ1982E1ZN",
                                         LglNm: "FORTUNE PARK LAKE CITY",
@@ -660,50 +701,50 @@
                                         Em: "Test123@gmail.com"
                                     },
                             */
-                                        BuyerDtls: {
-                                            LglNm: oh.Customer.'Customer Name',
-                                            TrdNm: "",
-                                            Addr1: LookUp(
-                                                AllCustomerss,
-                                                Account = oh.Customer.Account
-                                            ).'Address 1: Street 1',
-                                            Addr2: LookUp(
-                                                AllCustomerss,
-                                                Account = oh.Customer.Account
-                                            ).'Address 1: Street 2',
-                                            Loc: LookUp(
-                                                AllCustomerss,
-                                                Account = oh.Customer.Account
-                                            ).'Address 1: City',
-                                            Pin: LookUp(
-                                                AllCustomerss,
-                                                Account = oh.Customer.Account
-                                            ).'Address 1: ZIP/Postal Code',
-                                            Stcd: Left(
-                                                LookUp(
+                                            BuyerDtls: {
+                                                LglNm: oh.Customer.'Customer Name',
+                                                TrdNm: "",
+                                                Addr1: LookUp(
                                                     AllCustomerss,
                                                     Account = oh.Customer.Account
-                                                ).GSTIN,
-                                                2
-                                            ),
-                                            Ph: LookUp(
-                                                AllCustomerss,
-                                                Account = oh.Customer.Account
-                                            ).'Mobile No',
-                                            Em: LookUp(
-                                                AllCustomerss,
-                                                Account = oh.Customer.Account
-                                            ).Email
-                                        },
-                                        DispDtls: {
-                                            Nm: "MH04GR6972",
-                                            Addr1: "JUPITOR HOSPITAL",
-                                            Addr2: "THANE",
-                                            Loc: "V433",
-                                            Pin: 400407,
-                                            Stcd: "27"
-                                        },
-                                        /*
+                                                ).'Address 1: Street 1',
+                                                Addr2: LookUp(
+                                                    AllCustomerss,
+                                                    Account = oh.Customer.Account
+                                                ).'Address 1: Street 2',
+                                                Loc: LookUp(
+                                                    AllCustomerss,
+                                                    Account = oh.Customer.Account
+                                                ).'Address 1: City',
+                                                Pin: LookUp(
+                                                    AllCustomerss,
+                                                    Account = oh.Customer.Account
+                                                ).'Address 1: ZIP/Postal Code',
+                                                Stcd: Left(
+                                                    LookUp(
+                                                        AllCustomerss,
+                                                        Account = oh.Customer.Account
+                                                    ).GSTIN,
+                                                    2
+                                                ),
+                                                Ph: LookUp(
+                                                    AllCustomerss,
+                                                    Account = oh.Customer.Account
+                                                ).'Mobile No',
+                                                Em: LookUp(
+                                                    AllCustomerss,
+                                                    Account = oh.Customer.Account
+                                                ).Email
+                                            },
+                                            DispDtls: {
+                                                Nm: "MH04GR6972",
+                                                Addr1: "JUPITOR HOSPITAL",
+                                                Addr2: "THANE",
+                                                Loc: "V433",
+                                                Pin: 400407,
+                                                Stcd: "27"
+                                            },
+                                            /*
                                     ShipDtls: {
                                         Gstin: "27AABCJ1982E1ZN",
                                         LglNm: "FORTUNE PARK LAKE CITY",
@@ -715,61 +756,64 @@
                                         Stcd: "27"
                                     },
                             */
-                                        ShipDtls: {
-                                            Gstin: LookUp(
-                                                AllCustomerss,
-                                                Account = oh.Customer.Account
-                                            ).GSTIN,
-                                            LglNm: oh.Customer.'Customer Name',
-                                            TrdNm: "",
-                                            Addr1: LookUp(
-                                                AllCustomerss,
-                                                Account = oh.Customer.Account
-                                            ).'Address 1: Street 1',
-                                            Addr2: LookUp(
-                                                AllCustomerss,
-                                                Account = oh.Customer.Account
-                                            ).'Address 1: Street 2',
-                                            Loc: LookUp(
-                                                AllCustomerss,
-                                                Account = oh.Customer.Account
-                                            ).'Address 1: City',
-                                            Pin: LookUp(
-                                                AllCustomerss,
-                                                Account = oh.Customer.Account
-                                            ).'Address 1: ZIP/Postal Code',
-                                            Stcd: Left(
-                                                LookUp(
+                                            ShipDtls: {
+                                                Gstin: LookUp(
                                                     AllCustomerss,
                                                     Account = oh.Customer.Account
                                                 ).GSTIN,
-                                                2
-                                            )
-                                        },
-                                        ItemList: ManipulatedCartCollection
+                                                LglNm: oh.Customer.'Customer Name',
+                                                TrdNm: "",
+                                                Addr1: LookUp(
+                                                    AllCustomerss,
+                                                    Account = oh.Customer.Account
+                                                ).'Address 1: Street 1',
+                                                Addr2: LookUp(
+                                                    AllCustomerss,
+                                                    Account = oh.Customer.Account
+                                                ).'Address 1: Street 2',
+                                                Loc: LookUp(
+                                                    AllCustomerss,
+                                                    Account = oh.Customer.Account
+                                                ).'Address 1: City',
+                                                Pin: LookUp(
+                                                    AllCustomerss,
+                                                    Account = oh.Customer.Account
+                                                ).'Address 1: ZIP/Postal Code',
+                                                Stcd: Left(
+                                                    LookUp(
+                                                        AllCustomerss,
+                                                        Account = oh.Customer.Account
+                                                    ).GSTIN,
+                                                    2
+                                                )
+                                            },
+                                            ItemList: ManipulatedCartCollection
                                 //  ItemList: First(ProductList)
-                                    }
-                                )
-                            }
+                                        }
+                                    )
+                                }
+                            );
+                            Set(
+                                varConfirmationIRN,
+                                "localQRGenerated"
+                            );
+                            Notify(
+                                "QR has been generated sucessfully",
+                                NotificationType.Success,
+                                2000
+                            );
+                            ,
+                            Notify(
+                                "IRN Genetared Successfully",
+                                NotificationType.Success,
+                                2000
+                            );
                         );
-                        Set(
-                            varConfirmationIRN,
-                            "localQRGenerated"
-                        );
-                        /*Notify(
-                            "QR has been generated sucessfully",
-                            NotificationType.Success,
-                            2000
-                        );*/
-                    );
                     If(
                         !IsBlank(varConfirmationIRN),
                         If(
                             IsBlank(Text(testButton.qr)) && First(CreateInvHeader).'IRN Message' = "N",
-                            Set(
-                                varIRN,
-                                true
-                            );
+                            
                             Notify(
                                 "QR Code generated successfully.",
                                 NotificationType.Success,
@@ -778,10 +822,7 @@
                             ,
                             If(
                                 Not(First(CreateInvHeader).'IRN Message' = "N"),
-                                Set(
-                                    varIRN,
-                                    true
-                                );
+                                
                                 Notify(
                                     "IRN has been generated successfully.",
                                     NotificationType.Success,
