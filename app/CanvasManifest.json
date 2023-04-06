@@ -104,11 +104,11 @@
     "FileID": "39cc0832-0209-409a-aabb-75e3b372b828",
     "Id": "06f8bc97-b406-4f0e-b6ac-77a4055006f4",
     "InstrumentationKey": "",
-    "Name": "Van v2",
+    "Name": "VanSales App",
     "OriginatingVersion": "1.326"
   },
   "PublishInfo": {
-    "AppName": "Van v2",
+    "AppName": "VanSales App",
     "BackgroundColor": "rgba(255, 255, 255, 1)",
     "IconColor": "RGBA(255,255,255,1)",
     "IconName": "",

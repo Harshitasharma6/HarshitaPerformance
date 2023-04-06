@@ -455,10 +455,7 @@
                     AutoHeight: =true
                     Height: =68
                     HtmlText: |-
-                        =
-                        
-                        
-                        "
+                        ="
                          <p ><center style=""font-size:27px""><b>Bisleri International Pvt.Ltd.</b></center> </p>
                         <p style=""font-size:27px"">Western Express Highway,Andheri<E>, Mumbai- 400099 Tel No. +(91)-22-61447000, Fax: +(91)-22-61447145</p>
                         
@@ -483,10 +480,10 @@
                         <p style=""line-height:2px;font-size:27px"">Reverse Charge: No" & " </p>
                         <p style=""line-height:2px;font-size:27px"">IRN No.:" & First(Invoicedata2).'IRN Number' & "  </p>
                         <p></p>
-                        <font size=""4"" face=""Courier New"" >
-                        <table  width='60%'>" & "<thead><tr><th>HSN No</th><th>Cases</th><th>Pcs</th><th>Rate</th><th>Amt</th></thead>" & "<tbody>" & Concat(
+                        <font size=""4"" style=""text-align:left;"" >
+                        <table  width='80%'>" & "<thead><tr><th>HSN No</th><th>Cases</th><th>Pcs</th><th>Rate</th><th>Amt</th></thead>" & "<tbody>" & Concat(
                             Invoicelinedata2 As item,
-                            "<tr><td>" & item.'Item HSN Code' & "</td><td>" & item.Cases & "</td><td>" & item.PCs & "</td><td>" & item.'Base Amount' & "</td><td>" & item.Rate & "</td></tr>" & "<tr><td>" & item.'Item SKU'.'Item Description ' & "</td></tr><tr><td>Batch:" & item.'Batch No' & "</td><td>Mfg Dt." & Text(
+                            "<tr><td>" & item.'Item HSN Code' & "</td><td>" & item.Cases & "</td><td>" & item.PCs & "</td><td>" & item.'Base Amount' & "</td><td>" & item.Rate & "</td></tr>" & "<tr><td>" & item.'Item SKU'.'Item Description ' & "</td></tr><tr><td>Batch:" & item.'Batch No'&"</td><td>Mfg Dt."&Text(
                                 item.'Manufacturing Date',
                                 DateTimeFormat.ShortDate
                             ) & "</td></tr>"
