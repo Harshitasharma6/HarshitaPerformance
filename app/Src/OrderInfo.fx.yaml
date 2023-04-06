@@ -39,6 +39,8 @@
             OrderHeader As gallery.variableTemplateHeightGallery:
                 AccessibleLabel: ="OrderHeader"
                 DelayItemLoading: =true
+                FocusedBorderColor: =Color.Transparent
+                FocusedBorderThickness: =0.5
                 Height: =1262
                 Items: |-
                     =Table(
@@ -144,6 +146,8 @@
                 AccessibleLabel: ="OrderLine"
                 DelayItemLoading: =true
                 Fill: =_VarGblAppColors.LightText
+                FocusedBorderColor: =Color.Transparent
+                FocusedBorderThickness: =0.5
                 Height: =824
                 Items: =Filter('Order Lines','Order Number'.'Order Id'=oh.'Order Id')
                 Layout: =Layout.Vertical

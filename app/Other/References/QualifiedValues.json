@@ -43,6 +43,13 @@
       }
     },
     {
+      "Kind": "default.cds_zx_beatplan_forms",
+      "Namespace": "Beat Plans (Forms)",
+      "Values": {
+        "Information": "cd5136b5-9f71-4367-a933-c4a89fe19358"
+      }
+    },
+    {
       "Kind": "default.cds_new_branchmaster_forms",
       "Namespace": "Branch Masters (Forms)",
       "Values": {
@@ -103,13 +110,6 @@
       "Namespace": "Customer sub-categories (Forms)",
       "Values": {
         "Information": "b84bacd3-fa47-4583-bc6c-d7c103196f9f"
-      }
-    },
-    {
-      "Kind": "default.cds_zx_beatplan_forms",
-      "Namespace": "Beat Plans (Forms)",
-      "Values": {
-        "Information": "cd5136b5-9f71-4367-a933-c4a89fe19358"
       }
     },
     {
