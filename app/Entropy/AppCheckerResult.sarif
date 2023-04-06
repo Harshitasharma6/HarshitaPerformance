@@ -654,441 +654,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 12,
-                  "charOffset": 23,
-                  "snippet": {
-                    "text": "'Beat Plans'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "MyBeatPlanScreen",
-                "type": "MyBeatPlanScreen.galCustomerList_3"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Beat Plans"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 62,
-                  "charOffset": 16,
-                  "snippet": {
-                    "text": "Filter('Beat Plans', Date=galVisitDateFilter_2.Selected.Value)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "MyBeatPlanScreen",
-                "type": "MyBeatPlanScreen.galCustomerList_3"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 4,
-                  "charOffset": 37,
-                  "snippet": {
-                    "text": "Date"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "MyBeatPlanScreen",
-                "type": "MyBeatPlanScreen.galCustomerList_3"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Date"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 41,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "MyBeatPlanScreen",
-                "type": "MyBeatPlanScreen.galCustomerList_3"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Error",
-              "Date"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.lblGalCustomerName_3.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.lblGalCustomerName_3.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 5,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".Name"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "MyBeatPlanScreen",
-                "type": "MyBeatPlanScreen.galCustomerList_3.lblGalCustomerName_3"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Name"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.icoGalCustomerWaypoint_3.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.icoGalCustomerWaypoint_3.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 12,
-                  "charOffset": 53,
-                  "snippet": {
-                    "text": ".'Beat name'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "MyBeatPlanScreen",
-                "type": "MyBeatPlanScreen.galCustomerList_3.icoGalCustomerWaypoint_3"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Beat name"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.icoGalCustomerWaypoint_3.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.icoGalCustomerWaypoint_3.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 12,
-                  "charOffset": 65,
-                  "snippet": {
-                    "text": ".'Beat name'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "MyBeatPlanScreen",
-                "type": "MyBeatPlanScreen.galCustomerList_3.icoGalCustomerWaypoint_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.lblGalCustomerAddress_11.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.lblGalCustomerAddress_11.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 12,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".'Beat name'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "MyBeatPlanScreen",
-                "type": "MyBeatPlanScreen.galCustomerList_3.lblGalCustomerAddress_11"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Beat name"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.lblGalCustomerAddress_11.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.lblGalCustomerAddress_11.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 12,
-                  "charOffset": 20,
-                  "snippet": {
-                    "text": ".'Beat name'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "MyBeatPlanScreen",
-                "type": "MyBeatPlanScreen.galCustomerList_3.lblGalCustomerAddress_11"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.lblGalCustomerAddress_13.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.lblGalCustomerAddress_13.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 5,
-                  "charOffset": 23,
-                  "snippet": {
-                    "text": ".Date"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "MyBeatPlanScreen",
-                "type": "MyBeatPlanScreen.galCustomerList_3.lblGalCustomerAddress_13"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Date"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.lblGalCustomerAddress_14.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "MyBeatPlanScreen.galCustomerList_3.lblGalCustomerAddress_14.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 5,
-                  "charOffset": 32,
-                  "snippet": {
-                    "text": ".Date"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "MyBeatPlanScreen",
-                "type": "MyBeatPlanScreen.galCustomerList_3.lblGalCustomerAddress_14"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Date"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "NewFOCScreen.contFOCFinalConfirmation.btnFOCFinalConfirmationYes.OnSelect"
                 }
               ],
@@ -4162,7 +3727,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -4242,7 +3807,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -4322,7 +3887,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -4402,7 +3967,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -4482,7 +4047,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -4562,7 +4127,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -4642,7 +4207,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -4722,7 +4287,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -4802,7 +4367,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -4882,7 +4447,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -4962,7 +4527,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -5042,7 +4607,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -5122,7 +4687,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -5202,7 +4767,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -5282,7 +4847,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -5362,7 +4927,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -5442,7 +5007,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -5522,7 +5087,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -5602,7 +5167,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -5682,7 +5247,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -5762,7 +5327,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -5842,7 +5407,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -5922,7 +5487,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -6002,7 +5567,7 @@
             "level": "Medium"
           },
           "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
-          "ruleIndex": 6
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -6083,839 +5648,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 12,
-                  "charOffset": 19,
-                  "snippet": {
-                    "text": "'Beat Plans'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "BeatPlanScreen",
-                "type": "BeatPlanScreen.galCustomerList_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Beat Plans"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 12,
-                  "charOffset": 45,
-                  "snippet": {
-                    "text": "'Beat Plans'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "BeatPlanScreen",
-                "type": "BeatPlanScreen.galCustomerList_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Beat Plans"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 66,
-                  "charOffset": 38,
-                  "snippet": {
-                    "text": "Filter('Beat Plans', 'Beat name'.'Beat name'=PlanData.'Beat name')"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "BeatPlanScreen",
-                "type": "BeatPlanScreen.galCustomerList_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
           "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 11,
-                  "charOffset": 59,
-                  "snippet": {
-                    "text": "'Beat name'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "BeatPlanScreen",
-                "type": "BeatPlanScreen.galCustomerList_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Beat name"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 12,
-                  "charOffset": 70,
-                  "snippet": {
-                    "text": ".'Beat name'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "BeatPlanScreen",
-                "type": "BeatPlanScreen.galCustomerList_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 82,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "BeatPlanScreen",
-                "type": "BeatPlanScreen.galCustomerList_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Error",
-              "Text"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 4,
-                  "charOffset": 106,
-                  "snippet": {
-                    "text": "Date"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "BeatPlanScreen",
-                "type": "BeatPlanScreen.galCustomerList_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Date"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 78,
-                  "charOffset": 33,
-                  "snippet": {
-                    "text": "Sort(Filter('Beat Plans', 'Beat name'.'Beat name'=PlanData.'Beat name'), Date)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "BeatPlanScreen",
-                "type": "BeatPlanScreen.galCustomerList_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Sort"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 112,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "If(showAllBeatPlan,'Beat Plans', Sort(Filter('Beat Plans', 'Beat name'.'Beat name'=PlanData.'Beat name'), Date))"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "BeatPlanScreen",
-                "type": "BeatPlanScreen.galCustomerList_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "If"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.lblGalCustomerName_2.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.lblGalCustomerName_2.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 5,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".Name"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "BeatPlanScreen",
-                "type": "BeatPlanScreen.galCustomerList_2.lblGalCustomerName_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Name"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.icoGalCustomerWaypoint_2.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.icoGalCustomerWaypoint_2.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 12,
-                  "charOffset": 53,
-                  "snippet": {
-                    "text": ".'Beat name'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "BeatPlanScreen",
-                "type": "BeatPlanScreen.galCustomerList_2.icoGalCustomerWaypoint_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Beat name"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.icoGalCustomerWaypoint_2.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.icoGalCustomerWaypoint_2.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 12,
-                  "charOffset": 65,
-                  "snippet": {
-                    "text": ".'Beat name'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "BeatPlanScreen",
-                "type": "BeatPlanScreen.galCustomerList_2.icoGalCustomerWaypoint_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.lblGalCustomerAddress_6.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.lblGalCustomerAddress_6.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 12,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".'Beat name'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "BeatPlanScreen",
-                "type": "BeatPlanScreen.galCustomerList_2.lblGalCustomerAddress_6"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Beat name"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.lblGalCustomerAddress_6.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.lblGalCustomerAddress_6.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 12,
-                  "charOffset": 20,
-                  "snippet": {
-                    "text": ".'Beat name'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "BeatPlanScreen",
-                "type": "BeatPlanScreen.galCustomerList_2.lblGalCustomerAddress_6"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.lblGalCustomerAddress_8.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.lblGalCustomerAddress_8.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 5,
-                  "charOffset": 23,
-                  "snippet": {
-                    "text": ".Date"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "BeatPlanScreen",
-                "type": "BeatPlanScreen.galCustomerList_2.lblGalCustomerAddress_8"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Date"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.lblGalCustomerAddress_9.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatPlanScreen.galCustomerList_2.lblGalCustomerAddress_9.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 5,
-                  "charOffset": 32,
-                  "snippet": {
-                    "text": ".Date"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "BeatPlanScreen",
-                "type": "BeatPlanScreen.galCustomerList_2.lblGalCustomerAddress_9"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Date"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatScreen.galCustomerList_1.Button10.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatScreen.galCustomerList_1.Button10.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 12,
-                  "charOffset": 6,
-                  "snippet": {
-                    "text": "'Beat Plans'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "BeatScreen",
-                "type": "BeatScreen.galCustomerList_1.Button10"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Beat Plans"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatScreen.galCustomerList_1.Button10.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatScreen.galCustomerList_1.Button10.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 12,
-                  "charOffset": 29,
-                  "snippet": {
-                    "text": "'Beat Plans'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "BeatScreen",
-                "type": "BeatScreen.galCustomerList_1.Button10"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Beat Plans"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatScreen.galCustomerList_1.Button10.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatScreen.galCustomerList_1.Button10.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 22,
-                  "charOffset": 20,
-                  "snippet": {
-                    "text": "Defaults('Beat Plans')"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "BeatScreen",
-                "type": "BeatScreen.galCustomerList_1.Button10"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Defaults"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatScreen.galCustomerList_1.Button10.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatScreen.galCustomerList_1.Button10.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 109,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "Patch('Beat Plans', Defaults('Beat Plans'), {'Beat name':ThisItem, Date:galVisitDateFilter_1.Selected.Value})"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "BeatScreen",
-                "type": "BeatScreen.galCustomerList_1.Button10"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Patch"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BeatScreen.galCustomerList_1.Button10.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BeatScreen.galCustomerList_1.Button10.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 64,
-                  "charOffset": 44,
-                  "snippet": {
-                    "text": "{'Beat name':ThisItem, Date:galVisitDateFilter_1.Selected.Value}"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "BeatScreen",
-                "type": "BeatScreen.galCustomerList_1.Button10"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Beat name"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrColDNE-Name",
-          "ruleIndex": 7
         },
         {
           "locations": [
@@ -6945,7 +5678,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 8
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -6975,7 +5708,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 8
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -7005,7 +5738,7 @@
             "level": "Medium"
           },
           "ruleId": "app-CollectDelegatableDataSource",
-          "ruleIndex": 9
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -7034,7 +5767,7 @@
             "level": "Medium"
           },
           "ruleId": "app-DataSourceDefaultMaxRowsLimit",
-          "ruleIndex": 10
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -7063,7 +5796,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 11
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -7092,7 +5825,7 @@
             "level": "Medium"
           },
           "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 11
+          "ruleIndex": 7
         }
       ],
       "tool": {
@@ -7140,69 +5873,6 @@
               }
             },
             {
-              "id": "app-ErrInvalidName",
-              "messageStrings": {
-                "issue": {
-                  "text": "Name isn't valid. '{0}' isn't recognized."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "Remove or correct the reference to the name that isn't valid."
-                ],
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrInvalidArgs-Func",
-              "messageStrings": {
-                "issue": {
-                  "text": "The function '{0}' has some invalid arguments."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrIncompatibleTypesForEquality-Left-Right",
-              "messageStrings": {
-                "issue": {
-                  "text": "Incompatible types for comparison. These types can't be compared: {0}, {1}."
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "You might need to convert the value to be the same type, such as converting a date string (e.g., \"12/31/2018\") to a date value.",
-                  "If you’re comparing records or tables, the field or column types must match exactly."
-                ],
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrInvalidDot",
-              "messageStrings": {
-                "issue": {
-                  "text": "Invalid use of '.'"
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
               "id": "app-SuggestRemoteExecutionHint-OpNotSupportedByColumn",
               "messageStrings": {
                 "issue": {
@@ -7222,15 +5892,19 @@
               }
             },
             {
-              "id": "app-ErrColDNE-Name",
+              "id": "app-ErrIncompatibleTypesForEquality-Left-Right",
               "messageStrings": {
                 "issue": {
-                  "text": "The specified column '{0}' does not exist."
+                  "text": "Incompatible types for comparison. These types can't be compared: {0}, {1}."
                 }
               },
               "properties": {
                 "componentType": "app",
-                "level": "High",
+                "howToFix": [
+                  "You might need to convert the value to be the same type, such as converting a date string (e.g., \"12/31/2018\") to a date value.",
+                  "If you’re comparing records or tables, the field or column types must match exactly."
+                ],
+                "level": "Medium",
                 "primaryCategory": "formula",
                 "whyFix": ""
               }
