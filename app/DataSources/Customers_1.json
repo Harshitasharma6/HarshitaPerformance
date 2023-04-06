@@ -1232,5 +1232,86 @@
     "RelatedColumnInvariantName": "zx_contactpersonmobileno",
     "RelatedEntityName": "Customers_1",
     "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Customer status (Choice)",
+    "Name": "zx_customerstatus",
+    "OptionSetInfoNameMapping": {
+      "425120000": "Requested for On-Boarding",
+      "425120001": "Pushed to ERP",
+      "425120002": "Customer",
+      "425120003": "Rejected On-Boarding",
+      "425120004": "On-Boarded"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "zx_customerstatus",
+        "OptionSetReferenceEntityName": "Customers_1"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "zx_customerstatus",
+    "RelatedEntityName": "Customers_1",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Customer Type",
+    "Name": "zx_customertype",
+    "OptionSetInfoNameMapping": {
+      "425120000": "CORPORATE",
+      "425120001": "KEY",
+      "425120002": "RETAIL",
+      "425120003": "DEPO",
+      "915610001": "AGENT"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "zx_customertype",
+        "OptionSetReferenceEntityName": "Customers_1"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "zx_customertype",
+    "RelatedEntityName": "Customers_1",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Payment Type (choice)",
+    "Name": "zx_paymenttype",
+    "OptionSetInfoNameMapping": {
+      "425120000": "CASH",
+      "425120001": "COUPON",
+      "425120002": "CREDIT",
+      "425120003": "KOTAK",
+      "915610001": "PAYTM"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "zx_modeofpayment",
+        "OptionSetReferenceEntityName": "Customers_1"
+      },
+      "OptionSetReferenceItem1": {
+        "OptionSetReferenceColumnName": "zx_modeofpayment",
+        "OptionSetReferenceEntityName": "Invoice Headers"
+      },
+      "OptionSetReferenceItem2": {
+        "OptionSetReferenceColumnName": "zx_modeofpayment",
+        "OptionSetReferenceEntityName": "Order Headers"
+      },
+      "OptionSetReferenceItem3": {
+        "OptionSetReferenceColumnName": "zx_modeofpayment",
+        "OptionSetReferenceEntityName": "Payments"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "zx_modeofpayment",
+    "RelatedEntityName": "Customers_1",
+    "Type": "OptionSetInfo"
   }
 ]

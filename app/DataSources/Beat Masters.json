@@ -6,7 +6,6 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "zx_beatmaster",
-    "MaxGetRowsCount": 2000,
     "Name": "Beat Masters",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",
