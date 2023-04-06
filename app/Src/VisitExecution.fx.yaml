@@ -8947,7 +8947,7 @@
                         <font size=""4"" face=""Courier New"" >
                         <table  width='60%'>" & "<thead><tr><th>HSN No</th><th>Cases</th><th>Pcs</th><th>Rate</th><th>Amt</th></thead>" & "<tbody>" & Concat(
                             Invoicelinedata As item,
-                            "<tr><td>" & item.'Item SKU'.'SKU Code' & "</td><td>" & item.Cases & "</td><td>" & item.PCs & "</td> <td>" & item.'Base Amount' & "</td><td>" & item.Rate & "</td> </tr>" & "<tr><td>" & item.'Item SKU'.'Item Description ' & "</td></tr><tr><td>Batch:" & item.'Batch No' & "</td><td>Mfg Dt." & Text(
+                            "<tr><td>" & item.'Item HSN Code' & "</td><td>" & item.Cases & "</td><td>" & item.PCs & "</td> <td>" & item.'Base Amount' & "</td><td>" & item.Rate & "</td> </tr>" & "<tr><td>" & item.'Item SKU'.'Item Description ' & "</td></tr><tr><td>Batch:" & item.'Batch No' & "</td><td>Mfg Dt." & Text(
                                 item.'Manufacturing Date',
                                 DateTimeFormat.ShortDate
                             ) & "</td></tr>"
