@@ -500,7 +500,7 @@
                         <p style=""line-height:2px;font-size:27px"">Deposit (INR) 0.0</p>
                         <p style=""line-height:2px;font-size:27px"">Rounding Off 0.0</p>
                         <p></p>
-                        <p style=""font-size:27px"">Total (INR)" & First(Invoicedata2).'Net Amount' & " </p>
+                        <p style=""font-size:27px"">Total (INR) :" & First(Invoicedata2).'Net Amount' & " </p>
                         <p></p>
                         <p style=""line-height:2px;font-size:27px"">Invoice Amount (In Words):</p>
                         <p></p>
