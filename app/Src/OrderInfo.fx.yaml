@@ -806,12 +806,12 @@
                                 NotificationType.Success,
                                 2000
                             );
-                            ,
+                            /*,
                             Notify(
                                 "IRN Genetared Successfully",
                                 NotificationType.Success,
                                 2000
-                            );
+                            );*/
                         );
                     If(
                         !IsBlank(varConfirmationIRN),
@@ -837,7 +837,7 @@
                         If(
                             First(CreateInvHeader).'IRN Message' = "N",
                             Notify(
-                                "IRN not generated.",
+                                "IRN not generated. ",
                                 NotificationType.Warning,
                                 4000
                             );
