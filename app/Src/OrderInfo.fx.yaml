@@ -478,16 +478,16 @@
                             DateTimeFormat.ShortDate
                         ) & " Route No.: " & First(Invoicedata2).'Route No'.'Name (zx_name)' & "</p>
                         <p style=""line-height:2px;font-size:27px"">Customer Code:" & First(Invoicedata2).Customer.'Customer Code' & " </p>
-                        <p style=""line-height:2px;font-size:27px"">Name & Add of Customer:" & First(Invoicedata2).Customer.'Customer Name' & "                                        </p>
-                        <p style=""line-height:2px;font-size:27px"">State Code:" & First(Invoicedata2).Customer.'Address 1: Street 1' & "                                </p>
+                        <p style=""font-size:27px"">Name & Add of Customer:" & First(Invoicedata2).Customer.'Customer Name' & "                                        </p>
+                        <p style=""font-size:27px"">State Code:" & First(Invoicedata2).Customer.'Address 1: Street 1' & "                                </p>
                         <p style=""line-height:2px;font-size:27px"">GSTIN No.:" & First(Invoicedata2).Customer.GSTIN & "                                                          </p>
                         <p style=""line-height:2px;font-size:27px"">Reverse Charge: No" & " </p>
-                        <p style=""line-height:2px;font-size:27px"">IRN No.:" & First(Invoicedata2).'IRN Number' & "  </p>
+                        <p style=""font-size:27px"">IRN No.:" & First(Invoicedata2).'IRN Number' & "  </p>
                         <p></p>
                         <font size=""4"" style=""text-align:left;"" >
-                        <table  width='80%'>" & "<thead><tr><th>HSN No</th><th>Cases</th><th>Pcs</th><th>Rate</th><th>Amt</th></thead>" & "<tbody>" & Concat(
+                        <table  width='80%'>" & "<thead><tr><th>HSN No</th><th>Cases</th><th>Pcs&nbsp;&nbsp;</th><th>&nbsp;&nbsp;Rate</th><th>&nbsp;&nbsp;Amt</th></thead>" & "<tbody>" & Concat(
                             Invoicelinedata2 As item,
-                            "<tr><td>" & item.'Item HSN Code' & "</td><td>" & item.Cases & "</td><td>" & item.PCs & "</td><td>" & item.'Base Amount' & "</td><td>" & item.Rate & "</td></tr>" & "<tr><td>" & item.'Item SKU'.'Item Description ' & "</td></tr><tr><td>Batch:" & item.'Batch No'&"</td><td>Mfg Dt."&Text(
+                            "<tr><td>" & item.'Item HSN Code' & "</td><td>" & item.Cases & "</td><td>" & item.PCs & "</td><td>" & item.'Base Amount' & "</td><td>" & item.Rate & "</td></tr>" & "<tr><td colspan=""6"">" & item.'Item SKU'.'Item Description ' & "<td></tr><tr><td colspan=""2"">Batch:" & item.'Batch No'&"</td><td colspan=""3"">Mfg Dt."&Text(
                                 item.'Manufacturing Date',
                                 DateTimeFormat.ShortDate
                             ) & "</td></tr>"
@@ -495,8 +495,8 @@
                         </font>
                         <p></p>
                         <p style=""line-height:2px;font-size:27px"">Total Price of Goods (INR) :" & First(Invoicedata2).'Total Amount (Base)' & " </p>
-                        <p style=""line-height:2px;font-size:27px"">CGST @9% </p>"&First(Invoicedata2).'CGST Value'&"
-                        <p style=""line-height:2px;font-size:27px"">SGST @9% </p>"&First(Invoicedata2).'SGST Value'&"
+                        <p style=""line-height:2px;font-size:27px"">CGST @9% "&First(Invoicedata2).'CGST Value'&"</p>
+                        <p style=""line-height:2px;font-size:27px"">SGST @9% "&First(Invoicedata2).'SGST Value'&"</p>
                         <p style=""line-height:2px;font-size:27px"">Deposit (INR) 0.0</p>
                         <p style=""line-height:2px;font-size:27px"">Rounding Off 0.0</p>
                         <p></p>
@@ -513,13 +513,13 @@
                         <p></p>
                         <p> </p>
                         <p></p>
-                        <p style=""line-height:2px;font-size:27px"">We reserve to ourselves the right to demand payments of this bill at any time before due date. A 11 disputes are subject to Mumbai Jurisdiction. The Company reserves its right to charge interest on overdue unpaid bill. Claim of any nature whatsoever will lapse unless raised in 3 days from the date of Invoice. Goods once sold cannot be returned and/or exchanged. No claim for shortage, damage, breakage etc will be entertained. </p>
+                        <p style=""font-size:27px"">We reserve to ourselves the right to demand payments of this bill at any time before due date. A 11 disputes are subject to Mumbai Jurisdiction. The Company reserves its right to charge interest on overdue unpaid bill. Claim of any nature whatsoever will lapse unless raised in 3 days from the date of Invoice. Goods once sold cannot be returned and/or exchanged. No claim for shortage, damage, breakage etc will be entertained. </p>
                         <p></p>
-                        <p style=""line-height:2px;font-size:27px"">We hereby declare that statutory details in respect of customer mentioned in this invoice are as per information provided by the customer. The receiver of the invoice should confirm the statutory details mentioned on the Invoice. The customer may revert to the company if any variations are observed in the Invoice details within 7 days from the date of Invoice. No claims and alternation would be entertained thereafter. </p>
+                        <p style=""font-size:27px"">We hereby declare that statutory details in respect of customer mentioned in this invoice are as per information provided by the customer. The receiver of the invoice should confirm the statutory details mentioned on the Invoice. The customer may revert to the company if any variations are observed in the Invoice details within 7 days from the date of Invoice. No claims and alternation would be entertained thereafter. </p>
                         <p></p>
-                        <p style=""line-height:2px;font-size:27px"">Certified that the particular's given above are true and correct. </p>
+                        <p style=""font-size:27px"">Certified that the particular's given above are true and correct. </p>
                         <p ></p>
-                        <pstyle=""line-height:2px;font-size:27px"">For BISLERI INTERNATIONAL PVT. LTD. </p>
+                        <p style=""font-size:27px"">For BISLERI INTERNATIONAL PVT. LTD. </p>
                         
                         
                         
