@@ -1,4 +1,42 @@
 {
+  "025b4b35-4e33-49c2-9fb8-f00bcca4b8db": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "55f72745-b50d-456c-87c4-787c319fa6eb": {
+          "value": "shared_commondataserviceforapps"
+        },
+        "workflowEntityId": {
+          "value": "d8b362a2-23d5-ed11-a7c7-002248d5da52"
+        },
+        "workflowName": {
+          "value": "2eeceb34-9662-6e96-30d9-556d6de91241"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_commondataserviceforapps": {
+          "value": "55f72745-b50d-456c-87c4-787c319fa6eb"
+        },
+        "workflowEntityId": {
+          "value": "d8b362a2-23d5-ed11-a7c7-002248d5da52"
+        },
+        "workflowName": {
+          "value": "2eeceb34-9662-6e96-30d9-556d6de91241"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "EndDayFlow"
+    ],
+    "dependencies": {
+      "shared_commondataserviceforapps": "55f72745-b50d-456c-87c4-787c319fa6eb"
+    },
+    "dependents": [],
+    "id": "025b4b35-4e33-49c2-9fb8-f00bcca4b8db"
+  },
   "05949ac3-3ae7-4e0a-a83b-8c204e6fad54": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -264,7 +302,8 @@
     "dependencies": {},
     "dependents": [
       "88540a79-971a-4ec4-a435-4d2b17fd8f34",
-      "05949ac3-3ae7-4e0a-a83b-8c204e6fad54"
+      "05949ac3-3ae7-4e0a-a83b-8c204e6fad54",
+      "025b4b35-4e33-49c2-9fb8-f00bcca4b8db"
     ],
     "id": "55f72745-b50d-456c-87c4-787c319fa6eb"
   },

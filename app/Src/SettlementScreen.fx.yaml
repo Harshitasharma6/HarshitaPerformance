@@ -1207,88 +1207,12 @@
                 Fill: =_VarGblAppColors.BisleriBlue
                 HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
                 OnSelect: |-
-                    =/*Patch(
-                        Attendances,
-                        LookUp(
-                            Attendances,
-                            Date = Today() && User.'Primary Email' = User().Email
-                        ),
-                        {
-                            'Check-Out Latitude': Location.Latitude,
-                            'Check-Out Longitude': Location.Longitude,
-                            'Check-out Time': Now()
-                        }
-                    );
-                    ClearCollect(
-                        colOfflineTodayAttendance,
-                        LookUp(
-                            Attendances,
-                            User.'Primary Email' = User().Email && IsToday(DateValue('Created On')) && IsBlank('Check-out Time')
-                        )
-                    );
-                    ///////////////////////Patch Stock Inventory////////////////////////////
-                    ForAll(
-                        galHomeReplacementData_1.AllItems As StkInv,
-                        Patch(
-                            'Stock Inventories',
-                            Defaults('Stock Inventories'),
-                            {
-                                'Check-in Date': LookUp(
+                    =/*EndDayFlow.Run(
+                                LookUp(
                                     Attendances,
-                                    Date = Today() && User.'Primary Email' = User().Email
-                                ).'Check-in Time',
-                                Route: LookUp(
-                                    Areas,
-                                    Area = varUserArea.Area.Area
-                                ),
-                                'Vehicle Code': LookUp(
-                                    Warehouses,
-                                    Warehouse = varUserVanNo.Van.Warehouse
-                                ),
-                                'Item Code': LookUp(
-                                    'SKU Masters',
-                                    'SKU Master' = StkInv.SKU.'SKU Master'
-                                ),
-                                'Item Description': LookUp(
-                                    'SKU Masters',
-                                    'SKU Master' = StkInv.SKU.'SKU Master'
-                                ).'Item Description ',
-                                'Loaded Cases': Value(StkInv.lblHomeReplacementReason_1.Text),
-                                'Loaded Units': Value(StkInv.lblHomeReplacementUOM_1.Text),
-                                'Filled Cases': Value(StkInv.lblHomeReplacementQty_1.Text),
-                                'Filled Units': Value(StkInv.lblHomeReplacementUOM_2.Text),
-                                'Empties Returned': Value(StkInv.lblHomeReplacementUOM_3.Text),
-                                'Sold Cases': Value(StkInv.lblHomeReplacementUOM_4.Text),
-                                'Sold Units': Value(StkInv.lblHomeReplacementUOM_5.Text),
-                                'Replacement Cases': Value(StkInv.lblHomeReplacementUOM_7.Text),
-                                'Replacement Units': Value(StkInv.lblHomeReplacementUOM_8.Text),
-                                'FOC Cases': Value(StkInv.lblHomeReplacementUOM_9.Text),
-                                'FOC Units': Value(StkInv.lblHomeReplacementUOM_10.Text),
-                                'Return Cases': Value(StkInv.lblHomeReplacementUOM_11.Text),
-                                'Return Units': Value(StkInv.lblHomeReplacementUOM_12.Text),
-                                'Transfer in Cases': Value(StkInv.lblHomeReplacementUOM_13.Text),
-                                'Transfer in Units': Value(StkInv.lblHomeReplacementUOM_14.Text),
-                                'Transfer out Cases': Value(StkInv.lblHomeReplacementUOM_15.Text),
-                                'Transfer out Units': Value(StkInv.lblHomeReplacementUOM_16.Text),
-                                'Batch No': LookUp(
-                                    'Stock Transfer Lines',
-                                    SKU.'SKU Master' = StkInv.SKU.'SKU Master'
-                                ).'Batch no.',
-                                'Lot No': LookUp(
-                                    'Stock Transfer Lines',
-                                    SKU.'SKU Master' = StkInv.SKU.'SKU Master'
-                                ).'Lot no.',
-                                'Mfg Date':LookUp(
-                                    'Stock Transfer Lines',
-                                    SKU.'SKU Master' = StkInv.SKU.'SKU Master'
-                                ).'Manufacturing date'
-                            }
-                        );
-                        
-                    );
-                    Clear(EitherCasesOrPcs);
-                    Set(varDayEnd, true);
-                    Navigate('Attendance Screen');*/
+                                    User.'Primary Email'=User().Email && 'Created On'>=Today()
+                                ).Attendance
+                            );*/
                     
                     Patch(
                         Attendances,

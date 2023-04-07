@@ -184,7 +184,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 1796,
+                  "charOffset": 1857,
                   "snippet": {
                     "text": ".'Invoice Number'"
                   }
@@ -224,7 +224,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1660,
+                  "charOffset": 1718,
                   "snippet": {
                     "text": "="
                   }
@@ -264,7 +264,7 @@
                 },
                 "region": {
                   "charLength": 17,
-                  "charOffset": 2402,
+                  "charOffset": 2486,
                   "snippet": {
                     "text": ".'Invoice Number'"
                   }
@@ -304,7 +304,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2278,
+                  "charOffset": 2359,
                   "snippet": {
                     "text": "="
                   }
