@@ -1207,12 +1207,12 @@
                 Fill: =_VarGblAppColors.BisleriBlue
                 HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
                 OnSelect: |-
-                    =/*EndDayFlow.Run(
+                    ='AutorunPush-Invoices'.Run(
                                 LookUp(
                                     Attendances,
                                     User.'Primary Email'=User().Email && 'Created On'>=Today()
                                 ).Attendance
-                            );*/
+                            );
                     
                     Patch(
                         Attendances,
