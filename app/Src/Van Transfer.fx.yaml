@@ -1357,7 +1357,7 @@
                                 "UserEmail",
                                 Salesperson.'Primary Email'
                             ).UserEmail && Not('Primary Email' = User().Email)
-                       &&// ),
+                       && // ),
                         !IsBlank('Primary Email')
                     ),ComboBox4.SearchText,"firstname")
                 SelectionFill: =_VarGblAppColors.BisleriBlue

@@ -303,7 +303,8 @@
     "dependents": [
       "88540a79-971a-4ec4-a435-4d2b17fd8f34",
       "05949ac3-3ae7-4e0a-a83b-8c204e6fad54",
-      "025b4b35-4e33-49c2-9fb8-f00bcca4b8db"
+      "025b4b35-4e33-49c2-9fb8-f00bcca4b8db",
+      "e5cb9e66-2f28-4867-98c6-c7c0bf1ec76d"
     ],
     "id": "55f72745-b50d-456c-87c4-787c319fa6eb"
   },
@@ -481,6 +482,39 @@
     "dependencies": {},
     "dependents": [],
     "id": "dfbf20ae-d93a-4b38-b148-5e8e31f8755d"
+  },
+  "e5cb9e66-2f28-4867-98c6-c7c0bf1ec76d": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "e4b0db48-67d4-ed11-a7c7-002248d5da52"
+        },
+        "workflowName": {
+          "value": "9e035509-1334-9660-227c-c5d6ccf9d44c"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "e4b0db48-67d4-ed11-a7c7-002248d5da52"
+        },
+        "workflowName": {
+          "value": "9e035509-1334-9660-227c-c5d6ccf9d44c"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "AutorunPush-Invoices"
+    ],
+    "dependencies": {
+      "shared_commondataserviceforapps": "55f72745-b50d-456c-87c4-787c319fa6eb",
+      "shared_commondataserviceforapps_1": "55f72745-b50d-456c-87c4-787c319fa6eb"
+    },
+    "dependents": [],
+    "id": "e5cb9e66-2f28-4867-98c6-c7c0bf1ec76d"
   },
   "eac358ef-8b2b-44d8-8393-c3e00c4416fc": {
     "connectionRef": {
