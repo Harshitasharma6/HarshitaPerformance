@@ -1206,14 +1206,22 @@
                     )
                 Fill: =_VarGblAppColors.BisleriBlue
                 HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
-                OnSelect: |-
-                    ='AutorunPush-Invoices'.Run(
-                                LookUp(
-                                    Attendances,
-                                    User.'Primary Email'=User().Email && 'Created On'>=Today()
-                                ).Attendance
-                            );
-                    
+                OnSelect: |
+                    =Set(
+                        Attid,
+                        LookUp(
+                            Attendances,
+                            User.'Primary Email' = User().Email && 'Created On' >= Today()
+                        ).Attendance
+                    );
+                    'AutorunPush-Invoices'.Run(Attid);
+                    'AutorunPush-Invoices-Pune'.Run(Attid);
+                    'AutorunPush-Payments'.Run(Attid);
+                    'AutorunPush-Payments-Pune'.Run(Attid);
+                    'AutorunPush-CheckinDemand'.Run(Attid);
+                    'AutorunPush-CheckinDemand_pune'.Run(Attid);
+                    'AutorunPush-Stockinventory'.Run(Attid);
+                    'AutorunPush-Stockinventory-pune'.Run(Attid);
                     Patch(
                         Attendances,
                         LookUp(
@@ -1230,7 +1238,7 @@
                         colOfflineTodayAttendance,
                         LookUp(
                             Attendances,
-                            User.'Primary Email' = User().Email && 'Created On'>=Today() && IsBlank('Check-out Time')
+                            User.'Primary Email' = User().Email && 'Created On' >= Today() && IsBlank('Check-out Time')
                         )
                     );
                     ///////////////////////Patch Stock Inventory////////////////////////////
@@ -1271,8 +1279,8 @@
                                 'Replacement Units': Value(StkInv.lblHomeReplacementUOM_8.Text),
                                 'FOC Cases': Value(StkInv.lblHomeReplacementUOM_9.Text),
                                 'FOC Units': Value(StkInv.lblHomeReplacementUOM_10.Text),
-                                'Return Cases':0 /*Value(StkInv.lblHomeReplacementUOM_11.Text)*/,
-                                'Return Units':0 /*Value(StkInv.lblHomeReplacementUOM_12.Text)*/,
+                                'Return Cases': 0/*Value(StkInv.lblHomeReplacementUOM_11.Text)*/,
+                                'Return Units': 0/*Value(StkInv.lblHomeReplacementUOM_12.Text)*/,
                                 'Transfer in Cases': Value(StkInv.lblHomeReplacementUOM_13.Text),
                                 'Transfer in Units': Value(StkInv.lblHomeReplacementUOM_14.Text),
                                 'Transfer out Cases': Value(StkInv.lblHomeReplacementUOM_15.Text),
@@ -1285,16 +1293,18 @@
                                     'Stock Transfer Lines',
                                     SKU.'SKU Master' = StkInv.SKU.'SKU Master'
                                 ).'Lot no.',
-                                'Mfg Date':LookUp(
+                                'Mfg Date': LookUp(
                                     'Stock Transfer Lines',
                                     SKU.'SKU Master' = StkInv.SKU.'SKU Master'
                                 ).'Manufacturing date'
                             }
                         )
-                        
                     );
                     Clear(EitherCasesOrPcs);
-                    Set(varDayEnd, true);
+                    Set(
+                        varDayEnd,
+                        true
+                    );
                     Navigate('Attendance Screen');
                 Size: =_VarGblAppFonts.Size.Title
                 Text: ="End"

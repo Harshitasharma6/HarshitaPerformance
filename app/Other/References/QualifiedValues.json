@@ -307,13 +307,6 @@
       }
     },
     {
-      "Kind": "default.cds_site_forms",
-      "Namespace": "Sites (Forms)",
-      "Values": {
-        "Information": "43ba7bd4-22ad-4993-b0e9-949540585faa"
-      }
-    },
-    {
       "Kind": "default.cds_zx_skumaster_forms",
       "Namespace": "SKU Masters (Forms)",
       "Values": {
@@ -393,6 +386,13 @@
       "Namespace": "Warehouses (Forms)",
       "Values": {
         "Information": "b72f83a5-92e6-4cf7-b95b-db6a6395a851"
+      }
+    },
+    {
+      "Kind": "default.cds_site_forms",
+      "Namespace": "Sites (Forms)",
+      "Values": {
+        "Information": "43ba7bd4-22ad-4993-b0e9-949540585faa"
       }
     },
     {
