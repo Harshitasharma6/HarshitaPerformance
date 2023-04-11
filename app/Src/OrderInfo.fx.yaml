@@ -566,7 +566,7 @@
                         ).Branch.Name = "Mumbai"))) && LookUp(
                             'Invoice Headers',
                             'Order Number'.'Order Number' = oh.'Order Number'
-                        ).'IRN Message' = "N",
+                        ).'IRN Message' <> "Y",
                         DisplayMode.Edit,
                         DisplayMode.Disabled
                     )

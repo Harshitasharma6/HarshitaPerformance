@@ -439,7 +439,14 @@
         "DisabledColor",
         "PressedColor",
         "HoverColor",
-        "DisplayMode",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "If(\r\n    (!IsBlank(\r\n        LookUp(\r\n            AllCustomerss,\r\n            Account = oh.Customer.Account\r\n        ).GSTIN\r\n    ) && (((LookUp(\r\n        AllCustomerss,\r\n        Account = oh.Customer.Account\r\n    ).'Customer Group'.Name <> \"KEY-RT\") && LookUp(\r\n        AllCustomerss,\r\n        Account = oh.Customer.Account\r\n    ).Branch.Name = \"PUNE\") || ((LookUp(\r\n        AllCustomerss,\r\n        Account = oh.Customer.Account\r\n    ).'Customer Group'.Name <> \"COR-RT\") && LookUp(\r\n        AllCustomerss,\r\n        Account = oh.Customer.Account\r\n    ).Branch.Name = \"Mumbai\"))) && LookUp(\r\n        'Invoice Headers',\r\n        'Order Number'.'Order Number' = oh.'Order Number'\r\n    ).'IRN Message' = \"N\",\r\n    DisplayMode.Edit,\r\n    DisplayMode.Disabled\r\n)",
+          "InvariantPropertyName": "DisplayMode",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
