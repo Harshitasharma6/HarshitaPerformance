@@ -1214,14 +1214,6 @@
                             User.'Primary Email' = User().Email && 'Created On' >= Today()
                         ).Attendance
                     );
-                    'AutorunPush-Invoices'.Run(Attid);
-                    'AutorunPush-Invoices-Pune'.Run(Attid);
-                    'AutorunPush-Payments'.Run(Attid);
-                    'AutorunPush-Payments-Pune'.Run(Attid);
-                    'AutorunPush-CheckinDemand'.Run(Attid);
-                    'AutorunPush-CheckinDemand_pune'.Run(Attid);
-                    'AutorunPush-Stockinventory'.Run(Attid);
-                    'AutorunPush-Stockinventory-pune'.Run(Attid);
                     Patch(
                         Attendances,
                         LookUp(
@@ -1300,6 +1292,14 @@
                             }
                         )
                     );
+                    'AutorunPush-Invoices'.Run(Attid);
+                    'AutorunPush-Invoices-Pune'.Run(Attid);
+                    'AutorunPush-Payments'.Run(Attid);
+                    'AutorunPush-Payments-Pune'.Run(Attid);
+                    'AutorunPush-CheckinDemand'.Run(Attid);
+                    'AutorunPush-CheckinDemand_pune'.Run(Attid);
+                    'AutorunPush-Stockinventory'.Run(Attid);
+                    'AutorunPush-Stockinventory-pune'.Run(Attid);
                     Clear(EitherCasesOrPcs);
                     Set(
                         varDayEnd,
