@@ -535,17 +535,22 @@ GatePassScreen As screen:
         Button12_3 As button:
             Color: =_VarGblAppColors.LightText
             DisplayMode: |-
-                =DisplayMode.Edit
-                /*If(
-                    CountRows(
-                        Filter(
-                            'Stock Transfer Lines',
-                            'Transfer Order No'.'Stock Transfer Header' exactin varGatePassHeader.headerGUID
+                =If(
+                    IsBlank(
+                        LookUp(
+                            Filter(
+                                Filter(
+                                    'Stock Transfer Lines',
+                                    'Transfer Order No'.'Stock Transfer Header' in varGatePassHeader.headerGUID
+                                ),
+                                Date >= Today()
+                            ),
+                            'Transfer accepted' = 'Transfer accepted (Stock Transfer Lines)'.No
                         )
-                    ) = CountRows(colSelectedGatePassLines),
-                    DisplayMode.Edit,
-                    DisplayMode.Disabled
-                )*/
+                    ),
+                    DisplayMode.Disabled,
+                    DisplayMode.Edit
+                )
             Fill: =_VarGblAppColors.BisleriBlue
             FocusedBorderThickness: =2
             Height: =49
@@ -710,14 +715,20 @@ GatePassScreen As screen:
             Color: =RGBA(255, 255, 255, 1)
             DisplayMode: |-
                 =If(
-                    CountRows(
-                        Filter(
-                            colOfflineStockLine,
-                            'Transfer Order No'.'Stock Transfer Header' exactin varGatePassHeader.headerGUID && 'Transfer accepted' = 'Transfer accepted (Stock Transfer Lines)'.No
+                    IsBlank(
+                        LookUp(
+                            Filter(
+                                Filter(
+                                    'Stock Transfer Lines',
+                                    'Transfer Order No'.'Stock Transfer Header' in varGatePassHeader.headerGUID
+                                ),
+                                Date >= Today()
+                            ),
+                            'Transfer accepted' = 'Transfer accepted (Stock Transfer Lines)'.No
                         )
-                    ) = CountRows(colSelectedGatePassLines),
-                    DisplayMode.Edit,
-                    DisplayMode.Disabled
+                    ),
+                    DisplayMode.Disabled,
+                    DisplayMode.Edit
                 )
             Height: =36
             Icon: =Icon.OpenInNewWindow
