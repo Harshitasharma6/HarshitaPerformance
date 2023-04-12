@@ -5727,7 +5727,7 @@
                     Height: =50
                     HoverFill: =ColorFade(_VarGblAppColors.BisleriBlue, -20%)
                     OnSelect: |-
-                        =/////////////////////////////////////////////////////////_______________ORDER PLACEMENT
+                        =/////////////////////////////////////////////////////////_____. __________ORDER PLACEMENT
                         Set(
                             visitiddata,
                             First(VisitData).'Visit ID'
