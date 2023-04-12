@@ -432,7 +432,7 @@
     lblCustomer360Name As label:
         FontWeight: =FontWeight.Bold
         Height: =60
-        Size: =_VarGblAppFonts.Size.Huge
+        Size: =_VarGblAppFonts.Size.Title
         Text: =varCustomerDetails.'Customer Name'
         Width: =350
         X: =19
