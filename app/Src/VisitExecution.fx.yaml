@@ -2597,7 +2597,8 @@
                                                         totalCasePriceWithoutDisc: OneProductItem.caseUnitPrice * (((LookUp(
                                                             colManipulatedCartItems,
                                                             skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date'
-                                                        ).qtyCases) + (First(CurrentQtyCases).Value)))
+                                                        ).qtyCases) + (First(CurrentQtyCases).Value))),
+                                                        scheme: false
                                                     }
                                                 ),
                                                 Collect(
@@ -2666,7 +2667,8 @@
                                                         totalCasePriceWithoutDisc: OneProductItem.caseUnitPrice * (((LookUp(
                                                             colManipulatedCartItems,
                                                             skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date'
-                                                        ).qtyCases) + (OneFifoItem.'Remaining Qty Cases')))
+                                                        ).qtyCases) + (OneFifoItem.'Remaining Qty Cases'))),
+                                                        scheme: false
                                                     }
                                                 ),
                                                 Collect(
@@ -2782,7 +2784,8 @@
                                                         totalPcsPriceWithoutDisc: OneProductItem.pcsUnitPrice * (((LookUp(
                                                             colManipulatedCartItems,
                                                             skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date'
-                                                        ).qtyPcs) + (First(CurrentQty).Value)))
+                                                        ).qtyPcs) + (First(CurrentQty).Value))),
+                                                        scheme: false
                                                     }
                                                 ),
                                                 Collect(
@@ -2854,7 +2857,8 @@
                                                         totalPcsPriceWithoutDisc: OneProductItem.pcsUnitPrice * (((LookUp(
                                                             colManipulatedCartItems,
                                                             skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date'
-                                                        ).qtyPcs) + (First(CurrentQty).Value)))
+                                                        ).qtyPcs) + (First(CurrentQty).Value))),
+                                                        scheme: false
                                                     }
                                                 ),
                                                 Collect(
@@ -2970,7 +2974,8 @@
                                                         ).qtyPcs) + ((OneFifoItem.'Remaining Qty Cases' * LookUp(
                                                             'Item UOMS',
                                                             SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master'
-                                                        ).'Quantity Per UOM') + (OneFifoItem.'Remaining Qty Pcs'))))
+                                                        ).'Quantity Per UOM') + (OneFifoItem.'Remaining Qty Pcs')))),
+                                                        scheme: false
                                                     }
                                                 ),
                                                 Collect(
@@ -3081,19 +3086,19 @@
                                                 !IsBlank(
                                                     LookUp(
                                                         colManipulatedCartItems,
-                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true
+                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true && schemeSKU=OneProductItem.SchemeOrderProductReference
                                                     )
                                                 ),
                                                 Patch(
                                                     colManipulatedCartItems,
                                                     LookUp(
                                                         colManipulatedCartItems,
-                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true
+                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true && schemeSKU=OneProductItem.SchemeOrderProductReference
                                                     ),
                                                     {
                                                         qtyCases: ((LookUp(
                                                             colManipulatedCartItems,
-                                                            skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true
+                                                            skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true && schemeSKU=OneProductItem.SchemeOrderProductReference
                                                         ).qtyCases) + (First(CurrentQtyCasesScheme).Value))
                                                     }
                                                 ),
@@ -3105,7 +3110,8 @@
                                                         skuId: OneFifoItem.SKU.'SKU Master',
                                                         qtyCases: First(CurrentQtyCasesScheme).Value,
                                                         qtyPcs: 0,
-                                                        scheme: true
+                                                        scheme: true,
+                                                        schemeSKU: OneProductItem.SchemeOrderProductReference
                                                     }
                                                 );
                                             );
@@ -3141,19 +3147,19 @@
                                                 !IsBlank(
                                                     LookUp(
                                                         colManipulatedCartItems,
-                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true
+                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true && schemeSKU=OneProductItem.SchemeOrderProductReference
                                                     )
                                                 ),
                                                 Patch(
                                                     colManipulatedCartItems,
                                                     LookUp(
                                                         colManipulatedCartItems,
-                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true
+                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true && schemeSKU=OneProductItem.SchemeOrderProductReference
                                                     ),
                                                     {
                                                         qtyCases: ((LookUp(
                                                             colManipulatedCartItems,
-                                                            skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true
+                                                            skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true && schemeSKU=OneProductItem.SchemeOrderProductReference
                                                         ).qtyCases) + (OneFifoItem.'Remaining Qty Cases'))
                                                     }
                                                 ),
@@ -3165,7 +3171,8 @@
                                                         skuId: OneFifoItem.SKU.'SKU Master',
                                                         qtyCases: OneFifoItem.'Remaining Qty Cases',
                                                         qtyPcs: 0,
-                                                        scheme: true
+                                                        scheme: true,
+                                                        schemeSKU: OneProductItem.SchemeOrderProductReference
                                                     }
                                                 );
                                             );
@@ -3248,19 +3255,19 @@
                                                 !IsBlank(
                                                     LookUp(
                                                         colManipulatedCartItems,
-                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true
+                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true && schemeSKU=OneProductItem.SchemeOrderProductReference
                                                     )
                                                 ),
                                                 Patch(
                                                     colManipulatedCartItems,
                                                     LookUp(
                                                         colManipulatedCartItems,
-                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true
+                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true && schemeSKU=OneProductItem.SchemeOrderProductReference
                                                     ),
                                                     {
                                                         qtyPcs: ((LookUp(
                                                             colManipulatedCartItems,
-                                                            skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true
+                                                            skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true && schemeSKU=OneProductItem.SchemeOrderProductReference
                                                         ).qtyPcs) + (First(CurrentQtyScheme).Value))
                                                     }
                                                 ),
@@ -3272,7 +3279,8 @@
                                                         skuId: OneFifoItem.SKU.'SKU Master',
                                                         qtyCases: 0,
                                                         qtyPcs: First(CurrentQtyScheme).Value,
-                                                        scheme: true
+                                                        scheme: true,
+                                                        schemeSKU: OneProductItem.SchemeOrderProductReference
                                                     }
                                                 );
                                             );
@@ -3311,19 +3319,19 @@
                                                 !IsBlank(
                                                     LookUp(
                                                         colManipulatedCartItems,
-                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true
+                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true && schemeSKU=OneProductItem.SchemeOrderProductReference
                                                     )
                                                 ),
                                                 Patch(
                                                     colManipulatedCartItems,
                                                     LookUp(
                                                         colManipulatedCartItems,
-                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true
+                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true && schemeSKU=OneProductItem.SchemeOrderProductReference
                                                     ),
                                                     {
                                                         qtyPcs: (LookUp(
                                                             colManipulatedCartItems,
-                                                            skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true
+                                                            skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true && schemeSKU=OneProductItem.SchemeOrderProductReference
                                                         ).qtyPcs + (First(CurrentQtyScheme).Value))
                                                     }
                                                 ),
@@ -3335,7 +3343,8 @@
                                                         skuId: OneFifoItem.SKU.'SKU Master',
                                                         qtyCases: 0,
                                                         qtyPcs: First(CurrentQtyScheme).Value,
-                                                        scheme: true
+                                                        scheme: true,
+                                                        schemeSKU: OneProductItem.SchemeOrderProductReference
                                                     }
                                                 );
                                             );
@@ -3406,19 +3415,19 @@
                                                 !IsBlank(
                                                     LookUp(
                                                         colManipulatedCartItems,
-                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true
+                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true && schemeSKU=OneProductItem.SchemeOrderProductReference
                                                     )
                                                 ),
                                                 Patch(
                                                     colManipulatedCartItems,
                                                     LookUp(
                                                         colManipulatedCartItems,
-                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true
+                                                        skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true && schemeSKU=OneProductItem.SchemeOrderProductReference
                                                     ),
                                                     {
                                                         qtyPcs: (( LookUp(
                                                             colManipulatedCartItems,
-                                                            skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true
+                                                            skuId = OneFifoItem.SKU.'SKU Master' && manDate = OneFifoItem.'Manufacturing date' && scheme = true && schemeSKU=OneProductItem.SchemeOrderProductReference
                                                         ).qtyPcs) + ((OneFifoItem.'Remaining Qty Cases' * LookUp(
                                                             'Item UOMS',
                                                             SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master'
@@ -3436,7 +3445,8 @@
                                                             'Item UOMS',
                                                             SKU.'SKU Master' = OneFifoItem.SKU.'SKU Master'
                                                         ).'Quantity Per UOM') + (OneFifoItem.'Remaining Qty Pcs')),
-                                                        scheme: true
+                                                        scheme: true,
+                                                        schemeSKU: OneProductItem.SchemeOrderProductReference
                                                     }
                                                 );
                                             );
@@ -3530,7 +3540,7 @@
                                                 IsBlank(
                                                     LookUp(
                                                         'Order Lines',
-                                                        'Order Number'.'Order Number' = CreateOrderRecorddata.'Order Number' && 'Item SKU'.'SKU Master' = ThissItem.skuId
+                                                        'Order Number'.'Order Number' = CreateOrderRecorddata.'Order Number' && 'Item SKU'.'SKU Master' = ThissItem.skuId && 'Scheme Parent Item Code'.'SKU Master' = ThissItem.schemeSKU
                                                     )
                                                 ),
                                                 Patch(
@@ -3578,7 +3588,7 @@
                                                     'Order Lines',
                                                     LookUp(
                                                         'Order Lines',
-                                                        'Order Number'.'Order Number' = CreateOrderRecorddata.'Order Number' && 'Item SKU'.'SKU Master' = ThissItem.skuId
+                                                        'Order Number'.'Order Number' = CreateOrderRecorddata.'Order Number' && 'Item SKU'.'SKU Master' = ThissItem.skuId && 'Scheme Parent Item Code'.'SKU Master' = ThissItem.schemeSKU
                                                     ),
                                                     {
                                                         'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,
@@ -3937,7 +3947,7 @@
                                                         IsBlank(
                                                             LookUp(
                                                                 'Order Lines',
-                                                                'Order Number'.'Order Number' = CreateOrderRecorddata.'Order Number' && 'Item SKU'.'SKU Master' = ThissItem.skuId
+                                                                'Order Number'.'Order Number' = CreateOrderRecorddata.'Order Number' && 'Item SKU'.'SKU Master' = ThissItem.skuId && 'Scheme Parent Item Code'.'SKU Master' = ThissItem.schemeSKU
                                                             )
                                                         ),
                                                         Patch(
@@ -3997,7 +4007,7 @@
                                                             'Order Lines',
                                                             LookUp(
                                                                 'Order Lines',
-                                                                'Order Number'.'Order Number' = CreateOrderRecorddata.'Order Number' && 'Item SKU'.'SKU Master' = ThissItem.skuId
+                                                                'Order Number'.'Order Number' = CreateOrderRecorddata.'Order Number' && 'Item SKU'.'SKU Master' = ThissItem.skuId && 'Scheme Parent Item Code'.'SKU Master' = ThissItem.schemeSKU
                                                             ),
                                                             {
                                                                 'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,
@@ -4368,7 +4378,7 @@
                                                         IsBlank(
                                                             LookUp(
                                                                 'Order Lines',
-                                                                'Order Number'.'Order Number' = CreateOrderRecorddata.'Order Number' && 'Item SKU'.'SKU Master' = ThissItem.skuId
+                                                                'Order Number'.'Order Number' = CreateOrderRecorddata.'Order Number' && 'Item SKU'.'SKU Master' = ThissItem.skuId && 'Scheme Parent Item Code'.'SKU Master' = ThissItem.schemeSKU
                                                             )
                                                         ),
                                                         Patch(
@@ -4428,7 +4438,7 @@
                                                             'Order Lines',
                                                             LookUp(
                                                                 'Order Lines',
-                                                                'Order Number'.'Order Number' = CreateOrderRecorddata.'Order Number' && 'Item SKU'.'SKU Master' = ThissItem.skuId
+                                                                'Order Number'.'Order Number' = CreateOrderRecorddata.'Order Number' && 'Item SKU'.'SKU Master' = ThissItem.skuId && 'Scheme Parent Item Code'.'SKU Master' = ThissItem.schemeSKU
                                                             ),
                                                             {
                                                                 'Total Quantity': ThissItem.qtyCases + ThissItem.qtyPcs,
