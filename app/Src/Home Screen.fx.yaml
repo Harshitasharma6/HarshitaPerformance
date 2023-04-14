@@ -204,7 +204,7 @@
                                         Height: =50
                                         OnSelect: =Select(Parent)
                                         Size: =_VarGblAppFonts.Size.Subtitle
-                                        Text: =ThisItem.'Total Amount'
+                                        Text: =ThisItem.'Net Amount'
                                         Width: =120
                                         X: =495
                                         Y: =5

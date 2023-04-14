@@ -387,7 +387,7 @@
                 Height: =32
                 Size: =_VarGblAppFonts.Size.Regular
                 TabIndex: =0
-                Text: ="₹" &  If(ThisItem.'Total Amount'>0, ThisItem.'Total Amount', 0)
+                Text: ="₹" &  If(ThisItem.'Net Amount'>0, ThisItem.'Net Amount', 0)
                 Width: =118
                 X: =451
                 Y: =188

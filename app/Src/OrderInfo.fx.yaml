@@ -911,6 +911,14 @@
             );
             Set(varShowGatePassFile23, true);
         TabIndex: =0
+        Visible: |-
+            =If(!IsBlank(LookUp(
+                    'Invoice Headers',
+                    'Order Number'.'Order Number' = oh.'Order Number'
+                ).'IRN Number') || !IsBlank(LookUp(
+                    'Invoice Headers',
+                    'Order Number'.'Order Number' = oh.'Order Number'
+                ).'Local QR '), true, false)
         X: =458
         Y: =16
         ZIndex: =6

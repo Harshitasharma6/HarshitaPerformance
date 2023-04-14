@@ -3062,7 +3062,7 @@
             "Name": "htmOrderListBillTo",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1679,
+            "PublishOrderIndex": 1678,
             "Rules": [
               {
                 "Category": "Data",
@@ -3253,7 +3253,7 @@
             "Name": "htmOrderListDate",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1680,
+            "PublishOrderIndex": 1679,
             "Rules": [
               {
                 "Category": "Data",
@@ -7632,7 +7632,7 @@
               },
               {
                 "Category": "Data",
-                "InvariantScript": "\"₹\" &  If(ThisItem.'Total Amount'>0, ThisItem.'Total Amount', 0)",
+                "InvariantScript": "\"₹\" &  If(ThisItem.'Net Amount'>0, ThisItem.'Net Amount', 0)",
                 "Property": "Text",
                 "RuleProviderType": "Unknown"
               },
@@ -7922,7 +7922,7 @@
             "Name": "grpOrderListDetails",
             "Parent": "galOrdersList",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 1678,
+            "PublishOrderIndex": 1680,
             "Rules": [
               {
                 "Category": "Design",
@@ -8239,7 +8239,7 @@
       "Y",
       "ZIndex"
     ],
-    "LastModifiedTimestamp": "638170393676588677",
+    "LastModifiedTimestamp": "638170517457057778",
     "Name": "Order List View",
     "Rules": [
       {
@@ -8298,7 +8298,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638170393676588677",
+  "LastModifiedTimestamp": "638170517457057778",
   "Name": "f403aadad82d4272bc528edc7b5ea384",
   "OverridableProperties": {},
   "Version": "638075005431189027"
