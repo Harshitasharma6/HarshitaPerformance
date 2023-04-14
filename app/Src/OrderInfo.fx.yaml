@@ -817,30 +817,35 @@
                     If(
                         !IsBlank(varConfirmationIRN),
                         If(
-                            IsBlank(Text(testButton.qr)) && First(CreateInvHeader).'IRN Message' = "N",
+                            Not(
+                                LookUp(
+                                    'Invoice Headers',
+                                    'Order Number'.'Order Number' = oh.'Order Number'
+                                ).'IRN Message' = "N"
+                            ),
                             Notify(
-                                "QR Code generated successfully.",
+                                "IRN has been generated successfully.",
                                 NotificationType.Success,
                                 4000
-                            );
-                            ,
+                            ),
                             If(
-                                Not(First(CreateInvHeader).'IRN Message' = "N"),
+                                LookUp(
+                                    'Invoice Headers',
+                                    'Order Number'.'Order Number' = oh.'Order Number'
+                                ).'IRN Message' = "N",
                                 Notify(
-                                    "IRN has been generated successfully.",
-                                    NotificationType.Success,
+                                    "IRN not generated.",
+                                    NotificationType.Warning,
                                     4000
-                                )
+                                );
                             )
                         ),
-                        If(
-                            First(CreateInvHeader).'IRN Message' = "N",
-                            Notify(
-                                "IRN not generated.",
-                                NotificationType.Warning,
-                                4000
-                            );
-                        )
+                        Notify(
+                            "IRN not generated.",
+                            NotificationType.Warning,
+                            4000
+                        );
+                        
                     );
                 Size: =_VarGblAppFonts.Size.Medium
                 Text: ="Regenerate IRN"
