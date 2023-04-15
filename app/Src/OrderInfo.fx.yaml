@@ -597,7 +597,7 @@
                         ).Branch.Name = "Mumbai")),
                         Set(
                             testButton,
-                            'PowerApp->RespondtoaPowerApporflow'.Run(
+                            IRNGeneration.Run(
                                 LookUp(
                                     'Invoice Headers',
                                     'Order Number'.'Order Number' = oh.'Order Number'

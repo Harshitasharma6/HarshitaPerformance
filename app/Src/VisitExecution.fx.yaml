@@ -2172,9 +2172,8 @@
                                     Account = OrderData.Account
                                 ).Branch.Name = "Mumbai")
                                 ),
-                                Set(
-                                    testButton,
-                                    'PowerApp->RespondtoaPowerApporflow'.Run(CreateInvHeaderdata.'Invoice Header');
+                              UpdateContext({testButton:
+                                    IRNGeneration.Run(CreateInvHeaderdata.'Invoice Header')}
                                 );
                                 /*Patch(
                                     'Invoice Headers',
@@ -5022,9 +5021,9 @@
                                     Account = OrderData.Account
                                 ).Branch.Name = "Mumbai")
                                 ),
-                                Set(
-                                    testButton,
-                                    'PowerApp->RespondtoaPowerApporflow'.Run(CreateInvHeaderdata.'Invoice Header');
+                               
+                                    UpdateContext({testButton:
+                                    IRNGeneration.Run(CreateInvHeaderdata.'Invoice Header')}
                                 );
                                 /*Patch(
                                     'Invoice Headers',
