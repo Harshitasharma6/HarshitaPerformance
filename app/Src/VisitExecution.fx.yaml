@@ -2173,7 +2173,7 @@
                                 ).Branch.Name = "Mumbai")
                                 ),
                               Set(testButton,
-                                    IRNGeneration.Run(CreateInvHeaderdata.'Invoice Header')
+                                   IRNGeneration.Run(CreateInvHeaderdata.'Invoice Header')
                                 );
                                 /*Patch(
                                     'Invoice Headers',
@@ -5023,7 +5023,7 @@
                                 ),
                                
                                     Set(testButton,
-                                    IRNGeneration.Run(CreateInvHeaderdata.'Invoice Header')
+                                   IRNGeneration.Run(CreateInvHeaderdata.'Invoice Header')
                                 );
                                 /*Patch(
                                     'Invoice Headers',
