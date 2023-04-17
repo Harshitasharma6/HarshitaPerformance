@@ -1,7 +1,7 @@
-<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://india-001.azure-apim.net/apim/irn-5f7ae3c468c3353edd-5f0c0c75d71d877874" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="IRN" xmlns="http://wadl.dev.java.net/2009/02">
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://india-001.azure-apim.net/apim/irn-2d1-20solution-5f7ae3c468c3353edd-5f1ad5e1bf43efcde8" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="IRN" xmlns="http://wadl.dev.java.net/2009/02">
   <doc title="IRN"></doc>
   <grammars>
-    <jsonTypes targetNamespace="https://india-001.azure-apim.net/apim/irn-5f7ae3c468c3353edd-5f0c0c75d71d877874" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <jsonTypes targetNamespace="https://india-001.azure-apim.net/apim/irn-2d1-20solution-5f7ae3c468c3353edd-5f1ad5e1bf43efcde8" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
       <string name="IRn_param_body_def_Version_def" />
       <string name="IRn_param_body_def_TranDtls_def_TaxSch_def" />
       <string name="IRn_param_body_def_TranDtls_def_SupTyp_def" />
@@ -117,7 +117,7 @@
       <number name="IRn_param_body_def_ItemList_def_items_def_CgstAmt_def" />
       <number name="IRn_param_body_def_ItemList_def_items_def_SgstAmt_def" />
       <integer name="IRn_param_body_def_ItemList_def_items_def_CesRt_def" />
-      <integer name="IRn_param_body_def_ItemList_def_items_def_CesAmt_def" />
+      <number name="IRn_param_body_def_ItemList_def_items_def_CesAmt_def" />
       <integer name="IRn_param_body_def_ItemList_def_items_def_CesNonAdvlAmt_def" />
       <integer name="IRn_param_body_def_ItemList_def_items_def_StateCesRt_def" />
       <integer name="IRn_param_body_def_ItemList_def_items_def_StateCesAmt_def" />
@@ -161,7 +161,7 @@
         <property name="CgstAmt" type="number" />
         <property name="SgstAmt" type="number" />
         <property name="CesRt" type="integer" />
-        <property name="CesAmt" type="integer" />
+        <property name="CesAmt" type="number" />
         <property name="CesNonAdvlAmt" type="integer" />
         <property name="StateCesRt" type="integer" />
         <property name="StateCesAmt" type="integer" />
@@ -184,7 +184,7 @@
       <integer name="IRn_param_body_def_ValDtls_def_Discount_def" />
       <integer name="IRn_param_body_def_ValDtls_def_OthChrg_def" />
       <number name="IRn_param_body_def_ValDtls_def_RndOffAmt_def" />
-      <integer name="IRn_param_body_def_ValDtls_def_TotInvVal_def" />
+      <number name="IRn_param_body_def_ValDtls_def_TotInvVal_def" />
       <integer name="IRn_param_body_def_ValDtls_def_TotInvValFc_def" />
       <object name="IRn_param_body_def_ValDtls_def">
         <property name="AssVal" type="number" />
@@ -196,7 +196,7 @@
         <property name="Discount" type="integer" />
         <property name="OthChrg" type="integer" />
         <property name="RndOffAmt" type="number" />
-        <property name="TotInvVal" type="integer" />
+        <property name="TotInvVal" type="number" />
         <property name="TotInvValFc" type="integer" />
       </object>
       <object name="IRn_param_body_def">
@@ -236,7 +236,7 @@
       </object>
     </jsonTypes>
   </grammars>
-  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://india-001.azure-apim.net/apim/irn-5f7ae3c468c3353edd-5f0c0c75d71d877874">
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://india-001.azure-apim.net/apim/irn-2d1-20solution-5f7ae3c468c3353edd-5f1ad5e1bf43efcde8">
     <resource path="/{connectionId}/einv/v1/govt/api/Invoice">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <method siena:requiresAuthentication="true" name="POST" id="IRn" actionName="IRn" siena:isDeprecated="false">
@@ -265,7 +265,7 @@
     </resource>
   </resources>
   <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
-    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_irn-5f7ae3c468c3353edd-5f0c0c75d71d877874" />
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_irn-2d1-20solution-5f7ae3c468c3353edd-5f1ad5e1bf43efcde8" />
   </authenticationProviders>
   <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
     <variable name="connectionId">
