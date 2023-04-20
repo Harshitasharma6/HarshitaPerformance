@@ -2140,7 +2140,8 @@
                                             ),
                                             ChequeNo: txtPaymentAmountValue_9.Text,
                                             ChequeDate: DatePicker3_1.SelectedDate,
-                                            Bank: ComboBox1_1.Selected
+                                            Bank: ComboBox1_1.Selected,
+                                            'Coupon Count':Value(txtPaymentAmountValue_3.Text)
                                         }
                                     );
                                 );
